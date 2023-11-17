@@ -29,37 +29,37 @@ def L_2(a):
 
 def C_qq_1(x, z, M, MF, Q2):
     if x==1:
-        d1x = 1
+        delta_1mx = 1
     else:
-        d1x = 0
+        delta_1mx = 0
     if z==1:
-        d1z = 1
+        delta_1mz = 1
     else:
-        d1z = 0
+        delta_1mz = 0
     result = 0
     return result
 
 def C_gq_1(x, z, MF, Q2):
     if x==1:
-        d1x = 1
+        delta_1mx = 1
     else:
-        d1x = 0
+        delta_1mx = 0
     if z==1:
-        d1z = 1
+        delta_1mz = 1
     else:
-        d1z = 0
+        delta_1mz = 0
     result = 0
     return result
 
 def C_qg_1(x, z, MF, Q2):
     if x==1:
-        d1x = 1
+        delta_1mx = 1
     else:
-        d1x = 0
+        delta_1mx = 0
     if z==1:
-        d1z = 1
+        delta_1mz = 1
     else:
-        d1z = 0
+        delta_1mz = 0
     result = 0
     return result
 
@@ -80,29 +80,29 @@ def del_C_gq_N(x, z, MF, Q2):
 
 def del_C_qg_N(x, z, M, Q2):
     if x==1:
-        d1x = 1
+        delta_1mx = 1
     else:
-        d1x = 0
+        delta_1mx = 0
     if z==1:
-        d1z = 1
+        delta_1mz = 1
     else:
-        d1z = 0
+        delta_1mz = 0
     result = 0
     return result
 
 def del_C_qq_H(x, z, M, MF, Q2):
     if x==1:
-        d1x = 1
+        delta_1mx = 1
     else:
-        d1x = 0
-    result = del_C_qq_N(x, z, M, MF, Q2) + 2*CF*(1-z)*d1x
+        delta_1mx = 0
+    result = del_C_qq_N(x, z, M, MF, Q2) + 2*CF*(1-z)*delta_1mx
     return result
 
 def del_C_gq_H(x, z, MF, Q2):
     if x==1:
-        d1x = 1
+        delta_1mx = 1
     else:
-        d1x = 0
+        delta_1mx = 0
     result = 0
     return result
 
@@ -111,10 +111,10 @@ def del_C_qg_H(x, z, MF, Q2):
 
 def del_C_qq_1NH(x, z, M, MF, Q2):
     if x==1:
-        d1x = 1
+        delta_1mx = 1
     else:
-        d1x = 0
-    result = C_qq_1(x, z, M, MF, Q2) + 2*CF*(1-z)*d1x
+        delta_1mx = 0
+    result = C_qq_1(x, z, M, MF, Q2) + 2*CF*(1-z)*delta_1mx
     return result
 
 def del_C_gq_1NH(x, z, MF, Q2):
