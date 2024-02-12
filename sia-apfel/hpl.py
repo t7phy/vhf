@@ -40,7 +40,7 @@ def Hr3(a, b, c, x):
     elif a == -1 and b == 0 and c == 0:
         result = power(log(x), 2)*log(1+x)/2 + log(x)*nl(1, 1, -x) - nl(2, 1, -x)
     elif a == -1 and b == 0 and c == 1:
-        result = power(pi(), 2)*log(2)/6 - power(log(2), 3)/3 (power(pi(), 2) + 6*power(log(2), 2))/12 + power(log(1-x), 2)*(log((1-x)/8) - 3*log(x))/6 - log(1+x)*(power(pi(), 2) - 6*power(log(2), 2) + log(64)*log(1+x))/12 - log(1-x)*nl(1, 1, -x) + nl(2, 1, (1-x)/2) - nl(2, 1, 1-x) + nl(2, 1, -x) - nl(2, 1, 2*x/(-1+x)) + nl(2, 1, x/(1+x)) - nl(2, 1, 2*x/(1+x)) + nl(2, 1, (1+x)/2) - 3*zeta(3)/4
+        result = power(pi(), 2)*log(2)/6 - power(log(2), 3)/3 - (power(pi(), 2) + 6*power(log(2), 2))/12 + power(log(1-x), 2)*(log((1-x)/8) - 3*log(x))/6 - log(1+x)*(power(pi(), 2) - 6*power(log(2), 2) + log(64)*log(1+x))/12 - log(1-x)*nl(1, 1, -x) + nl(2, 1, (1-x)/2) - nl(2, 1, 1-x) + nl(2, 1, -x) - nl(2, 1, 2*x/(-1+x)) + nl(2, 1, x/(1+x)) - nl(2, 1, 2*x/(1+x)) + nl(2, 1, (1+x)/2) - 3*zeta(3)/4
     elif a == 0 and b == -1 and c == 0:
         result = - log(x)*nl(1, 1, -x) + 2*nl(2, 1, -x)
     elif a == 0 and b == 0 and c == 0:

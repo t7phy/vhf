@@ -40,7 +40,8 @@ def basis_function(poly_index, xgrid, blocks_index, basis_functions):
     return basis_functions
 
 def compute_basis_functions(xgrid, poly_deg, mode_log=True):
-    # todo: check if xgrid is sorted and add mode_log conversion
+    if mode_log:
+        xgrid = np.log(xgrid)
     num_x = len(xgrid)
     blocks_index = area_block_map(xgrid, poly_deg)
     basis_functions = {}
@@ -49,15 +50,19 @@ def compute_basis_functions(xgrid, poly_deg, mode_log=True):
         basis_functions = basis_function(i, xgrid, blocks_index, basis_functions)
     return basis_functions
 
-xgrid = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ,0.7, 0.8, 1.0]
-adict = compute_basis_functions(xgrid, 3)
+xgrid = [0.1, 0.2, 0.1, 0.3, 0.4, 0.5, 0.6 ,0.7, 0.8, 1.0]
+# adict = compute_basis_functions(xgrid, 3)
 # for i in adict:
 #     print(i)
 
 # def process_xgrid(xgrid, mode_log=True):
-#     return 
+#     if mode_log:
+#         xgrid = np.log(xgrid)
+#     return xgrid
 
-def interpolator(ev_point, basis_functions):
+def interpolator(ev_point, basis_functions, mode_log=True):
+    if mode_log:
+        ev_point = np.log(ev_point)
     res_list = []
     for i in range(len(basis_functions)):
         res = 0
@@ -68,8 +73,15 @@ def interpolator(ev_point, basis_functions):
         res_list.append(res)
     return res_list
 
-print(interpolator(0.478, adict))
+# print(interpolator(0.234567, adict))
 
-
-
+def point_interpolator(ev_point, basis_functions, i, mode_log=True):
+    if mode_log:
+        ev_point = np.log(ev_point)
+    res = 0
+    for j in range(len(basis_functions['p_'+str(i)])):
+        if basis_functions['p_'+str(i)][j]['xmin'] < ev_point <= basis_functions['p_'+str(i)][j]['xmax']:
+            for k, l in enumerate(basis_functions['p_'+str(i)][j]['coeffs']):
+                res += l * np.power(ev_point, k)
+    return res
 
