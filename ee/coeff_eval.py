@@ -2,6 +2,8 @@ from . import coeff
 from core.conv import convolution, evaluate_loc
 from core.interpolation import compute_basis_functions, interpolator
 from eko.interpolation import lambertgrid
+import numpy as np
+import pineappl
 
 def eval_c2_lo(x, interpolator_at_x):
     res_q = evaluate_loc(x, interpolator_at_x, coeff.c2_lo_q_loc)
@@ -39,5 +41,74 @@ bf = compute_basis_functions(xgrid, 4)
 x = 0.15
 interpolator_at_x = interpolator(x, bf)
 c2test = eval_c2('nnlo', x, True, bf, interpolator_at_x, 5)
-print(c2test)
+# print(c2test)
 
+def basis_transform(pre_results):
+    e2_avg = (4/9 + 1/9 + 4/9 + 1/9 + 1/9)/5
+    ns_weights = {'g': 0, 'ph': 0, 'u': 4/9, 'd': 1/9, 's': 1/9, 'c': 4/9, 'b': 1/9, 't': 0, 'ub': 4/9, 'db': 1/9, 'sb': 1/9, 'cb': 4/9, 'bb': 1/9, 'tb': 0}
+    g_weights = {'g': e2_avg, 'ph': 0, 'u': 0, 'd': 0, 's': 0, 'c': 0, 'b': 0, 't': 0, 'ub': 0, 'db': 0, 'sb': 0, 'cb': 0, 'bb': 0, 'tb': 0}
+    ps_weights = {'g': 0, 'ph': 0, 'u': e2_avg, 'd': e2_avg, 's': e2_avg, 'c': e2_avg, 'b': e2_avg, 't': 0, 'ub': e2_avg, 'db': e2_avg, 'sb': e2_avg, 'cb': e2_avg, 'bb': e2_avg, 'tb': 0}    
+
+    results = {}
+
+    for order in ['lo', 'nlo', 'nnlo']:
+        for partons in ['g', 'ph', 'u', 'd', 's', 'c', 'b', 't', 'ub', 'db', 'sb', 'cb', 'bb', 'tb']:
+            results[order + '_' + partons] = []
+            for i in range(len(pre_results[order + '_ns'])):
+                if partons == 'g':
+                    results[order + '_' + partons].append(pre_results[order + '_g'][i] * g_weights[partons])
+                elif partons == 'ph':
+                    results[order + '_' + partons].append(0)
+                else:
+                    results[order + '_' + partons].append(pre_results[order + '_ns'][i] * ns_weights[partons] + pre_results[order + '_ps'][i] * ps_weights[partons])
+    return results
+
+c2res = basis_transform(c2test)
+# print(c2res)
+
+interpolation_xgrid = xgrid
+
+interpolation_polynomial_degree = 4
+lepton_pid = 11
+pids = [21, 22, 2, 1, 3, 4, 5, 6, -2, -1, -3, -4, -5, -6]
+
+   # init pineappl objects
+lumi_entries = [
+    pineappl.lumi.LumiEntry([(pid, lepton_pid, 1.0)]) for pid in pids
+]
+orders = [pineappl.grid.Order(o, 0, 0, 0) for o in [0, 1, 2]]
+bins = 5
+bin_limits = list(map(float, range(0, bins + 1)))
+    # subgrid params
+params = pineappl.subgrid.SubgridParams()
+params.set_reweight(False)
+params.set_x_bins(len(interpolation_xgrid))
+params.set_x_max(interpolation_xgrid[-1])
+params.set_x_min(interpolation_xgrid[0])
+params.set_x_order(interpolation_polynomial_degree)
+
+grid = pineappl.grid.Grid.create(lumi_entries, orders, bin_limits, params)
+limits = []
+
+for bin_, (x, q2) in enumerate([(0.1, 17.), (0.2, 17.), (0.3, 17.), (0.4, 17.), (0.5, 17.)]):
+    limits.append((q2, q2))
+    limits.append((x, x))
+    for o_index, order in enumerate(['lo', 'nlo', 'nnlo']):
+        for p_index, partons in enumerate(['g', 'ph', 'u', 'd', 's', 'c', 'b', 't', 'ub', 'db', 'sb', 'cb', 'bb', 'tb']):
+            inparr = np.array(c2res[order + '_' + partons], dtype=np.float64)
+            print(type(inparr))
+            subgrid = pineappl.import_only_subgrid.ImportOnlySubgridV1(
+                    inparr[np.newaxis, :, np.newaxis],
+                    [q2],
+                    interpolation_xgrid,
+                    [1.0],
+                )
+            grid.set_subgrid(o_index, bin_, p_index, subgrid)
+
+normalizations = [1.0] * bins
+remapper = pineappl.bin.BinRemapper(normalizations, limits)
+grid.set_remapper(remapper)
+grid.set_key_value("initial_state_1", "11")
+grid.set_key_value("initial_state_2", "-11")
+grid.optimize()
+grid.write('filename')

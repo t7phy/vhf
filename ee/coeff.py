@@ -10,17 +10,17 @@ z3 = ZETA3
 # CT
 
 def ct_lo_q_loc(X):
-    return 2
+    return 1.
 
 # CA
 
 def ca_lo_q_loc(X):
-    return 2
+    return 1.
 
 # C
 
 def c2_lo_q_loc(X):
-    return 2
+    return 1.
 
 ############################# NLO COEFFICIENTS #############################
 
