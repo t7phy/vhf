@@ -38,9 +38,9 @@ def eval_c2(order, x, mode_log, basis_functions, interpolator_at_x, NF):
 
 xgrid = lambertgrid(50, 0.001, 1)  #[0.001, 0.005, 0.01, 0.05, 0.1, 0.2, 0.5, 0.9]
 bf = compute_basis_functions(xgrid, 4)
-x = 0.15
-interpolator_at_x = interpolator(x, bf)
-c2test = eval_c2('nnlo', x, True, bf, interpolator_at_x, 5)
+# x = 0.15
+# interpolator_at_x = interpolator(x, bf)
+# c2test = eval_c2('nnlo', x, True, bf, interpolator_at_x, 5)
 # print(c2test)
 
 def basis_transform(pre_results):
@@ -63,7 +63,7 @@ def basis_transform(pre_results):
                     results[order + '_' + partons].append(pre_results[order + '_ns'][i] * ns_weights[partons] + pre_results[order + '_ps'][i] * ps_weights[partons])
     return results
 
-c2res = basis_transform(c2test)
+# c2res = basis_transform(c2test)
 # print(c2res)
 
 interpolation_xgrid = xgrid
@@ -91,6 +91,9 @@ grid = pineappl.grid.Grid.create(lumi_entries, orders, bin_limits, params)
 limits = []
 
 for bin_, (x, q2) in enumerate([(0.1, 17.), (0.2, 17.), (0.3, 17.), (0.4, 17.), (0.5, 17.)]):
+    interpolator_at_x = interpolator(x, bf)
+    c2test = eval_c2('nnlo', x, True, bf, interpolator_at_x, 5)
+    c2res = basis_transform(c2test)
     limits.append((q2, q2))
     limits.append((x, x))
     for o_index, order in enumerate(['lo', 'nlo', 'nnlo']):
@@ -111,4 +114,4 @@ grid.set_remapper(remapper)
 grid.set_key_value("initial_state_1", "11")
 grid.set_key_value("initial_state_2", "-11")
 grid.optimize()
-grid.write('filename')
+grid.write_lz4('filename')
