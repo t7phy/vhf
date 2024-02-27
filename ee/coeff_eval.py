@@ -99,7 +99,8 @@ for bin_, (x, q2) in enumerate([(0.1, 17.), (0.2, 17.), (0.3, 17.), (0.4, 17.), 
     for o_index, order in enumerate(['lo', 'nlo', 'nnlo']):
         for p_index, partons in enumerate(['g', 'ph', 'u', 'd', 's', 'c', 'b', 't', 'ub', 'db', 'sb', 'cb', 'bb', 'tb']):
             inparr = np.array(c2res[order + '_' + partons], dtype=np.float64)
-            print(type(inparr))
+            if not any(inparr != 0.0):
+                continue
             subgrid = pineappl.import_only_subgrid.ImportOnlySubgridV1(
                     inparr[np.newaxis, :, np.newaxis],
                     [q2],
@@ -113,5 +114,7 @@ remapper = pineappl.bin.BinRemapper(normalizations, limits)
 grid.set_remapper(remapper)
 grid.set_key_value("initial_state_1", "11")
 grid.set_key_value("initial_state_2", "-11")
+grid.set_key_value("lumi_id_types", "pdg_mc_ids")
+grid.set_key_value("y_label", "obsname")
 grid.optimize()
-grid.write_lz4('filename')
+grid.write('filename')
