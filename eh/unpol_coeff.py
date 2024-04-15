@@ -38,13 +38,13 @@ def ct_nlo_qq_ls(x, z):
     return 2 * CF * result
 
 def ct_nlo_qq_ll(x, z):
-    result = -8 + log(1 - x)**2 + log(1 - z)**2
+    result = -8 + log(1 - x)**2 + log(1 - z)**2 + 2*log(1 - x)*log(1 - z)
     return 2 * CF * result
 
 # CT gq
 
 def ct_nlo_gq_rr(x, z):
-    result = 2*(1 + x - x*z) + (1 + x)/z
+    result = 2*(1 + x - x*z) - (1 + x)/z
     return 2 * CF * result
 
 # def ct_nlo_gq_rs(x, z):
@@ -68,7 +68,7 @@ def ct_nlo_gq_sr(x, z):
 #     return result
 
 def ct_nlo_gq_lr(x, z):
-    result = z + (1 + (1 - z)**2) * log(z)/z - (2 + z*(z - 2))*(log(z) - log (z - x*z))/z + log(1 - z)*(-1 + (1 + (1 - z)**2)/z)
+    result = z + (1 + (1 - z)**2) * log(z)/z + (1 + (1 - z)**2) * log(1 - x)/z + log(1 - z)*(-1 + (1 + (1 - z)**2)/z)
     return 2 * CF * result
 
 def ct_nlo_gq_ls(x, z):
@@ -76,7 +76,7 @@ def ct_nlo_gq_ls(x, z):
     return 2 * CF * result
 
 def ct_nlo_gq_ll(x, z):
-    result = (z - z**2)*log(1 - z)
+    result = z + (1 - z)*log(1 - z)
     return 2 * CF * result
 
 # CT qg
@@ -110,7 +110,7 @@ def ct_nlo_qg_sl(x, z):
 #     return
 
 def ct_nlo_qg_ll(x, z):
-    result = (x - x**2) * log(1 - x)
+    result = x + (1 - x)*log(1 - x)
     return result
 
 # CL qq
