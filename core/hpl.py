@@ -1,5 +1,5 @@
 from numpy import log, pi, power
-from .nielsen import nielsen as nl
+from core.nielsen import nielsen as nl
 from scipy.special import zeta
 
 
