@@ -7,6 +7,9 @@ from numpy import log as ln
 from numpy import arctan as ArcTan
 from numpy import sqrt, pi
 
+LMUA = 1
+LMUF = 1
+LMUR = 1
 
 def cl_nnlo_g2g_eq(x, z, orders, rsl):
     
@@ -40,7 +43,7 @@ def cl_nnlo_g2g_eq(x, z, orders, rsl):
       pow(rln2,2) - 2./3.*NC*x*z*pow(pi,2)*pow(opx,-1) + 1./3.*NC*x*z*pow(pi,2) + 61./8.*NC*pow(\
       x,2)*pow(z,-1) + 8*NC*pow(x,2)*pow(z,-1)*sqrtxz1*rln2 + 3./8.*NC*pow(x,2) - 8*NC*pow(x,2)*z\
        + 8*NC*pow(x,2)*z*pow(rln2,2)
-            result +=  - 2./3.*NC*pow(x,2)*z*pow(pi,2) + ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*pow(x,-1)*z*\
+            result +=  - 2./3.*NC*pow(x,2)*z*pow(pi,2)  + ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*pow(x,-1)*z*\
       sqrtxz3 - ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*sqrtxz3 + 3*ArcTan(z*sqrtxz3)*ln(z*\
       sqrtxz3)*pow(NC,-1)*pow(z,2)*sqrtxz3 - 15*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*x*z*\
       sqrtxz3 - 3./8.*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*NC*pow(x,-2)*sqrtxz3 + 1./4.*ArcTan(z*sqrtxz3\
@@ -98,7 +101,7 @@ def cl_nnlo_g2g_eq(x, z, orders, rsl):
        + sqrtxz1 + z)*NC*pow(x,2)*z + 4*ln(1 + sqrtxz1 + z)*pow(NC,-1)*x*rln2 - 4*ln(1 + sqrtxz1 + \
       z)*pow(NC,-1)*x*z*rln2 - 4*ln(1 + sqrtxz1 + z)*pow(NC,-1)*pow(x,2)*rln2 + 4*ln(1 + sqrtxz1 + \
       z)*pow(NC,-1)*pow(x,2)*z*rln2
-            result +=  + 4*ln(1 + sqrtxz1 + z)*NC*x*rln2 + 4*ln(1 + sqrtxz1 + z)*NC*x*z*rln2 - 4*ln(1 +\
+            result +=  + 4*ln(1 + sqrtxz1 + z)*NC*x*rln2 + 4*ln(1 + sqrtxz1 + z)*NC*x*z*rln2 - 4*ln(1 + \
       sqrtxz1 + z)*NC*pow(x,2)*rln2 - 4*ln(1 + sqrtxz1 + z)*NC*pow(x,2)*z*rln2 + 8*ln(x)*pow(NC,-1)\
       *pow(x,-1)*z*pow(opx,-1) - 8*ln(x)*pow(NC,-1)*pow(x,-1)*z + 3./2.*ln(x)*pow(NC,-1) + 16*ln(x)\
       *pow(NC,-1)*z*pow(opx,-1) - 19./2.*ln(x)*pow(NC,-1)*z + 4*ln(x)*pow(NC,-1)*x*pow(z,-1) + 5./2.\
@@ -114,7 +117,7 @@ def cl_nnlo_g2g_eq(x, z, orders, rsl):
       rln2 + 29./16.*ln(x)*NC*pow(x,2)*pow(z,-1) + 4*ln(x)*NC*pow(x,2)*pow(z,-1)*sqrtxz1 + 35./16.*\
       ln(x)*NC*pow(x,2) - 4*ln(x)*NC*pow(x,2)*rln2 - 4*ln(x)*NC*pow(x,2)*z + 8*ln(x)*NC*pow(x,2)*z*\
       rln2
-            result +=  + 4*ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*x - 4*ln(x)*ln(1 + sqrtxz1 - z)*pow(\
+            result +=   + 4*ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*x - 4*ln(x)*ln(1 + sqrtxz1 - z)*pow(\
       NC,-1)*x*z - 4*ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(x,2) + 4*ln(x)*ln(1 + sqrtxz1 - z)*\
       pow(NC,-1)*pow(x,2)*z - 4*ln(x)*ln(1 + sqrtxz1 - z)*NC*x + 4*ln(x)*ln(1 + sqrtxz1 - z)*NC*x*z\
        + 4*ln(x)*ln(1 + sqrtxz1 - z)*NC*pow(x,2) - 4*ln(x)*ln(1 + sqrtxz1 - z)*NC*pow(x,2)*z + 4*\
@@ -187,7 +190,7 @@ def cl_nnlo_g2g_eq(x, z, orders, rsl):
       ln(z)*NC*z + 3./16.*ln(z)*NC*x*pow(z,-2) + 49./8.*ln(z)*NC*x*pow(z,-1) - 4*ln(z)*NC*x*pow(\
       z,-1)*sqrtxz1 + 1./8.*ln(z)*NC*x - 4*ln(z)*NC*x*rln2 + 3./16.*ln(z)*NC*x*z - 8*ln(z)*NC*x*z*\
       rln2 - 99./16.*ln(z)*NC*pow(x,2)*pow(z,-1) + 4*ln(z)*NC*pow(x,2)*pow(z,-1)*sqrtxz1 + 29./16.*\
-      ln(z)*NC*pow(x,2) + 4*ln(z)*NC*pow(x,2)*rln2 + 8*ln(z)*NC*pow(x,2)*z*rln2 + \
+      ln(z)*NC*pow(x,2) + 4*ln(z)*NC*pow(x,2)*rln2 + 8*ln(z)*NC*pow(x,2)*z*rln2  + \
       4*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*x - 4*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*x*z - 4*ln(\
       z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(x,2) + 4*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(x,2)*\
       z + 4*ln(z)*ln(1 + sqrtxz1 - z)*NC*x*z - 4*ln(z)*ln(1 + sqrtxz1 - z)*NC*pow(x,2)*z + 4*ln(z)*\
@@ -281,20 +284,21 @@ def cl_nnlo_g2g_eq(x, z, orders, rsl):
             result = 0
     elif orders == '001':
         if rsl == 'rr':
-            result = 4*ln(z)*pow(NC,-1)*x - 4*ln(z)*pow(NC,-1)*pow(x,2) - 4*ln(z)*NC*x + 4*ln(z)*NC*pow(x,2) + 4*pow(NC,-1)*x*pow(z,-1) - \
-                2*pow(NC,-1)*x - 2*pow(NC,-1)*x*z - 4*pow(NC,-1)*pow(x,2)*pow(z,-1) + 2*pow(NC,-1)*pow(x,2) + 2*pow(NC,-1)*pow(x,2)*z - 4*NC*x*pow(z,-1) \
-                + 2*NC*x + 2*NC*x*z + 4*NC*pow(x,2)*pow(z,-1) - 2*NC*pow(x,2) - 2*NC*pow(x,2)*z
+            result = 4*LMUA*pow(NC,-1)*x*pow(z,-1) - 2*LMUA*pow(NC,-1)*x - 2*LMUA*pow(NC,-1)*x*z - 4*LMUA*pow(\
+            NC,-1)*pow(x,2)*pow(z,-1) + 2*LMUA*pow(NC,-1)*pow(x,2) + 2*LMUA*pow(NC,-1)*pow(x,2)*z - 4*\
+            LMUA*NC*x*pow(z,-1) + 2*LMUA*NC*x + 2*LMUA*NC*x*z + 4*LMUA*NC*pow(x,2)*pow(z,-1) - 2*LMUA*NC*\
+            pow(x,2) - 2*LMUA*NC*pow(x,2)*z + 4*ln(z)*LMUA*pow(NC,-1)*x - 4*ln(z)*LMUA*pow(NC,-1)*pow(x,2) \
+            - 4*ln(z)*LMUA*NC*x + 4*ln(z)*LMUA*NC*pow(x,2)
         else:
             result = 0
     elif orders == '010':
         if rsl == 'rr':
-            result = + 2*ln(x)*pow(NC,-1)*x - 2*ln(x)*pow(NC,-1)*x*z - 2*ln(x)*NC*x + 2*ln(x)*NC*x*z+ pow(NC,-1) - pow(NC,-1)*z + pow(NC,-1)*x \
-                - pow(NC,-1)*x*z - 2*pow(NC,-1)*pow(x,2) + 2*pow(NC,-1)*pow(x,2)*z - NC + NC*z - NC*x + NC*x*z + 2*NC*pow(x,2)  - 2*NC*pow(x,2)*z
+            result = + LMUF*pow(NC,-1) - LMUF*pow(NC,-1)*z + LMUF*pow(NC,-1)*x - LMUF*pow(NC,-1)*x*z - 2*LMUF*pow(NC,-1)*pow(x,2) + 2*LMUF*pow(NC,-1)*pow(x,2)*z - \
+            LMUF*NC + LMUF*NC*z - LMUF*NC*x + LMUF*NC*x*z + 2*LMUF*NC*pow(x,2) - 2*LMUF*NC*pow(x,2)*z +  + 2*ln(x)*LMUF*pow(NC,-1)*x - 2*ln(x)*LMUF*pow(NC,-1)*x*z - 2*ln(x)*LMUF*NC*x + 2*ln(\
+            x)*LMUF*NC*x*z 
         else:
             result = 0
     else:
         result = 0
 
     return result
-
-

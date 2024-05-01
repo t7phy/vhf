@@ -367,24 +367,8 @@ double C2Tg2gEq(double inx, double inz, std::string cx, std::string cz,
        + 117./16.*NC*pow(x,2)*pow(z,-1) + 4*NC*pow(x,2)*pow(z,-1)*pow(rln2,2) + 4*NC*pow(x,2)*pow(
       z,-1)*sqrtxz1*rln2 - 2./3.*NC*pow(x,2)*pow(z,-1)*pow(pi,2) - 89./16.*NC*pow(x,2) + 1./3.*NC*
       pow(x,2)*pow(pi,2);
-      tmp +=  - 3./2.*NC*pow(x,2)*z + 4*NC*pow(x,2)*z*pow(rln2,2) - 1./2.*NC*pow(x,2)*z*pow(pi,2)
-       - 1./2.*LMUF*pow(NC,-1)*pow(z,-1) + 1./2.*LMUF*pow(NC,-1) - 1./2.*LMUF*pow(NC,-1)*z + 5./4.*
-      LMUF*pow(NC,-1)*x*pow(z,-1) - 1./2.*LMUF*pow(NC,-1)*x - 3./4.*LMUF*pow(NC,-1)*pow(x,2)*pow(
-      z,-1) + 3./4.*LMUF*pow(NC,-1)*pow(x,2)*z + 1./2.*LMUF*NC*pow(z,-1) - 1./2.*LMUF*NC + 1./2.*
-      LMUF*NC*z - 5./4.*LMUF*NC*x*pow(z,-1) + 1./2.*LMUF*NC*x + 3./4.*LMUF*NC*pow(x,2)*pow(z,-1) - 
-      3./4.*LMUF*NC*pow(x,2)*z - 11./8.*LMUA*pow(NC,-1)*pow(z,-1) + 5./4.*LMUA*pow(NC,-1) + 1./8.*
-      LMUA*pow(NC,-1)*z + 15./4.*LMUA*pow(NC,-1)*x*pow(z,-1) - 7./2.*LMUA*pow(NC,-1)*x + 1./4.*LMUA
-      *pow(NC,-1)*x*z - 15./4.*LMUA*pow(NC,-1)*pow(x,2)*pow(z,-1) + 7./2.*LMUA*pow(NC,-1)*pow(x,2)
-       - 1./4.*LMUA*pow(NC,-1)*pow(x,2)*z + 11./8.*LMUA*NC*pow(z,-1) - 5./4.*LMUA*NC - 1./8.*LMUA*
-      NC*z - 15./4.*LMUA*NC*x*pow(z,-1) + 7./2.*LMUA*NC*x - 1./4.*LMUA*NC*x*z + 15./4.*LMUA*NC*pow(
-      x,2)*pow(z,-1) - 7./2.*LMUA*NC*pow(x,2) + 1./4.*LMUA*NC*pow(x,2)*z - 1./2.*LMUA*LMUF*pow(
-      NC,-1)*pow(z,-1) + 1./2.*LMUA*LMUF*pow(NC,-1) - 1./4.*LMUA*LMUF*pow(NC,-1)*z + LMUA*LMUF*pow(
-      NC,-1)*x*pow(z,-1) - LMUA*LMUF*pow(NC,-1)*x + 1./2.*LMUA*LMUF*pow(NC,-1)*x*z - LMUA*LMUF*pow(
-      NC,-1)*pow(x,2)*pow(z,-1) + LMUA*LMUF*pow(NC,-1)*pow(x,2) - 1./2.*LMUA*LMUF*pow(NC,-1)*pow(
-      x,2)*z + 1./2.*LMUA*LMUF*NC*pow(z,-1) - 1./2.*LMUA*LMUF*NC + 1./4.*LMUA*LMUF*NC*z - LMUA*LMUF
-      *NC*x*pow(z,-1);
-      tmp +=  + LMUA*LMUF*NC*x - 1./2.*LMUA*LMUF*NC*x*z + LMUA*LMUF*NC*pow(x,2)*pow(z,-1) - LMUA*
-      LMUF*NC*pow(x,2) + 1./2.*LMUA*LMUF*NC*pow(x,2)*z - 3./2.*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(
+      tmp +=  - 3./2.*NC*pow(x,2)*z + 4*NC*pow(x,2)*z*pow(rln2,2) - 1./2.*NC*pow(x,2)*z*pow(pi,2);
+      tmp +=   - 3./2.*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(
       NC,-1)*pow(x,-1)*z*sqrtxz3 + 3./2.*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*sqrtxz3 + 3./2.
       *ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*pow(z,2)*sqrtxz3 - 15./2.*ArcTan(z*sqrtxz3)*ln(z*
       sqrtxz3)*pow(NC,-1)*x*z*sqrtxz3 + 5./16.*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*NC*pow(x,-2)*sqrtxz3
@@ -619,19 +603,8 @@ double C2Tg2gEq(double inx, double inz, std::string cx, std::string cz,
       rln2 - 4*ln(x)*NC*x*z*pow(opx,-1) + 45./32.*ln(x)*NC*x*z - 4*ln(x)*NC*x*z*rln2 + 109./32.*ln(
       x)*NC*pow(x,2)*pow(z,-1) + 4*ln(x)*NC*pow(x,2)*pow(z,-1)*rln2 + 2*ln(x)*NC*pow(x,2)*pow(z,-1)
       *sqrtxz1 - 77./32.*ln(x)*NC*pow(x,2) - 2*ln(x)*NC*pow(x,2)*rln2 - 1./2.*ln(x)*NC*pow(x,2)*z
-       + 4*ln(x)*NC*pow(x,2)*z*rln2 - 1./4.*ln(x)*LMUF*pow(NC,-1)*pow(z,-1) - 1./4.*ln(x)*LMUF*pow(
-      NC,-1)*z + 1./2.*ln(x)*LMUF*pow(NC,-1)*x*pow(z,-1) - 1./2.*ln(x)*LMUF*pow(NC,-1)*x*z - ln(x)*
-      LMUF*pow(NC,-1)*pow(x,2)*pow(z,-1) + ln(x)*LMUF*pow(NC,-1)*pow(x,2) - 1./2.*ln(x)*LMUF*pow(
-      NC,-1)*pow(x,2)*z;
-      tmp +=  + 1./4.*ln(x)*LMUF*NC*pow(z,-1) + 1./4.*ln(x)*LMUF*NC*z - 1./2.*ln(x)*LMUF*NC*x*pow(
-      z,-1) + 1./2.*ln(x)*LMUF*NC*x*z + ln(x)*LMUF*NC*pow(x,2)*pow(z,-1) - ln(x)*LMUF*NC*pow(x,2)
-       + 1./2.*ln(x)*LMUF*NC*pow(x,2)*z - 1./2.*ln(x)*LMUA*pow(NC,-1)*pow(z,-1) + 1./2.*ln(x)*LMUA*
-      pow(NC,-1) - 1./4.*ln(x)*LMUA*pow(NC,-1)*z + ln(x)*LMUA*pow(NC,-1)*x*pow(z,-1) - ln(x)*LMUA*
-      pow(NC,-1)*x + 1./2.*ln(x)*LMUA*pow(NC,-1)*x*z - ln(x)*LMUA*pow(NC,-1)*pow(x,2)*pow(z,-1) + 
-      ln(x)*LMUA*pow(NC,-1)*pow(x,2) - 1./2.*ln(x)*LMUA*pow(NC,-1)*pow(x,2)*z + 1./2.*ln(x)*LMUA*NC
-      *pow(z,-1) - 1./2.*ln(x)*LMUA*NC + 1./4.*ln(x)*LMUA*NC*z - ln(x)*LMUA*NC*x*pow(z,-1) + ln(x)*
-      LMUA*NC*x - 1./2.*ln(x)*LMUA*NC*x*z + ln(x)*LMUA*NC*pow(x,2)*pow(z,-1) - ln(x)*LMUA*NC*pow(
-      x,2) + 1./2.*ln(x)*LMUA*NC*pow(x,2)*z + ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1) + 2*
+       + 4*ln(x)*NC*pow(x,2)*z*rln2 ;
+      tmp +=   + ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1) + 2*
       ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)*sqrtxz1*pow(opz,-1) - 2*ln(x)*ln(1 + sqrtxz1
        - z)*pow(NC,-1)*pow(z,-1)*sqrtxz1 + 6*ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(sqrtxz1,-1)*
       pow(opz,-1) - 4*ln(x)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(sqrtxz1,-1) - 2*ln(x)*ln(1 + sqrtxz1
@@ -953,21 +926,8 @@ double C2Tg2gEq(double inx, double inz, std::string cx, std::string cz,
        - 2*ln(z)*NC*x*pow(z,-1)*sqrtxz1 - 7./16.*ln(z)*NC*x + 2*ln(z)*NC*x*rln2 + 27./32.*ln(z)*NC*
       x*z - 4*ln(z)*NC*x*z*rln2 - 131./32.*ln(z)*NC*pow(x,2)*pow(z,-1) + 4*ln(z)*NC*pow(x,2)*pow(
       z,-1)*rln2 + 2*ln(z)*NC*pow(x,2)*pow(z,-1)*sqrtxz1 + 61./32.*ln(z)*NC*pow(x,2) + 2*ln(z)*NC*
-      pow(x,2)*rln2 - ln(z)*NC*pow(x,2)*z + 4*ln(z)*NC*pow(x,2)*z*rln2 + 1./2.*ln(z)*LMUF*pow(
-      NC,-1)*pow(z,-1) - 1./2.*ln(z)*LMUF*pow(NC,-1) + 1./4.*ln(z)*LMUF*pow(NC,-1)*z - ln(z)*LMUF*
-      pow(NC,-1)*x*pow(z,-1) + ln(z)*LMUF*pow(NC,-1)*x - 1./2.*ln(z)*LMUF*pow(NC,-1)*x*z + ln(z)*
-      LMUF*pow(NC,-1)*pow(x,2)*pow(z,-1) - ln(z)*LMUF*pow(NC,-1)*pow(x,2) + 1./2.*ln(z)*LMUF*pow(
-      NC,-1)*pow(x,2)*z - 1./2.*ln(z)*LMUF*NC*pow(z,-1) + 1./2.*ln(z)*LMUF*NC - 1./4.*ln(z)*LMUF*NC
-      *z;
-      tmp +=  + ln(z)*LMUF*NC*x*pow(z,-1) - ln(z)*LMUF*NC*x + 1./2.*ln(z)*LMUF*NC*x*z - ln(z)*LMUF*
-      NC*pow(x,2)*pow(z,-1) + ln(z)*LMUF*NC*pow(x,2) - 1./2.*ln(z)*LMUF*NC*pow(x,2)*z - 1./2.*ln(z)
-      *LMUA*pow(NC,-1)*pow(z,-1) - 1./2.*ln(z)*LMUA*pow(NC,-1) - 1./4.*ln(z)*LMUA*pow(NC,-1)*z + 
-      ln(z)*LMUA*pow(NC,-1)*x*pow(z,-1) + ln(z)*LMUA*pow(NC,-1)*x + 1./2.*ln(z)*LMUA*pow(NC,-1)*x*z
-       - ln(z)*LMUA*pow(NC,-1)*pow(x,2)*pow(z,-1) - ln(z)*LMUA*pow(NC,-1)*pow(x,2) - 1./2.*ln(z)*
-      LMUA*pow(NC,-1)*pow(x,2)*z + 1./2.*ln(z)*LMUA*NC*pow(z,-1) + 1./2.*ln(z)*LMUA*NC + 1./4.*ln(z
-      )*LMUA*NC*z - ln(z)*LMUA*NC*x*pow(z,-1) - ln(z)*LMUA*NC*x - 1./2.*ln(z)*LMUA*NC*x*z + ln(z)*
-      LMUA*NC*pow(x,2)*pow(z,-1) + ln(z)*LMUA*NC*pow(x,2) + 1./2.*ln(z)*LMUA*NC*pow(x,2)*z - 2*ln(z
-      )*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)*pow(opz,-1) + 2*ln(z)*ln(1 + sqrtxz1 - z)*pow(
+      pow(x,2)*rln2 - ln(z)*NC*pow(x,2)*z + 4*ln(z)*NC*pow(x,2)*z*rln2;
+      tmp +=   - 2*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)*pow(opz,-1) + 2*ln(z)*ln(1 + sqrtxz1 - z)*pow(
       NC,-1)*pow(z,-1) - 4*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)*sqrtxz1*pow(opz,-1) + 4*
       ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)*sqrtxz1 - 12*ln(z)*ln(1 + sqrtxz1 - z)*pow(
       NC,-1)*pow(sqrtxz1,-1)*pow(opz,-1) + 8*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(sqrtxz1,-1)
@@ -1158,21 +1118,8 @@ double C2Tg2gEq(double inx, double inz, std::string cx, std::string cz,
       *ln(omx)*pow(NC,-1)*pow(x,2) - 1./2.*ln(omx)*pow(NC,-1)*pow(x,2)*z - 15./8.*ln(omx)*NC*pow(
       z,-1) + 7./4.*ln(omx)*NC - 3./8.*ln(omx)*NC*z + 5*ln(omx)*NC*x*pow(z,-1) - 4*ln(omx)*NC*x + 1.
       /4.*ln(omx)*NC*x*z - 9./2.*ln(omx)*NC*pow(x,2)*pow(z,-1) + 7./2.*ln(omx)*NC*pow(x,2) + 1./2.*
-      ln(omx)*NC*pow(x,2)*z + 1./2.*ln(omx)*LMUF*pow(NC,-1)*pow(z,-1) - 1./2.*ln(omx)*LMUF*pow(
-      NC,-1) + 1./4.*ln(omx)*LMUF*pow(NC,-1)*z - ln(omx)*LMUF*pow(NC,-1)*x*pow(z,-1) + ln(omx)*LMUF
-      *pow(NC,-1)*x - 1./2.*ln(omx)*LMUF*pow(NC,-1)*x*z + ln(omx)*LMUF*pow(NC,-1)*pow(x,2)*pow(
-      z,-1) - ln(omx)*LMUF*pow(NC,-1)*pow(x,2) + 1./2.*ln(omx)*LMUF*pow(NC,-1)*pow(x,2)*z - 1./2.*
-      ln(omx)*LMUF*NC*pow(z,-1) + 1./2.*ln(omx)*LMUF*NC - 1./4.*ln(omx)*LMUF*NC*z + ln(omx)*LMUF*NC
-      *x*pow(z,-1) - ln(omx)*LMUF*NC*x + 1./2.*ln(omx)*LMUF*NC*x*z - ln(omx)*LMUF*NC*pow(x,2)*pow(
-      z,-1) + ln(omx)*LMUF*NC*pow(x,2) - 1./2.*ln(omx)*LMUF*NC*pow(x,2)*z + 1./2.*ln(omx)*LMUA*pow(
-      NC,-1)*pow(z,-1) - 1./2.*ln(omx)*LMUA*pow(NC,-1) + 1./4.*ln(omx)*LMUA*pow(NC,-1)*z - ln(omx)*
-      LMUA*pow(NC,-1)*x*pow(z,-1);
-      tmp +=  + ln(omx)*LMUA*pow(NC,-1)*x - 1./2.*ln(omx)*LMUA*pow(NC,-1)*x*z + ln(omx)*LMUA*pow(
-      NC,-1)*pow(x,2)*pow(z,-1) - ln(omx)*LMUA*pow(NC,-1)*pow(x,2) + 1./2.*ln(omx)*LMUA*pow(NC,-1)*
-      pow(x,2)*z - 1./2.*ln(omx)*LMUA*NC*pow(z,-1) + 1./2.*ln(omx)*LMUA*NC - 1./4.*ln(omx)*LMUA*NC*
-      z + ln(omx)*LMUA*NC*x*pow(z,-1) - ln(omx)*LMUA*NC*x + 1./2.*ln(omx)*LMUA*NC*x*z - ln(omx)*
-      LMUA*NC*pow(x,2)*pow(z,-1) + ln(omx)*LMUA*NC*pow(x,2) - 1./2.*ln(omx)*LMUA*NC*pow(x,2)*z - 1./
-      2.*pow(ln(omx),2)*pow(NC,-1)*pow(z,-1) + 1./2.*pow(ln(omx),2)*pow(NC,-1) - 1./4.*pow(ln(omx),
+      ln(omx)*NC*pow(x,2)*z ;
+      tmp +=   - 1./2.*pow(ln(omx),2)*pow(NC,-1)*pow(z,-1) + 1./2.*pow(ln(omx),2)*pow(NC,-1) - 1./4.*pow(ln(omx),
       2)*pow(NC,-1)*z + pow(ln(omx),2)*pow(NC,-1)*x*pow(z,-1) - pow(ln(omx),2)*pow(NC,-1)*x + 1./2.
       *pow(ln(omx),2)*pow(NC,-1)*x*z - pow(ln(omx),2)*pow(NC,-1)*pow(x,2)*pow(z,-1) + pow(ln(omx),2
       )*pow(NC,-1)*pow(x,2) - 1./2.*pow(ln(omx),2)*pow(NC,-1)*pow(x,2)*z + 1./2.*pow(ln(omx),2)*NC*
@@ -1205,22 +1152,8 @@ double C2Tg2gEq(double inx, double inz, std::string cx, std::string cz,
       pow(NC,-1)*pow(x,3)*pow(sqrtxz1,-1)*rln2*pow(opz,-1) + 16*ln(omz)*pow(NC,-1)*pow(x,3)*pow(
       sqrtxz1,-1)*rln2 - 15./8.*ln(omz)*NC*pow(z,-1) + 7./4.*ln(omz)*NC - 3./8.*ln(omz)*NC*z + 5*
       ln(omz)*NC*x*pow(z,-1) - 4*ln(omz)*NC*x + 1./4.*ln(omz)*NC*x*z - 9./2.*ln(omz)*NC*pow(x,2)*
-      pow(z,-1) + 7./2.*ln(omz)*NC*pow(x,2) + 1./2.*ln(omz)*NC*pow(x,2)*z + 1./2.*ln(omz)*LMUF*pow(
-      NC,-1)*pow(z,-1) - 1./2.*ln(omz)*LMUF*pow(NC,-1) + 1./4.*ln(omz)*LMUF*pow(NC,-1)*z - ln(omz)*
-      LMUF*pow(NC,-1)*x*pow(z,-1) + ln(omz)*LMUF*pow(NC,-1)*x - 1./2.*ln(omz)*LMUF*pow(NC,-1)*x*z
-       + ln(omz)*LMUF*pow(NC,-1)*pow(x,2)*pow(z,-1) - ln(omz)*LMUF*pow(NC,-1)*pow(x,2) + 1./2.*ln(
-      omz)*LMUF*pow(NC,-1)*pow(x,2)*z - 1./2.*ln(omz)*LMUF*NC*pow(z,-1) + 1./2.*ln(omz)*LMUF*NC - 1.
-      /4.*ln(omz)*LMUF*NC*z + ln(omz)*LMUF*NC*x*pow(z,-1) - ln(omz)*LMUF*NC*x + 1./2.*ln(omz)*LMUF*
-      NC*x*z - ln(omz)*LMUF*NC*pow(x,2)*pow(z,-1) + ln(omz)*LMUF*NC*pow(x,2) - 1./2.*ln(omz)*LMUF*
-      NC*pow(x,2)*z + 1./2.*ln(omz)*LMUA*pow(NC,-1)*pow(z,-1) - 1./2.*ln(omz)*LMUA*pow(NC,-1) + 1./
-      4.*ln(omz)*LMUA*pow(NC,-1)*z - ln(omz)*LMUA*pow(NC,-1)*x*pow(z,-1) + ln(omz)*LMUA*pow(NC,-1)*
-      x;
-      tmp +=  - 1./2.*ln(omz)*LMUA*pow(NC,-1)*x*z + ln(omz)*LMUA*pow(NC,-1)*pow(x,2)*pow(z,-1) - 
-      ln(omz)*LMUA*pow(NC,-1)*pow(x,2) + 1./2.*ln(omz)*LMUA*pow(NC,-1)*pow(x,2)*z - 1./2.*ln(omz)*
-      LMUA*NC*pow(z,-1) + 1./2.*ln(omz)*LMUA*NC - 1./4.*ln(omz)*LMUA*NC*z + ln(omz)*LMUA*NC*x*pow(
-      z,-1) - ln(omz)*LMUA*NC*x + 1./2.*ln(omz)*LMUA*NC*x*z - ln(omz)*LMUA*NC*pow(x,2)*pow(z,-1) + 
-      ln(omz)*LMUA*NC*pow(x,2) - 1./2.*ln(omz)*LMUA*NC*pow(x,2)*z - 4*ln(omz)*ln(1 + sqrtxz1 - z)*
-      pow(NC,-1)*pow(z,-1)*sqrtxz1*pow(opz,-1) + 4*ln(omz)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)
+      pow(z,-1) + 7./2.*ln(omz)*NC*pow(x,2) + 1./2.*ln(omz)*NC*pow(x,2)*z;
+      tmp +=  - 4*ln(omz)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)*sqrtxz1*pow(opz,-1) + 4*ln(omz)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(z,-1)
       *sqrtxz1 - 12*ln(omz)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(sqrtxz1,-1)*pow(opz,-1) + 8*ln(omz)*
       ln(1 + sqrtxz1 - z)*pow(NC,-1)*pow(sqrtxz1,-1) + 4*ln(omz)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*z*
       pow(sqrtxz1,-1)*pow(opz,-1) - 4*ln(omz)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*z*pow(sqrtxz1,-1) + 8*
@@ -1568,6 +1501,9 @@ double C2Tg2gEq(double inx, double inz, std::string cx, std::string cz,
 
     res += tmp;
     }
+########################################### RR
+   
+###########################################
   return res;
   }
 }
