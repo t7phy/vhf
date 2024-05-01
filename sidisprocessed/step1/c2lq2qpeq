@@ -288,15 +288,17 @@ double C2Lq2qpEq(double inx, double inz, std::string cx, std::string cz,
     if (z != x && z != 1.-x) {
     double tmp = 0.0;
     tmp =  - 4*CF + 2*z*CF + 2*pow(z,2)*CF + 7*x*CF - 1./3.*x*pow(pi,2)*CF - 2./3.*x*z*pow(pi,2)*CF
-       - 7*x*pow(z,2)*CF + 4*LMUA*x*CF - 2*LMUA*x*z*CF - 2*LMUA*x*pow(z,2)*CF + 8*ln(x)*x*CF - 4*
+       - 7*x*pow(z,2)*CF  + 8*ln(x)*x*CF - 4*
       ln(x)*x*z*CF - 4*ln(x)*x*pow(z,2)*CF + 4*ln(x)*ln(z)*x*CF + 8*ln(x)*ln(z)*x*z*CF - 2*ln(z)*CF
-       - 4*ln(z)*z*CF - 2*ln(z)*x*CF + 8*ln(z)*x*z*CF + 2*ln(z)*x*pow(z,2)*CF + 2*ln(z)*LMUA*x*CF
-       + 4*ln(z)*LMUA*x*z*CF - 2*pow(ln(z),2)*x*CF - 4*pow(ln(z),2)*x*z*CF - 2*ln(z)*ln(omx)*x*CF
+       - 4*ln(z)*z*CF - 2*ln(z)*x*CF + 8*ln(z)*x*z*CF + 2*ln(z)*x*pow(z,2)*CF - 2*pow(ln(z),2)*x*CF - 4*pow(ln(z),2)*x*z*CF - 2*ln(z)*ln(omx)*x*CF
        - 4*ln(z)*ln(omx)*x*z*CF - 4*ln(omx)*x*CF + 2*ln(omx)*x*z*CF + 2*ln(omx)*x*pow(z,2)*CF - 4*
       ln(omz)*x*CF + 2*ln(omz)*x*z*CF + 2*ln(omz)*x*pow(z,2)*CF + 2*Li2(z)*x*CF + 4*Li2(z)*x*z*CF;
 
     res += tmp;
     }
+############################################ RR
+
+############################################
   return res;
   }
 }

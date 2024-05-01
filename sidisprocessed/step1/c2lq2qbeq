@@ -321,8 +321,7 @@ double C2Lq2qbEq(double inx, double inz, std::string cx, std::string cz,
       pow(pi,2)*CF*pow(opx,-1);
       tmp +=  + 41./3.*x*CF + 8*x*sqrtxz1*rln2*CF - x*pow(pi,2)*CF - 22*x*z*CF + 2./3.*x*z*pow(
       pi,2)*CF - 7*x*pow(z,2)*CF + 32*x*pow(z,2)*pow(rln2,2)*CF - 8./3.*x*pow(z,2)*pow(pi,2)*CF + 
-      88./9.*pow(x,2)*CF - 4./3.*LMUF*pow(x,-1)*CF + 4*LMUF*CF - 8./3.*LMUF*pow(x,2)*CF + 4*LMUA*x*
-      CF - 2*LMUA*x*z*CF - 2*LMUA*x*pow(z,2)*CF + 16*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*
+      88./9.*pow(x,2)*CF  + 16*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(NC,-1)*
       pow(z,2)*sqrtxz3*CF + 2*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(x,-1)*z*sqrtxz3*CF - 2*ArcTan(z*
       sqrtxz3)*ln(z*sqrtxz3)*sqrtxz3*CF + 46*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*pow(z,2)*sqrtxz3*CF - 
       6*ArcTan(z*sqrtxz3)*ln(z*sqrtxz3)*x*z*sqrtxz3*CF - 16*ArcTan(sqrtxz3)*ln(sqrtxz3)*pow(NC,-1)*
@@ -413,7 +412,7 @@ double C2Lq2qbEq(double inx, double inz, std::string cx, std::string cz,
       CF - 14*ln(x)*x*CF + 4*ln(x)*x*sqrtxz1*CF + 11*ln(x)*x*z*CF - 8*ln(x)*x*z*rln2*CF - 4*ln(x)*x
       *pow(z,2)*CF + 32*ln(x)*x*pow(z,2)*rln2*CF - 2*ln(x)*pow(x,2)*pow(poly2,-1)*CF + 4*ln(x)*pow(
       x,2)*CF*pow(xmz,-1) - 5*ln(x)*pow(x,2)*CF - ln(x)*pow(x,3)*pow(poly2,-1)*CF - 4*ln(x)*pow(
-      x,3)*CF*pow(xmz,-1) + ln(x)*pow(x,4)*pow(poly2,-1)*CF + 4*ln(x)*LMUF*x*CF - 1./2.*ln(x)*ln(1
+      x,3)*CF*pow(xmz,-1) + ln(x)*pow(x,4)*pow(poly2,-1)*CF  - 1./2.*ln(x)*ln(1
        - sqrtxz2 + x)*pow(x,-1)*pow(sqrtxz2,-1)*pow(poly2,-1)*CF;
       tmp +=  + 1./2.*ln(x)*ln(1 - sqrtxz2 + x)*pow(x,-1)*pow(sqrtxz2,-1)*CF - ln(x)*ln(1 - sqrtxz2
        + x)*pow(sqrtxz2,-1)*CF + 2*ln(x)*ln(1 - sqrtxz2 + x)*z*pow(sqrtxz2,-1)*CF + 3./2.*ln(x)*ln(
@@ -568,7 +567,7 @@ double C2Lq2qbEq(double inx, double inz, std::string cx, std::string cz,
       poly2,-1)*CF + 4*ln(z)*x*sqrtxz1*CF - 7*ln(z)*x*z*CF + 8*ln(z)*x*z*rln2*CF + 2*ln(z)*x*pow(
       z,2)*CF + 32*ln(z)*x*pow(z,2)*rln2*CF + 2*ln(z)*pow(x,2)*pow(poly2,-1)*CF - 4*ln(z)*pow(x,2)*
       CF*pow(xmz,-1) - 1./3.*ln(z)*pow(x,2)*CF - ln(z)*pow(x,3)*pow(poly2,-1)*CF + 4*ln(z)*pow(x,3)
-      *CF*pow(xmz,-1) - ln(z)*pow(x,4)*pow(poly2,-1)*CF + 2*ln(z)*LMUA*x*CF + 4*ln(z)*LMUA*x*z*CF
+      *CF*pow(xmz,-1) - ln(z)*pow(x,4)*pow(poly2,-1)*CF 
        + 8*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*x*pow(z,-1)*CF*pow(opz,-1) - 8*ln(z)*ln(1 + sqrtxz1
        - z)*pow(NC,-1)*x*pow(z,-1)*CF + 16*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*x*pow(z,-1)*sqrtxz1
       *CF*pow(opz,-1) - 16*ln(z)*ln(1 + sqrtxz1 - z)*pow(NC,-1)*x*pow(z,-1)*sqrtxz1*CF + 48*ln(z)*
@@ -847,6 +846,9 @@ double C2Lq2qbEq(double inx, double inz, std::string cx, std::string cz,
 
     res += tmp;
     }
+######################################### RR
+
+#########################################
   return res;
   }
 }

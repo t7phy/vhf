@@ -288,11 +288,11 @@ double C2Lq2qpEqp(double inx, double inz, std::string cx, std::string cz,
     if (z != x && z != 1.-x) {
     double tmp = 0.0;
     tmp = 20./9.*pow(x,-1)*CF - 50./3.*CF + 20*z*CF + 14./3.*x*CF - 2./3.*x*pow(pi,2)*CF - 20*x*z*
-      CF + 88./9.*pow(x,2)*CF - 4./3.*LMUF*pow(x,-1)*CF + 4*LMUF*CF - 8./3.*LMUF*pow(x,2)*CF - 1./2.
+      CF + 88./9.*pow(x,2)*CF  - 1./2.
       *ln(x)*pow(x,-1)*pow(poly2,-1)*CF + 1./2.*ln(x)*pow(x,-1)*CF + 1./2.*ln(x)*pow(poly2,-1)*CF
        - 3./2.*ln(x)*CF + 10*ln(x)*z*CF + ln(x)*x*pow(poly2,-1)*CF - 33./2.*ln(x)*x*CF + 10*ln(x)*x
       *z*CF - ln(x)*pow(x,2)*pow(poly2,-1)*CF - 17./2.*ln(x)*pow(x,2)*CF - 1./2.*ln(x)*pow(x,3)*
-      pow(poly2,-1)*CF + 1./2.*ln(x)*pow(x,4)*pow(poly2,-1)*CF + 4*ln(x)*LMUF*x*CF - 1./4.*ln(x)*
+      pow(poly2,-1)*CF + 1./2.*ln(x)*pow(x,4)*pow(poly2,-1)*CF  - 1./4.*ln(x)*
       ln(1 - sqrtxz2 + x)*pow(x,-1)*pow(sqrtxz2,-1)*pow(poly2,-1)*CF + 1./4.*ln(x)*ln(1 - sqrtxz2
        + x)*pow(x,-1)*pow(sqrtxz2,-1)*CF - 1./2.*ln(x)*ln(1 - sqrtxz2 + x)*pow(sqrtxz2,-1)*CF + ln(
       x)*ln(1 - sqrtxz2 + x)*z*pow(sqrtxz2,-1)*CF + 3./4.*ln(x)*ln(1 - sqrtxz2 + x)*x*pow(
@@ -371,6 +371,9 @@ double C2Lq2qpEqp(double inx, double inz, std::string cx, std::string cz,
 
     res += tmp;
     }
+############################################### RR
+
+###############################################
   return res;
   }
 }
