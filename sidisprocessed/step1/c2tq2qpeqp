@@ -183,32 +183,15 @@ double C2Tq2qpEqp(double inx, double inz, std::string cx, std::string cz,
   double omx = 1.-x;
   double opx = 1.+x;
   double op6xpxsq = 1.+6.*x+x*x;
-  res = 52./27.*pow(x,-1)*CF - 41./36.*CF + 1./6.*pow(pi,2)*CF + 17./36.*x*CF + 1./2.*x*pow(pi,2)*
-      CF - 34./27.*pow(x,2)*CF + 1./3.*pow(x,2)*pow(pi,2)*CF + 23./6.*ln(x)*CF - 1./3.*ln(x)*pow(pi,2)*CF - 5./6.*ln(
-      x)*x*CF - 1./3.*ln(x)*x*pow(pi,2)*CF + 38./9.*ln(x)*pow(x,2)*CF  - 13./8.*pow(ln(x),2)*CF 
-      - 13./8.*pow(ln(x),2)*x*CF - 5./3.*pow(ln(x),2)*pow(x,2)*CF + 5./12.*pow(ln(x),3)*CF + 5./12.*pow(ln(x),3)*
-      x*CF - 2./3.*ln(x)*ln(omx)*pow(x,-1)*CF - 1./2.*ln(x)*ln(omx)*CF + 1./2.*ln(x)*ln(omx)*x*CF
-       + 2./3.*ln(x)*ln(omx)*pow(x,2)*CF - 1./2.*ln(x)*pow(ln(omx),2)*CF - 1./2.*ln(x)*pow(ln(omx),
-      2)*x*CF + ln(x)*Li2(x)*CF + ln(x)*Li2(x)*x*CF + 13./9.*ln(omx)*pow(x,-1)*CF - 11./6.*ln(omx)*
-      CF + 1./6.*ln(omx)*pow(pi,2)*CF + 17./6.*ln(omx)*x*CF + 1./6.*ln(omx)*x*pow(pi,2)*CF - 22./9.
-      *ln(omx)*pow(x,2)*CF + 1./3.*pow(ln(omx),2)*pow(x,-1)*CF + 1./4.*pow(
-      ln(omx),2)*CF;
-      res +=  - 1./4.*pow(ln(omx),2)*x*CF - 1./3.*pow(ln(omx),2)*pow(x,2)*CF - ln(omx)*Li2(x)*CF - 
-      ln(omx)*Li2(x)*x*CF - Li3(1 - x)*CF - Li3(1 - x)*x*CF - 2./3.*Li2(x)*pow(x,-1)*CF - 3./2.*
-      Li2(x)*CF - 5./2.*Li2(x)*x*CF - 4./3.*Li2(x)*pow(x,2)*CF;
+  res = 
 
 ################################################# RD
 
 ///////////////////////////////////////// 010
-- 13./9.*LMUF*pow(x,-1)*CF + 11./6.*
-      LMUF*CF - 1./6.*LMUF*pow(pi,2)*CF - 17./6.*LMUF*x*CF - 1./6.*LMUF*x*pow(pi,2)*CF + 22./9.*
-      LMUF*pow(x,2)*CF - ln(x)*LMUF*CF - 3*ln(x)*LMUF*x*CF - 2*ln(x)*LMUF*pow(x,2)*CF + 
-      pow(ln(x),2)*LMUF*CF + pow(ln(x),2)*LMUF*x*CF - 2./3.*ln(omx)*LMUF*pow(x,-1)*CF - 1./2.*ln(omx)*LMUF*CF + 1./2.*ln(omx
-      )*LMUF*x*CF + 2./3.*ln(omx)*LMUF*pow(x,2)*CF + Li2(x)*LMUF*CF + Li2(x)*LMUF*x*CF
+
 
 ///////////////////////////////////////// 020
-+ 1./3.*pow(LMUF,2)*pow(x,-1)*CF + 1./4.*pow(LMUF,2)*CF - 1./4.*pow(LMUF,2)*
-      x*CF - 1./3.*pow(LMUF,2)*pow(x,2)*CF + 1./2.*ln(x)*pow(LMUF,2)*CF + 1./2.*ln(x)*pow(LMUF,2)*x*CF
+
  
 #################################################
   return res;
@@ -218,17 +201,13 @@ double C2Tq2qpEqp(double inx, double inz, std::string cx, std::string cz,
   double omx = 1.-x;
   double opx = 1.+x;
   double op6xpxsq = 1.+6.*x+x*x;
-  res = 13./9.*pow(x,-1)*CF - 11./6.*CF + 1./6.*pow(pi,2)*CF + 17./6.*x*CF + 1./6.*x*pow(pi,2)*CF
-       - 22./9.*pow(x,2)*CF  + ln(x)*CF + 3*ln(x)*x*CF + 2*ln(x)*pow(x,2)*CF - pow(ln(x),2)*CF - pow(ln(x),2)*x*CF + 2./3.*ln(omx)*pow(x,-1)*CF + 1./2.*ln(omx)*CF
-       - 1./2.*ln(omx)*x*CF - 2./3.*ln(omx)*pow(x,2)*CF - Li2(x)*CF - Li2(x)*x*CF;
+  res = 
 
 ################################################# R0
 
 ///////////////////////////////////////// 010
 
-- 2./3.*LMUF*pow(x,-1)*CF - 1./2.*LMUF*CF + 1./2.*LMUF*x*CF + 2./3.*
-      LMUF*pow(x,2)*CF - ln(x)*LMUF*CF - ln(x)*LMUF
-      *x*CF
+
 #################################################
 
   return res;
@@ -238,7 +217,7 @@ double C2Tq2qpEqp(double inx, double inz, std::string cx, std::string cz,
   double omx = 1.-x;
   double opx = 1.+x;
   double op6xpxsq = 1.+6.*x+x*x;
-  res = 2./3.*pow(x,-1)*CF + 1./2.*CF - 1./2.*x*CF - 2./3.*pow(x,2)*CF + ln(x)*CF + ln(x)*x*CF;
+  res = ;
 
   return res;
   }
