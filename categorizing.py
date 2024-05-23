@@ -15,6 +15,9 @@ def contains_LMUx(s, x):
     return bool(re.search(r"LMU" + re.escape(x), s))
 
 
+import re
+
+
 def find_pow_terms(s, x):
     """
     Find all occurrences of "pow(LMUx, n)" in the string s and return the exponents n.
@@ -27,7 +30,7 @@ def find_pow_terms(s, x):
         list: A list of integers representing the exponents found.
     """
     # Define the pattern for "pow(LMUx, n)"
-    pattern = r"pow\(LMU" + re.escape(x) + r",(\d+)\)"
+    pattern = r"pow\s*\(\s*LMU" + re.escape(x) + r"\s*,\s*([+-]?\d+)\s*\)"
     matches = re.findall(pattern, s)
     return [int(n) for n in matches]
 
@@ -48,6 +51,16 @@ def find_order(s, x):
     occurences_pow_LMUx = len(pow_terms)
 
     return occurences_LMUx - occurences_pow_LMUx + sum(pow_terms)
+
+
+def split_string(s):
+    first_paren = s.find("(")
+    last_paren = s.rfind(")")
+
+    if first_paren == -1 or last_paren == -1:
+        return [s]  # No parentheses found, return the string as is
+
+    return [s[:first_paren], s[first_paren : last_paren + 1], s[last_paren + 1 :]]
 
 
 def split_expression(expression):
@@ -81,6 +94,10 @@ def split_expression(expression):
             continue
         elif n_lef_paren < n_right_paren:
             raise ValueError("Invalid input string, encountered )() situation.")
+
+    # When there are single terms, split a(b)c into a, (b), c
+    split_on_term = [term for s in split_on_term for term in split_string(s)]
+    split_on_term = [s for s in split_on_term if s]
 
     return split_on_term
 
@@ -238,7 +255,9 @@ def create_file_with_split_orders(s: str, output_file: str, var: str):
         for order, terms in orders.items():
             f.write(f"// Order {order}:\n")
             f.write(f"{var} += ")
-            for term in terms:
+            for i, term in enumerate(terms):
+                if i % 20 == 0 and i != 0:
+                    f.write(f"0;\n{var} += ")
                 term = revert_minus_sign(term)
                 f.write(f"{term} + ")
             f.write("0;\n")
@@ -247,58 +266,14 @@ def create_file_with_split_orders(s: str, output_file: str, var: str):
 if __name__ == "__main__":
     output_file = "split_orders.txt"
     s = """
-    tmp =  - 3*pow(z,-1)*CF - 5./2.*pow(z,-1)*LMUF*CF + 10*CF + 5*LMUF*CF + 3*x*pow(z,-1)*CF + 5./2.
-      *x*pow(z,-1)*LMUF*CF - 10*x*CF - 5*x*LMUF*CF + 1./6.*pow(pi,2)*pow(z,-1)*CF - 1./3.*pow(pi,2)
-      *CF + 1./6.*pow(pi,2)*x*pow(z,-1)*CF - 1./3.*pow(pi,2)*x*CF - 3*ln(x)*pow(z,-1)*CF - ln(x)*
-      pow(z,-1)*LMUF*CF + 1./2.*ln(x)*CF*pow(poly2,-1) + 8*ln(x)*CF + 2*ln(x)*LMUF*CF + 3*ln(x)*x*
-      pow(z,-1)*CF - ln(x)*x*pow(z,-1)*LMUF*CF - 1./2.*ln(x)*x*CF*pow(poly2,-1) - 4*ln(x)*x*CF + 2*
-      ln(x)*x*LMUF*CF - 1./2.*ln(x)*pow(x,2)*CF*pow(poly2,-1) + 1./2.*ln(x)*pow(x,3)*CF*pow(
-      poly2,-1) + 1./4.*ln(x)*ln(1 - sqrtxz2 + x)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) + 7./4.*ln(x)*
-      ln(1 - sqrtxz2 + x)*CF*pow(sqrtxz2,-1) + 1./2.*ln(x)*ln(1 - sqrtxz2 + x)*x*CF*pow(sqrtxz2,-1)
-       - ln(x)*ln(1 - sqrtxz2 + x)*x*z*CF*pow(sqrtxz2,-1) - 1./2.*ln(x)*ln(1 - sqrtxz2 + x)*pow(
-      x,2)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) + 7./4.*ln(x)*ln(1 - sqrtxz2 + x)*pow(x,2)*CF*pow(
-      sqrtxz2,-1) + 1./4.*ln(x)*ln(1 - sqrtxz2 + x)*pow(x,4)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) - 1./
-      4.*ln(x)*ln(1 + sqrtxz2 + x)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) - 7./4.*ln(x)*ln(1 + sqrtxz2 + 
-      x)*CF*pow(sqrtxz2,-1) - 1./2.*ln(x)*ln(1 + sqrtxz2 + x)*x*CF*pow(sqrtxz2,-1) + ln(x)*ln(1 + 
-      sqrtxz2 + x)*x*z*CF*pow(sqrtxz2,-1) + 1./2.*ln(x)*ln(1 + sqrtxz2 + x)*pow(x,2)*CF*pow(
-      sqrtxz2,-1)*pow(poly2,-1) - 7./4.*ln(x)*ln(1 + sqrtxz2 + x)*pow(x,2)*CF*pow(sqrtxz2,-1) - 1./
-      4.*ln(x)*ln(1 + sqrtxz2 + x)*pow(x,4)*CF*pow(sqrtxz2,-1)*pow(poly2,-1);
-      tmp +=  - pow(ln(x),2)*pow(z,-1)*CF + 2*pow(ln(x),2)*CF - pow(ln(x),2)*x*pow(z,-1)*CF + 2*
-      pow(ln(x),2)*x*CF + ln(x)*ln(z)*pow(z,-1)*CF - ln(x)*ln(z)*CF + ln(x)*ln(z)*x*pow(z,-1)*CF - 
-      ln(x)*ln(z)*x*CF + ln(x)*ln(omz)*pow(z,-1)*CF - 2*ln(x)*ln(omz)*CF + ln(x)*ln(omz)*x*pow(
-      z,-1)*CF - 2*ln(x)*ln(omz)*x*CF + 5./2.*ln(z)*pow(z,-1)*CF + 1./2.*ln(z)*CF*pow(poly2,-1) + 
-      ln(z)*CF*pow(omz,-1) - 2*ln(z)*CF - 5./2.*ln(z)*x*pow(z,-1)*CF + 1./2.*ln(z)*x*CF*pow(
-      poly2,-1) - ln(z)*x*CF*pow(omz,-1) + 2*ln(z)*x*CF - 1./2.*ln(z)*pow(x,2)*CF*pow(poly2,-1) - 1.
-      /2.*ln(z)*pow(x,3)*CF*pow(poly2,-1) + 5./2.*ln(omx)*pow(z,-1)*CF - 5*ln(omx)*CF - 5./2.*ln(
-      omx)*x*pow(z,-1)*CF + 5*ln(omx)*x*CF + 5./2.*ln(omz)*pow(z,-1)*CF - 5*ln(omz)*CF - 5./2.*ln(
-      omz)*x*pow(z,-1)*CF + 5*ln(omz)*x*CF + 1./4.*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*
-      sqrtxz2)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) + 7./4.*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(
-      x,-1)*sqrtxz2)*CF*pow(sqrtxz2,-1) + 1./2.*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*
-      sqrtxz2)*x*CF*pow(sqrtxz2,-1) - Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*x*z*CF
-      *pow(sqrtxz2,-1) - 1./2.*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(x,2)*CF*
-      pow(sqrtxz2,-1)*pow(poly2,-1) + 7./4.*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*
-      pow(x,2)*CF*pow(sqrtxz2,-1) + 1./4.*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*
-      pow(x,4)*CF*pow(sqrtxz2,-1)*pow(poly2,-1);
-      tmp +=  - 1./4.*Li2(1./2. - 1./2.*pow(x,-1) + 1./2.*pow(x,-1)*sqrtxz2)*CF*pow(sqrtxz2,-1)*
-      pow(poly2,-1) - 7./4.*Li2(1./2. - 1./2.*pow(x,-1) + 1./2.*pow(x,-1)*sqrtxz2)*CF*pow(
-      sqrtxz2,-1) - 1./2.*Li2(1./2. - 1./2.*pow(x,-1) + 1./2.*pow(x,-1)*sqrtxz2)*x*CF*pow(
-      sqrtxz2,-1) + Li2(1./2. - 1./2.*pow(x,-1) + 1./2.*pow(x,-1)*sqrtxz2)*x*z*CF*pow(sqrtxz2,-1)
-       + 1./2.*Li2(1./2. - 1./2.*pow(x,-1) + 1./2.*pow(x,-1)*sqrtxz2)*pow(x,2)*CF*pow(sqrtxz2,-1)*
-      pow(poly2,-1) - 7./4.*Li2(1./2. - 1./2.*pow(x,-1) + 1./2.*pow(x,-1)*sqrtxz2)*pow(x,2)*CF*pow(
-      sqrtxz2,-1) - 1./4.*Li2(1./2. - 1./2.*pow(x,-1) + 1./2.*pow(x,-1)*sqrtxz2)*pow(x,4)*CF*pow(
-      sqrtxz2,-1)*pow(poly2,-1) - 1./4.*Li2(1./2. - 1./2.*sqrtxz2 - 1./2.*x)*CF*pow(sqrtxz2,-1)*
-      pow(poly2,-1) - 7./4.*Li2(1./2. - 1./2.*sqrtxz2 - 1./2.*x)*CF*pow(sqrtxz2,-1) - 1./2.*Li2(1./
-      2. - 1./2.*sqrtxz2 - 1./2.*x)*x*CF*pow(sqrtxz2,-1) + Li2(1./2. - 1./2.*sqrtxz2 - 1./2.*x)*x*z
-      *CF*pow(sqrtxz2,-1) + 1./2.*Li2(1./2. - 1./2.*sqrtxz2 - 1./2.*x)*pow(x,2)*CF*pow(sqrtxz2,-1)*
-      pow(poly2,-1) - 7./4.*Li2(1./2. - 1./2.*sqrtxz2 - 1./2.*x)*pow(x,2)*CF*pow(sqrtxz2,-1) - 1./4.
-      *Li2(1./2. - 1./2.*sqrtxz2 - 1./2.*x)*pow(x,4)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) + 1./4.*Li2(1.
-      /2. + 1./2.*sqrtxz2 - 1./2.*x)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) + 7./4.*Li2(1./2. + 1./2.*
-      sqrtxz2 - 1./2.*x)*CF*pow(sqrtxz2,-1) + 1./2.*Li2(1./2. + 1./2.*sqrtxz2 - 1./2.*x)*x*CF*pow(
-      sqrtxz2,-1);
-      tmp +=  - Li2(1./2. + 1./2.*sqrtxz2 - 1./2.*x)*x*z*CF*pow(sqrtxz2,-1) - 1./2.*Li2(1./2. + 1./
-      2.*sqrtxz2 - 1./2.*x)*pow(x,2)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) + 7./4.*Li2(1./2. + 1./2.*
-      sqrtxz2 - 1./2.*x)*pow(x,2)*CF*pow(sqrtxz2,-1) + 1./4.*Li2(1./2. + 1./2.*sqrtxz2 - 1./2.*x)*
-      pow(x,4)*CF*pow(sqrtxz2,-1)*pow(poly2,-1) - Li2(x)*pow(z,-1)*CF + 2*Li2(x)*CF - Li2(x)*x*pow(
-      z,-1)*CF + 2*Li2(x)*x*CF;
+      tmp = -3 * pow(z, -1) * CF - 5. / 2. * pow(z, -1) * LMUF * CF + 10 * CF + 5 * LMUF * CF + 3 * x * pow(z, -1) * CF + 5. / 2. * x * pow(z, -1) * LMUF * CF - 10 * x * CF - 5 * x * LMUF * CF + 1. / 6. * pow(pi, 2) * pow(z, -1) * CF - 1. / 3. * pow(pi, 2) * CF + 1. / 6. * pow(pi, 2) * x * pow(z, -1) * CF - 1. / 3. * pow(pi, 2) * x * CF - 3 * ln(x) * pow(z, -1) * CF - ln(x) * pow(z, -1) * LMUF * CF + 1. / 2. * ln(x) * CF * pow(poly2, -1) + 8 * ln(x) * CF + 2 * ln(x) * LMUF * CF + 3 * ln(x) * x * pow(z, -1) * CF - ln(x) * x * pow(z, -1) * LMUF * CF - 1. / 2. * ln(x) * x * CF * pow(poly2, -1) - 4 * ln(x) * x * CF + 2 * ln(x) * x * LMUF * CF - 1. / 2. * ln(x) * pow(x, 2) * CF * pow(poly2, -1) + 1. / 2. * ln(x) * pow(x, 3) * CF * pow(poly2, -1) + 1. / 4. * ln(x) * ln(1 - sqrtxz2 + x) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) + 7. / 4. * ln(x) * ln(1 - sqrtxz2 + x) * CF * pow(sqrtxz2, -1) + 1. / 2. * ln(x) * ln(1 - sqrtxz2 + x) * x * CF * pow(sqrtxz2, -1) - ln(x) * ln(1 - sqrtxz2 + x) * x * z * CF * pow(sqrtxz2, -1) - 1. / 2. * ln(x) * ln(1 - sqrtxz2 + x) * pow(x, 2) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) + 7. / 4. * ln(x) * ln(1 - sqrtxz2 + x) * pow(x, 2) * CF * pow(sqrtxz2, -1) + 1. / 4. * ln(x) * ln(1 - sqrtxz2 + x) * pow(x, 4) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - 1. / 4. * ln(x) * ln(1 + sqrtxz2 + x) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - 7. / 4. * ln(x) * ln(1 + sqrtxz2 + x) * CF * pow(sqrtxz2, -1) - 1. / 2. * ln(x) * ln(1 + sqrtxz2 + x) * x * CF * pow(sqrtxz2, -1) + ln(x) * ln(1 + sqrtxz2 + x) * x * z * CF * pow(sqrtxz2, -1) + 1. / 2. * ln(x) * ln(1 + sqrtxz2 + x) * pow(x, 2) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - 7. / 4. * ln(x) * ln(1 + sqrtxz2 + x) * pow(x, 2) * CF * pow(sqrtxz2, -1) - 1. / 4. * ln(x) * ln(1 + sqrtxz2 + x) * pow(x, 4) * CF * pow(sqrtxz2, -1) * pow(poly2, -1);
+      tmp += -pow(ln(x), 2) * pow(z, -1) * CF + 2 * pow(ln(x), 2) * CF - pow(ln(x), 2) * x * pow(z, -1) * CF + 2 * pow(ln(x), 2) * x * CF + ln(x) * ln(z) * pow(z, -1) * CF - ln(x) * ln(z) * CF + ln(x) * ln(z) * x * pow(z, -1) * CF -
+             ln(x) * ln(z) * x * CF + ln(x) * ln(omz) * pow(z, -1) * CF - 2 * ln(x) * ln(omz) * CF + ln(x) * ln(omz) * x * pow(z, -1) * CF - 2 * ln(x) * ln(omz) * x * CF + 5. / 2. * ln(z) * pow(z, -1) * CF + 1. / 2. * ln(z) * CF * pow(poly2, -1) +
+             ln(z) * CF * pow(omz, -1) - 2 * ln(z) * CF - 5. / 2. * ln(z) * x * pow(z, -1) * CF + 1. / 2. * ln(z) * x * CF * pow(poly2, -1) - ln(z) * x * CF * pow(omz, -1) + 2 * ln(z) * x * CF - 1. / 2. * ln(z) * pow(x, 2) * CF * pow(poly2, -1) - 1. / 2. * ln(z) * pow(x, 3) * CF * pow(poly2, -1) + 5. / 2. * ln(omx) * pow(z, -1) * CF - 5 * ln(omx) * CF - 5. / 2. * ln(omx) * x * pow(z, -1) * CF + 5 * ln(omx) * x * CF + 5. / 2. * ln(omz) * pow(z, -1) * CF - 5 * ln(omz) * CF - 5. / 2. * ln(omz) * x * pow(z, -1) * CF + 5 * ln(omz) * x * CF + 1. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) - 1. / 2. * pow(x, -1) * sqrtxz2) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) + 7. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) - 1. / 2. * pow(x, -1) * sqrtxz2) * CF * pow(sqrtxz2, -1) + 1. / 2. * Li2(1. / 2. - 1. / 2. * pow(x, -1) - 1. / 2. * pow(x, -1) * sqrtxz2) * x * CF * pow(sqrtxz2, -1) - Li2(1. / 2. - 1. / 2. * pow(x, -1) - 1. / 2. * pow(x, -1) * sqrtxz2) * x * z * CF * pow(sqrtxz2, -1) - 1. / 2. * Li2(1. / 2. - 1. / 2. * pow(x, -1) - 1. / 2. * pow(x, -1) * sqrtxz2) * pow(x, 2) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) + 7. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) - 1. / 2. * pow(x, -1) * sqrtxz2) * pow(x, 2) * CF * pow(sqrtxz2, -1) + 1. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) - 1. / 2. * pow(x, -1) * sqrtxz2) * pow(x, 4) * CF * pow(sqrtxz2, -1) * pow(poly2, -1);
+      tmp += -1. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) + 1. / 2. * pow(x, -1) * sqrtxz2) * CF * pow(sqrtxz2, -1) *
+                 pow(poly2, -1) -
+             7. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) + 1. / 2. * pow(x, -1) * sqrtxz2) * CF * pow(sqrtxz2, -1) - 1. / 2. * Li2(1. / 2. - 1. / 2. * pow(x, -1) + 1. / 2. * pow(x, -1) * sqrtxz2) * x * CF * pow(sqrtxz2, -1) + Li2(1. / 2. - 1. / 2. * pow(x, -1) + 1. / 2. * pow(x, -1) * sqrtxz2) * x * z * CF * pow(sqrtxz2, -1) + 1. / 2. * Li2(1. / 2. - 1. / 2. * pow(x, -1) + 1. / 2. * pow(x, -1) * sqrtxz2) * pow(x, 2) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - 7. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) + 1. / 2. * pow(x, -1) * sqrtxz2) * pow(x, 2) * CF * pow(sqrtxz2, -1) - 1. / 4. * Li2(1. / 2. - 1. / 2. * pow(x, -1) + 1. / 2. * pow(x, -1) * sqrtxz2) * pow(x, 4) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - 1. / 4. * Li2(1. / 2. - 1. / 2. * sqrtxz2 - 1. / 2. * x) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - 7. / 4. * Li2(1. / 2. - 1. / 2. * sqrtxz2 - 1. / 2. * x) * CF * pow(sqrtxz2, -1) - 1. / 2. * Li2(1. / 2. - 1. / 2. * sqrtxz2 - 1. / 2. * x) * x * CF * pow(sqrtxz2, -1) + Li2(1. / 2. - 1. / 2. * sqrtxz2 - 1. / 2. * x) * x * z * CF * pow(sqrtxz2, -1) + 1. / 2. * Li2(1. / 2. - 1. / 2. * sqrtxz2 - 1. / 2. * x) * pow(x, 2) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - 7. / 4. * Li2(1. / 2. - 1. / 2. * sqrtxz2 - 1. / 2. * x) * pow(x, 2) * CF * pow(sqrtxz2, -1) - 1. / 4. * Li2(1. / 2. - 1. / 2. * sqrtxz2 - 1. / 2. * x) * pow(x, 4) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) + 1. / 4. * Li2(1. / 2. + 1. / 2. * sqrtxz2 - 1. / 2. * x) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) + 7. / 4. * Li2(1. / 2. + 1. / 2. * sqrtxz2 - 1. / 2. * x) * CF * pow(sqrtxz2, -1) + 1. / 2. * Li2(1. / 2. + 1. / 2. * sqrtxz2 - 1. / 2. * x) * x * CF * pow(sqrtxz2, -1);
+      tmp += -Li2(1. / 2. + 1. / 2. * sqrtxz2 - 1. / 2. * x) * x * z * CF * pow(sqrtxz2, -1) - 1. / 2. * Li2(1. / 2. + 1. / 2. * sqrtxz2 - 1. / 2. * x) * pow(x, 2) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) + 7. / 4. * Li2(1. / 2. + 1. / 2. * sqrtxz2 - 1. / 2. * x) * pow(x, 2) * CF * pow(sqrtxz2, -1) + 1. / 4. * Li2(1. / 2. + 1. / 2. * sqrtxz2 - 1. / 2. * x) * pow(x, 4) * CF * pow(sqrtxz2, -1) * pow(poly2, -1) - Li2(x) * pow(z, -1) * CF + 2 * Li2(x) * CF - Li2(x) * x * pow(z, -1) * CF + 2 * Li2(x) * x * CF;
+
  """
     create_file_with_split_orders(s, output_file, "tmp")
