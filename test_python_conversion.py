@@ -1,5 +1,5 @@
 import unittest
-from polarized_txt_to_python.rename_txt_to_cpp import (
+from change_cpp_to_python import (
     cpp_to_python_func_def,
     cpp_to_python_if_statement,
 )

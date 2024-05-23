@@ -1,4 +1,5 @@
 import os
+import re
 
 
 def cpp_to_python_func_def(cpp_signature):
@@ -89,8 +90,69 @@ def convert_python_to_cpp(
             file.write(line)
 
 
+def replace_order_with_if(s):
+    # The pattern to match
+    pattern = r"# Order (\d+):"
+
+    # The replacement function
+    def replacement(match):
+        x = match.group(1)
+        return f'if (order == "{x}") or (order == "all"):\n'
+
+    # Replace the string
+    new_s = re.sub(pattern, replacement, s)
+
+    return new_s
+
+
+def convert_to_our_library(file_path):
+    # Read the file line by line
+    python_file = list()
+    add_indendt_flag = False
+    with open(file_path, "r") as file:
+        for line in file:
+            # Replace order with if statement
+            if "(inx, inz, cx, cz,                Q, muR, muF, muA)" in line:
+                line = line.replace(
+                    "(inx, inz, cx, cz,                Q, muR, muF, muA)",
+                    "(inx, inz, cx, cz, Q, muR, muF, muA, order)",
+                )
+            if "log(" in line:
+                line = line.replace("log(", "ln(")
+            if "mysqrt(" in line:
+                line = line.replace("mysqrt(", "sqrt(")
+            if add_indendt_flag and "+=" in line:
+                line = "\t" + line
+            else:
+                add_indendt_flag = False
+            if "# Order" in line:
+                line = replace_order_with_if(line)
+                add_indendt_flag = True
+            python_file.append(line)
+
+    # Add the import statements at the beginning
+    import_statements = [
+        "from core.definitions import CF, NC, TR\n",
+        "from core.definitions import ln2 as rln2\n",
+        "from core.miscfunc import atanint as InvTanInt\n",
+        "from core.miscfunc import Li2, Li3\n",
+        "from numpy import power as pow\n",
+        "from numpy import log as ln\n",
+        "from numpy import arctan as ArcTan\n",
+        "from numpy import sqrt, pi\n",
+    ]
+
+    # Add the import statements at the beginning
+    python_file = import_statements + python_file
+
+    # Store the new file
+    with open(file_path, "w") as file:
+        for line in python_file:
+            file.write(line)
+
+
 # Get all files in the current directory
-dir = "./sidisprocessed/step1pol/original"
+dir = "./sidisprocessed/step1pol/ordered"
 files = os.listdir(dir + "/cpp")
 rename_txt_flag = False
 
@@ -109,3 +171,9 @@ for filename in files:
     if filename.endswith(".cpp"):
         convert_python_to_cpp(filename, dir)
         # os.remove("polarized/" + filename)
+
+files = os.listdir(dir + "/python")
+# Convert order to if statement and/or use our library conventions
+for filename in files:
+    if filename.endswith(".py") and not "__init__" in filename:
+        convert_to_our_library(dir + "/python/" + filename)

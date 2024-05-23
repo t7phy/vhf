@@ -198,10 +198,5 @@ class TestStringFunction(unittest.TestCase):
             self.assertEqual(result, expected_result, f"Failed on case {i+1}: {s}")
 
 
-class TestResults(unittest.TestCase):
-    def test_same_result_per_func(self):
-        assert True
-
-
 if __name__ == "__main__":
     unittest.main()
