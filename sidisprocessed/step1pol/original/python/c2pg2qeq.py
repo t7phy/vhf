@@ -1,4 +1,4 @@
-from core.definitions import CF, NC, TR
+from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2
 from core.definitions import ln2 as rln2
 from core.miscfunc import atanint as InvTanInt
 from core.miscfunc import Li2, Li3
@@ -256,10 +256,10 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             + 3.0 / 4.0 * x * LMUA * NC
             - 3.0 / 4.0 * x * LMUA * LMUF * pow(NC, -1)
             + 3.0 / 4.0 * x * LMUA * LMUF * NC
-            + 4 * zeta3 * pow(NC, -1)
-            - 13.0 / 4.0 * zeta3 * NC
-            - 8 * zeta3 * x * pow(NC, -1)
-            + 9.0 / 2.0 * zeta3 * x * NC
+            + 4 * ZETA3 * pow(NC, -1)
+            - 13.0 / 4.0 * ZETA3 * NC
+            - 8 * ZETA3 * x * pow(NC, -1)
+            + 9.0 / 2.0 * ZETA3 * x * NC
             + 5.0 / 24.0 * pow(pi, 2) * pow(NC, -1)
             - 23.0 / 24.0 * pow(pi, 2) * NC
             + 1.0 / 6.0 * pow(pi, 2) * NC * rln2

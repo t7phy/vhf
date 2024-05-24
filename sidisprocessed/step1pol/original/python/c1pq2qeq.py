@@ -1,4 +1,4 @@
-from core.definitions import CF, NC, TR
+from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2
 from core.definitions import ln2 as rln2
 from core.miscfunc import atanint as InvTanInt
 from core.miscfunc import Li2, Li3

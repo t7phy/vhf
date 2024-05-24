@@ -1,4 +1,4 @@
-from core.definitions import CF, NC, TR
+from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2
 from core.definitions import ln2 as rln2
 from core.miscfunc import atanint as InvTanInt
 from core.miscfunc import Li2, Li3
@@ -185,8 +185,8 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA):
                 + (-1) * 11.0 / 9.0 * CF
                 + (-1) * 4.0 / 9.0 * z * CF
                 + 287.0 / 108.0 * pow(z, 2) * CF
-                + 2 * zeta3 * CF
-                + 2 * zeta3 * z * CF
+                + 2 * ZETA3 * CF
+                + 2 * ZETA3 * z * CF
                 + (-1) * 1.0 / 6.0 * pow(pi, 2) * CF
                 + (-1) * 1.0 / 4.0 * pow(pi, 2) * z * CF
                 + (-1) * 7.0 / 18.0 * ln(z) * pow(z, -1) * CF
@@ -269,8 +269,8 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA):
                 + (-1) * 11.0 / 9.0 * CF
                 + (-1) * 4.0 / 9.0 * z * CF
                 + 287.0 / 108.0 * pow(z, 2) * CF
-                + 2 * zeta3 * CF
-                + 2 * zeta3 * z * CF
+                + 2 * ZETA3 * CF
+                + 2 * ZETA3 * z * CF
                 + (-1) * 1.0 / 6.0 * pow(pi, 2) * CF
                 + (-1) * 1.0 / 4.0 * pow(pi, 2) * z * CF
                 + (-1) * 7.0 / 18.0 * ln(z) * pow(z, -1) * CF

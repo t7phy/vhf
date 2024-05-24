@@ -1,4 +1,4 @@
-from core.definitions import CF, NC, TR
+from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2
 from core.definitions import ln2 as rln2
 from core.miscfunc import atanint as InvTanInt
 from core.miscfunc import Li2, Li3
@@ -31,9 +31,9 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                 +(-1) * 511.0 / 32.0 * CF * pow(NC, -1)
                 + 127.0 / 24.0 * CF * NF
                 + (-1) * 1537.0 / 96.0 * CF * NC
-                + 15.0 / 2.0 * zeta3 * CF * pow(NC, -1)
-                + 2.0 / 3.0 * zeta3 * CF * NF
-                + 41.0 / 6.0 * zeta3 * CF * NC
+                + 15.0 / 2.0 * ZETA3 * CF * pow(NC, -1)
+                + 2.0 / 3.0 * ZETA3 * CF * NF
+                + 41.0 / 6.0 * ZETA3 * CF * NC
                 + (-1) * 29.0 / 24.0 * pow(pi, 2) * CF * pow(NC, -1)
                 + 19.0 / 54.0 * pow(pi, 2) * CF * NF
                 + (-1) * 277.0 / 216.0 * pow(pi, 2) * CF * NC
@@ -46,7 +46,7 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             res += 8.0 / 3.0 * LMUR * CF * NF + (-1) * 44.0 / 3.0 * LMUR * CF * NC + 0
         if (order == "010") or (order == "all"):
 
-            res += (-1) * 93.0 / 16.0 * LMUF * CF * pow(NC, -1) + 1.0 / 12.0 * LMUF * CF * NF + 245.0 / 48.0 * LMUF * CF * NC + 5 * zeta3 * LMUF * CF * pow(NC, -1) + (-1) * 2 * zeta3 * LMUF * CF * NC + (-1) * 1.0 / 4.0 * pow(pi, 2) * LMUF * CF * pow(NC, -1) + 1.0 / 9.0 * pow(pi, 2) * LMUF * CF * NF + (-1) * 13.0 / 36.0 * pow(pi, 2) * LMUF * CF * NC + 0
+            res += (-1) * 93.0 / 16.0 * LMUF * CF * pow(NC, -1) + 1.0 / 12.0 * LMUF * CF * NF + 245.0 / 48.0 * LMUF * CF * NC + 5 * ZETA3 * LMUF * CF * pow(NC, -1) + (-1) * 2 * ZETA3 * LMUF * CF * NC + (-1) * 1.0 / 4.0 * pow(pi, 2) * LMUF * CF * pow(NC, -1) + 1.0 / 9.0 * pow(pi, 2) * LMUF * CF * NF + (-1) * 13.0 / 36.0 * pow(pi, 2) * LMUF * CF * NC + 0
         if (order == "110") or (order == "all"):
 
             res += 1.0 / 2.0 * LMUF * LMUR * CF * NF + (-1) * 11.0 / 4.0 * LMUF * LMUR * CF * NC + 0
@@ -55,7 +55,7 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             res += (-1) * 9.0 / 16.0 * pow(LMUF, 2) * CF * pow(NC, -1) + (-1) * 1.0 / 4.0 * pow(LMUF, 2) * CF * NF + 31.0 / 16.0 * pow(LMUF, 2) * CF * NC + 1.0 / 6.0 * pow(pi, 2) * pow(LMUF, 2) * CF * pow(NC, -1) + (-1) * 1.0 / 6.0 * pow(pi, 2) * pow(LMUF, 2) * CF * NC + 0
         if (order == "001") or (order == "all"):
 
-            res += (-1) * 93.0 / 16.0 * LMUA * CF * pow(NC, -1) + 1.0 / 12.0 * LMUA * CF * NF + 245.0 / 48.0 * LMUA * CF * NC + 5 * zeta3 * LMUA * CF * pow(NC, -1) + (-1) * 2 * zeta3 * LMUA * CF * NC + (-1) * 1.0 / 4.0 * pow(pi, 2) * LMUA * CF * pow(NC, -1) + 1.0 / 9.0 * pow(pi, 2) * LMUA * CF * NF + (-1) * 13.0 / 36.0 * pow(pi, 2) * LMUA * CF * NC + 0
+            res += (-1) * 93.0 / 16.0 * LMUA * CF * pow(NC, -1) + 1.0 / 12.0 * LMUA * CF * NF + 245.0 / 48.0 * LMUA * CF * NC + 5 * ZETA3 * LMUA * CF * pow(NC, -1) + (-1) * 2 * ZETA3 * LMUA * CF * NC + (-1) * 1.0 / 4.0 * pow(pi, 2) * LMUA * CF * pow(NC, -1) + 1.0 / 9.0 * pow(pi, 2) * LMUA * CF * NF + (-1) * 13.0 / 36.0 * pow(pi, 2) * LMUA * CF * NC + 0
         if (order == "101") or (order == "all"):
 
             res += 1.0 / 2.0 * LMUA * LMUR * CF * NF + (-1) * 11.0 / 4.0 * LMUA * LMUR * CF * NC + 0
@@ -74,7 +74,7 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         res = 0
         if (order == "000") or (order == "all"):
 
-            res += 28.0 / 27.0 * CF * NF + (-1) * 202.0 / 27.0 * CF * NC + (-1) * 4 * zeta3 * CF * pow(NC, -1) + 11 * zeta3 * CF * NC + (-1) * 1.0 / 9.0 * pow(pi, 2) * CF * NF + 11.0 / 18.0 * pow(pi, 2) * CF * NC + 0
+            res += 28.0 / 27.0 * CF * NF + (-1) * 202.0 / 27.0 * CF * NC + (-1) * 4 * ZETA3 * CF * pow(NC, -1) + 11 * ZETA3 * CF * NC + (-1) * 1.0 / 9.0 * pow(pi, 2) * CF * NF + 11.0 / 18.0 * pow(pi, 2) * CF * NC + 0
         if (order == "001") or (order == "all"):
 
             res += (-1) * 8 * LMUA * CF * pow(NC, -1) + 10.0 / 9.0 * LMUA * CF * NF + 5.0 / 9.0 * LMUA * CF * NC + (-1) * 1.0 / 3.0 * pow(pi, 2) * LMUA * CF * pow(NC, -1) + 2.0 / 3.0 * pow(pi, 2) * LMUA * CF * NC + 0
@@ -140,7 +140,7 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         res = 0
         if (order == "000") or (order == "all"):
 
-            res += 28.0 / 27.0 * CF * NF + (-1) * 202.0 / 27.0 * CF * NC + (-1) * 4 * zeta3 * CF * pow(NC, -1) + 11 * zeta3 * CF * NC + (-1) * 1.0 / 9.0 * pow(pi, 2) * CF * NF + 11.0 / 18.0 * pow(pi, 2) * CF * NC + 0
+            res += 28.0 / 27.0 * CF * NF + (-1) * 202.0 / 27.0 * CF * NC + (-1) * 4 * ZETA3 * CF * pow(NC, -1) + 11 * ZETA3 * CF * NC + (-1) * 1.0 / 9.0 * pow(pi, 2) * CF * NF + 11.0 / 18.0 * pow(pi, 2) * CF * NC + 0
         if (order == "010") or (order == "all"):
 
             res += (-1) * 8 * LMUF * CF * pow(NC, -1) + 10.0 / 9.0 * LMUF * CF * NF + 5.0 / 9.0 * LMUF * CF * NC + (-1) * 1.0 / 3.0 * pow(pi, 2) * LMUF * CF * pow(NC, -1) + 2.0 / 3.0 * pow(pi, 2) * LMUF * CF * NC + 0
@@ -352,14 +352,14 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                 + (-1) * 37.0 / 54.0 * z * CF * NF
                 + 611.0 / 108.0 * z * CF * NC
                 + 287.0 / 108.0 * pow(z, 2) * CF
-                + 10 * zeta3 * CF * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 4 * zeta3 * CF * pow(NC, -1)
-                + 2 * zeta3 * CF
-                + (-1) * 14 * zeta3 * CF * NC * pow(omz, -1)
-                + 5.0 / 2.0 * zeta3 * CF * NC
-                + (-1) * 4 * zeta3 * z * CF * pow(NC, -1)
-                + 2 * zeta3 * z * CF
-                + 5.0 / 2.0 * zeta3 * z * CF * NC
+                + 10 * ZETA3 * CF * pow(NC, -1) * pow(omz, -1)
+                + (-1) * 4 * ZETA3 * CF * pow(NC, -1)
+                + 2 * ZETA3 * CF
+                + (-1) * 14 * ZETA3 * CF * NC * pow(omz, -1)
+                + 5.0 / 2.0 * ZETA3 * CF * NC
+                + (-1) * 4 * ZETA3 * z * CF * pow(NC, -1)
+                + 2 * ZETA3 * z * CF
+                + 5.0 / 2.0 * ZETA3 * z * CF * NC
                 + (-1) * 1.0 / 4.0 * pow(pi, 2) * CF * pow(NC, -1) * pow(omz, -1)
                 + 0
             )
@@ -882,12 +882,12 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                 + 28.0 / 9.0 * x * CF * pow(NF, 2)
                 + (-1) * 1639.0 / 108.0 * x * CF * NC
                 + 78 * x * pow(CF, 2)
-                + (-1) * 7 * zeta3 * CF * pow(NC, -1) * pow(omx, -1)
-                + 11.0 / 2.0 * zeta3 * CF * pow(NC, -1)
-                + 5 * zeta3 * CF * NC * pow(omx, -1)
-                + (-1) * 8 * zeta3 * CF * NC
-                + 11.0 / 2.0 * zeta3 * x * CF * pow(NC, -1)
-                + (-1) * 8 * zeta3 * x * CF * NC
+                + (-1) * 7 * ZETA3 * CF * pow(NC, -1) * pow(omx, -1)
+                + 11.0 / 2.0 * ZETA3 * CF * pow(NC, -1)
+                + 5 * ZETA3 * CF * NC * pow(omx, -1)
+                + (-1) * 8 * ZETA3 * CF * NC
+                + 11.0 / 2.0 * ZETA3 * x * CF * pow(NC, -1)
+                + (-1) * 8 * ZETA3 * x * CF * NC
                 + 1.0 / 4.0 * pow(pi, 2) * CF * pow(NC, -1) * pow(omx, -1)
                 + 0
             )

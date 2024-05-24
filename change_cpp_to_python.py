@@ -1,5 +1,6 @@
 import os
 import re
+import subprocess
 
 
 def cpp_to_python_func_def(cpp_signature):
@@ -121,6 +122,8 @@ def convert_to_our_library(file_path):
                 line = line.replace("log(", "ln(")
             if "mysqrt(" in line:
                 line = line.replace("mysqrt(", "sqrt(")
+            if "zeta3" in line:
+                line = line.replace("zeta3", "ZETA3")
             if add_indendt_flag and "+=" in line:
                 line = "\t" + line
             else:
@@ -132,7 +135,7 @@ def convert_to_our_library(file_path):
 
     # Add the import statements at the beginning
     import_statements = [
-        "from core.definitions import CF, NC, TR\n",
+        "from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2\n",
         "from core.definitions import ln2 as rln2\n",
         "from core.miscfunc import atanint as InvTanInt\n",
         "from core.miscfunc import Li2, Li3\n",
@@ -149,6 +152,11 @@ def convert_to_our_library(file_path):
     with open(file_path, "w") as file:
         for line in python_file:
             file.write(line)
+
+
+def format_file_with_black(file_path, line_length):
+    # Run the black command
+    subprocess.run(["black", f"--line-length={line_length}", file_path], check=True)
 
 
 # Get all files in the current directory
@@ -177,3 +185,4 @@ files = os.listdir(dir + "/python")
 for filename in files:
     if filename.endswith(".py") and not "__init__" in filename:
         convert_to_our_library(dir + "/python/" + filename)
+        format_file_with_black(dir + "/python/" + filename, 400)

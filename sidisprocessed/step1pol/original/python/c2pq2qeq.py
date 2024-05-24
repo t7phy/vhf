@@ -1,4 +1,4 @@
-from core.definitions import CF, NC, TR
+from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2
 from core.definitions import ln2 as rln2
 from core.miscfunc import atanint as InvTanInt
 from core.miscfunc import Li2, Li3
@@ -47,13 +47,13 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             - 9.0 / 16.0 * pow(LMUA, 2) * CF * pow(NC, -1)
             - 1.0 / 4.0 * pow(LMUA, 2) * CF * NF
             + 31.0 / 16.0 * pow(LMUA, 2) * CF * NC
-            + 15.0 / 2.0 * zeta3 * CF * pow(NC, -1)
-            + 2.0 / 3.0 * zeta3 * CF * NF
-            + 41.0 / 6.0 * zeta3 * CF * NC
-            + 5 * zeta3 * LMUF * CF * pow(NC, -1)
-            - 2 * zeta3 * LMUF * CF * NC
-            + 5 * zeta3 * LMUA * CF * pow(NC, -1)
-            - 2 * zeta3 * LMUA * CF * NC
+            + 15.0 / 2.0 * ZETA3 * CF * pow(NC, -1)
+            + 2.0 / 3.0 * ZETA3 * CF * NF
+            + 41.0 / 6.0 * ZETA3 * CF * NC
+            + 5 * ZETA3 * LMUF * CF * pow(NC, -1)
+            - 2 * ZETA3 * LMUF * CF * NC
+            + 5 * ZETA3 * LMUA * CF * pow(NC, -1)
+            - 2 * ZETA3 * LMUA * CF * NC
             - 29.0 / 24.0 * pow(pi, 2) * CF * pow(NC, -1)
             + 19.0 / 54.0 * pow(pi, 2) * CF * NF
             - 277.0 / 216.0 * pow(pi, 2) * CF * NC
@@ -88,8 +88,8 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             - 3.0 / 2.0 * pow(LMUA, 2) * CF * pow(NC, -1)
             - 1.0 / 3.0 * pow(LMUA, 2) * CF * NF
             + 10.0 / 3.0 * pow(LMUA, 2) * CF * NC
-            - 4 * zeta3 * CF * pow(NC, -1)
-            + 11 * zeta3 * CF * NC
+            - 4 * ZETA3 * CF * pow(NC, -1)
+            + 11 * ZETA3 * CF * NC
             - 1.0 / 9.0 * pow(pi, 2) * CF * NF
             + 11.0 / 18.0 * pow(pi, 2) * CF * NC
             - 1.0 / 3.0 * pow(pi, 2) * LMUF * CF * pow(NC, -1)
@@ -147,8 +147,8 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             + 10.0 / 3.0 * pow(LMUF, 2) * CF * NC
             - 3.0 / 2.0 * LMUA * LMUF * CF * pow(NC, -1)
             + 3.0 / 2.0 * LMUA * LMUF * CF * NC
-            - 4 * zeta3 * CF * pow(NC, -1)
-            + 11 * zeta3 * CF * NC
+            - 4 * ZETA3 * CF * pow(NC, -1)
+            + 11 * ZETA3 * CF * NC
             - 1.0 / 9.0 * pow(pi, 2) * CF * NF
             + 11.0 / 18.0 * pow(pi, 2) * CF * NC
             - 1.0 / 3.0 * pow(pi, 2) * LMUF * CF * pow(NC, -1)
@@ -353,14 +353,14 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             + 287.0 / 108.0 * pow(z, 2) * CF
             - 25.0 / 18.0 * pow(z, 2) * LMUA * CF
             - 1.0 / 3.0 * pow(z, 2) * pow(LMUA, 2) * CF
-            + 10 * zeta3 * CF * pow(NC, -1) * pow(omz, -1)
-            - 4 * zeta3 * CF * pow(NC, -1)
-            + 2 * zeta3 * CF
-            - 14 * zeta3 * CF * NC * pow(omz, -1)
-            + 5.0 / 2.0 * zeta3 * CF * NC
-            - 4 * zeta3 * z * CF * pow(NC, -1)
-            + 2 * zeta3 * z * CF
-            + 5.0 / 2.0 * zeta3 * z * CF * NC
+            + 10 * ZETA3 * CF * pow(NC, -1) * pow(omz, -1)
+            - 4 * ZETA3 * CF * pow(NC, -1)
+            + 2 * ZETA3 * CF
+            - 14 * ZETA3 * CF * NC * pow(omz, -1)
+            + 5.0 / 2.0 * ZETA3 * CF * NC
+            - 4 * ZETA3 * z * CF * pow(NC, -1)
+            + 2 * ZETA3 * z * CF
+            + 5.0 / 2.0 * ZETA3 * z * CF * NC
             - 1.0 / 4.0 * pow(pi, 2) * CF * pow(NC, -1) * pow(omz, -1)
             + 7.0 / 12.0 * pow(pi, 2) * CF * pow(NC, -1)
             - 1.0 / 6.0 * pow(pi, 2) * CF
@@ -828,12 +828,12 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
             + 6 * x * LMUA * pow(CF, 2)
             + 3.0 / 4.0 * x * LMUA * LMUF * CF * pow(NC, -1)
             - 3.0 / 4.0 * x * LMUA * LMUF * CF * NC
-            - 7 * zeta3 * CF * pow(NC, -1) * pow(omx, -1)
-            + 11.0 / 2.0 * zeta3 * CF * pow(NC, -1)
-            + 5 * zeta3 * CF * NC * pow(omx, -1)
-            - 8 * zeta3 * CF * NC
-            + 11.0 / 2.0 * zeta3 * x * CF * pow(NC, -1)
-            - 8 * zeta3 * x * CF * NC
+            - 7 * ZETA3 * CF * pow(NC, -1) * pow(omx, -1)
+            + 11.0 / 2.0 * ZETA3 * CF * pow(NC, -1)
+            + 5 * ZETA3 * CF * NC * pow(omx, -1)
+            - 8 * ZETA3 * CF * NC
+            + 11.0 / 2.0 * ZETA3 * x * CF * pow(NC, -1)
+            - 8 * ZETA3 * x * CF * NC
             + 1.0 / 4.0 * pow(pi, 2) * CF * pow(NC, -1) * pow(omx, -1)
             + 1.0 / 6.0 * pow(pi, 2) * CF * pow(NC, -1)
             - 1.0 / 2.0 * pow(pi, 2) * CF
