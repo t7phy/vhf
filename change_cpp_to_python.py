@@ -118,6 +118,11 @@ def convert_to_our_library(file_path):
                     "(inx, inz, cx, cz,                Q, muR, muF, muA)",
                     "(inx, inz, cx, cz, Q, muR, muF, muA, order)",
                 )
+            elif "(inx, inz, cx, cz,                 Q, muR, muF, muA)" in line:
+                line = line.replace(
+                    "(inx, inz, cx, cz,                 Q, muR, muF, muA)",
+                    "(inx, inz, cx, cz, Q, muR, muF, muA, order)",
+                )
             if "log(" in line:
                 line = line.replace("log(", "ln(")
             if "mysqrt(" in line:
@@ -160,7 +165,7 @@ def format_file_with_black(file_path, line_length):
 
 
 # Get all files in the current directory
-dir = "./sidisprocessed/step1pol/ordered"
+dir = "./sidisprocessed/step1pol/original"
 files = os.listdir(dir + "/cpp")
 rename_txt_flag = False
 

@@ -8,7 +8,7 @@ from numpy import arctan as ArcTan
 from numpy import sqrt, pi
 
 
-def C2Pq2qbEq(inx, inz, cx, cz, Q, muR, muF, muA):
+def C2Pq2qbEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
     res = 0.0
 
     rln2 = ln(2.0)
