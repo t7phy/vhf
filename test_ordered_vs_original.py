@@ -2,7 +2,7 @@ import unittest
 from importlib import import_module
 import re
 import os
-import math
+import cmath
 
 modules = {
     "c1pg2qeq": "C1Pg2qEq",
@@ -58,11 +58,12 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
         # Precission in decimals
         self.precision = 5
         self.Q = 1.0
+        self.ndecimal = 6
 
-        self.x_values = [0.9]  # [1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
-        self.z_values = [0.1]  # [1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
-        self.cx_values = ["R"]  # ["D", "R", "0", "1", "2", "3"]
-        self.cz_values = ["R"]  # ["D", "R", "0", "1", "2", "3"]
+        self.x_values = [1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
+        self.z_values = [1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
+        self.cx_values = ["D", "R", "0", "1", "2", "3"]
+        self.cz_values = ["D", "R", "0", "1", "2", "3"]
         # Check what orders there are in the original code
         self.orders = ["000", "001", "002", "010", "011", "100", "110", "020", "101"]
 
@@ -81,16 +82,32 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                         for cz in self.cz_values:
                             # Call the functions and get the results
                             result_ordered = functions_ordered[func_name](
-                                inx, inz, cx, cz, self.Q, muR, muF, muA, order
+                                inx,
+                                inz,
+                                cx,
+                                cz,
+                                self.Q,
+                                muR,
+                                muF,
+                                muA,
+                                order,
+                                self.ndecimal,
                             )
                             result_original = functions_original[func_name](
-                                inx, inz, cx, cz, self.Q, muR, muF, muA, order
+                                inx,
+                                inz,
+                                cx,
+                                cz,
+                                self.Q,
+                                muR,
+                                muF,
+                                muA,
+                                order,
+                                self.ndecimal,
                             )
 
                             # If the results are not equal
-                            if not math.isclose(
-                                result_ordered, result_original, rel_tol=self.precision
-                            ):
+                            if not cmath.isclose(result_ordered, result_original):
                                 # Print the values of the variables
                                 print(
                                     f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, Q: {self.Q}, muR: {muR}, muF: {muF}, muA: {muA}, order: {order}"
@@ -99,7 +116,7 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                                     f"result_ordered: {result_ordered}, result_original: {result_original}"
                                 )
 
-                            if result_ordered == -47.175059104467444 + 0j:
+                            if result_ordered == -101.93350653373561 + 0j:
                                 a = 1
 
                             # Assert that the results are equal
