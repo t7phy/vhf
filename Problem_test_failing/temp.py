@@ -42,8 +42,8 @@ muR = 1.0
 muF = 1.0
 muA = 1.0
 
-result_ordered = C2Pg2qEqOrdered(inx, inz, cx, cz, Q, muR, muF, muA, "all")
-result_original = C2Pg2qEqOriginal(inx, inz, cx, cz, Q, muR, muF, muA, "all")
+result_ordered = C2Pg2qEqOrdered(inx, inz, cx, cz, Q, muR, muF, muA, "all", 10)
+result_original = C2Pg2qEqOriginal(inx, inz, cx, cz, Q, muR, muF, muA, "all", 10)
 
 print(
     f"Result ordered is {result_ordered}\nResult original is {result_original}\nCombined={result_ordered-result_original}"
