@@ -8,7 +8,7 @@ from numpy import arctan as ArcTan
 from numpy import sqrt, pi
 
 
-def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
+def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
     res = 0.0
 
     rln2 = ln(2.0)
@@ -23,152 +23,202 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
     if cx == "D" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "R":
@@ -178,8 +228,7 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if (order == "000") or (order == "all"):
-
+        if ("000" in orders) or ("all" in orders):
             res += (
                 +(-1) * 107.0 / 108.0 * pow(z, -1) * CF
                 + (-1) * 11.0 / 9.0 * CF
@@ -200,10 +249,7 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                 + (-1) * 5.0 / 8.0 * pow(ln(z), 2) * z * CF
                 + 5.0 / 12.0 * pow(ln(z), 3) * CF
                 + 5.0 / 12.0 * pow(ln(z), 3) * z * CF
-                + 0
-            )
-            res += (
-                (-1) * 3.0 / 2.0 * ln(z) * pow(ln(omz), 2) * CF
+                + (-1) * 3.0 / 2.0 * ln(z) * pow(ln(omz), 2) * CF
                 + (-1) * 3.0 / 2.0 * ln(z) * pow(ln(omz), 2) * z * CF
                 + (-1) * 7.0 / 18.0 * ln(omz) * pow(z, -1) * CF
                 + (-1) * 10.0 / 3.0 * ln(omz) * CF
@@ -216,18 +262,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                 + (-1) * 1.0 / 4.0 * pow(ln(omz), 2) * z * CF
                 + (-1) * 1.0 / 3.0 * pow(ln(omz), 2) * pow(z, 2) * CF
                 + (-1) * ln(omz) * Li2(1 - z) * CF
-                + (-1) * ln(omz) * Li2(1 - z) * z * CF
-                + (-1) * 2 * ln(omz) * Li2(z) * CF
-                + (-1) * 2 * ln(omz) * Li2(z) * z * CF
-                + (-1) * Li3(1 - z) * CF
-                + (-1) * Li3(1 - z) * z * CF
-                + (-1) * 2 * Li3(z) * CF
-                + (-1) * 2 * Li3(z) * z * CF
                 + 0
             )
-            res += (-1) * 2.0 / 3.0 * Li2(z) * pow(z, -1) * CF + 1.0 / 2.0 * Li2(z) * CF + 2 * Li2(z) * z * CF + 2.0 / 3.0 * Li2(z) * pow(z, 2) * CF + 0
-        if (order == "001") or (order == "all"):
-
+            res += +(-1) * ln(omz) * Li2(1 - z) * z * CF + (-1) * 2 * ln(omz) * Li2(z) * CF + (-1) * 2 * ln(omz) * Li2(z) * z * CF + (-1) * Li3(1 - z) * CF + (-1) * Li3(1 - z) * z * CF + (-1) * 2 * Li3(z) * CF + (-1) * 2 * Li3(z) * z * CF + (-1) * 2.0 / 3.0 * Li2(z) * pow(z, -1) * CF + 1.0 / 2.0 * Li2(z) * CF + 2 * Li2(z) * z * CF + 2.0 / 3.0 * Li2(z) * pow(z, 2) * CF + 0
+        if ("001" in orders) or ("all" in orders):
             res += (
                 7.0 / 18.0 * pow(z, -1) * LMUA * CF
                 + 10.0 / 3.0 * LMUA * CF
@@ -245,14 +283,11 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                 + (-1) * 1.0 / 2.0 * ln(omz) * LMUA * CF
                 + 1.0 / 2.0 * ln(omz) * z * LMUA * CF
                 + 2.0 / 3.0 * ln(omz) * pow(z, 2) * LMUA * CF
-                + Li2(z) * LMUA * CF
-                + Li2(z) * z * LMUA * CF
                 + 0
             )
-        if (order == "002") or (order == "all"):
-
+            res += Li2(z) * LMUA * CF + Li2(z) * z * LMUA * CF + 0
+        if ("002" in orders) or ("all" in orders):
             res += 1.0 / 3.0 * pow(z, -1) * pow(LMUA, 2) * CF + 1.0 / 4.0 * pow(LMUA, 2) * CF + (-1) * 1.0 / 4.0 * z * pow(LMUA, 2) * CF + (-1) * 1.0 / 3.0 * pow(z, 2) * pow(LMUA, 2) * CF + 1.0 / 2.0 * ln(z) * pow(LMUA, 2) * CF + 1.0 / 2.0 * ln(z) * z * pow(LMUA, 2) * CF + 0
-
         return res
 
     if cx == "0" and cz == "R":
@@ -262,81 +297,30 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if (order == "000") or (order == "all"):
-
+        if ("000" in orders) or ("all" in orders):
             res += (
-                +(-1) * 107.0 / 108.0 * pow(z, -1) * CF
-                + (-1) * 11.0 / 9.0 * CF
-                + (-1) * 4.0 / 9.0 * z * CF
-                + 287.0 / 108.0 * pow(z, 2) * CF
-                + 2 * ZETA3 * CF
-                + 2 * ZETA3 * z * CF
-                + (-1) * 1.0 / 6.0 * pow(pi, 2) * CF
-                + (-1) * 1.0 / 4.0 * pow(pi, 2) * z * CF
-                + (-1) * 7.0 / 18.0 * ln(z) * pow(z, -1) * CF
-                + (-1) * 5 * ln(z) * CF
-                + (-1) * 9.0 / 2.0 * ln(z) * z * CF
-                + (-1) * 31.0 / 18.0 * ln(z) * pow(z, 2) * CF
-                + 1.0 / 6.0 * ln(z) * pow(pi, 2) * CF
-                + 1.0 / 6.0 * ln(z) * pow(pi, 2) * z * CF
-                + 1.0 / 3.0 * pow(ln(z), 2) * pow(z, -1) * CF
-                + (-1) * 1.0 / 8.0 * pow(ln(z), 2) * CF
-                + (-1) * 5.0 / 8.0 * pow(ln(z), 2) * z * CF
-                + 5.0 / 12.0 * pow(ln(z), 3) * CF
-                + 5.0 / 12.0 * pow(ln(z), 3) * z * CF
+                +(-1) * 7.0 / 18.0 * pow(z, -1) * CF
+                + (-1) * 10.0 / 3.0 * CF
+                + 7.0 / 3.0 * z * CF
+                + 25.0 / 18.0 * pow(z, 2) * CF
+                + 1.0 / 6.0 * pow(pi, 2) * CF
+                + 1.0 / 6.0 * pow(pi, 2) * z * CF
+                + 2.0 / 3.0 * ln(z) * pow(z, -1) * CF
+                + (-1) * 1.0 / 2.0 * ln(z) * CF
+                + (-1) * 2 * ln(z) * z * CF
+                + (-1) * 2.0 / 3.0 * ln(z) * pow(z, 2) * CF
+                + pow(ln(z), 2) * CF
+                + pow(ln(z), 2) * z * CF
+                + 2.0 / 3.0 * ln(omz) * pow(z, -1) * CF
+                + 1.0 / 2.0 * ln(omz) * CF
+                + (-1) * 1.0 / 2.0 * ln(omz) * z * CF
+                + (-1) * 2.0 / 3.0 * ln(omz) * pow(z, 2) * CF
+                + (-1) * Li2(z) * CF
+                + (-1) * Li2(z) * z * CF
                 + 0
             )
-            res += (
-                (-1) * 3.0 / 2.0 * ln(z) * pow(ln(omz), 2) * CF
-                + (-1) * 3.0 / 2.0 * ln(z) * pow(ln(omz), 2) * z * CF
-                + (-1) * 7.0 / 18.0 * ln(omz) * pow(z, -1) * CF
-                + (-1) * 10.0 / 3.0 * ln(omz) * CF
-                + 7.0 / 3.0 * ln(omz) * z * CF
-                + 25.0 / 18.0 * ln(omz) * pow(z, 2) * CF
-                + 1.0 / 3.0 * ln(omz) * pow(pi, 2) * CF
-                + 1.0 / 3.0 * ln(omz) * pow(pi, 2) * z * CF
-                + 1.0 / 3.0 * pow(ln(omz), 2) * pow(z, -1) * CF
-                + 1.0 / 4.0 * pow(ln(omz), 2) * CF
-                + (-1) * 1.0 / 4.0 * pow(ln(omz), 2) * z * CF
-                + (-1) * 1.0 / 3.0 * pow(ln(omz), 2) * pow(z, 2) * CF
-                + (-1) * ln(omz) * Li2(1 - z) * CF
-                + (-1) * ln(omz) * Li2(1 - z) * z * CF
-                + (-1) * 2 * ln(omz) * Li2(z) * CF
-                + (-1) * 2 * ln(omz) * Li2(z) * z * CF
-                + (-1) * Li3(1 - z) * CF
-                + (-1) * Li3(1 - z) * z * CF
-                + (-1) * 2 * Li3(z) * CF
-                + (-1) * 2 * Li3(z) * z * CF
-                + 0
-            )
-            res += (-1) * 2.0 / 3.0 * Li2(z) * pow(z, -1) * CF + 1.0 / 2.0 * Li2(z) * CF + 2 * Li2(z) * z * CF + 2.0 / 3.0 * Li2(z) * pow(z, 2) * CF + 0
-        if (order == "001") or (order == "all"):
-
-            res += (
-                7.0 / 18.0 * pow(z, -1) * LMUA * CF
-                + 10.0 / 3.0 * LMUA * CF
-                + (-1) * 7.0 / 3.0 * z * LMUA * CF
-                + (-1) * 25.0 / 18.0 * pow(z, 2) * LMUA * CF
-                + (-1) * 1.0 / 6.0 * pow(pi, 2) * LMUA * CF
-                + (-1) * 1.0 / 6.0 * pow(pi, 2) * z * LMUA * CF
-                + (-1) * 2.0 / 3.0 * ln(z) * pow(z, -1) * LMUA * CF
-                + 1.0 / 2.0 * ln(z) * LMUA * CF
-                + 2 * ln(z) * z * LMUA * CF
-                + 2.0 / 3.0 * ln(z) * pow(z, 2) * LMUA * CF
-                + (-1) * pow(ln(z), 2) * LMUA * CF
-                + (-1) * pow(ln(z), 2) * z * LMUA * CF
-                + (-1) * 2.0 / 3.0 * ln(omz) * pow(z, -1) * LMUA * CF
-                + (-1) * 1.0 / 2.0 * ln(omz) * LMUA * CF
-                + 1.0 / 2.0 * ln(omz) * z * LMUA * CF
-                + 2.0 / 3.0 * ln(omz) * pow(z, 2) * LMUA * CF
-                + Li2(z) * LMUA * CF
-                + Li2(z) * z * LMUA * CF
-                + 0
-            )
-        if (order == "002") or (order == "all"):
-
-            res += 1.0 / 3.0 * pow(z, -1) * pow(LMUA, 2) * CF + 1.0 / 4.0 * pow(LMUA, 2) * CF + (-1) * 1.0 / 4.0 * z * pow(LMUA, 2) * CF + (-1) * 1.0 / 3.0 * pow(z, 2) * pow(LMUA, 2) * CF + 1.0 / 2.0 * ln(z) * pow(LMUA, 2) * CF + 1.0 / 2.0 * ln(z) * z * pow(LMUA, 2) * CF + 0
-
+        if ("001" in orders) or ("all" in orders):
+            res += (-1) * 2.0 / 3.0 * pow(z, -1) * LMUA * CF + (-1) * 1.0 / 2.0 * LMUA * CF + 1.0 / 2.0 * z * LMUA * CF + 2.0 / 3.0 * pow(z, 2) * LMUA * CF + (-1) * ln(z) * LMUA * CF + (-1) * ln(z) * z * LMUA * CF + 0
         return res
 
     if cx == "1" and cz == "R":
@@ -344,8 +328,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
-        res = 2.0 / 3.0 * pow(z, -1) * CF + 1.0 / 2.0 * CF - 1.0 / 2.0 * z * CF - 2.0 / 3.0 * pow(z, 2) * CF + ln(z) * CF + ln(z) * z * CF
-
+        # Split orders:
+        res = 0
+        if ("000" in orders) or ("all" in orders):
+            res += 2.0 / 3.0 * pow(z, -1) * CF + 1.0 / 2.0 * CF + (-1) * 1.0 / 2.0 * z * CF + (-1) * 2.0 / 3.0 * pow(z, 2) * CF + ln(z) * CF + ln(z) * z * CF + 0
         return res
 
     if cx == "2" and cz == "R":
@@ -353,8 +339,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "R":
@@ -362,8 +350,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "D":
@@ -372,8 +362,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "0":
@@ -382,8 +374,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "1":
@@ -392,8 +386,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "2":
@@ -402,8 +398,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "3":
@@ -412,8 +410,10 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "R":
@@ -431,69 +431,84 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         sqrtxz1 = sqrt(1 - 2 * z + z * z + 4 * x * z)
         sqrtxz2 = sqrt(poly2)
         sqrtxz3 = sqrt(x / z)
-        if z < 1.0 - x and z < x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > 1.0 - x and z < x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z < 1.0 - x and z > x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > 1.0 - x and z > x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z < x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z < 1.0 - x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > 1.0 - x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z != x and z != 1.0 - x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if (order == "000") or (order == "all"):
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
 
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) > round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) < round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) < round(1.0 - x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) > round(1.0 - x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) != round(x, ndecimals) and round(z, ndecimals) != round(1.0 - x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
                 tmp += (
                     +(-1) * 5.0 / 36.0 * pow(z, -1) * CF
                     + 2.0 / 3.0 * CF
@@ -514,10 +529,7 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * ln(x) * z * CF
                     + 4.0 / 3.0 * ln(x) * pow(z, 2) * CF * pow(omx, -1)
                     + (-1) * 8.0 / 3.0 * ln(x) * pow(z, 2) * CF
-                    + 0
-                )
-                tmp += (
-                    2.0 / 3.0 * ln(x) * x * pow(z, -1) * CF
+                    + 2.0 / 3.0 * ln(x) * x * pow(z, -1) * CF
                     + ln(x) * x * CF
                     + (-1) * 3 * ln(x) * x * z * CF
                     + 4.0 / 3.0 * ln(x) * x * pow(z, 2) * CF
@@ -537,10 +549,7 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * pow(ln(z), 2) * CF
                     + (-1) * 2 * pow(ln(z), 2) * z * CF
                     + (-1) * pow(ln(z), 2) * x * CF
-                    + 0
-                )
-                tmp += (
-                    (-1) * ln(z) * ln(omx) * CF
+                    + (-1) * ln(z) * ln(omx) * CF
                     + (-1) * 2 * ln(z) * ln(omx) * z * CF
                     + (-1) * ln(z) * ln(omx) * x * CF
                     + (-1) * 1.0 / 3.0 * ln(omx) * pow(z, -1) * CF
@@ -552,21 +561,11 @@ def C2Pq2qpEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 3.0 / 2.0 * ln(omx) * x * z * CF
                     + (-1) * 2.0 / 3.0 * ln(omx) * x * pow(z, 2) * CF
                     + (-1) * 1.0 / 3.0 * ln(omz) * pow(z, -1) * CF
-                    + (-1) * 3.0 / 2.0 * ln(omz) * CF
-                    + 1.0 / 2.0 * ln(omz) * z * CF
-                    + 4.0 / 3.0 * ln(omz) * pow(z, 2) * CF
-                    + (-1) * 1.0 / 3.0 * ln(omz) * x * pow(z, -1) * CF
-                    + (-1) * 1.0 / 2.0 * ln(omz) * x * CF
-                    + 3.0 / 2.0 * ln(omz) * x * z * CF
-                    + (-1) * 2.0 / 3.0 * ln(omz) * x * pow(z, 2) * CF
-                    + Li2(z) * CF
                     + 0
                 )
-                tmp += 2 * Li2(z) * z * CF + Li2(z) * x * CF + 0
-            if (order == "001") or (order == "all"):
-
+                tmp += +(-1) * 3.0 / 2.0 * ln(omz) * CF + 1.0 / 2.0 * ln(omz) * z * CF + 4.0 / 3.0 * ln(omz) * pow(z, 2) * CF + (-1) * 1.0 / 3.0 * ln(omz) * x * pow(z, -1) * CF + (-1) * 1.0 / 2.0 * ln(omz) * x * CF + 3.0 / 2.0 * ln(omz) * x * z * CF + (-1) * 2.0 / 3.0 * ln(omz) * x * pow(z, 2) * CF + Li2(z) * CF + 2 * Li2(z) * z * CF + Li2(z) * x * CF + 0
+            if ("001" in orders) or ("all" in orders):
                 tmp += 1.0 / 3.0 * pow(z, -1) * LMUA * CF + 3.0 / 2.0 * LMUA * CF + (-1) * 1.0 / 2.0 * z * LMUA * CF + (-1) * 4.0 / 3.0 * pow(z, 2) * LMUA * CF + 1.0 / 3.0 * x * pow(z, -1) * LMUA * CF + 1.0 / 2.0 * x * LMUA * CF + (-1) * 3.0 / 2.0 * x * z * LMUA * CF + 2.0 / 3.0 * x * pow(z, 2) * LMUA * CF + ln(z) * LMUA * CF + 2 * ln(z) * z * LMUA * CF + ln(z) * x * LMUA * CF + 0
-
             res += tmp
 
         return res

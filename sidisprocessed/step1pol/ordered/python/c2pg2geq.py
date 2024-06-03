@@ -8,7 +8,7 @@ from numpy import arctan as ArcTan
 from numpy import sqrt, pi
 
 
-def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
+def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
     res = 0.0
 
     rln2 = ln(2.0)
@@ -23,152 +23,202 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
     if cx == "D" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "R":
@@ -176,8 +226,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "R":
@@ -185,8 +237,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "R":
@@ -194,8 +248,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "R":
@@ -203,8 +259,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "R":
@@ -212,8 +270,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "D":
@@ -222,8 +282,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "0":
@@ -232,8 +294,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "1":
@@ -242,8 +306,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "2":
@@ -252,8 +318,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "3":
@@ -262,8 +330,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "R":
@@ -281,69 +351,84 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         sqrtxz1 = sqrt(1 - 2 * z + z * z + 4 * x * z)
         sqrtxz2 = sqrt(poly2)
         sqrtxz3 = sqrt(x / z)
-        if z < 1.0 - x and z < x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > 1.0 - x and z < x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z < 1.0 - x and z > x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > 1.0 - x and z > x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z < x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z < 1.0 - x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z > 1.0 - x:
-
-            tmp = 0.0
-            tmp = 0
-
-            res += tmp
-
-        if z != x and z != 1.0 - x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if (order == "000") or (order == "all"):
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
 
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) > round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) < round(x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) < round(1.0 - x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) > round(1.0 - x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
+            res += tmp
+
+        if round(z, ndecimals) != round(x, ndecimals) and round(z, ndecimals) != round(1.0 - x, ndecimals):
+
+            tmp = 0.0
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
                 tmp += (
                     13.0 / 16.0 * pow(z, -1) * pow(NC, -1)
                     + (-1) * 4 * pow(z, -1) * pow(NC, -1) * pow(rln2, 2) * pow(opz, -1)
@@ -365,16 +450,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 2 * NC * pow(rln2, 2)
                     + 8 * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + (-1) * 8 * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                    + 0
-                )
-                tmp += (
-                    6 * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2) * pow(opz, -1)
+                    + 6 * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2) * pow(opz, -1)
                     + (-1) * 6 * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2)
                     + (-1) * 43.0 / 16.0 * z * pow(NC, -1)
                     + 2 * z * pow(NC, -1) * pow(rln2, 2)
                     + 43.0 / 16.0 * z * NC
                     + (-1) * 2 * z * NC * pow(rln2, 2)
-                    + 3.0 / 4.0 * x * pow(z, -1) * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +3.0 / 4.0 * x * pow(z, -1) * pow(NC, -1)
                     + 8 * x * pow(z, -1) * pow(NC, -1) * pow(rln2, 2) * pow(opz, -1)
                     + (-1) * 8 * x * pow(z, -1) * pow(NC, -1) * pow(rln2, 2)
                     + 16 * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
@@ -388,10 +473,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 64 * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
                     + 60 * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2) * pow(opz, -1)
                     + (-1) * 48 * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 5.0 / 2.0 * x * pow(NC, -1)
+                    + (-1) * 5.0 / 2.0 * x * pow(NC, -1)
                     + 8 * x * pow(NC, -1) * pow(rln2, 2)
                     + (-1) * 17.0 / 2.0 * x * NC
                     + (-1) * 4 * x * NC * pow(rln2, 2)
@@ -403,7 +485,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 4 * x * z * pow(NC, -1) * pow(rln2, 2)
                     + (-1) * 11.0 / 4.0 * x * z * NC
                     + 4 * x * z * NC * pow(rln2, 2)
-                    + (-1) * 4 * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(rln2, 2) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 4 * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(rln2, 2) * pow(opz, -1)
                     + 4 * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(rln2, 2)
                     + (-1) * 8 * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
                     + 8 * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
@@ -411,10 +496,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 6 * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(rln2, 2)
                     + (-1) * 88 * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + 80 * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                    + 0
-                )
-                tmp += (
-                    (-1) * 66 * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2) * pow(opz, -1)
+                    + (-1) * 66 * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2) * pow(opz, -1)
                     + 60 * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(rln2, 2)
                     + (-1) * 4 * pow(x, 2) * pow(NC, -1) * pow(rln2, 2)
                     + 4 * pow(x, 2) * NC * pow(rln2, 2)
@@ -430,14 +512,14 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 1.0 / 3.0 * pow(pi, 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + 1.0 / 3.0 * pow(pi, 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + (-1) * 1.0 / 3.0 * pow(pi, 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                    + (-1) * 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                    + 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(z, -1) * NC
-                    + 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                    + (-1) * 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(NC, -1)
                     + 0
                 )
                 tmp += (
-                    1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    +(-1) * 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(z, -1) * NC
+                    + 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * pow(NC, -1)
+                    + 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
                     + (-1) * 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * z * pow(NC, -1)
                     + (-1) * 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * z * NC * pow(opx, -1)
                     + 1.0 / 6.0 * pow(pi, 2) * pow(x, -2) * z * NC
@@ -457,16 +539,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + pow(pi, 2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + (-1) * 7.0 / 24.0 * pow(pi, 2) * pow(z, -1) * pow(NC, -1)
                     + (-1) * 1.0 / 3.0 * pow(pi, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                    + 0
-                )
-                tmp += (
-                    1.0 / 3.0 * pow(pi, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 1.0 / 3.0 * pow(pi, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + (-1) * 1.0 / 3.0 * pow(pi, 2) * pow(z, -1) * NC * pow(opx, -1)
                     + 7.0 / 24.0 * pow(pi, 2) * pow(z, -1) * NC
                     + (-1) * pow(pi, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 2.0 / 3.0 * pow(pi, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 1.0 / 3.0 * pow(pi, 2) * pow(NC, -1) * pow(omz, -1)
-                    + 2.0 / 3.0 * pow(pi, 2) * pow(NC, -1) * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +2.0 / 3.0 * pow(pi, 2) * pow(NC, -1) * pow(opx, -1)
                     + (-1) * 1.0 / 12.0 * pow(pi, 2) * pow(NC, -1)
                     + (-1) * 1.0 / 3.0 * pow(pi, 2) * NC * pow(opx, -1)
                     + 1.0 / 12.0 * pow(pi, 2) * NC
@@ -480,10 +562,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 2.0 / 3.0 * pow(pi, 2) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + 1.0 / 3.0 * pow(pi, 2) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + 5.0 / 4.0 * pow(pi, 2) * x * pow(z, -1) * pow(NC, -1)
-                    + 0
-                )
-                tmp += (
-                    2.0 / 3.0 * pow(pi, 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2.0 / 3.0 * pow(pi, 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + (-1) * 2.0 / 3.0 * pow(pi, 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + (-1) * 7.0 / 12.0 * pow(pi, 2) * x * pow(z, -1) * NC
                     + 10.0 / 3.0 * pow(pi, 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
@@ -501,12 +580,12 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
                     + (-1) * 1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                    + (-1) * 11.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 10.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 0
                 )
                 tmp += (
-                    1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
+                    +(-1) * 11.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 10.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
                     + 1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * pow(NC, -1)
                     + (-1) * 1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * NC
                     + 1.0 / 3.0 * pow(pi, 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
@@ -526,13 +605,13 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 24 * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + (-1) * 16 * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
                     + 6 * ln(1 + sqrtxz1 - z) * pow(NC, -1) * rln2
+                    + (-1) * 4 * ln(1 + sqrtxz1 - z) * NC * rln2
+                    + (-1) * 8 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 0
                 )
                 tmp += (
-                    (-1) * 4 * ln(1 + sqrtxz1 - z) * NC * rln2
-                    + (-1) * 8 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 8 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                    + (-1) * 8 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    +(-1) * 8 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + 8 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
                     + (-1) * 3 * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * rln2
                     + 3 * ln(1 + sqrtxz1 - z) * z * NC * rln2
@@ -549,10 +628,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 80 * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + 64 * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
                     + (-1) * 12 * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * rln2
-                    + 0
-                )
-                tmp += (
-                    8 * ln(1 + sqrtxz1 - z) * x * NC * rln2
+                    + 8 * ln(1 + sqrtxz1 - z) * x * NC * rln2
                     + 16 * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 16 * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 16 * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
@@ -560,7 +636,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 6 * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * rln2
                     + (-1) * 6 * ln(1 + sqrtxz1 - z) * x * z * NC * rln2
                     + 4 * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
-                    + (-1) * 4 * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 4 * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2
                     + 8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + (-1) * 8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + 8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
@@ -572,10 +651,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 6 * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * rln2
                     + (-1) * 6 * ln(1 + sqrtxz1 - z) * pow(x, 2) * NC * rln2
                     + (-1) * 8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 0
-                )
-                tmp += (
-                    8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * 8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + 8 * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
                     + (-1) * 32 * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
@@ -584,7 +660,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 32 * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
                     + pow(ln(1 + sqrtxz1 - z), 2) * pow(z, -1) * pow(NC, -1)
                     + (-1) * 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                    + 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 0
+                )
+                tmp += (
+                    +2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + (-1) * pow(ln(1 + sqrtxz1 - z), 2) * pow(z, -1) * NC
                     + (-1) * 6 * pow(ln(1 + sqrtxz1 - z), 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 4 * pow(ln(1 + sqrtxz1 - z), 2) * pow(NC, -1) * pow(sqrtxz1, -1)
@@ -595,10 +674,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + pow(ln(1 + sqrtxz1 - z), 2) * z * pow(NC, -1)
                     + (-1) * pow(ln(1 + sqrtxz1 - z), 2) * z * NC
                     + (-1) * 2 * pow(ln(1 + sqrtxz1 - z), 2) * x * pow(z, -1) * pow(NC, -1)
-                    + 0
-                )
-                tmp += (
-                    4 * pow(ln(1 + sqrtxz1 - z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * pow(ln(1 + sqrtxz1 - z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + (-1) * 4 * pow(ln(1 + sqrtxz1 - z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + 2 * pow(ln(1 + sqrtxz1 - z), 2) * x * pow(z, -1) * NC
                     + 20 * pow(ln(1 + sqrtxz1 - z), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
@@ -612,16 +688,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + (-1) * 22 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 20 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 0
+                )
+                tmp += (
+                    +20 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * pow(NC, -1)
                     + 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * NC
                     + 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 2 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 8 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 8 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 8 * pow(ln(1 + sqrtxz1 - z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * 4 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
                     + 3 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1)
                     + (-1) * 4 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
@@ -635,16 +711,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1)
                     + (-1) * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * z * NC
                     + 8 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                    + (-1) * 6 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 6 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1)
                     + 8 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + (-1) * 8 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + 2 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * NC
                     + 40 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 32 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                    + 0
-                )
-                tmp += (
-                    4 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1)
+                    + 4 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1)
                     + (-1) * 8 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 8 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * 2 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1)
@@ -657,17 +733,17 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 40 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * 2 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1)
                     + 2 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * NC
-                    + 4 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +4 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 4 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 16 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 16 * ln(1 + sqrtxz1 - z) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 4 * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
                     + (-1) * 3 * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * rln2
                     + 4 * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 4 * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
+                    + (-1) * 4 * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
                     + ln(1 + sqrtxz1 + z) * pow(z, -1) * NC * rln2
                     + 12 * ln(1 + sqrtxz1 + z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + (-1) * 8 * ln(1 + sqrtxz1 + z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
@@ -683,14 +759,14 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 2 * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * NC * rln2
                     + (-1) * 40 * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
                     + 32 * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                    + (-1) * 4 * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * rln2
-                    + 8 * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                    + (-1) * 8 * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                    + 2 * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * rln2
                     + 0
                 )
                 tmp += (
-                    (-1) * 2 * ln(1 + sqrtxz1 + z) * x * z * NC * rln2
+                    +(-1) * 4 * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * rln2
+                    + 8 * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 8 * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 2 * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * rln2
+                    + (-1) * 2 * ln(1 + sqrtxz1 + z) * x * z * NC * rln2
                     + 4 * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
                     + (-1) * 4 * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2
                     + 4 * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
@@ -707,13 +783,13 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 1.0 / 2.0 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + (-1) * 3.0 / 2.0 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                    + 1.0 / 2.0 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + (-1) * 1.0 / 2.0 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                    + pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 0
                 )
                 tmp += (
-                    (-1) * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    +1.0 / 2.0 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + 5 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 4 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
@@ -727,16 +803,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 2 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 2 * pow(ln(1 - 2 * z + pow(z, 2) + 4 * x * z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + ln(z * sqrtxz3) * ArcTan(z * sqrtxz3) * pow(x, -1) * NC * sqrtxz3
-                    + 5 * ln(z * sqrtxz3) * ArcTan(z * sqrtxz3) * pow(z, -1) * NC * sqrtxz3
+                    + 0
+                )
+                tmp += (
+                    +5 * ln(z * sqrtxz3) * ArcTan(z * sqrtxz3) * pow(z, -1) * NC * sqrtxz3
                     + (-1) * 4 * ln(z * sqrtxz3) * ArcTan(z * sqrtxz3) * z * pow(NC, -1) * sqrtxz3
                     + 9 * ln(z * sqrtxz3) * ArcTan(z * sqrtxz3) * z * NC * sqrtxz3
                     + 5 * ln(z * sqrtxz3) * ArcTan(z * sqrtxz3) * x * NC * sqrtxz3
                     + (-1) * 4 * ln(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
                     + 4 * ln(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                    + 0
-                )
-                tmp += (
-                    4 * ln(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 4 * ln(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + (-1) * 4 * ln(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
                     + (-1) * 2 * ln(x) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
                     + 2 * ln(x) * pow(x, -2) * pow(z, -1) * NC
@@ -756,16 +832,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 4 * ln(x) * pow(x, -1) * pow(NC, -1)
                     + 6 * ln(x) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
                     + (-1) * 4 * ln(x) * pow(x, -1) * z * pow(NC, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 6 * ln(x) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + (-1) * 6 * ln(x) * pow(x, -1) * z * NC * pow(opx, -1)
                     + 4 * ln(x) * pow(x, -1) * z * NC
                     + (-1) * 12 * ln(x) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
                     + 12 * ln(x) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + 11.0 / 4.0 * ln(x) * pow(z, -1) * pow(NC, -1)
                     + (-1) * 2 * ln(x) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
-                    + 3 * ln(x) * pow(z, -1) * pow(NC, -1) * rln2
+                    + 0
+                )
+                tmp += (
+                    +3 * ln(x) * pow(z, -1) * pow(NC, -1) * rln2
                     + (-1) * 4 * ln(x) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 4 * ln(x) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + (-1) * 4 * ln(x) * pow(z, -1) * NC * pow(opx, -1)
@@ -779,10 +855,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 11.0 / 2.0 * ln(x) * pow(NC, -1)
                     + (-1) * 4 * ln(x) * pow(NC, -1) * rln2
                     + (-1) * 4 * ln(x) * NC * pow(opx, -1)
-                    + 0
-                )
-                tmp += (
-                    13.0 / 2.0 * ln(x) * NC
+                    + 13.0 / 2.0 * ln(x) * NC
                     + 3 * ln(x) * NC * rln2
                     + 4 * ln(x) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 4 * ln(x) * z * pow(NC, -1) * pow(sqrtxz1, -1)
@@ -799,13 +872,13 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 4 * ln(x) * x * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
                     + (-1) * 6 * ln(x) * x * pow(z, -1) * pow(NC, -1) * rln2
                     + 8 * ln(x) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                    + (-1) * 8 * ln(x) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                    + (-1) * 1.0 / 2.0 * ln(x) * x * pow(z, -1) * NC
-                    + 4 * ln(x) * x * pow(z, -1) * NC * rln2
                     + 0
                 )
                 tmp += (
-                    2 * ln(x) * x * pow(z, -1) * NC * sqrtxz1
+                    +(-1) * 8 * ln(x) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 1.0 / 2.0 * ln(x) * x * pow(z, -1) * NC
+                    + 4 * ln(x) * x * pow(z, -1) * NC * rln2
+                    + 2 * ln(x) * x * pow(z, -1) * NC * sqrtxz1
                     + 40 * ln(x) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 32 * ln(x) * x * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 8 * ln(x) * x * pow(NC, -1) * pow(omz, -1)
@@ -825,15 +898,15 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 2 * ln(x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2
                     + (-1) * 4 * ln(x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 4 * ln(x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                    + 0
-                )
-                tmp += (
-                    (-1) * 44 * ln(x) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 44 * ln(x) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 40 * ln(x) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 4 * ln(x) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
                     + (-1) * 4 * ln(x) * pow(x, 2) * pow(NC, -1) * rln2
                     + 4 * ln(x) * pow(x, 2) * NC * rln2
-                    + 4 * ln(x) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +4 * ln(x) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 4 * ln(x) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 16 * ln(x) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 16 * ln(x) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
@@ -848,10 +921,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 2 * ln(x) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * ln(x) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1)
-                    + 0
-                )
-                tmp += (
-                    ln(x) * ln(1 + sqrtxz1 - z) * z * NC
+                    + ln(x) * ln(1 + sqrtxz1 - z) * z * NC
                     + 2 * ln(x) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1)
                     + 4 * ln(x) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + (-1) * 4 * ln(x) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
@@ -862,7 +932,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 4 * ln(x) * ln(1 + sqrtxz1 - z) * x * NC
                     + (-1) * 4 * ln(x) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 4 * ln(x) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                    + 2 * ln(x) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +2 * ln(x) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1)
                     + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 - z) * x * z * NC
                     + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 2 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
@@ -871,10 +944,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 2 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1)
                     + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 2) * NC
                     + 2 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 2 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 8 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + (-1) * 8 * ln(x) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + 2 * ln(x) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
@@ -888,16 +958,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * ln(x) * ln(1 + sqrtxz1 + z) * NC
                     + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 2 * ln(x) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                    + (-1) * ln(x) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * ln(x) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1)
                     + ln(x) * ln(1 + sqrtxz1 + z) * z * NC
                     + (-1) * 4 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
                     + 4 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1)
                     + (-1) * 4 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 4 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                    + 0
-                )
-                tmp += (
-                    (-1) * 2 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * NC
+                    + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * NC
                     + (-1) * 20 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 16 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
                     + (-1) * 4 * ln(x) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1)
@@ -915,12 +985,12 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 2 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1)
                     + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 2) * NC
                     + (-1) * 2 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 2 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                    + (-1) * 8 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
                     + 0
                 )
                 tmp += (
-                    8 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    +2 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 8 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * ln(x) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
                     + ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
@@ -939,11 +1009,11 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 2 * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
                     + 3.0 / 2.0 * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC
-                    + (-1) * 3.0 / 2.0 * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
                     + 0
                 )
                 tmp += (
-                    ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1)
+                    +(-1) * 3.0 / 2.0 * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1)
                     + (-1) * 3.0 / 2.0 * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
                     + ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1)
                     + 3.0 / 2.0 * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * NC * pow(opx, -1)
@@ -963,16 +1033,16 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + ln(x) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
                     + 2 * ln(x) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 2 * ln(x) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1)
                     + ln(x) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * NC
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * x * pow(NC, -1) * pow(opx, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * x * pow(NC, -1)
                     + ln(x) * ln(1 + x * pow(z, -1)) * x * NC * pow(opx, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * x * z * pow(NC, -1)
-                    + ln(x) * ln(1 + x * pow(z, -1)) * x * z * NC
+                    + 0
+                )
+                tmp += (
+                    +ln(x) * ln(1 + x * pow(z, -1)) * x * z * NC
                     + ln(x) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
                     + (-1) * ln(x) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(NC, -1)
@@ -986,10 +1056,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 1.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
                     + 1.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -2) * pow(NC, -1)
                     + (-1) * 1.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                    + 0
-                )
-                tmp += (
-                    1.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -2) * z * pow(NC, -1)
+                    + 1.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -2) * z * pow(NC, -1)
                     + 1.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -2) * z * NC * pow(opx, -1)
                     + (-1) * 1.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -2) * z * NC
                     + 3 * ln(x) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
@@ -1000,7 +1067,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * ln(x) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * NC
                     + (-1) * 3.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
                     + ln(x) * ln(1 + x * z) * pow(x, -1) * pow(NC, -1)
-                    + (-1) * 3.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 3.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
                     + ln(x) * ln(1 + x * z) * pow(x, -1) * z * pow(NC, -1)
                     + 3.0 / 2.0 * ln(x) * ln(1 + x * z) * pow(x, -1) * z * NC * pow(opx, -1)
                     + (-1) * ln(x) * ln(1 + x * z) * pow(x, -1) * z * NC
@@ -1009,10 +1079,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * ln(x) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
                     + ln(x) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1)
                     + ln(x) * ln(1 + x * z) * pow(z, -1) * NC * pow(opx, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 2 * ln(x) * ln(1 + x * z) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(1 + x * z) * pow(NC, -1) * pow(opx, -1)
                     + ln(x) * ln(1 + x * z) * NC * pow(opx, -1)
                     + (-1) * ln(x) * ln(1 + x * z) * NC
                     + (-1) * ln(x) * ln(1 + x * z) * z * pow(NC, -1) * pow(opx, -1)
@@ -1032,11 +1099,11 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 2 * ln(x) * ln(1 + x * z) * pow(x, 2) * pow(NC, -1)
                     + 2 * ln(x) * ln(1 + x * z) * pow(x, 2) * NC
                     + ln(x) * ln(z + x) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * ln(x) * ln(z + x) * pow(z, -1) * pow(NC, -1)
                     + 0
                 )
                 tmp += (
-                    (-1) * ln(x) * ln(z + x) * pow(z, -1) * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(x) * ln(z + x) * pow(z, -1) * NC
+                    +1.0 / 2.0 * ln(x) * ln(z + x) * pow(z, -1) * NC
                     + 1.0 / 2.0 * ln(x) * ln(z + x) * pow(NC, -1)
                     + (-1) * 1.0 / 2.0 * ln(x) * ln(z + x) * z * pow(NC, -1)
                     + 1.0 / 2.0 * ln(x) * ln(z + x) * z * NC
@@ -1055,10 +1122,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + 3.0 / 2.0 * pow(ln(x), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
                     + 3.0 / 4.0 * pow(ln(x), 2) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 3.0 / 4.0 * pow(ln(x), 2) * pow(x, -2) * pow(z, -1) * NC
+                    + (-1) * 3.0 / 4.0 * pow(ln(x), 2) * pow(x, -2) * pow(z, -1) * NC
                     + (-1) * 3.0 / 4.0 * pow(ln(x), 2) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
                     + 3.0 / 4.0 * pow(ln(x), 2) * pow(x, -2) * pow(NC, -1)
                     + (-1) * 3.0 / 4.0 * pow(ln(x), 2) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
@@ -1069,7 +1133,10 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 3 * pow(ln(x), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + (-1) * 9.0 / 2.0 * pow(ln(x), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + 3 * pow(ln(x), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                    + 9.0 / 4.0 * pow(ln(x), 2) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +9.0 / 4.0 * pow(ln(x), 2) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
                     + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, -1) * pow(z, -1) * NC
                     + (-1) * 9.0 / 4.0 * pow(ln(x), 2) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
                     + 3.0 / 2.0 * pow(ln(x), 2) * pow(x, -1) * pow(NC, -1)
@@ -1078,10 +1145,7 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 9.0 / 4.0 * pow(ln(x), 2) * pow(x, -1) * z * NC * pow(opx, -1)
                     + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, -1) * z * NC
                     + 9.0 / 2.0 * pow(ln(x), 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                    + 0
-                )
-                tmp += (
-                    (-1) * 9.0 / 2.0 * pow(ln(x), 2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 9.0 / 2.0 * pow(ln(x), 2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
                     + 1.0 / 2.0 * pow(ln(x), 2) * pow(z, -1) * pow(NC, -1)
                     + 3.0 / 2.0 * pow(ln(x), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
@@ -1101,11 +1165,11 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 3.0 / 2.0 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
                     + 3 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 4 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1)
                     + 0
                 )
                 tmp += (
-                    (-1) * 4 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1)
-                    + (-1) * 3 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    +(-1) * 3 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + 3 * pow(ln(x), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + pow(ln(x), 2) * x * pow(z, -1) * NC
                     + (-1) * 15 * pow(ln(x), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
@@ -1124,1436 +1188,1295 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
                     + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + 33.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                    + 0
-                )
-            tmp += (
-                (-1) * 15 * pow(ln(x), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * pow(NC, -1)
-                + 1.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * NC
-                + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 6 * pow(ln(x), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 6 * pow(ln(x), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * NC
-                + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(NC, -1)
-                + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * NC * pow(opx, -1)
-                + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * NC
-                + 0
-            )
-            tmp += (
-                (-1) * 3 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 3 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * NC
-                + 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(z) * pow(x, -1) * pow(NC, -1)
-                + 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(z) * pow(x, -1) * z * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * z * NC * pow(opx, -1)
-                + ln(x) * ln(z) * pow(x, -1) * z * NC
-                + (-1) * 3 * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 3 * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 5.0 / 4.0 * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1)
-                + ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * ln(x) * ln(z) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 7.0 / 4.0 * ln(x) * ln(z) * pow(z, -1) * NC
-                + 0
-            )
-            tmp += (
-                3 * ln(x) * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(x) * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + ln(x) * ln(z) * pow(NC, -1) * pow(omz, -1)
-                + 2 * ln(x) * ln(z) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(z) * pow(NC, -1)
-                + (-1) * ln(x) * ln(z) * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * NC
-                + (-1) * ln(x) * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + ln(x) * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + ln(x) * ln(z) * z * pow(NC, -1) * pow(opx, -1)
-                + ln(x) * ln(z) * z * pow(NC, -1)
-                + (-1) * ln(x) * ln(z) * z * NC * pow(opx, -1)
-                + (-1) * ln(x) * ln(z) * z * NC
-                + (-1) * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 0
-            )
-            tmp += (
-                (-1) * 1.0 / 2.0 * ln(x) * ln(z) * x * pow(z, -1) * NC
-                + (-1) * 10 * ln(x) * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * ln(x) * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(x) * ln(z) * x * pow(NC, -1) * pow(omz, -1)
-                + ln(x) * ln(z) * x * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(z) * x * pow(NC, -1)
-                + (-1) * ln(x) * ln(z) * x * NC * pow(opx, -1)
-                + (-1) * 3 * ln(x) * ln(z) * x * NC
-                + 2 * ln(x) * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(x) * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * ln(x) * ln(z) * x * z * pow(NC, -1)
-                + ln(x) * ln(z) * x * z * NC
-                + (-1) * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 2 * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 11 * ln(x) * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 10 * ln(x) * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + ln(x) * ln(z) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * ln(x) * ln(z) * pow(x, 2) * pow(NC, -1)
-                + ln(x) * ln(z) * pow(x, 2) * NC
-                + (-1) * ln(x) * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + ln(x) * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * ln(x) * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(x) * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * NC
-                + (-1) * ln(x) * ln(omx) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + ln(x) * ln(omx) * pow(x, -2) * pow(NC, -1)
-                + (-1) * ln(x) * ln(omx) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + ln(x) * ln(omx) * pow(x, -2) * z * pow(NC, -1)
-                + ln(x) * ln(omx) * pow(x, -2) * z * NC * pow(opx, -1)
-                + (-1) * ln(x) * ln(omx) * pow(x, -2) * z * NC
-                + 6 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 4 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 6 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 4 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + 3 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * NC
-                + (-1) * 3 * ln(x) * ln(omx) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * pow(x, -1) * pow(NC, -1)
-                + (-1) * 3 * ln(x) * ln(omx) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * pow(x, -1) * z * pow(NC, -1)
-                + 3 * ln(x) * ln(omx) * pow(x, -1) * z * NC * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * pow(x, -1) * z * NC
-                + 6 * ln(x) * ln(omx) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 6 * ln(x) * ln(omx) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(omx) * pow(z, -1) * pow(NC, -1)
-                + 2 * ln(x) * ln(omx) * pow(z, -1) * NC * pow(opx, -1)
-                + 1.0 / 2.0 * ln(x) * ln(omx) * pow(z, -1) * NC
-                + (-1) * 2 * ln(x) * ln(omx) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 4 * ln(x) * ln(omx) * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * pow(NC, -1)
-                + 2 * ln(x) * ln(omx) * NC * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * NC
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * ln(x) * ln(omx) * z * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * z * NC * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 4 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 3 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * ln(x) * ln(omx) * x * pow(z, -1) * NC
-                + (-1) * 4 * ln(x) * ln(omx) * x * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * x * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * x * NC * pow(opx, -1)
-                + 2 * ln(x) * ln(omx) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(omx) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * ln(x) * ln(omx) * pow(x, 2) * pow(NC, -1)
-                + ln(x) * ln(omx) * pow(x, 2) * NC
-                + (-1) * 3.0 / 4.0 * ln(x) * ln(omz) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * ln(x) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 3.0 / 4.0 * ln(x) * ln(omz) * pow(z, -1) * NC
-                + (-1) * 6 * ln(x) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 0
-            )
-            tmp += (
-                4 * ln(x) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 1.0 / 2.0 * ln(x) * ln(omz) * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(x) * ln(omz) * NC
-                + 2 * ln(x) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(x) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 3.0 / 2.0 * ln(x) * ln(omz) * x * pow(z, -1) * pow(NC, -1)
-                + 4 * ln(x) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(x) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 3.0 / 2.0 * ln(x) * ln(omz) * x * pow(z, -1) * NC
-                + 20 * ln(x) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * ln(x) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * ln(x) * ln(omz) * x * pow(NC, -1)
-                + ln(x) * ln(omz) * x * NC
-                + (-1) * 4 * ln(x) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(x) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + ln(x) * ln(omz) * x * z * pow(NC, -1)
-                + (-1) * ln(x) * ln(omz) * x * z * NC
-                + (-1) * 2 * ln(x) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * ln(x) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 22 * ln(x) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 0
-            )
-            tmp += (
-                20 * ln(x) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(x) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(x) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * ln(x) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(x) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * NC
-                + ln(x) * ln(opx) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(opx) * pow(x, -2) * pow(NC, -1)
-                + ln(x) * ln(opx) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(opx) * pow(x, -2) * z * pow(NC, -1)
-                + (-1) * ln(x) * ln(opx) * pow(x, -2) * z * NC * pow(opx, -1)
-                + ln(x) * ln(opx) * pow(x, -2) * z * NC
-                + (-1) * 6 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 4 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 6 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 4 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 3 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + 2 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * NC
-                + 3 * ln(x) * ln(opx) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * pow(x, -1) * pow(NC, -1)
-                + 3 * ln(x) * ln(opx) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * pow(x, -1) * z * pow(NC, -1)
-                + (-1) * 3 * ln(x) * ln(opx) * pow(x, -1) * z * NC * pow(opx, -1)
-                + 2 * ln(x) * ln(opx) * pow(x, -1) * z * NC
-                + (-1) * 6 * ln(x) * ln(opx) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 6 * ln(x) * ln(opx) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * ln(x) * ln(opx) * pow(z, -1) * NC
-                + 4 * ln(x) * ln(opx) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(x) * ln(opx) * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * NC * pow(opx, -1)
-                + 2 * ln(x) * ln(opx) * NC
-                + 2 * ln(x) * ln(opx) * z * pow(NC, -1) * pow(opx, -1)
-                + ln(x) * ln(opx) * z * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * z * NC * pow(opx, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * ln(x) * ln(opx) * z * NC
-                + (-1) * 2 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 4 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 2 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 4 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * x * pow(z, -1) * NC
-                + 2 * ln(x) * ln(opx) * x * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(x) * ln(opx) * x * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * x * NC * pow(opx, -1)
-                + 2 * ln(x) * ln(opx) * x * z * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * x * z * NC
-                + (-1) * 2 * ln(x) * ln(opx) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 2 * ln(x) * ln(opx) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 2 * ln(x) * ln(opx) * pow(x, 2) * pow(NC, -1)
-                + (-1) * 2 * ln(x) * ln(opx) * pow(x, 2) * NC
-                + (-1) * 33.0 / 8.0 * ln(z) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 6 * ln(z) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
-                + 5 * ln(z) * pow(z, -1) * pow(NC, -1) * rln2
-                + (-1) * 4 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 0
-            )
-            tmp += (
-                (-1) * 8 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
-                + 8 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
-                + 5.0 / 8.0 * ln(z) * pow(z, -1) * NC
-                + (-1) * 2 * ln(z) * pow(z, -1) * NC * rln2
-                + (-1) * ln(z) * pow(z, -1) * NC * sqrtxz1
-                + (-1) * 12 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 24 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + 16 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 3.0 / 4.0 * ln(z) * pow(NC, -1)
-                + (-1) * 4 * ln(z) * pow(NC, -1) * rln2
-                + (-1) * 17.0 / 4.0 * ln(z) * NC
-                + ln(z) * NC * rln2
-                + 4 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 8 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + (-1) * 9.0 / 8.0 * ln(z) * z * pow(NC, -1)
-                + 2 * ln(z) * z * pow(NC, -1) * rln2
-                + 9.0 / 8.0 * ln(z) * z * NC
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * ln(z) * z * NC * rln2
-                + 13.0 / 2.0 * ln(z) * x * pow(z, -1) * pow(NC, -1)
-                + 12 * ln(z) * x * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
-                + (-1) * 10 * ln(z) * x * pow(z, -1) * pow(NC, -1) * rln2
-                + 8 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 8 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 16 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
-                + (-1) * 16 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
-                + (-1) * 3 * ln(z) * x * pow(z, -1) * NC
-                + 4 * ln(z) * x * pow(z, -1) * NC * rln2
-                + 2 * ln(z) * x * pow(z, -1) * NC * sqrtxz1
-                + 40 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 32 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 80 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 64 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 8 * ln(z) * x * pow(NC, -1) * rln2
-                + 7.0 / 2.0 * ln(z) * x * NC
-                + (-1) * 2 * ln(z) * x * NC * rln2
-                + (-1) * 8 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 16 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + 16 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 5.0 / 4.0 * ln(z) * x * z * pow(NC, -1)
-                + (-1) * 4 * ln(z) * x * z * pow(NC, -1) * rln2
-                + (-1) * 5.0 / 4.0 * ln(z) * x * z * NC
-                + 4 * ln(z) * x * z * NC * rln2
-                + (-1) * 6 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
-                + 6 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2
-                + (-1) * 4 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 8 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
-                + 8 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
-                + (-1) * 44 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 40 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 88 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + 80 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + (-1) * 4 * ln(z) * pow(x, 2) * pow(NC, -1) * rln2
-                + 4 * ln(z) * pow(x, 2) * NC * rln2
-                + 4 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 0
-            )
-            tmp += (
-                8 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 8 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 16 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 32 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 32 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * NC
-                + 12 * ln(z) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(NC, -1)
-                + (-1) * ln(z) * ln(1 + sqrtxz1 - z) * NC
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * ln(z) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1)
-                + ln(z) * ln(1 + sqrtxz1 - z) * z * NC
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 0
-            )
-            tmp += (
-                4 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * NC
-                + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 32 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1)
-                + 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * NC
-                + 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1)
-                + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * NC
-                + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 44 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1)
-                + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * NC
-                + 0
-            )
-            tmp += (
-                (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 16 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 16 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 3 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * NC
-                + 12 * ln(z) * ln(1 + sqrtxz1 + z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(1 + sqrtxz1 + z) * pow(NC, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * ln(z) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1)
-                + ln(z) * ln(1 + sqrtxz1 + z) * z * NC
-                + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 6 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * NC
-                + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 32 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1)
-                + 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1)
-                + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * NC
-                + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 44 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1)
-                + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * NC
-                + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 16 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 16 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(NC, -1)
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * NC * pow(opx, -1)
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * NC
-                + (-1) * 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 2 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC
-                + 3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * NC * pow(opx, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * NC
-                + (-1) * 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * NC
-                + 2 * ln(z) * ln(1 + x * pow(z, -1)) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(NC, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * NC * pow(opx, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * NC
-                + ln(z) * ln(1 + x * pow(z, -1)) * z * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * z * pow(NC, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * z * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * z * NC
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * NC
-                + ln(z) * ln(1 + x * pow(z, -1)) * x * pow(NC, -1) * pow(opx, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * x * pow(NC, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * NC * pow(opx, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * x * z * pow(NC, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * z * NC
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(NC, -1)
-                + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * NC
-                + ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * NC
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * NC
-                + 3 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 2 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 3 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * NC
-                + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + ln(z) * ln(1 + x * z) * pow(x, -1) * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + ln(z) * ln(1 + x * z) * pow(x, -1) * z * pow(NC, -1)
-                + 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * z * NC * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * pow(x, -1) * z * NC
-                + 3 * ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 3 * ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1)
-                + ln(z) * ln(1 + x * z) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 2 * ln(z) * ln(1 + x * z) * pow(NC, -1) * pow(opx, -1)
-                + 0
-            )
-            tmp += (
-                ln(z) * ln(1 + x * z) * NC * pow(opx, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * NC
-                + (-1) * ln(z) * ln(1 + x * z) * z * pow(NC, -1) * pow(opx, -1)
-                + ln(z) * ln(1 + x * z) * z * NC * pow(opx, -1)
-                + ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 2 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 4 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1)
-                + 2 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * NC
-                + (-1) * ln(z) * ln(1 + x * z) * x * pow(NC, -1) * pow(opx, -1)
-                + ln(z) * ln(1 + x * z) * x * NC * pow(opx, -1)
-                + (-1) * 2 * ln(z) * ln(1 + x * z) * x * z * pow(NC, -1)
-                + 2 * ln(z) * ln(1 + x * z) * x * z * NC
-                + ln(z) * ln(1 + x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * ln(z) * ln(1 + x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(z) * ln(1 + x * z) * pow(x, 2) * pow(NC, -1)
-                + 2 * ln(z) * ln(1 + x * z) * pow(x, 2) * NC
-                + (-1) * ln(z) * ln(z + x) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + ln(z) * ln(z + x) * pow(z, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 1.0 / 2.0 * ln(z) * ln(z + x) * pow(z, -1) * NC
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(z + x) * pow(NC, -1)
-                + 1.0 / 2.0 * ln(z) * ln(z + x) * z * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(z) * ln(z + x) * z * NC
-                + 2 * ln(z) * ln(z + x) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(z) * ln(z + x) * x * pow(z, -1) * pow(NC, -1)
-                + ln(z) * ln(z + x) * x * pow(z, -1) * NC
-                + ln(z) * ln(z + x) * x * pow(NC, -1)
-                + (-1) * ln(z) * ln(z + x) * x * z * pow(NC, -1)
-                + ln(z) * ln(z + x) * x * z * NC
-                + (-1) * ln(z) * ln(z + x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + ln(z) * ln(z + x) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * ln(z) * ln(z + x) * pow(x, 2) * pow(NC, -1)
-                + ln(z) * ln(z + x) * pow(x, 2) * NC
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * NC
-                + 0
-            )
-            tmp += (
-                1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(NC, -1)
-                + 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * pow(NC, -1)
-                + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * NC * pow(opx, -1)
-                + 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * NC
-                + (-1) * 3.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 3.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * NC
-                + 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(NC, -1)
-                + 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * z * pow(NC, -1)
-                + (-1) * 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * z * NC * pow(opx, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * z * NC
-                + (-1) * 3.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 3.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 5.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 5.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * NC * pow(opx, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * NC
-                + (-1) * 15.0 / 2.0 * pow(ln(z), 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 5 * pow(ln(z), 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(NC, -1) * pow(omz, -1)
-                + pow(ln(z), 2) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * NC * pow(opx, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * NC
-                + 5.0 / 2.0 * pow(ln(z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 5.0 / 2.0 * pow(ln(z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * z * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * z * NC * pow(opx, -1)
-                + 1.0 / 4.0 * pow(ln(z), 2) * z * NC
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 2 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1)
-                + 5 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 5 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 2 * pow(ln(z), 2) * x * pow(z, -1) * NC
-                + 25 * pow(ln(z), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 20 * pow(ln(z), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + pow(ln(z), 2) * x * pow(NC, -1) * pow(omz, -1)
-                + 1.0 / 2.0 * pow(ln(z), 2) * x * pow(NC, -1) * pow(opx, -1)
-                + pow(ln(z), 2) * x * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * x * NC * pow(opx, -1)
-                + (-1) * 5 * pow(ln(z), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 5 * pow(ln(z), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 3.0 / 2.0 * pow(ln(z), 2) * x * z * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * pow(ln(z), 2) * x * z * NC
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 3.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 55.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 25 * pow(ln(z), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
-                + pow(ln(z), 2) * pow(x, 2) * pow(NC, -1)
-                + (-1) * pow(ln(z), 2) * pow(x, 2) * NC
-                + 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 10 * pow(ln(z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 10 * pow(ln(z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * ln(z) * ln(omx) * pow(NC, -1)
-                + ln(z) * ln(omx) * NC
-                + 2 * ln(z) * ln(omx) * x * pow(NC, -1)
-                + (-1) * 2 * ln(z) * ln(omx) * x * NC
-                + (-1) * 2 * ln(z) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * ln(z) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 6 * ln(z) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(z) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * ln(z) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * ln(z) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(z) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 20 * ln(z) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * ln(z) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * ln(z) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(z) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * ln(z) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * ln(z) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 22 * ln(z) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 20 * ln(z) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(z) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * ln(z) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * ln(z) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(z) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * ln(sqrtxz3) * ArcTan(sqrtxz3) * pow(x, -1) * NC * sqrtxz3
-                + (-1) * 5 * ln(sqrtxz3) * ArcTan(sqrtxz3) * pow(z, -1) * NC * sqrtxz3
-                + 4 * ln(sqrtxz3) * ArcTan(sqrtxz3) * z * pow(NC, -1) * sqrtxz3
-                + (-1) * 9 * ln(sqrtxz3) * ArcTan(sqrtxz3) * z * NC * sqrtxz3
-                + (-1) * 5 * ln(sqrtxz3) * ArcTan(sqrtxz3) * x * NC * sqrtxz3
-                + 0
-            )
-            tmp += (
-                (-1) * 25.0 / 8.0 * ln(omx) * pow(z, -1) * pow(NC, -1)
-                + 25.0 / 8.0 * ln(omx) * pow(z, -1) * NC
-                + 11.0 / 4.0 * ln(omx) * pow(NC, -1)
-                + (-1) * 11.0 / 4.0 * ln(omx) * NC
-                + 3.0 / 8.0 * ln(omx) * z * pow(NC, -1)
-                + (-1) * 3.0 / 8.0 * ln(omx) * z * NC
-                + 9.0 / 2.0 * ln(omx) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * 9.0 / 2.0 * ln(omx) * x * pow(z, -1) * NC
-                + (-1) * 4 * ln(omx) * x * pow(NC, -1)
-                + 4 * ln(omx) * x * NC
-                + (-1) * 3.0 / 4.0 * ln(omx) * x * z * pow(NC, -1)
-                + 3.0 / 4.0 * ln(omx) * x * z * NC
-                + 1.0 / 2.0 * pow(ln(omx), 2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(omx), 2) * pow(z, -1) * NC
-                + (-1) * 1.0 / 2.0 * pow(ln(omx), 2) * pow(NC, -1)
-                + 1.0 / 2.0 * pow(ln(omx), 2) * NC
-                + 1.0 / 4.0 * pow(ln(omx), 2) * z * pow(NC, -1)
-                + (-1) * 1.0 / 4.0 * pow(ln(omx), 2) * z * NC
-                + (-1) * pow(ln(omx), 2) * x * pow(z, -1) * pow(NC, -1)
-                + pow(ln(omx), 2) * x * pow(z, -1) * NC
-                + 0
-            )
-            tmp += (
-                pow(ln(omx), 2) * x * pow(NC, -1)
-                + (-1) * pow(ln(omx), 2) * x * NC
-                + (-1) * 1.0 / 2.0 * pow(ln(omx), 2) * x * z * pow(NC, -1)
-                + 1.0 / 2.0 * pow(ln(omx), 2) * x * z * NC
-                + ln(omx) * ln(omz) * pow(z, -1) * pow(NC, -1)
-                + (-1) * ln(omx) * ln(omz) * pow(z, -1) * NC
-                + (-1) * ln(omx) * ln(omz) * pow(NC, -1)
-                + ln(omx) * ln(omz) * NC
-                + 1.0 / 2.0 * ln(omx) * ln(omz) * z * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * ln(omx) * ln(omz) * z * NC
-                + (-1) * 2 * ln(omx) * ln(omz) * x * pow(z, -1) * pow(NC, -1)
-                + 2 * ln(omx) * ln(omz) * x * pow(z, -1) * NC
-                + 2 * ln(omx) * ln(omz) * x * pow(NC, -1)
-                + (-1) * 2 * ln(omx) * ln(omz) * x * NC
-                + (-1) * ln(omx) * ln(omz) * x * z * pow(NC, -1)
-                + ln(omx) * ln(omz) * x * z * NC
-                + (-1) * 25.0 / 8.0 * ln(omz) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 4 * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
-                + 4 * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
-                + 25.0 / 8.0 * ln(omz) * pow(z, -1) * NC
-                + 0
-            )
-            tmp += (
-                (-1) * 12 * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + 8 * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 11.0 / 4.0 * ln(omz) * pow(NC, -1)
-                + (-1) * 11.0 / 4.0 * ln(omz) * NC
-                + 4 * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 4 * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 3.0 / 8.0 * ln(omz) * z * pow(NC, -1)
-                + (-1) * 3.0 / 8.0 * ln(omz) * z * NC
-                + 9.0 / 2.0 * ln(omz) * x * pow(z, -1) * pow(NC, -1)
-                + 8 * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
-                + (-1) * 8 * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
-                + (-1) * 9.0 / 2.0 * ln(omz) * x * pow(z, -1) * NC
-                + 40 * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 32 * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + (-1) * 4 * ln(omz) * x * pow(NC, -1)
-                + 4 * ln(omz) * x * NC
-                + (-1) * 8 * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + 8 * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + (-1) * 3.0 / 4.0 * ln(omz) * x * z * pow(NC, -1)
-                + 3.0 / 4.0 * ln(omz) * x * z * NC
-                + 0
-            )
-            tmp += (
-                (-1) * 4 * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
-                + 4 * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
-                + (-1) * 44 * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + 40 * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 4 * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 4 * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 16 * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
-                + (-1) * 16 * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
-                + 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 12 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(omz) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 40 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 32 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 0
-            )
-            tmp += (
-                4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 44 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 40 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 16 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 16 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 6 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 20 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 16 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 0
-            )
-            tmp += (
-                2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 22 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 20 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 8 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 1.0 / 2.0 * pow(ln(omz), 2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * pow(ln(omz), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * pow(ln(omz), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 1.0 / 2.0 * pow(ln(omz), 2) * pow(z, -1) * NC
-                + (-1) * 6 * pow(ln(omz), 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * pow(ln(omz), 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(omz), 2) * pow(NC, -1)
-                + 1.0 / 2.0 * pow(ln(omz), 2) * NC
-                + 2 * pow(ln(omz), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * pow(ln(omz), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 1.0 / 4.0 * pow(ln(omz), 2) * z * pow(NC, -1)
-                + (-1) * 1.0 / 4.0 * pow(ln(omz), 2) * z * NC
-                + 0
-            )
-            tmp += (
-                (-1) * pow(ln(omz), 2) * x * pow(z, -1) * pow(NC, -1)
-                + 4 * pow(ln(omz), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * pow(ln(omz), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + pow(ln(omz), 2) * x * pow(z, -1) * NC
-                + 20 * pow(ln(omz), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * pow(ln(omz), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + pow(ln(omz), 2) * x * pow(NC, -1)
-                + (-1) * pow(ln(omz), 2) * x * NC
-                + (-1) * 4 * pow(ln(omz), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * pow(ln(omz), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 1.0 / 2.0 * pow(ln(omz), 2) * x * z * pow(NC, -1)
-                + 1.0 / 2.0 * pow(ln(omz), 2) * x * z * NC
-                + (-1) * 2 * pow(ln(omz), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * pow(ln(omz), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 22 * pow(ln(omz), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 20 * pow(ln(omz), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * pow(ln(omz), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * pow(ln(omz), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * pow(ln(omz), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * pow(ln(omz), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 6 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * NC
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * NC
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 22 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 6 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * NC
-                + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1)
-                + 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 20 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * NC
-                + (-1) * 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 22 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 20 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 0
-            )
-            tmp += (
-                Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * NC
-                + 6 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(NC, -1)
-                + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * NC
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * pow(NC, -1)
-                + Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * NC
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * NC
-                + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 16 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(NC, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * NC
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 0
-            )
-            tmp += (
-                2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * pow(NC, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * NC
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 22 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * NC
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * NC
-                + 6 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(NC, -1)
-                + Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * NC
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * pow(NC, -1)
-                + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * NC
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * NC
-                + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 16 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(NC, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * NC
-                + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * pow(NC, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * NC
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 22 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * NC
-                + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 12 * Li2(pow(sqrtxz1, -1) * omz) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * Li2(pow(sqrtxz1, -1) * omz) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * Li2(pow(sqrtxz1, -1) * omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 8 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 0
-            )
-            tmp += (
-                40 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 32 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 8 * Li2(pow(sqrtxz1, -1) * omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * Li2(pow(sqrtxz1, -1) * omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 44 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 40 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 16 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 12 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * Li2(-sqrtxz1 * pow(omz, -1)) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 0
-            )
-            tmp += (
-                40 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 32 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 44 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 40 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 16 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC
-                + (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1)
-                + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * NC
-                + 3 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 3 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC
-                + (-1) * 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * pow(x, -1) * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1)
-                + 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * z * NC * pow(opx, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * pow(x, -1) * z * NC
-                + 3 * Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 3 * Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                Li2(-x * pow(z, -1)) * pow(z, -1) * NC * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * pow(z, -1) * NC
-                + (-1) * 2 * Li2(-x * pow(z, -1)) * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * pow(NC, -1)
-                + Li2(-x * pow(z, -1)) * NC * pow(opx, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * NC
-                + (-1) * Li2(-x * pow(z, -1)) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * z * pow(NC, -1)
-                + Li2(-x * pow(z, -1)) * z * NC * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * z * NC
-                + Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 2 * Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * Li2(-x * pow(z, -1)) * x * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x * pow(z, -1)) * x * pow(NC, -1)
-                + Li2(-x * pow(z, -1)) * x * NC * pow(opx, -1)
-                + Li2(-x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + Li2(-x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(-x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * Li2(-x) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + Li2(-x) * pow(x, -2) * pow(z, -1) * NC
-                + Li2(-x) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * Li2(-x) * pow(x, -2) * pow(NC, -1)
-                + Li2(-x) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * Li2(-x) * pow(x, -2) * z * pow(NC, -1)
-                + (-1) * Li2(-x) * pow(x, -2) * z * NC * pow(opx, -1)
-                + Li2(-x) * pow(x, -2) * z * NC
-                + (-1) * 6 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 4 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 6 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 4 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 3 * Li2(-x) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + 2 * Li2(-x) * pow(x, -1) * pow(z, -1) * NC
-                + 3 * Li2(-x) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x) * pow(x, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                3 * Li2(-x) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x) * pow(x, -1) * z * pow(NC, -1)
-                + (-1) * 3 * Li2(-x) * pow(x, -1) * z * NC * pow(opx, -1)
-                + 2 * Li2(-x) * pow(x, -1) * z * NC
-                + (-1) * 6 * Li2(-x) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 6 * Li2(-x) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * Li2(-x) * pow(z, -1) * NC
-                + 4 * Li2(-x) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * Li2(-x) * pow(NC, -1)
-                + (-1) * 2 * Li2(-x) * NC * pow(opx, -1)
-                + 2 * Li2(-x) * NC
-                + 2 * Li2(-x) * z * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x) * z * pow(NC, -1)
-                + (-1) * 2 * Li2(-x) * z * NC * pow(opx, -1)
-                + (-1) * Li2(-x) * z * NC
-                + (-1) * 2 * Li2(-x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 4 * Li2(-x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 2 * Li2(-x) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 4 * Li2(-x) * x * pow(z, -1) * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * Li2(-x) * x * pow(z, -1) * NC
-                + 2 * Li2(-x) * x * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(-x) * x * pow(NC, -1)
-                + (-1) * 2 * Li2(-x) * x * NC * pow(opx, -1)
-                + 2 * Li2(-x) * x * z * pow(NC, -1)
-                + (-1) * 2 * Li2(-x) * x * z * NC
-                + (-1) * 2 * Li2(-x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 2 * Li2(-x) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + 2 * Li2(-x) * pow(x, 2) * pow(NC, -1)
-                + (-1) * 2 * Li2(-x) * pow(x, 2) * NC
-                + Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(z, -1) * NC
-                + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(NC, -1)
-                + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * NC * pow(opx, -1)
-                + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * NC
-                + 3 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 3 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * Li2(-x * z) * pow(x, -1) * pow(z, -1) * NC
-                + (-1) * 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * z) * pow(x, -1) * pow(NC, -1)
-                + (-1) * 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * z) * pow(x, -1) * z * pow(NC, -1)
-                + 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * z * NC * pow(opx, -1)
-                + (-1) * Li2(-x * z) * pow(x, -1) * z * NC
-                + 3 * Li2(-x * z) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 3 * Li2(-x * z) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * Li2(-x * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + Li2(-x * z) * pow(z, -1) * pow(NC, -1)
-                + Li2(-x * z) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 2 * Li2(-x * z) * pow(NC, -1) * pow(opx, -1)
-                + 0
-            )
-            tmp += (
-                Li2(-x * z) * NC * pow(opx, -1)
-                + (-1) * Li2(-x * z) * NC
-                + (-1) * Li2(-x * z) * z * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * z) * z * NC * pow(opx, -1)
-                + Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 2 * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 4 * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1)
-                + 2 * Li2(-x * z) * x * pow(z, -1) * NC
-                + (-1) * Li2(-x * z) * x * pow(NC, -1) * pow(opx, -1)
-                + Li2(-x * z) * x * NC * pow(opx, -1)
-                + (-1) * 2 * Li2(-x * z) * x * z * pow(NC, -1)
-                + 2 * Li2(-x * z) * x * z * NC
-                + Li2(-x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * Li2(-x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(-x * z) * pow(x, 2) * pow(NC, -1)
-                + 2 * Li2(-x * z) * pow(x, 2) * NC
-                + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 0
-            )
-            tmp += (
-                (-1) * 6 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + (-1) * 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + 20 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 16 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
-                + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
-                + (-1) * 22 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + 20 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 8 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
-                + (-1) * 8 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
-                + 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
-                + Li2(x) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * Li2(x) * pow(x, -2) * pow(z, -1) * NC
-                + (-1) * Li2(x) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
-                + Li2(x) * pow(x, -2) * pow(NC, -1)
-                + (-1) * Li2(x) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
-                + Li2(x) * pow(x, -2) * z * pow(NC, -1)
-                + Li2(x) * pow(x, -2) * z * NC * pow(opx, -1)
-                + (-1) * Li2(x) * pow(x, -2) * z * NC
-                + 6 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 4 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 6 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 4 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
-                + 3 * Li2(x) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 2 * Li2(x) * pow(x, -1) * pow(z, -1) * NC
-                + (-1) * 3 * Li2(x) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(x) * pow(x, -1) * pow(NC, -1)
-                + (-1) * 3 * Li2(x) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(x) * pow(x, -1) * z * pow(NC, -1)
-                + 0
-            )
-            tmp += (
-                3 * Li2(x) * pow(x, -1) * z * NC * pow(opx, -1)
-                + (-1) * 2 * Li2(x) * pow(x, -1) * z * NC
-                + 6 * Li2(x) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + (-1) * 6 * Li2(x) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + 1.0 / 4.0 * Li2(x) * pow(z, -1) * pow(NC, -1)
-                + 2 * Li2(x) * pow(z, -1) * NC * pow(opx, -1)
-                + (-1) * 1.0 / 4.0 * Li2(x) * pow(z, -1) * NC
-                + (-1) * 2 * Li2(x) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 4 * Li2(x) * pow(NC, -1) * pow(opx, -1)
-                + 3.0 / 2.0 * Li2(x) * pow(NC, -1)
-                + 2 * Li2(x) * NC * pow(opx, -1)
-                + (-1) * 3.0 / 2.0 * Li2(x) * NC
-                + (-1) * 2 * Li2(x) * z * pow(NC, -1) * pow(opx, -1)
-                + 2 * Li2(x) * z * NC * pow(opx, -1)
-                + 2 * Li2(x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
-                + 4 * Li2(x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 2 * Li2(x) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
-                + (-1) * 9.0 / 2.0 * Li2(x) * x * pow(z, -1) * pow(NC, -1)
-                + 1.0 / 2.0 * Li2(x) * x * pow(z, -1) * NC
-                + (-1) * 4 * Li2(x) * x * pow(NC, -1) * pow(omz, -1)
-                + 0
-            )
-            tmp += (
-                (-1) * 2 * Li2(x) * x * pow(NC, -1) * pow(opx, -1)
-                + Li2(x) * x * pow(NC, -1)
-                + 2 * Li2(x) * x * NC * pow(opx, -1)
-                + (-1) * Li2(x) * x * NC
-                + (-1) * Li2(x) * x * z * pow(NC, -1)
-                + Li2(x) * x * z * NC
-                + 2 * Li2(x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * 2 * Li2(x) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
-                + (-1) * 2 * Li2(x) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
-                + (-1) * Li2(x) * pow(x, 2) * pow(NC, -1)
-                + Li2(x) * pow(x, 2) * NC
-                + Li2(z) * pow(NC, -1)
-                + (-1) * Li2(z) * NC
-                + (-1) * 2 * Li2(z) * x * pow(NC, -1)
-                + 2 * Li2(z) * x * NC
-                + (-1) * 1.0 / 2.0 * InvTanInt(-sqrtxz3) * pow(x, -1) * NC * sqrtxz3
-                + (-1) * 5.0 / 2.0 * InvTanInt(-sqrtxz3) * pow(z, -1) * NC * sqrtxz3
-                + 2 * InvTanInt(-sqrtxz3) * z * pow(NC, -1) * sqrtxz3
-                + (-1) * 9.0 / 2.0 * InvTanInt(-sqrtxz3) * z * NC * sqrtxz3
-                + (-1) * 5.0 / 2.0 * InvTanInt(-sqrtxz3) * x * NC * sqrtxz3
-                + 0
-            )
-            tmp += (
-                (-1) * InvTanInt(z * sqrtxz3) * pow(x, -1) * NC * sqrtxz3
-                + (-1) * 5 * InvTanInt(z * sqrtxz3) * pow(z, -1) * NC * sqrtxz3
-                + 4 * InvTanInt(z * sqrtxz3) * z * pow(NC, -1) * sqrtxz3
-                + (-1) * 9 * InvTanInt(z * sqrtxz3) * z * NC * sqrtxz3
-                + (-1) * 5 * InvTanInt(z * sqrtxz3) * x * NC * sqrtxz3
-                + 1.0 / 2.0 * InvTanInt(sqrtxz3) * pow(x, -1) * NC * sqrtxz3
-                + 5.0 / 2.0 * InvTanInt(sqrtxz3) * pow(z, -1) * NC * sqrtxz3
-                + (-1) * 2 * InvTanInt(sqrtxz3) * z * pow(NC, -1) * sqrtxz3
-                + 9.0 / 2.0 * InvTanInt(sqrtxz3) * z * NC * sqrtxz3
-                + 5.0 / 2.0 * InvTanInt(sqrtxz3) * x * NC * sqrtxz3
-                + 0
-            )
-            if (order == "010") or (order == "all"):
-
-                tmp += (
-                    3.0 / 4.0 * pow(z, -1) * LMUF * pow(NC, -1)
-                    + (-1) * 3.0 / 4.0 * pow(z, -1) * LMUF * NC
-                    + (-1) * 1.0 / 2.0 * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * LMUF * NC
-                    + (-1) * 3.0 / 4.0 * z * LMUF * pow(NC, -1)
-                    + 3.0 / 4.0 * z * LMUF * NC
-                    + (-1) * 3.0 / 4.0 * x * pow(z, -1) * LMUF * pow(NC, -1)
-                    + 3.0 / 4.0 * x * pow(z, -1) * LMUF * NC
-                    + 1.0 / 2.0 * x * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * x * LMUF * NC
-                    + x * z * LMUF * pow(NC, -1)
-                    + (-1) * x * z * LMUF * NC
-                    + 1.0 / 4.0 * ln(x) * pow(z, -1) * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 4.0 * ln(x) * pow(z, -1) * LMUF * NC
-                    + (-1) * 1.0 / 4.0 * ln(x) * z * LMUF * pow(NC, -1)
-                    + 1.0 / 4.0 * ln(x) * z * LMUF * NC
-                    + (-1) * 1.0 / 2.0 * ln(x) * x * pow(z, -1) * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(x) * x * pow(z, -1) * LMUF * NC
-                    + (-1) * 1.0 / 2.0 * ln(x) * x * z * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(x) * x * z * LMUF * NC
+                    + (-1) * 15 * pow(ln(x), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * pow(NC, -1)
+                    + 1.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * NC
+                    + (-1) * 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 3.0 / 2.0 * pow(ln(x), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 6 * pow(ln(x), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 6 * pow(ln(x), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
                     + 0
                 )
                 tmp += (
-                    (-1) * 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUF * NC
-                    + 1.0 / 2.0 * ln(z) * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(z) * LMUF * NC
-                    + (-1) * 1.0 / 4.0 * ln(z) * z * LMUF * pow(NC, -1)
-                    + 1.0 / 4.0 * ln(z) * z * LMUF * NC
-                    + ln(z) * x * pow(z, -1) * LMUF * pow(NC, -1)
-                    + (-1) * ln(z) * x * pow(z, -1) * LMUF * NC
-                    + (-1) * ln(z) * x * LMUF * pow(NC, -1)
-                    + ln(z) * x * LMUF * NC
-                    + 1.0 / 2.0 * ln(z) * x * z * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(z) * x * z * LMUF * NC
-                    + (-1) * 1.0 / 2.0 * ln(omx) * pow(z, -1) * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(omx) * pow(z, -1) * LMUF * NC
-                    + 1.0 / 2.0 * ln(omx) * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(omx) * LMUF * NC
-                    + (-1) * 1.0 / 4.0 * ln(omx) * z * LMUF * pow(NC, -1)
-                    + 1.0 / 4.0 * ln(omx) * z * LMUF * NC
-                    + ln(omx) * x * pow(z, -1) * LMUF * pow(NC, -1)
-                    + (-1) * ln(omx) * x * pow(z, -1) * LMUF * NC
+                    +ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(z, -1) * NC
+                    + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * pow(NC, -1)
+                    + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(x) * ln(z) * pow(x, -2) * z * NC
+                    + (-1) * 3 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 3 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + ln(x) * ln(z) * pow(x, -1) * pow(z, -1) * NC
+                    + 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(z) * pow(x, -1) * pow(NC, -1)
+                    + 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(z) * pow(x, -1) * z * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * ln(x) * ln(z) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + ln(x) * ln(z) * pow(x, -1) * z * NC
+                    + (-1) * 3 * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 3 * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 5.0 / 4.0 * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1)
+                    + ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * ln(x) * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
                     + 0
                 )
                 tmp += (
-                    (-1) * ln(omx) * x * LMUF * pow(NC, -1)
-                    + ln(omx) * x * LMUF * NC
-                    + 1.0 / 2.0 * ln(omx) * x * z * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(omx) * x * z * LMUF * NC
-                    + (-1) * 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUF * NC
-                    + 1.0 / 2.0 * ln(omz) * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(omz) * LMUF * NC
-                    + (-1) * 1.0 / 4.0 * ln(omz) * z * LMUF * pow(NC, -1)
-                    + 1.0 / 4.0 * ln(omz) * z * LMUF * NC
-                    + ln(omz) * x * pow(z, -1) * LMUF * pow(NC, -1)
-                    + (-1) * ln(omz) * x * pow(z, -1) * LMUF * NC
-                    + (-1) * ln(omz) * x * LMUF * pow(NC, -1)
-                    + ln(omz) * x * LMUF * NC
-                    + 1.0 / 2.0 * ln(omz) * x * z * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(omz) * x * z * LMUF * NC
-                    + 0
-                )
-            if (order == "001") or (order == "all"):
-
-                tmp += (
-                    19.0 / 8.0 * pow(z, -1) * LMUA * pow(NC, -1)
-                    + (-1) * 19.0 / 8.0 * pow(z, -1) * LMUA * NC
-                    + (-1) * 9.0 / 4.0 * LMUA * pow(NC, -1)
-                    + 9.0 / 4.0 * LMUA * NC
-                    + 3.0 / 8.0 * z * LMUA * pow(NC, -1)
-                    + (-1) * 3.0 / 8.0 * z * LMUA * NC
-                    + (-1) * 15.0 / 4.0 * x * pow(z, -1) * LMUA * pow(NC, -1)
-                    + 15.0 / 4.0 * x * pow(z, -1) * LMUA * NC
-                    + 7.0 / 2.0 * x * LMUA * pow(NC, -1)
-                    + (-1) * 7.0 / 2.0 * x * LMUA * NC
-                    + (-1) * 1.0 / 4.0 * x * z * LMUA * pow(NC, -1)
-                    + 1.0 / 4.0 * x * z * LMUA * NC
-                    + 1.0 / 2.0 * ln(x) * pow(z, -1) * LMUA * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(x) * pow(z, -1) * LMUA * NC
-                    + (-1) * 1.0 / 2.0 * ln(x) * LMUA * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(x) * LMUA * NC
-                    + 1.0 / 4.0 * ln(x) * z * LMUA * pow(NC, -1)
-                    + (-1) * 1.0 / 4.0 * ln(x) * z * LMUA * NC
-                    + (-1) * ln(x) * x * pow(z, -1) * LMUA * pow(NC, -1)
-                    + ln(x) * x * pow(z, -1) * LMUA * NC
+                    +(-1) * ln(x) * ln(z) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 7.0 / 4.0 * ln(x) * ln(z) * pow(z, -1) * NC
+                    + 3 * ln(x) * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(x) * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + ln(x) * ln(z) * pow(NC, -1) * pow(omz, -1)
+                    + 2 * ln(x) * ln(z) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(z) * pow(NC, -1)
+                    + (-1) * ln(x) * ln(z) * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * NC
+                    + (-1) * ln(x) * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + ln(x) * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + ln(x) * ln(z) * z * pow(NC, -1) * pow(opx, -1)
+                    + ln(x) * ln(z) * z * pow(NC, -1)
+                    + (-1) * ln(x) * ln(z) * z * NC * pow(opx, -1)
+                    + (-1) * ln(x) * ln(z) * z * NC
+                    + (-1) * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * ln(x) * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(z) * x * pow(z, -1) * NC
+                    + (-1) * 10 * ln(x) * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * ln(x) * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(x) * ln(z) * x * pow(NC, -1) * pow(omz, -1)
+                    + ln(x) * ln(z) * x * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(z) * x * pow(NC, -1)
+                    + (-1) * ln(x) * ln(z) * x * NC * pow(opx, -1)
+                    + (-1) * 3 * ln(x) * ln(z) * x * NC
+                    + 2 * ln(x) * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(x) * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(x) * ln(z) * x * z * pow(NC, -1)
+                    + ln(x) * ln(z) * x * z * NC
+                    + (-1) * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + 0
                 )
                 tmp += (
-                    ln(x) * x * LMUA * pow(NC, -1)
-                    + (-1) * ln(x) * x * LMUA * NC
-                    + (-1) * 1.0 / 2.0 * ln(x) * x * z * LMUA * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(x) * x * z * LMUA * NC
-                    + 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUA * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUA * NC
-                    + 1.0 / 2.0 * ln(z) * LMUA * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(z) * LMUA * NC
-                    + 1.0 / 4.0 * ln(z) * z * LMUA * pow(NC, -1)
-                    + (-1) * 1.0 / 4.0 * ln(z) * z * LMUA * NC
-                    + (-1) * ln(z) * x * pow(z, -1) * LMUA * pow(NC, -1)
-                    + ln(z) * x * pow(z, -1) * LMUA * NC
-                    + (-1) * ln(z) * x * LMUA * pow(NC, -1)
-                    + ln(z) * x * LMUA * NC
-                    + (-1) * 1.0 / 2.0 * ln(z) * x * z * LMUA * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(z) * x * z * LMUA * NC
-                    + (-1) * 1.0 / 2.0 * ln(omx) * pow(z, -1) * LMUA * pow(NC, -1)
+                    +(-1) * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 2 * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * ln(x) * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 11 * ln(x) * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 10 * ln(x) * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + ln(x) * ln(z) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * ln(x) * ln(z) * pow(x, 2) * pow(NC, -1)
+                    + ln(x) * ln(z) * pow(x, 2) * NC
+                    + (-1) * ln(x) * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + ln(x) * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * ln(x) * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(x) * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * ln(x) * ln(omx) * pow(x, -2) * pow(z, -1) * NC
+                    + (-1) * ln(x) * ln(omx) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + ln(x) * ln(omx) * pow(x, -2) * pow(NC, -1)
+                    + (-1) * ln(x) * ln(omx) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + ln(x) * ln(omx) * pow(x, -2) * z * pow(NC, -1)
+                    + ln(x) * ln(omx) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + (-1) * ln(x) * ln(omx) * pow(x, -2) * z * NC
+                    + 6 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 4 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 6 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 4 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + 3 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * pow(x, -1) * pow(z, -1) * NC
+                    + (-1) * 3 * ln(x) * ln(omx) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * pow(x, -1) * pow(NC, -1)
+                    + (-1) * 3 * ln(x) * ln(omx) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * pow(x, -1) * z * pow(NC, -1)
+                    + 3 * ln(x) * ln(omx) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * pow(x, -1) * z * NC
+                    + 6 * ln(x) * ln(omx) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 6 * ln(x) * ln(omx) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(omx) * pow(z, -1) * pow(NC, -1)
+                    + 2 * ln(x) * ln(omx) * pow(z, -1) * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(x) * ln(omx) * pow(z, -1) * NC
+                    + (-1) * 2 * ln(x) * ln(omx) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 4 * ln(x) * ln(omx) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * pow(NC, -1)
+                    + 2 * ln(x) * ln(omx) * NC * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * NC
+                    + (-1) * 2 * ln(x) * ln(omx) * z * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * z * NC * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 4 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 3 * ln(x) * ln(omx) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * ln(x) * ln(omx) * x * pow(z, -1) * NC
+                    + (-1) * 4 * ln(x) * ln(omx) * x * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * x * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * x * NC * pow(opx, -1)
+                    + 2 * ln(x) * ln(omx) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * ln(x) * ln(omx) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 2 * ln(x) * ln(omx) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * ln(x) * ln(omx) * pow(x, 2) * pow(NC, -1)
+                    + ln(x) * ln(omx) * pow(x, 2) * NC
+                    + (-1) * 3.0 / 4.0 * ln(x) * ln(omz) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * ln(x) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 3.0 / 4.0 * ln(x) * ln(omz) * pow(z, -1) * NC
+                    + (-1) * 6 * ln(x) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(x) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 1.0 / 2.0 * ln(x) * ln(omz) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(x) * ln(omz) * NC
+                    + 2 * ln(x) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(x) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 3.0 / 2.0 * ln(x) * ln(omz) * x * pow(z, -1) * pow(NC, -1)
+                    + 4 * ln(x) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * ln(x) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 3.0 / 2.0 * ln(x) * ln(omz) * x * pow(z, -1) * NC
+                    + 20 * ln(x) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * ln(x) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(x) * ln(omz) * x * pow(NC, -1)
+                    + ln(x) * ln(omz) * x * NC
+                    + (-1) * 4 * ln(x) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(x) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + ln(x) * ln(omz) * x * z * pow(NC, -1)
+                    + (-1) * ln(x) * ln(omz) * x * z * NC
+                    + (-1) * 2 * ln(x) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * ln(x) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 22 * ln(x) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 20 * ln(x) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(x) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 2 * ln(x) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * ln(x) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(x) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + ln(x) * ln(opx) * pow(x, -2) * pow(z, -1) * NC
+                    + ln(x) * ln(opx) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(opx) * pow(x, -2) * pow(NC, -1)
+                    + ln(x) * ln(opx) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(opx) * pow(x, -2) * z * pow(NC, -1)
+                    + (-1) * ln(x) * ln(opx) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + ln(x) * ln(opx) * pow(x, -2) * z * NC
+                    + (-1) * 6 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 4 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 6 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 4 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 3 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + 2 * ln(x) * ln(opx) * pow(x, -1) * pow(z, -1) * NC
+                    + 3 * ln(x) * ln(opx) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * pow(x, -1) * pow(NC, -1)
+                    + 3 * ln(x) * ln(opx) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * pow(x, -1) * z * pow(NC, -1)
+                    + (-1) * 3 * ln(x) * ln(opx) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + 2 * ln(x) * ln(opx) * pow(x, -1) * z * NC
+                    + (-1) * 6 * ln(x) * ln(opx) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +6 * ln(x) * ln(opx) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * ln(x) * ln(opx) * pow(z, -1) * NC
+                    + 4 * ln(x) * ln(opx) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(x) * ln(opx) * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * NC * pow(opx, -1)
+                    + 2 * ln(x) * ln(opx) * NC
+                    + 2 * ln(x) * ln(opx) * z * pow(NC, -1) * pow(opx, -1)
+                    + ln(x) * ln(opx) * z * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * z * NC * pow(opx, -1)
+                    + (-1) * ln(x) * ln(opx) * z * NC
+                    + (-1) * 2 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 4 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 2 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 4 * ln(x) * ln(opx) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * x * pow(z, -1) * NC
+                    + 2 * ln(x) * ln(opx) * x * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(x) * ln(opx) * x * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * x * NC * pow(opx, -1)
+                    + 2 * ln(x) * ln(opx) * x * z * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * x * z * NC
+                    + (-1) * 2 * ln(x) * ln(opx) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 2 * ln(x) * ln(opx) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + 2 * ln(x) * ln(opx) * pow(x, 2) * pow(NC, -1)
+                    + (-1) * 2 * ln(x) * ln(opx) * pow(x, 2) * NC
+                    + (-1) * 33.0 / 8.0 * ln(z) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 6 * ln(z) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
+                    + 5 * ln(z) * pow(z, -1) * pow(NC, -1) * rln2
+                    + (-1) * 4 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 8 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
+                    + 8 * ln(z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
+                    + 5.0 / 8.0 * ln(z) * pow(z, -1) * NC
+                    + (-1) * 2 * ln(z) * pow(z, -1) * NC * rln2
+                    + (-1) * ln(z) * pow(z, -1) * NC * sqrtxz1
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 12 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 24 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + 16 * ln(z) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 3.0 / 4.0 * ln(z) * pow(NC, -1)
+                    + (-1) * 4 * ln(z) * pow(NC, -1) * rln2
+                    + (-1) * 17.0 / 4.0 * ln(z) * NC
+                    + ln(z) * NC * rln2
+                    + 4 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + (-1) * 9.0 / 8.0 * ln(z) * z * pow(NC, -1)
+                    + 2 * ln(z) * z * pow(NC, -1) * rln2
+                    + 9.0 / 8.0 * ln(z) * z * NC
+                    + (-1) * 2 * ln(z) * z * NC * rln2
+                    + 13.0 / 2.0 * ln(z) * x * pow(z, -1) * pow(NC, -1)
+                    + 12 * ln(z) * x * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 10 * ln(z) * x * pow(z, -1) * pow(NC, -1) * rln2
+                    + 8 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 16 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
+                    + (-1) * 16 * ln(z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
+                    + (-1) * 3 * ln(z) * x * pow(z, -1) * NC
+                    + 4 * ln(z) * x * pow(z, -1) * NC * rln2
+                    + 2 * ln(z) * x * pow(z, -1) * NC * sqrtxz1
+                    + 0
+                )
+                tmp += (
+                    +40 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 32 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 80 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 64 * ln(z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 8 * ln(z) * x * pow(NC, -1) * rln2
+                    + 7.0 / 2.0 * ln(z) * x * NC
+                    + (-1) * 2 * ln(z) * x * NC * rln2
+                    + (-1) * 8 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 16 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + 16 * ln(z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 5.0 / 4.0 * ln(z) * x * z * pow(NC, -1)
+                    + (-1) * 4 * ln(z) * x * z * pow(NC, -1) * rln2
+                    + (-1) * 5.0 / 4.0 * ln(z) * x * z * NC
+                    + 4 * ln(z) * x * z * NC * rln2
+                    + (-1) * 6 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2 * pow(opz, -1)
+                    + 6 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * rln2
+                    + (-1) * 4 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 8 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
+                    + 8 * ln(z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
+                    + (-1) * 44 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 40 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 88 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + 80 * ln(z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + (-1) * 4 * ln(z) * pow(x, 2) * pow(NC, -1) * rln2
+                    + 0
+                )
+                tmp += (
+                    +4 * ln(z) * pow(x, 2) * NC * rln2
+                    + 4 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 16 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 32 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 32 * ln(z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + ln(z) * ln(1 + sqrtxz1 - z) * pow(z, -1) * NC
+                    + 12 * ln(z) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(NC, -1)
+                    + (-1) * ln(z) * ln(1 + sqrtxz1 - z) * NC
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(z) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1)
+                    + ln(z) * ln(1 + sqrtxz1 - z) * z * NC
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * NC
+                    + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 32 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1)
+                    + 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * NC
+                    + 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * x * z * NC
+                    + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 44 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * NC
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 16 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 16 * ln(z) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 3 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + ln(z) * ln(1 + sqrtxz1 + z) * pow(z, -1) * NC
+                    + 12 * ln(z) * ln(1 + sqrtxz1 + z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(1 + sqrtxz1 + z) * pow(NC, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(z) * ln(1 + sqrtxz1 + z) * z * pow(NC, -1)
+                    + ln(z) * ln(1 + sqrtxz1 + z) * z * NC
+                    + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 6 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(z, -1) * NC
+                    + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 32 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * x * pow(NC, -1)
+                    + 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * pow(NC, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 + z) * x * z * NC
+                    + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 44 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 40 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * pow(NC, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * NC
+                    + (-1) * 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 16 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 16 * ln(z) * ln(1 + sqrtxz1 + z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * pow(NC, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -2) * z * NC
+                    + (-1) * 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +2 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC
+                    + 3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * pow(NC, -1)
+                    + 3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, -1) * z * NC
+                    + (-1) * 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 3 * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(z, -1) * NC
+                    + 2 * ln(z) * ln(1 + x * pow(z, -1)) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * pow(NC, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * NC * pow(opx, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * NC
+                    + ln(z) * ln(1 + x * pow(z, -1)) * z * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * z * pow(NC, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * z * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * pow(z, -1)) * z * NC
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 0
+                )
+                tmp += (
+                    +ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * pow(z, -1) * NC
+                    + ln(z) * ln(1 + x * pow(z, -1)) * x * pow(NC, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * x * pow(NC, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * NC * pow(opx, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * x * z * pow(NC, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * x * z * NC
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * pow(NC, -1)
+                    + (-1) * ln(z) * ln(1 + x * pow(z, -1)) * pow(x, 2) * NC
+                    + ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(z, -1) * NC
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * pow(NC, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -2) * z * NC
+                    + 3 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 3 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(z, -1) * NC
+                    + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * z) * pow(x, -1) * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * z) * pow(x, -1) * z * pow(NC, -1)
+                    + 3.0 / 2.0 * ln(z) * ln(1 + x * z) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * pow(x, -1) * z * NC
+                    + 3 * ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 3 * ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + ln(z) * ln(1 + x * z) * pow(z, -1) * pow(NC, -1)
+                    + ln(z) * ln(1 + x * z) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + x * z) * pow(NC, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * z) * NC * pow(opx, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * NC
+                    + (-1) * ln(z) * ln(1 + x * z) * z * pow(NC, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * z) * z * NC * pow(opx, -1)
+                    + ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 2 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * pow(NC, -1)
+                    + 2 * ln(z) * ln(1 + x * z) * x * pow(z, -1) * NC
+                    + (-1) * ln(z) * ln(1 + x * z) * x * pow(NC, -1) * pow(opx, -1)
+                    + ln(z) * ln(1 + x * z) * x * NC * pow(opx, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + x * z) * x * z * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +2 * ln(z) * ln(1 + x * z) * x * z * NC
+                    + ln(z) * ln(1 + x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * ln(z) * ln(1 + x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(z) * ln(1 + x * z) * pow(x, 2) * pow(NC, -1)
+                    + 2 * ln(z) * ln(1 + x * z) * pow(x, 2) * NC
+                    + (-1) * ln(z) * ln(z + x) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + ln(z) * ln(z + x) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(z + x) * pow(z, -1) * NC
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(z + x) * pow(NC, -1)
+                    + 1.0 / 2.0 * ln(z) * ln(z + x) * z * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(z) * ln(z + x) * z * NC
+                    + 2 * ln(z) * ln(z + x) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(z) * ln(z + x) * x * pow(z, -1) * pow(NC, -1)
+                    + ln(z) * ln(z + x) * x * pow(z, -1) * NC
+                    + ln(z) * ln(z + x) * x * pow(NC, -1)
+                    + (-1) * ln(z) * ln(z + x) * x * z * pow(NC, -1)
+                    + ln(z) * ln(z + x) * x * z * NC
+                    + (-1) * ln(z) * ln(z + x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + ln(z) * ln(z + x) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * ln(z) * ln(z + x) * pow(x, 2) * pow(NC, -1)
+                    + ln(z) * ln(z + x) * pow(x, 2) * NC
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(z, -1) * NC
+                    + 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * pow(NC, -1)
+                    + 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * pow(NC, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + 1.0 / 4.0 * pow(ln(z), 2) * pow(x, -2) * z * NC
+                    + (-1) * 3.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 3.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(z, -1) * NC
+                    + 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * pow(NC, -1)
+                    + 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * z * pow(NC, -1)
+                    + (-1) * 3.0 / 4.0 * pow(ln(z), 2) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * pow(x, -1) * z * NC
+                    + (-1) * 3.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 3.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 5.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 5.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * pow(z, -1) * NC
+                    + (-1) * 15.0 / 2.0 * pow(ln(z), 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 5 * pow(ln(z), 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(NC, -1) * pow(omz, -1)
+                    + pow(ln(z), 2) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * NC * pow(opx, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * NC
+                    + 0
+                )
+                tmp += (
+                    +5.0 / 2.0 * pow(ln(z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 5.0 / 2.0 * pow(ln(z), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 1.0 / 4.0 * pow(ln(z), 2) * z * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * z * NC * pow(opx, -1)
+                    + 1.0 / 4.0 * pow(ln(z), 2) * z * NC
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 2 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1)
+                    + 5 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 5 * pow(ln(z), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 2 * pow(ln(z), 2) * x * pow(z, -1) * NC
+                    + 25 * pow(ln(z), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 20 * pow(ln(z), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + pow(ln(z), 2) * x * pow(NC, -1) * pow(omz, -1)
+                    + 1.0 / 2.0 * pow(ln(z), 2) * x * pow(NC, -1) * pow(opx, -1)
+                    + pow(ln(z), 2) * x * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * x * NC * pow(opx, -1)
+                    + (-1) * 5 * pow(ln(z), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 5 * pow(ln(z), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 3.0 / 2.0 * pow(ln(z), 2) * x * z * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * pow(ln(z), 2) * x * z * NC
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 3.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 55.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 25 * pow(ln(z), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
+                    + pow(ln(z), 2) * pow(x, 2) * pow(NC, -1)
+                    + (-1) * pow(ln(z), 2) * pow(x, 2) * NC
+                    + 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 5.0 / 2.0 * pow(ln(z), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 10 * pow(ln(z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 10 * pow(ln(z), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(z) * ln(omx) * pow(NC, -1)
+                    + ln(z) * ln(omx) * NC
+                    + 2 * ln(z) * ln(omx) * x * pow(NC, -1)
+                    + (-1) * 2 * ln(z) * ln(omx) * x * NC
+                    + (-1) * 2 * ln(z) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * ln(z) * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 6 * ln(z) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(z) * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(z) * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * ln(z) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * ln(z) * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 20 * ln(z) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * ln(z) * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * ln(z) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(z) * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * ln(z) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * ln(z) * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 22 * ln(z) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +20 * ln(z) * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(z) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * ln(z) * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * ln(z) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(z) * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * ln(sqrtxz3) * ArcTan(sqrtxz3) * pow(x, -1) * NC * sqrtxz3
+                    + (-1) * 5 * ln(sqrtxz3) * ArcTan(sqrtxz3) * pow(z, -1) * NC * sqrtxz3
+                    + 4 * ln(sqrtxz3) * ArcTan(sqrtxz3) * z * pow(NC, -1) * sqrtxz3
+                    + (-1) * 9 * ln(sqrtxz3) * ArcTan(sqrtxz3) * z * NC * sqrtxz3
+                    + (-1) * 5 * ln(sqrtxz3) * ArcTan(sqrtxz3) * x * NC * sqrtxz3
+                    + (-1) * 25.0 / 8.0 * ln(omx) * pow(z, -1) * pow(NC, -1)
+                    + 25.0 / 8.0 * ln(omx) * pow(z, -1) * NC
+                    + 11.0 / 4.0 * ln(omx) * pow(NC, -1)
+                    + (-1) * 11.0 / 4.0 * ln(omx) * NC
+                    + 3.0 / 8.0 * ln(omx) * z * pow(NC, -1)
+                    + (-1) * 3.0 / 8.0 * ln(omx) * z * NC
+                    + 9.0 / 2.0 * ln(omx) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 9.0 / 2.0 * ln(omx) * x * pow(z, -1) * NC
+                    + (-1) * 4 * ln(omx) * x * pow(NC, -1)
+                    + 4 * ln(omx) * x * NC
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 3.0 / 4.0 * ln(omx) * x * z * pow(NC, -1)
+                    + 3.0 / 4.0 * ln(omx) * x * z * NC
+                    + 1.0 / 2.0 * pow(ln(omx), 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(omx), 2) * pow(z, -1) * NC
+                    + (-1) * 1.0 / 2.0 * pow(ln(omx), 2) * pow(NC, -1)
+                    + 1.0 / 2.0 * pow(ln(omx), 2) * NC
+                    + 1.0 / 4.0 * pow(ln(omx), 2) * z * pow(NC, -1)
+                    + (-1) * 1.0 / 4.0 * pow(ln(omx), 2) * z * NC
+                    + (-1) * pow(ln(omx), 2) * x * pow(z, -1) * pow(NC, -1)
+                    + pow(ln(omx), 2) * x * pow(z, -1) * NC
+                    + pow(ln(omx), 2) * x * pow(NC, -1)
+                    + (-1) * pow(ln(omx), 2) * x * NC
+                    + (-1) * 1.0 / 2.0 * pow(ln(omx), 2) * x * z * pow(NC, -1)
+                    + 1.0 / 2.0 * pow(ln(omx), 2) * x * z * NC
+                    + ln(omx) * ln(omz) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * ln(omx) * ln(omz) * pow(z, -1) * NC
+                    + (-1) * ln(omx) * ln(omz) * pow(NC, -1)
+                    + ln(omx) * ln(omz) * NC
+                    + 1.0 / 2.0 * ln(omx) * ln(omz) * z * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(omx) * ln(omz) * z * NC
+                    + (-1) * 2 * ln(omx) * ln(omz) * x * pow(z, -1) * pow(NC, -1)
+                    + 2 * ln(omx) * ln(omz) * x * pow(z, -1) * NC
+                    + 2 * ln(omx) * ln(omz) * x * pow(NC, -1)
+                    + (-1) * 2 * ln(omx) * ln(omz) * x * NC
+                    + (-1) * ln(omx) * ln(omz) * x * z * pow(NC, -1)
+                    + ln(omx) * ln(omz) * x * z * NC
+                    + (-1) * 25.0 / 8.0 * ln(omz) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 4 * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
+                    + 4 * ln(omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
+                    + 25.0 / 8.0 * ln(omz) * pow(z, -1) * NC
+                    + (-1) * 12 * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +8 * ln(omz) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 11.0 / 4.0 * ln(omz) * pow(NC, -1)
+                    + (-1) * 11.0 / 4.0 * ln(omz) * NC
+                    + 4 * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 4 * ln(omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 3.0 / 8.0 * ln(omz) * z * pow(NC, -1)
+                    + (-1) * 3.0 / 8.0 * ln(omz) * z * NC
+                    + 9.0 / 2.0 * ln(omz) * x * pow(z, -1) * pow(NC, -1)
+                    + 8 * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
+                    + (-1) * 8 * ln(omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
+                    + (-1) * 9.0 / 2.0 * ln(omz) * x * pow(z, -1) * NC
+                    + 40 * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 32 * ln(omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + (-1) * 4 * ln(omz) * x * pow(NC, -1)
+                    + 4 * ln(omz) * x * NC
+                    + (-1) * 8 * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + 8 * ln(omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + (-1) * 3.0 / 4.0 * ln(omz) * x * z * pow(NC, -1)
+                    + 3.0 / 4.0 * ln(omz) * x * z * NC
+                    + (-1) * 4 * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2 * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +4 * ln(omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * rln2
+                    + (-1) * 44 * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + 40 * ln(omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 4 * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 4 * ln(omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 16 * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2 * pow(opz, -1)
+                    + (-1) * 16 * ln(omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * rln2
+                    + 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 12 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(omz) * ln(1 + sqrtxz1 - z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 40 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 32 * ln(omz) * ln(1 + sqrtxz1 - z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * ln(omz) * ln(1 + sqrtxz1 - z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 0
+                )
+                tmp += (
+                    +44 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 40 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 16 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 16 * ln(omz) * ln(1 + sqrtxz1 - z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 6 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 20 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 16 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 0
+                )
+                tmp += (
+                    +2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 22 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 20 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 2 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 8 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * ln(omz) * ln(1 - 2 * z + pow(z, 2) + 4 * x * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 1.0 / 2.0 * pow(ln(omz), 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * pow(ln(omz), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * pow(ln(omz), 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 1.0 / 2.0 * pow(ln(omz), 2) * pow(z, -1) * NC
+                    + (-1) * 6 * pow(ln(omz), 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * pow(ln(omz), 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(omz), 2) * pow(NC, -1)
+                    + 1.0 / 2.0 * pow(ln(omz), 2) * NC
+                    + 2 * pow(ln(omz), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * pow(ln(omz), 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 1.0 / 4.0 * pow(ln(omz), 2) * z * pow(NC, -1)
+                    + (-1) * 1.0 / 4.0 * pow(ln(omz), 2) * z * NC
+                    + (-1) * pow(ln(omz), 2) * x * pow(z, -1) * pow(NC, -1)
+                    + 4 * pow(ln(omz), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * pow(ln(omz), 2) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + pow(ln(omz), 2) * x * pow(z, -1) * NC
+                    + 0
+                )
+                tmp += (
+                    +20 * pow(ln(omz), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * pow(ln(omz), 2) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + pow(ln(omz), 2) * x * pow(NC, -1)
+                    + (-1) * pow(ln(omz), 2) * x * NC
+                    + (-1) * 4 * pow(ln(omz), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * pow(ln(omz), 2) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 1.0 / 2.0 * pow(ln(omz), 2) * x * z * pow(NC, -1)
+                    + 1.0 / 2.0 * pow(ln(omz), 2) * x * z * NC
+                    + (-1) * 2 * pow(ln(omz), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * pow(ln(omz), 2) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 22 * pow(ln(omz), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 20 * pow(ln(omz), 2) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * pow(ln(omz), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * pow(ln(omz), 2) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * pow(ln(omz), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * pow(ln(omz), 2) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 6 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * NC
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1)
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * NC
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 22 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 6 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * NC
+                    + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1)
+                    + 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 20 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * NC
+                    + (-1) * 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 22 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 20 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 0
+                )
+                tmp += (
+                    +2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * Li2(1.0 / 2.0 + 1.0 / 2.0 * pow(z, -1) - 1.0 / 2.0 * pow(z, -1) * sqrtxz1) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(z, -1) * NC
+                    + 6 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(NC, -1)
+                    + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * NC
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * pow(NC, -1)
+                    + Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * z * NC
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(z, -1) * NC
+                    + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 16 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * pow(NC, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * NC
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * pow(NC, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * x * z * NC
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 22 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * NC
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 - 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(z, -1) * NC
+                    + 6 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(NC, -1)
+                    + Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * NC
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * pow(NC, -1)
+                    + (-1) * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * z * NC
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(z, -1) * NC
+                    + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +16 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * pow(NC, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * NC
+                    + 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * pow(NC, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * x * z * NC
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 22 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 20 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * pow(NC, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * NC
+                    + (-1) * 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 2 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * Li2(1.0 / 2.0 - 1.0 / 2.0 * sqrtxz1 + 1.0 / 2.0 * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 12 * Li2(pow(sqrtxz1, -1) * omz) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * Li2(pow(sqrtxz1, -1) * omz) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * Li2(pow(sqrtxz1, -1) * omz) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 8 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 40 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 32 * Li2(pow(sqrtxz1, -1) * omz) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 8 * Li2(pow(sqrtxz1, -1) * omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * Li2(pow(sqrtxz1, -1) * omz) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 44 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 40 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 16 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * Li2(pow(sqrtxz1, -1) * omz) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 12 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * Li2(-sqrtxz1 * pow(omz, -1)) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 40 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 32 * Li2(-sqrtxz1 * pow(omz, -1)) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 8 * Li2(-sqrtxz1 * pow(omz, -1)) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 44 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 40 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 16 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * Li2(-sqrtxz1 * pow(omz, -1)) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(z, -1) * NC
+                    + (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * pow(NC, -1)
+                    + 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -2) * z * NC
+                    + 3 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 3 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(z, -1) * NC
+                    + (-1) * 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * pow(x, -1) * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * pow(x, -1) * z * pow(NC, -1)
+                    + 3.0 / 2.0 * Li2(-x * pow(z, -1)) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * pow(x, -1) * z * NC
+                    + 3 * Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 3 * Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * pow(z, -1) * pow(NC, -1)
+                    + Li2(-x * pow(z, -1)) * pow(z, -1) * NC * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * pow(z, -1) * NC
+                    + (-1) * 2 * Li2(-x * pow(z, -1)) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * pow(NC, -1)
+                    + Li2(-x * pow(z, -1)) * NC * pow(opx, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * NC
+                    + (-1) * Li2(-x * pow(z, -1)) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * z * pow(NC, -1)
+                    + Li2(-x * pow(z, -1)) * z * NC * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * z * NC
+                    + Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 2 * Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x * pow(z, -1)) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * Li2(-x * pow(z, -1)) * x * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x * pow(z, -1)) * x * pow(NC, -1)
+                    + Li2(-x * pow(z, -1)) * x * NC * pow(opx, -1)
+                    + Li2(-x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + Li2(-x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(-x * pow(z, -1)) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * Li2(-x) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + Li2(-x) * pow(x, -2) * pow(z, -1) * NC
+                    + 0
+                )
+                tmp += (
+                    +Li2(-x) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * Li2(-x) * pow(x, -2) * pow(NC, -1)
+                    + Li2(-x) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * Li2(-x) * pow(x, -2) * z * pow(NC, -1)
+                    + (-1) * Li2(-x) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + Li2(-x) * pow(x, -2) * z * NC
+                    + (-1) * 6 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 4 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 6 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 4 * Li2(-x) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 3 * Li2(-x) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + 2 * Li2(-x) * pow(x, -1) * pow(z, -1) * NC
+                    + 3 * Li2(-x) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x) * pow(x, -1) * pow(NC, -1)
+                    + 3 * Li2(-x) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x) * pow(x, -1) * z * pow(NC, -1)
+                    + (-1) * 3 * Li2(-x) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + 2 * Li2(-x) * pow(x, -1) * z * NC
+                    + (-1) * 6 * Li2(-x) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 6 * Li2(-x) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * Li2(-x) * pow(z, -1) * NC
+                    + 4 * Li2(-x) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * Li2(-x) * pow(NC, -1)
+                    + (-1) * 2 * Li2(-x) * NC * pow(opx, -1)
+                    + 2 * Li2(-x) * NC
+                    + 2 * Li2(-x) * z * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x) * z * pow(NC, -1)
+                    + (-1) * 2 * Li2(-x) * z * NC * pow(opx, -1)
+                    + (-1) * Li2(-x) * z * NC
+                    + (-1) * 2 * Li2(-x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 4 * Li2(-x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 2 * Li2(-x) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 4 * Li2(-x) * x * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * Li2(-x) * x * pow(z, -1) * NC
+                    + 0
+                )
+                tmp += (
+                    +2 * Li2(-x) * x * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(-x) * x * pow(NC, -1)
+                    + (-1) * 2 * Li2(-x) * x * NC * pow(opx, -1)
+                    + 2 * Li2(-x) * x * z * pow(NC, -1)
+                    + (-1) * 2 * Li2(-x) * x * z * NC
+                    + (-1) * 2 * Li2(-x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + 2 * Li2(-x) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + 2 * Li2(-x) * pow(x, 2) * pow(NC, -1)
+                    + (-1) * 2 * Li2(-x) * pow(x, 2) * NC
+                    + Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * z) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(z, -1) * NC
+                    + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * pow(NC, -1)
+                    + 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 2.0 * Li2(-x * z) * pow(x, -2) * z * NC
+                    + 3 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 3 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * Li2(-x * z) * pow(x, -1) * pow(z, -1) * NC
+                    + (-1) * 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * z) * pow(x, -1) * pow(NC, -1)
+                    + (-1) * 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +Li2(-x * z) * pow(x, -1) * z * pow(NC, -1)
+                    + 3.0 / 2.0 * Li2(-x * z) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + (-1) * Li2(-x * z) * pow(x, -1) * z * NC
+                    + 3 * Li2(-x * z) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 3 * Li2(-x * z) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * Li2(-x * z) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + Li2(-x * z) * pow(z, -1) * pow(NC, -1)
+                    + Li2(-x * z) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x * z) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * z) * NC * pow(opx, -1)
+                    + (-1) * Li2(-x * z) * NC
+                    + (-1) * Li2(-x * z) * z * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * z) * z * NC * pow(opx, -1)
+                    + Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 2 * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 4 * Li2(-x * z) * x * pow(z, -1) * pow(NC, -1)
+                    + 2 * Li2(-x * z) * x * pow(z, -1) * NC
+                    + (-1) * Li2(-x * z) * x * pow(NC, -1) * pow(opx, -1)
+                    + Li2(-x * z) * x * NC * pow(opx, -1)
+                    + (-1) * 2 * Li2(-x * z) * x * z * pow(NC, -1)
+                    + 2 * Li2(-x * z) * x * z * NC
+                    + Li2(-x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * Li2(-x * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(-x * z) * pow(x, 2) * pow(NC, -1)
+                    + 2 * Li2(-x * z) * pow(x, 2) * NC
+                    + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 6 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + (-1) * 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + 20 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 16 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 4 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * x * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1 * pow(opz, -1)
+                    + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * sqrtxz1
+                    + (-1) * 22 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + 0
+                )
+                tmp += (
+                    +20 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 2 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 2) * z * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 8 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1) * pow(opz, -1)
+                    + (-1) * 8 * Li2(-1 / (1 + sqrtxz1 - z) + 1 / (1 + sqrtxz1 - z) * sqrtxz1 + 1 / (1 + sqrtxz1 - z) * z) * pow(x, 3) * pow(NC, -1) * pow(sqrtxz1, -1)
+                    + 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(x) * pow(x, -2) * pow(z, -1) * pow(NC, -1)
+                    + Li2(x) * pow(x, -2) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * Li2(x) * pow(x, -2) * pow(z, -1) * NC
+                    + (-1) * Li2(x) * pow(x, -2) * pow(NC, -1) * pow(opx, -1)
+                    + Li2(x) * pow(x, -2) * pow(NC, -1)
+                    + (-1) * Li2(x) * pow(x, -2) * z * pow(NC, -1) * pow(opx, -1)
+                    + Li2(x) * pow(x, -2) * z * pow(NC, -1)
+                    + Li2(x) * pow(x, -2) * z * NC * pow(opx, -1)
+                    + (-1) * Li2(x) * pow(x, -2) * z * NC
+                    + 6 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 4 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 6 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 4 * Li2(x) * pow(x, -1) * pow(z, -1) * pow(NC, -1)
+                    + 3 * Li2(x) * pow(x, -1) * pow(z, -1) * NC * pow(opx, -1)
+                    + 0
+                )
+                tmp += (
+                    +(-1) * 2 * Li2(x) * pow(x, -1) * pow(z, -1) * NC
+                    + (-1) * 3 * Li2(x) * pow(x, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(x) * pow(x, -1) * pow(NC, -1)
+                    + (-1) * 3 * Li2(x) * pow(x, -1) * z * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(x) * pow(x, -1) * z * pow(NC, -1)
+                    + 3 * Li2(x) * pow(x, -1) * z * NC * pow(opx, -1)
+                    + (-1) * 2 * Li2(x) * pow(x, -1) * z * NC
+                    + 6 * Li2(x) * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + (-1) * 6 * Li2(x) * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + 1.0 / 4.0 * Li2(x) * pow(z, -1) * pow(NC, -1)
+                    + 2 * Li2(x) * pow(z, -1) * NC * pow(opx, -1)
+                    + (-1) * 1.0 / 4.0 * Li2(x) * pow(z, -1) * NC
+                    + (-1) * 2 * Li2(x) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 4 * Li2(x) * pow(NC, -1) * pow(opx, -1)
+                    + 3.0 / 2.0 * Li2(x) * pow(NC, -1)
+                    + 2 * Li2(x) * NC * pow(opx, -1)
+                    + (-1) * 3.0 / 2.0 * Li2(x) * NC
+                    + (-1) * 2 * Li2(x) * z * pow(NC, -1) * pow(opx, -1)
+                    + 2 * Li2(x) * z * NC * pow(opx, -1)
+                    + 2 * Li2(x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1) * pow(opx, -1)
+                    + 4 * Li2(x) * x * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * Li2(x) * x * pow(z, -1) * pow(NC, -1) * pow(opx, -1)
+                    + (-1) * 9.0 / 2.0 * Li2(x) * x * pow(z, -1) * pow(NC, -1)
+                    + 1.0 / 2.0 * Li2(x) * x * pow(z, -1) * NC
+                    + (-1) * 4 * Li2(x) * x * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * Li2(x) * x * pow(NC, -1) * pow(opx, -1)
+                    + Li2(x) * x * pow(NC, -1)
+                    + 2 * Li2(x) * x * NC * pow(opx, -1)
+                    + (-1) * Li2(x) * x * NC
+                    + (-1) * Li2(x) * x * z * pow(NC, -1)
+                    + Li2(x) * x * z * NC
+                    + 2 * Li2(x) * pow(x, 2) * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * 2 * Li2(x) * pow(x, 2) * pow(z, -1) * pow(NC, -1)
+                    + (-1) * 2 * Li2(x) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
+                    + (-1) * Li2(x) * pow(x, 2) * pow(NC, -1)
+                    + Li2(x) * pow(x, 2) * NC
+                    + Li2(z) * pow(NC, -1)
+                    + (-1) * Li2(z) * NC
+                    + (-1) * 2 * Li2(z) * x * pow(NC, -1)
+                    + 2 * Li2(z) * x * NC
+                    + (-1) * 1.0 / 2.0 * InvTanInt(-sqrtxz3) * pow(x, -1) * NC * sqrtxz3
+                    + (-1) * 5.0 / 2.0 * InvTanInt(-sqrtxz3) * pow(z, -1) * NC * sqrtxz3
+                    + 0
+                )
+                tmp += (
+                    +2 * InvTanInt(-sqrtxz3) * z * pow(NC, -1) * sqrtxz3
+                    + (-1) * 9.0 / 2.0 * InvTanInt(-sqrtxz3) * z * NC * sqrtxz3
+                    + (-1) * 5.0 / 2.0 * InvTanInt(-sqrtxz3) * x * NC * sqrtxz3
+                    + (-1) * InvTanInt(z * sqrtxz3) * pow(x, -1) * NC * sqrtxz3
+                    + (-1) * 5 * InvTanInt(z * sqrtxz3) * pow(z, -1) * NC * sqrtxz3
+                    + 4 * InvTanInt(z * sqrtxz3) * z * pow(NC, -1) * sqrtxz3
+                    + (-1) * 9 * InvTanInt(z * sqrtxz3) * z * NC * sqrtxz3
+                    + (-1) * 5 * InvTanInt(z * sqrtxz3) * x * NC * sqrtxz3
+                    + 1.0 / 2.0 * InvTanInt(sqrtxz3) * pow(x, -1) * NC * sqrtxz3
+                    + 5.0 / 2.0 * InvTanInt(sqrtxz3) * pow(z, -1) * NC * sqrtxz3
+                    + (-1) * 2 * InvTanInt(sqrtxz3) * z * pow(NC, -1) * sqrtxz3
+                    + 9.0 / 2.0 * InvTanInt(sqrtxz3) * z * NC * sqrtxz3
+                    + 5.0 / 2.0 * InvTanInt(sqrtxz3) * x * NC * sqrtxz3
+                    + 0
+                )
+            if ("001" in orders) or ("all" in orders):
+                tmp += 19.0 / 8.0 * pow(z, -1) * LMUA * pow(NC, -1) + (-1) * 19.0 / 8.0 * pow(z, -1) * LMUA * NC + (-1) * 9.0 / 4.0 * LMUA * pow(NC, -1) + 9.0 / 4.0 * LMUA * NC + 3.0 / 8.0 * z * LMUA * pow(NC, -1) + (-1) * 3.0 / 8.0 * z * LMUA * NC + 0
+                tmp += (-1) * 15.0 / 4.0 * x * pow(z, -1) * LMUA * pow(NC, -1) + 15.0 / 4.0 * x * pow(z, -1) * LMUA * NC + 7.0 / 2.0 * x * LMUA * pow(NC, -1) + (-1) * 7.0 / 2.0 * x * LMUA * NC + (-1) * 1.0 / 4.0 * x * z * LMUA * pow(NC, -1) + 0
+                tmp += 1.0 / 4.0 * x * z * LMUA * NC + 0
+                tmp += 1.0 / 2.0 * ln(x) * pow(z, -1) * LMUA * pow(NC, -1) + (-1) * 1.0 / 2.0 * ln(x) * pow(z, -1) * LMUA * NC + (-1) * 1.0 / 2.0 * ln(x) * LMUA * pow(NC, -1) + 1.0 / 2.0 * ln(x) * LMUA * NC + 1.0 / 4.0 * ln(x) * z * LMUA * pow(NC, -1) + (-1) * 1.0 / 4.0 * ln(x) * z * LMUA * NC + 0
+                tmp += (-1) * ln(x) * x * pow(z, -1) * LMUA * pow(NC, -1) + ln(x) * x * pow(z, -1) * LMUA * NC + ln(x) * x * LMUA * pow(NC, -1) + (-1) * ln(x) * x * LMUA * NC + (-1) * 1.0 / 2.0 * ln(x) * x * z * LMUA * pow(NC, -1) + 1.0 / 2.0 * ln(x) * x * z * LMUA * NC + 0
+                tmp += 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUA * pow(NC, -1) + (-1) * 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUA * NC + 1.0 / 2.0 * ln(z) * LMUA * pow(NC, -1) + (-1) * 1.0 / 2.0 * ln(z) * LMUA * NC + 1.0 / 4.0 * ln(z) * z * LMUA * pow(NC, -1) + (-1) * 1.0 / 4.0 * ln(z) * z * LMUA * NC + (-1) * ln(z) * x * pow(z, -1) * LMUA * pow(NC, -1) + 0
+                tmp += ln(z) * x * pow(z, -1) * LMUA * NC + (-1) * ln(z) * x * LMUA * pow(NC, -1) + ln(z) * x * LMUA * NC + (-1) * 1.0 / 2.0 * ln(z) * x * z * LMUA * pow(NC, -1) + 1.0 / 2.0 * ln(z) * x * z * LMUA * NC + 0
+                tmp += (
+                    (-1) * 1.0 / 2.0 * ln(omx) * pow(z, -1) * LMUA * pow(NC, -1)
                     + 1.0 / 2.0 * ln(omx) * pow(z, -1) * LMUA * NC
                     + 1.0 / 2.0 * ln(omx) * LMUA * pow(NC, -1)
                     + (-1) * 1.0 / 2.0 * ln(omx) * LMUA * NC
-                    + 0
-                )
-                tmp += (
-                    (-1) * 1.0 / 4.0 * ln(omx) * z * LMUA * pow(NC, -1)
+                    + (-1) * 1.0 / 4.0 * ln(omx) * z * LMUA * pow(NC, -1)
                     + 1.0 / 4.0 * ln(omx) * z * LMUA * NC
                     + ln(omx) * x * pow(z, -1) * LMUA * pow(NC, -1)
                     + (-1) * ln(omx) * x * pow(z, -1) * LMUA * NC
-                    + (-1) * ln(omx) * x * LMUA * pow(NC, -1)
-                    + ln(omx) * x * LMUA * NC
-                    + 1.0 / 2.0 * ln(omx) * x * z * LMUA * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * ln(omx) * x * z * LMUA * NC
-                    + (-1) * 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUA * pow(NC, -1)
-                    + 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUA * NC
-                    + 1.0 / 2.0 * ln(omz) * LMUA * pow(NC, -1)
+                    + 0
+                )
+                tmp += (-1) * ln(omx) * x * LMUA * pow(NC, -1) + ln(omx) * x * LMUA * NC + 1.0 / 2.0 * ln(omx) * x * z * LMUA * pow(NC, -1) + (-1) * 1.0 / 2.0 * ln(omx) * x * z * LMUA * NC + (-1) * 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUA * pow(NC, -1) + 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUA * NC + 0
+                tmp += (
+                    1.0 / 2.0 * ln(omz) * LMUA * pow(NC, -1)
                     + (-1) * 1.0 / 2.0 * ln(omz) * LMUA * NC
                     + (-1) * 1.0 / 4.0 * ln(omz) * z * LMUA * pow(NC, -1)
                     + 1.0 / 4.0 * ln(omz) * z * LMUA * NC
@@ -2565,24 +2488,44 @@ def C2Pg2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
                     + (-1) * 1.0 / 2.0 * ln(omz) * x * z * LMUA * NC
                     + 0
                 )
-            if (order == "011") or (order == "all"):
-
+            if ("010" in orders) or ("all" in orders):
+                tmp += 3.0 / 4.0 * pow(z, -1) * LMUF * pow(NC, -1) + (-1) * 3.0 / 4.0 * pow(z, -1) * LMUF * NC + (-1) * 1.0 / 2.0 * LMUF * pow(NC, -1) + 1.0 / 2.0 * LMUF * NC + (-1) * 3.0 / 4.0 * z * LMUF * pow(NC, -1) + 3.0 / 4.0 * z * LMUF * NC + 0
+                tmp += (-1) * 3.0 / 4.0 * x * pow(z, -1) * LMUF * pow(NC, -1) + 3.0 / 4.0 * x * pow(z, -1) * LMUF * NC + 1.0 / 2.0 * x * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * x * LMUF * NC + x * z * LMUF * pow(NC, -1) + (-1) * x * z * LMUF * NC + 0
+                tmp += 1.0 / 4.0 * ln(x) * pow(z, -1) * LMUF * pow(NC, -1) + (-1) * 1.0 / 4.0 * ln(x) * pow(z, -1) * LMUF * NC + (-1) * 1.0 / 4.0 * ln(x) * z * LMUF * pow(NC, -1) + 1.0 / 4.0 * ln(x) * z * LMUF * NC + 0
+                tmp += (-1) * 1.0 / 2.0 * ln(x) * x * pow(z, -1) * LMUF * pow(NC, -1) + 1.0 / 2.0 * ln(x) * x * pow(z, -1) * LMUF * NC + (-1) * 1.0 / 2.0 * ln(x) * x * z * LMUF * pow(NC, -1) + 1.0 / 2.0 * ln(x) * x * z * LMUF * NC + 0
+                tmp += (-1) * 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUF * pow(NC, -1) + 0
+                tmp += 1.0 / 2.0 * ln(z) * pow(z, -1) * LMUF * NC + 1.0 / 2.0 * ln(z) * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * ln(z) * LMUF * NC + (-1) * 1.0 / 4.0 * ln(z) * z * LMUF * pow(NC, -1) + 1.0 / 4.0 * ln(z) * z * LMUF * NC + ln(z) * x * pow(z, -1) * LMUF * pow(NC, -1) + (-1) * ln(z) * x * pow(z, -1) * LMUF * NC + 0
+                tmp += (-1) * ln(z) * x * LMUF * pow(NC, -1) + ln(z) * x * LMUF * NC + 1.0 / 2.0 * ln(z) * x * z * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * ln(z) * x * z * LMUF * NC + 0
                 tmp += (
-                    1.0 / 2.0 * pow(z, -1) * LMUA * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 2.0 * pow(z, -1) * LMUA * LMUF * NC
-                    + (-1) * 1.0 / 2.0 * LMUA * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * LMUA * LMUF * NC
-                    + 1.0 / 4.0 * z * LMUA * LMUF * pow(NC, -1)
-                    + (-1) * 1.0 / 4.0 * z * LMUA * LMUF * NC
-                    + (-1) * x * pow(z, -1) * LMUA * LMUF * pow(NC, -1)
-                    + x * pow(z, -1) * LMUA * LMUF * NC
-                    + x * LMUA * LMUF * pow(NC, -1)
-                    + (-1) * x * LMUA * LMUF * NC
-                    + (-1) * 1.0 / 2.0 * x * z * LMUA * LMUF * pow(NC, -1)
-                    + 1.0 / 2.0 * x * z * LMUA * LMUF * NC
+                    (-1) * 1.0 / 2.0 * ln(omx) * pow(z, -1) * LMUF * pow(NC, -1)
+                    + 1.0 / 2.0 * ln(omx) * pow(z, -1) * LMUF * NC
+                    + 1.0 / 2.0 * ln(omx) * LMUF * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(omx) * LMUF * NC
+                    + (-1) * 1.0 / 4.0 * ln(omx) * z * LMUF * pow(NC, -1)
+                    + 1.0 / 4.0 * ln(omx) * z * LMUF * NC
+                    + ln(omx) * x * pow(z, -1) * LMUF * pow(NC, -1)
+                    + (-1) * ln(omx) * x * pow(z, -1) * LMUF * NC
+                    + (-1) * ln(omx) * x * LMUF * pow(NC, -1)
                     + 0
                 )
-
+                tmp += ln(omx) * x * LMUF * NC + 1.0 / 2.0 * ln(omx) * x * z * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * ln(omx) * x * z * LMUF * NC + (-1) * 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUF * pow(NC, -1) + 1.0 / 2.0 * ln(omz) * pow(z, -1) * LMUF * NC + 0
+                tmp += (
+                    1.0 / 2.0 * ln(omz) * LMUF * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(omz) * LMUF * NC
+                    + (-1) * 1.0 / 4.0 * ln(omz) * z * LMUF * pow(NC, -1)
+                    + 1.0 / 4.0 * ln(omz) * z * LMUF * NC
+                    + ln(omz) * x * pow(z, -1) * LMUF * pow(NC, -1)
+                    + (-1) * ln(omz) * x * pow(z, -1) * LMUF * NC
+                    + (-1) * ln(omz) * x * LMUF * pow(NC, -1)
+                    + ln(omz) * x * LMUF * NC
+                    + 1.0 / 2.0 * ln(omz) * x * z * LMUF * pow(NC, -1)
+                    + (-1) * 1.0 / 2.0 * ln(omz) * x * z * LMUF * NC
+                    + 0
+                )
+            if ("011" in orders) or ("all" in orders):
+                tmp += 1.0 / 2.0 * pow(z, -1) * LMUA * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * pow(z, -1) * LMUA * LMUF * NC + (-1) * 1.0 / 2.0 * LMUA * LMUF * pow(NC, -1) + 1.0 / 2.0 * LMUA * LMUF * NC + 1.0 / 4.0 * z * LMUA * LMUF * pow(NC, -1) + (-1) * 1.0 / 4.0 * z * LMUA * LMUF * NC + 0
+                tmp += (-1) * x * pow(z, -1) * LMUA * LMUF * pow(NC, -1) + x * pow(z, -1) * LMUA * LMUF * NC + x * LMUA * LMUF * pow(NC, -1) + (-1) * x * LMUA * LMUF * NC + 0
+                tmp += (-1) * 1.0 / 2.0 * x * z * LMUA * LMUF * pow(NC, -1) + 1.0 / 2.0 * x * z * LMUA * LMUF * NC + 0
             res += tmp
 
         return res

@@ -15,152 +15,202 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
 
   if (cx == "D" && cz == "D")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "D" && cz == "0")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "D" && cz == "1")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "D" && cz == "2")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "D" && cz == "3")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "0" && cz == "D")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "0" && cz == "0")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "0" && cz == "1")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "0" && cz == "2")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "0" && cz == "3")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "1" && cz == "D")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "1" && cz == "0")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "1" && cz == "1")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "1" && cz == "2")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "1" && cz == "3")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "2" && cz == "D")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "2" && cz == "0")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "2" && cz == "1")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "2" && cz == "2")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "2" && cz == "3")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "3" && cz == "D")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "3" && cz == "0")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "3" && cz == "1")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "3" && cz == "2")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "3" && cz == "3")
   {
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "D" && cz == "R")
@@ -168,8 +218,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double z = inz;
     double omz = 1. - z;
     double opz = 1. + z;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "0" && cz == "R")
@@ -177,8 +229,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double z = inz;
     double omz = 1. - z;
     double opz = 1. + z;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "1" && cz == "R")
@@ -186,8 +240,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double z = inz;
     double omz = 1. - z;
     double opz = 1. + z;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "2" && cz == "R")
@@ -195,8 +251,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double z = inz;
     double omz = 1. - z;
     double opz = 1. + z;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "3" && cz == "R")
@@ -204,8 +262,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double z = inz;
     double omz = 1. - z;
     double opz = 1. + z;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "R" && cz == "D")
@@ -217,10 +277,9 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     // Split orders:
     res = 0;
     // Order 000:
-    res += 1 + (-1) * x + 1. / 2. * ln(x) + (-1) * ln(x) * x + (-1) * 1. / 2. * ln(omx) + ln(omx) * x + 0;
+    res += 1 + (-1)* x + 1. / 2. * ln(x) + (-1)* ln(x) * x + (-1)* 1. / 2. * ln(omx) + ln(omx) * x + 0;
     // Order 010:
-    res += 1. / 2. * LMUF + (-1) * x * LMUF + 0;
-
+    res += 1. / 2. * LMUF + (-1)* x * LMUF + 0;
     return res;
   }
   if (cx == "R" && cz == "0")
@@ -229,8 +288,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double omx = 1. - x;
     double opx = 1. + x;
     double op6xpxsq = 1. + 6. * x + x * x;
-    res = -1. / 2. + x;
-
+    // Split orders:
+    res = 0;
+    // Order 000:
+    res +=  + (-1)*1. / 2. + x + 0;
     return res;
   }
   if (cx == "R" && cz == "1")
@@ -239,8 +300,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double omx = 1. - x;
     double opx = 1. + x;
     double op6xpxsq = 1. + 6. * x + x * x;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "R" && cz == "2")
@@ -249,8 +312,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double omx = 1. - x;
     double opx = 1. + x;
     double op6xpxsq = 1. + 6. * x + x * x;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "R" && cz == "3")
@@ -259,8 +324,10 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     double omx = 1. - x;
     double opx = 1. + x;
     double op6xpxsq = 1. + 6. * x + x * x;
+    // Split orders:
     res = 0;
-
+    // Order 000:
+    res += 0 + 0;
     return res;
   }
   if (cx == "R" && cz == "R")
@@ -281,64 +348,82 @@ double C1Pg2qEq(double inx, double inz, std::string cx, std::string cz,
     if (z < 1. - x && z < x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z > 1. - x && z < x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z < 1. - x && z > x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z > 1. - x && z > x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z > x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z < x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z < 1. - x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z > 1. - x)
     {
       double tmp = 0.0;
+      // Split orders:
       tmp = 0;
-
+      // Order 000:
+      tmp += 0 + 0;
       res += tmp;
     }
     if (z != x && z != 1. - x)
     {
       double tmp = 0.0;
-      tmp = 1 - 1. / 2. * pow(z, -1) + x * pow(z, -1) - 2 * x;
-
+      // Split orders:
+      tmp = 0;
+      // Order 000:
+      tmp += 1 + (-1)* 1. / 2. * pow(z,-1) + x * pow(z,-1) + (-1)* 2 * x + 0;
       res += tmp;
     }
     return res;

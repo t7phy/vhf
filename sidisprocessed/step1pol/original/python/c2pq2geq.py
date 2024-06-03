@@ -8,7 +8,7 @@ from numpy import arctan as ArcTan
 from numpy import sqrt, pi
 
 
-def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
+def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
     res = 0.0
 
     rln2 = ln(2.0)
@@ -723,7 +723,7 @@ def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         sqrtxz1 = sqrt(1 - 2 * z + z * z + 4 * x * z)
         sqrtxz2 = sqrt(poly2)
         sqrtxz3 = sqrt(x / z)
-        if z < 1.0 - x and z < x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
             tmp = (
@@ -931,7 +931,7 @@ def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
             res += tmp
 
-        if z > 1.0 - x and z < x:
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
             tmp = (
@@ -1139,7 +1139,7 @@ def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
             res += tmp
 
-        if z < 1.0 - x and z > x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
 
             tmp = 0.0
             tmp = (
@@ -1347,7 +1347,7 @@ def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
             res += tmp
 
-        if z > 1.0 - x and z > x:
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
 
             tmp = 0.0
             tmp = (
@@ -1555,7 +1555,7 @@ def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
             res += tmp
 
-        if z > x:
+        if round(z, ndecimals) > round(x, ndecimals):
 
             tmp = 0.0
             tmp = (
@@ -1733,7 +1733,7 @@ def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
             res += tmp
 
-        if z < x:
+        if round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
             tmp = (
@@ -1911,21 +1911,21 @@ def C2Pq2gEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
             res += tmp
 
-        if z < 1.0 - x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals):
 
             tmp = 0.0
             tmp = 0
 
             res += tmp
 
-        if z > 1.0 - x:
+        if round(z, ndecimals) > round(1.0 - x, ndecimals):
 
             tmp = 0.0
             tmp = 0
 
             res += tmp
 
-        if z != x and z != 1.0 - x:
+        if round(z, ndecimals) != round(x, ndecimals) and round(z, ndecimals) != round(1.0 - x, ndecimals):
 
             tmp = 0.0
             tmp = (

@@ -8,7 +8,7 @@ from numpy import arctan as ArcTan
 from numpy import sqrt, pi
 
 
-def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
+def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
     res = 0.0
 
     rln2 = ln(2.0)
@@ -25,174 +25,208 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
 
         # Split orders:
         res = 0
-        if (order == "000") or (order == "all"):
-
+        if ("000" in orders) or ("all" in orders):
             res += +(-1) * 8 * CF + 0
-        if (order == "010") or (order == "all"):
-
-            res += (-1) * 3.0 / 2.0 * LMUF * CF + 0
-        if (order == "001") or (order == "all"):
-
+        if ("001" in orders) or ("all" in orders):
             res += (-1) * 3.0 / 2.0 * LMUA * CF + 0
-
+        if ("010" in orders) or ("all" in orders):
+            res += (-1) * 3.0 / 2.0 * LMUF * CF + 0
         return res
 
     if cx == "D" and cz == "0":
 
         # Split orders:
         res = 0
-        if (order == "000") or (order == "all"):
-
+        if ("000" in orders) or ("all" in orders):
             res += +0
-        if (order == "001") or (order == "all"):
-
+        if ("001" in orders) or ("all" in orders):
             res += (-1) * 2 * LMUA * CF + 0
-
         return res
 
     if cx == "D" and cz == "1":
 
-        res = 2 * CF
-
+        # Split orders:
+        res = 0
+        if ("000" in orders) or ("all" in orders):
+            res += 2 * CF + 0
         return res
 
     if cx == "D" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "D":
 
         # Split orders:
         res = 0
-        if (order == "000") or (order == "all"):
-
+        if ("000" in orders) or ("all" in orders):
             res += +0
-        if (order == "010") or (order == "all"):
-
+        if ("010" in orders) or ("all" in orders):
             res += (-1) * 2 * LMUF * CF + 0
-
         return res
 
     if cx == "0" and cz == "0":
 
-        res = 2 * CF
-
+        # Split orders:
+        res = 0
+        if ("000" in orders) or ("all" in orders):
+            res += 2 * CF + 0
         return res
 
     if cx == "0" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "0" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "D":
 
-        res = 2 * CF
-
+        # Split orders:
+        res = 0
+        if ("000" in orders) or ("all" in orders):
+            res += 2 * CF + 0
         return res
 
     if cx == "1" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "1" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "D":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "0":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "1":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "2":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "3":
 
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "D" and cz == "R":
@@ -202,13 +236,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if (order == "000") or (order == "all"):
-
-            res += CF + (-1) * z * CF + 2 * ln(z) * CF * pow(omz, +(-1) * 1) + (-1) * ln(z) * CF + (-1) * ln(z) * z * CF + (-1) * ln(omz) * CF + (-1) * ln(omz) * z * CF + 0
-        if (order == "001") or (order == "all"):
-
+        if ("000" in orders) or ("all" in orders):
+            res += CF + (-1) * z * CF + 2 * ln(z) * CF * pow(omz, -1) + (-1) * ln(z) * CF + (-1) * ln(z) * z * CF + (-1) * ln(omz) * CF + (-1) * ln(omz) * z * CF + 0
+        if ("001" in orders) or ("all" in orders):
             res += LMUA * CF + z * LMUA * CF + 0
-
         return res
 
     if cx == "0" and cz == "R":
@@ -216,8 +247,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
-        res = -CF - z * CF
-
+        # Split orders:
+        res = 0
+        if ("000" in orders) or ("all" in orders):
+            res += +(-1) * CF + (-1) * z * CF + 0
         return res
 
     if cx == "1" and cz == "R":
@@ -225,8 +258,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "2" and cz == "R":
@@ -234,8 +269,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "3" and cz == "R":
@@ -243,8 +280,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         z = inz
         omz = 1.0 - z
         opz = 1.0 + z
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "D":
@@ -255,13 +294,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         op6xpxsq = 1.0 + 6.0 * x + x * x
         # Split orders:
         res = 0
-        if (order == "000") or (order == "all"):
-
-            res += CF + (-1) * x * CF + (-1) * 2 * ln(x) * CF * pow(omx, +(-1) * 1) + ln(x) * CF + ln(x) * x * CF + (-1) * ln(omx) * CF + (-1) * ln(omx) * x * CF + 0
-        if (order == "010") or (order == "all"):
-
+        if ("000" in orders) or ("all" in orders):
+            res += CF + (-1) * x * CF + (-1) * 2 * ln(x) * CF * pow(omx, -1) + ln(x) * CF + ln(x) * x * CF + (-1) * ln(omx) * CF + (-1) * ln(omx) * x * CF + 0
+        if ("010" in orders) or ("all" in orders):
             res += LMUF * CF + x * LMUF * CF + 0
-
         return res
 
     if cx == "R" and cz == "0":
@@ -270,8 +306,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
-        res = -CF - x * CF
-
+        # Split orders:
+        res = 0
+        if ("000" in orders) or ("all" in orders):
+            res += +(-1) * CF + (-1) * x * CF + 0
         return res
 
     if cx == "R" and cz == "1":
@@ -280,8 +318,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "2":
@@ -290,8 +330,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "3":
@@ -300,8 +342,10 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         omx = 1.0 - x
         opx = 1.0 + x
         op6xpxsq = 1.0 + 6.0 * x + x * x
+        # Split orders:
         res = 0
-
+        if ("000" in orders) or ("all" in orders):
+            res += 0 + 0
         return res
 
     if cx == "R" and cz == "R":
@@ -319,67 +363,85 @@ def C1Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, order):
         sqrtxz1 = sqrt(1 - 2 * z + z * z + 4 * x * z)
         sqrtxz2 = sqrt(poly2)
         sqrtxz3 = sqrt(x / z)
-        if z < 1.0 - x and z < x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z > 1.0 - x and z < x:
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z < 1.0 - x and z > x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z > 1.0 - x and z > x:
+        if round(z, ndecimals) > round(1.0 - x, ndecimals) and round(z, ndecimals) > round(x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z > x:
+        if round(z, ndecimals) > round(x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z < x:
+        if round(z, ndecimals) < round(x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z < 1.0 - x:
+        if round(z, ndecimals) < round(1.0 - x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z > 1.0 - x:
+        if round(z, ndecimals) > round(1.0 - x, ndecimals):
 
             tmp = 0.0
+            # Split orders:
             tmp = 0
-
+            if ("000" in orders) or ("all" in orders):
+                tmp += 0 + 0
             res += tmp
 
-        if z != x and z != 1.0 - x:
+        if round(z, ndecimals) != round(x, ndecimals) and round(z, ndecimals) != round(1.0 - x, ndecimals):
 
             tmp = 0.0
-            tmp = 2 * z * CF + 2 * x * CF
-
+            # Split orders:
+            tmp = 0
+            if ("000" in orders) or ("all" in orders):
+                tmp += 2 * z * CF + 2 * x * CF + 0
             res += tmp
 
         return res
