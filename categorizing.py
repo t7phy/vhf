@@ -242,7 +242,7 @@ def remove_var_n_semicolon(s, var):
 def split_to_line_per_var(s, var):
     indent = re.split(f"{var}", s)[0]
     lines = re.split(rf"\s*{var}\s*=\s*|\s*{var}\s*\+=\s*", s)
-    lines = [line for line in lines if line]
+    lines = [line.replace("\n", "") for line in lines if line]
     return lines, indent
 
 
@@ -344,7 +344,7 @@ def categorize_a_file(
 
 
 if __name__ == "__main__":
-    folder_path = "./step1pol"
+    folder_path = "./sidisprocessed/step1pol"
     files = os.listdir(folder_path + "/original/cpp")
     for file_name in files:
         categorize_a_file(file_name, folder_path)

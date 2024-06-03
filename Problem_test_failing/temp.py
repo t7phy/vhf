@@ -1,7 +1,7 @@
 import os
 import re
 from change_cpp_to_python import (
-    convert_python_to_cpp,
+    convert_cpp_to_python,
     convert_to_our_library,
     format_file_with_black,
 )
@@ -22,7 +22,7 @@ if create_files_flag:
     # Convert all the .cpp files to python files
     for filename in files:
         if filename.endswith(".cpp"):
-            convert_python_to_cpp(filename, dir)
+            convert_cpp_to_python(filename, dir)
             # os.remove("polarized/" + filename)
 
     files = os.listdir(dir + "/python")

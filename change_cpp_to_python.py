@@ -86,7 +86,7 @@ def convert_if_statement_to_include_round(s):
     return python_code
 
 
-def convert_python_to_cpp(
+def convert_cpp_to_python(
     file_name, folder_path, cpp_folder_name="cpp", python_folder_name="python"
 ):
     # Read the file line by line
@@ -127,7 +127,7 @@ def replace_order_with_if(s):
     # The replacement function
     def replacement(match):
         x = match.group(1)
-        return f'if (order == "{x}") or (order == "all"):\n'
+        return f'if ("{x}" in orders) or ("all" in orders):'
 
     # Replace the string
     new_s = re.sub(pattern, replacement, s)
@@ -139,13 +139,14 @@ def convert_to_our_library(file_path):
     # Read the file line by line
     python_file = list()
     add_indendt_flag = False
+    tmp_flag = False
     with open(file_path, "r") as file:
         for line in file:
             # Replace order with if statement
             if "(inx,inz,cx,cz,Q,muR,muF,muA)" in line.replace(" ", ""):
                 line = re.sub(
                     r"\(inx, inz, cx, cz,\s*Q, muR, muF, muA\)",
-                    "(inx, inz, cx, cz, Q, muR, muF, muA, order, ndecimals)",
+                    "(inx, inz, cx, cz, Q, muR, muF, muA, orders:list, ndecimals)",
                     line,
                 )
             if "log(" in line:
@@ -154,10 +155,14 @@ def convert_to_our_library(file_path):
                 line = line.replace("mysqrt(", "sqrt(")
             if "zeta3" in line:
                 line = line.replace("zeta3", "ZETA3")
-            if add_indendt_flag and "+=" in line:
+            if add_indendt_flag and "+=" in line and not (tmp_flag and "res" in line):
                 line = "\t" + line
             else:
                 add_indendt_flag = False
+            if "tmp" in line:
+                tmp_flag = True
+            else:
+                tmp_flag = False
             if "# Order" in line:
                 line = replace_order_with_if(line)
                 add_indendt_flag = True
@@ -210,7 +215,7 @@ if __name__ == "__main__":
     # Convert all the .cpp files to python files
     for filename in files:
         if filename.endswith(".cpp"):
-            convert_python_to_cpp(filename, dir)
+            convert_cpp_to_python(filename, dir)
             # os.remove("polarized/" + filename)
 
     files = os.listdir(dir + "/python")
