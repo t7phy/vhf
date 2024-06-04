@@ -1,10 +1,4 @@
-from configs.eh import CF, NC, TR, Li2, Li3
-from configs.eh import ln2 as rln2
-from configs.eh import atanint as InvTanInt
-from numpy import sqrt, pi
-from numpy import power as pow
-from numpy import log as ln
-from numpy import arctan as ArcTan
+from configs.eh import *
 
 LMUR = 1
 LMUF = 1
@@ -26,7 +20,7 @@ def cl_nnlo_q2qp_eqp(x, z, rsl, orders):
 
     if rsl == 'rr':
         result = 0
-        if orders = '000':
+        if orders == '000':
             if z != x and z != 1.-x:
                 result += 20./9.*pow(x,-1)*CF - 50./3.*CF + 20*z*CF + 14./3.*x*CF - 2./3.*x*pow(pi,2)*CF - 20*x*z*\
           CF + 88./9.*pow(x,2)*CF  - 1./2.\

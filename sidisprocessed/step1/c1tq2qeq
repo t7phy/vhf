@@ -14,17 +14,17 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
   double TR = 0.5;
 
   if (cx == "D" && cz == "D") {
-  res =  - 8*CF - 3./2.*LMUF*CF - 3./2.*LMUA*CF;
+  res =    ;
 
   return res;
   }
   if (cx == "D" && cz == "0") {
-  res =  - 2*LMUA*CF;
+  res =  ;
 
   return res;
   }
   if (cx == "D" && cz == "1") {
-  res = 2*CF;
+  res = ;
 
   return res;
   }
@@ -39,12 +39,12 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
   return res;
   }
   if (cx == "0" && cz == "D") {
-  res =  - 2*LMUF*CF;
+  res =  ;
 
   return res;
   }
   if (cx == "0" && cz == "0") {
-  res = 2*CF;
+  res = ;
 
   return res;
   }
@@ -64,7 +64,7 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
   return res;
   }
   if (cx == "1" && cz == "D") {
-  res = 2*CF;
+  res = ;
 
   return res;
   }
@@ -142,8 +142,10 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
   double z = inz;
   double omz = 1.-z;
   double opz = 1.+z;
-  res = CF - z*CF + LMUA*CF + LMUA*z*CF + 2*ln(z)*CF*pow(omz,-1) - ln(z)*CF - ln(z)*z*CF - ln(omz)*
-      CF - ln(omz)*z*CF;
+  res = ;
+
+//////////////////////////////////// dr-001
+
 
   return res;
   }
@@ -151,7 +153,7 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
   double z = inz;
   double omz = 1.-z;
   double opz = 1.+z;
-  res =  - CF - z*CF;
+  res =  ;
 
   return res;
   }
@@ -184,8 +186,10 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
   double omx = 1.-x;
   double opx = 1.+x;
   double op6xpxsq = 1.+6.*x+x*x;
-  res = CF - x*CF + LMUF*CF + LMUF*x*CF - 2*ln(x)*CF*pow(omx,-1) + ln(x)*CF + ln(x)*x*CF - ln(omx)*
-      CF - ln(omx)*x*CF;
+  res = ;
+
+//////////////////////////////////// rd-010
+
 
   return res;
   }
@@ -194,7 +198,7 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
   double omx = 1.-x;
   double opx = 1.+x;
   double op6xpxsq = 1.+6.*x+x*x;
-  res =  - CF - x*CF;
+  res =  ;
 
   return res;
   }
@@ -289,7 +293,7 @@ double C1Tq2qEq(double inx, double inz, std::string cx, std::string cz,
     }
     if (z != x && z != 1.-x) {
     double tmp = 0.0;
-    tmp = 2*CF + 2*x*z*CF;
+    tmp = ;
 
     res += tmp;
     }

@@ -1,9 +1,4 @@
-from core.definitions import CA, CF, ZETA2, ZETA3
-from numpy import log
-from core.hpl import Hr1, Hr2, Hr3
-
-z2 = ZETA2
-z3 = ZETA3
+from configs.ee import *
 
 ############################# LO COEFFICIENTS #############################
 
@@ -35,7 +30,7 @@ def ct_nlo_q_sing(X): #C2NS1TB(X):
     return result
     
 def ct_nlo_q_loc(X): #C2NS1TC(X):
-    result = 2 * CF * ( log( 1 - X )**2 - 3 * log( 1 - X ) / 2 + ( 4 * ZETA2 - 9 / 2 ) )
+    result = 2 * CF * ( log( 1 - X )**2 - 3 * log( 1 - X ) / 2 + ( 4 * z2 - 9 / 2 ) )
     return result
     
 def ct_nlo_g_reg(X): #C2G1TA(X):
@@ -63,7 +58,7 @@ def ca_nlo_q_sing(X): #C3NS1TB(X):
     return result
     
 def ca_nlo_q_loc(X): #C3NS1TC(X):  
-    result = 2 * CF * ( log( 1 - X )**2 - 3 * log( 1 - X ) / 2 + ( 4 * ZETA2 - 9 / 2 ) )
+    result = 2 * CF * ( log( 1 - X )**2 - 3 * log( 1 - X ) / 2 + ( 4 * z2 - 9 / 2 ) )
     return result
 
 # C2
@@ -88,7 +83,7 @@ def c2_nlo_g_reg(X):
 
 # CT
 
-def ct_nnlo_ns_reg(X, NF): #C2NSP2TA(X, NF):
+def ct_nnlo_ns_reg(X): #C2NSP2TA(X, NF):
     DX = 1/X
     DM = 1/(1-X)
     DP = 1/(1+X)
@@ -110,7 +105,7 @@ def ct_nnlo_ns_reg(X, NF): #C2NSP2TA(X, NF):
     result = CTeq2 - CTeq2L
     return result
 
-def ct_nnlo_ns_sing(X, NF): #C2NS2TB(X, NF):  #### to check: should it be nsp?
+def ct_nnlo_ns_sing(X): #C2NS2TB(X, NF):  #### to check: should it be nsp?
     DL1 = log(1-X)
     DM  = 1/(1-X)
 
@@ -122,7 +117,7 @@ def ct_nnlo_ns_sing(X, NF): #C2NS2TB(X, NF):  #### to check: should it be nsp?
     result = DM * ( DL1**3 * A3 + DL1**2 * A2 + DL1 * A1 + A0)
     return result
 
-def ct_nnlo_ns_loc(X, NF): #C2NSP2TC(X, NF):
+def ct_nnlo_ns_loc(X): #C2NSP2TC(X, NF):
     C2DELT =  CA*CF * ( - 5465/72 + 140/3*z3 + 215/3*z2 - 49/5*z2**2 ) + CF**2 * ( 331/8 - 78*z3 - 39*z2 + 30*z2**2 ) + CF*NF * ( 457/36 + 4/3*z3 - 38/3*z2 )
     DL1 = log(1-X)
 
@@ -134,13 +129,13 @@ def ct_nnlo_ns_loc(X, NF): #C2NSP2TC(X, NF):
     result =   DL1**4 * A3/4 + DL1**3 * A2/3  + DL1**2 * A1/2 + DL1 * A0 + C2DELT
     return result
 
-def ct_nnlo_ps_reg(X, NF): #C2PS2TA(X, NF):
+def ct_nnlo_ps_reg(X): #C2PS2TA(X, NF):
     DX = 1/X
     cTeqps2 = NF*CF * (  - 118/3 + 70/3*X + 512/27*X**2 - 80/27*DX + 16*z3 + 16*z3*X - 8*z2 - 32*z2*X - 200/3*Hr1(0, X) - 104/3*Hr1(0, X)*X - 128/9*Hr1(0, X)*X**2 - 16/3*Hr1(0, X)*DX + 16*Hr1(0, X)*z2 + 16*Hr1(0, X)*z2*X + 92/3*Hr1(1, X) - 68/3*Hr1(1, X)*X - 32/3*Hr1(1, X)*X**2 + 8/3*Hr1(1, X)*DX - 16*Hr2(-1, 0, X) - 16*Hr2(-1, 0, X)*X - 16/3*Hr2(-1, 0, X)*X**2 - 16/3*Hr2(-1, 0, X)*DX - 14*Hr2(0, 0, X) - 14*Hr2(0, 0, X)*X + 16/3*Hr2(0, 0, X)*X**2 + 64/3*Hr2(0, 0, X)*DX + 4*Hr2(0, 1, X) + 20*Hr2(0, 1, X)*X + 16/3*Hr2(0, 1, X)*X**2 - 32/3*Hr2(0, 1, X)*DX + 4*Hr2(1, 1, X) - 4*Hr2(1, 1, X)*X -16/3*Hr2(1, 1, X)*X**2 + 16/3*Hr2(1, 1, X)*DX + 44*Hr3(0, 0, 0, X) + 44*Hr3(0, 0, 0, X)*X - 24*Hr3(0, 0, 1, X) - 24*Hr3(0, 0, 1, X)*X + 8*Hr3(0, 1, 1, X) + 8*Hr3(0, 1, 1, X)*X )
     result = cTeqps2
     return result
 
-def ct_nnlo_g_reg(X, NF): #C2G2TA(X, NF):
+def ct_nnlo_g_reg(X): #C2G2TA(X, NF):
     DX = 1/X
 
     cTeg2 = CF*CA * (  - 36 - 106*X - 928/27*X**2 + 4438/27*DX + 64*z3 - 136*z3*X - 240*z3*DX + 32*z2 + 64*z2*X - 56*z2*DX + 16*Hr1(-1, X)*z2 + 8*Hr1(-1, X)*z2*X + 32*Hr1(-1, X)*z2*DX + 772/3*Hr1(0, X) + 172/3*Hr1(0, X)*X + 256/9*Hr1(0, X)*X**2 + 496/3*Hr1(0, X)*DX - 128*Hr1(0, X)*z2 - 16*Hr1(0, X)*z2*X + 32*Hr1(0, X)*z2*DX + 236/3*Hr1(1, X) + 4/3*Hr1(1, X)*X + 32/3*Hr1(1, X)*X**2 - 356/3*Hr1(1, X)*DX - 48*Hr1(1, X)*z2 + 24*Hr1(1, X)*z2*X + 32*Hr1(1, X)*z2*DX + 80*Hr2(-1, 0, X) + 56*Hr2(-1, 0, X)*X + 32/3*Hr2(-1, 0, X)*X**2 + 80/3*Hr2(-1, 0, X)*DX - 32*Hr2(0, 0, X) + 4*Hr2(0, 0, X)*X - 32/3*Hr2(0, 0, X)*X**2 - 464/3*Hr2(0, 0, X)*DX - 96*Hr2(0, 1, X) - 16*Hr2(0, 1, X)*X - 32/3*Hr2(0, 1, X)*X**2 + 496/3*Hr2(0, 1, X)*DX - 64*Hr2(1, 0, X) + 8*Hr2(1, 0, X)*X + 64*Hr2(1, 0, X)*DX + 96*Hr2(1, 1, X) - 16*Hr2(1, 1, X)*X + 32/3*Hr2(1, 1, X)*X**2 - 344/3*Hr2(1, 1, X)*DX - 32*Hr3(-1, -1, 0, X) - 16*Hr3(-1, -1, 0, X)*X + 96*Hr3(-1, 0, 0, X) + 48*Hr3(-1, 0, 0, X)*X + 80*Hr3(-1, 0, 0, X)*DX - 32*Hr3(-1, 0, 1, X) - 16*Hr3(-1, 0, 1, X)*X - 32*Hr3(-1, 0, 1, X)*DX + 64*Hr3(0, -1, 0, X) + 32*Hr3(0, -1, 0, X)*X + 64*Hr3(0, -1, 0, X)*DX - 176*Hr3(0, 0, 0, X) - 248*Hr3(0, 0, 0, X)*X - 320*Hr3(0, 0, 0, X)*DX + 128*Hr3(0, 0, 1, X) + 96*Hr3(0, 0, 1, X)*X + 96*Hr3(0, 0, 1, X)*DX + 96*Hr3(0, 1, 0, X) - 48*Hr3(0, 1, 0, X)*X - 96*Hr3(0, 1, 0, X)*DX - 48*Hr3(0, 1, 1, X) - 24*Hr3(0, 1, 1, X)*X - 16*Hr3(0, 1, 1, X)*DX + 64*Hr3(1, 0, 0, X) - 32*Hr3(1, 0, 0, X)*X - 48*Hr3(1, 0, 0, X)*DX - 32*Hr3(1, 0, 1, X) + 16*Hr3(1, 0, 1, X)*X + 32*Hr3(1, 0, 1, X)*DX - 64*Hr3(1, 1, 0, X) + 32*Hr3(1, 1, 0, X)*X + 64*Hr3(1, 1, 0, X)*DX + 16*Hr3(1, 1, 1, X) - 8*Hr3(1, 1, 1, X)*X - 16*Hr3(1, 1, 1, X)*DX )
@@ -150,7 +145,7 @@ def ct_nnlo_g_reg(X, NF): #C2G2TA(X, NF):
     
 # CL
 
-def cl_nnlo_ns_reg(X, NF): #CLNSP2TA(X, NF):
+def cl_nnlo_ns_reg(X): #CLNSP2TA(X, NF):
     DX = 1/X
 
     CLeq2 = CF*CA * ( 1729/45 - 98/15*X - 16/5*X**2 - 24/5*DX + 16*z2*X + 16/5*z2*X**3 - 8*Hr1(-1, X)*z2 - 146/15*Hr1(0, X) + 8/5*Hr1(0, X)*X - 16/5*Hr1(0, X)*X**2 + 24/5*Hr1(0, X)*DX + 46/3*Hr1(1, X) - 8*Hr1(1, X)*z2 + 8*Hr2(-1, 0, X) + 16*Hr2(-1, 0, X)*X + 16/5*Hr2(-1, 0, X)*X**3 - 24/5*Hr2(-1, 0, X)*DX**2 - 16*Hr2(0, 0, X)* - 16/5*Hr2(0, 0, X)*X**3 - 16*Hr3(-1, -1, 0, X) + 8*Hr3(-1, 0, 0, X) + 16*Hr3(0, -1, 0, X) + 8*Hr3(1, 0, 0, X) )
@@ -159,13 +154,13 @@ def cl_nnlo_ns_reg(X, NF): #CLNSP2TA(X, NF):
     result = CLeq2
     return result
     
-def cl_nnlo_ps_reg(X, NF): #CLPS2TA(X, NF):
+def cl_nnlo_ps_reg(X): #CLPS2TA(X, NF):
     DX = 1/X
     cLeqps2 = NF*CF * (  - 56/3 + 104/3*X - 8*X**2 - 8*DX + 8*z2 - 16*Hr1(0, X) - 16*Hr1(0, X)*X + 8/3*Hr1(0, X)*X**2 + 32/3*Hr1(0, X)*DX + 8*Hr1(1, X)*X - 8/3*Hr1(1, X)*X**2 - 16/3*Hr1(1, X)*DX + 24*Hr2(0, 0, X) - 8*Hr2(0, 1, X) )
     result = cLeqps2
     return result
 
-def cl_nnlo_g_reg(X, NF): #CLG2TA(X, NF):
+def cl_nnlo_g_reg(X): #CLG2TA(X, NF):
     DX = 1/X
 
     cLeg2 = CF*CA * (  - 320/3 - 160/3*X + 32/3*X**2 +448/3*DX - 64*z2 + 32*z2*DX + 112*Hr1(0, X) + 32*Hr1(0, X)*X - 16/3*Hr1(0, X)*X**2 - 352/3*Hr1(0, X)*DX - 144*Hr1(1, X) - 16*Hr1(1, X)*X + 16/3*Hr1(1, X)*X**2 + 464/3*Hr1(1, X)*DX + 32*Hr2(-1, 0, X) + 32*Hr2(-1, 0, X)*DX - 96*Hr2(0, 0, X) - 128*Hr2(0, 0, X)*DX + 64*Hr2(0, 1, X) + 64*Hr2(1, 0, X) - 64*Hr2(1, 0, X)*DX - 32*Hr2(1, 1, X) + 32*Hr2(1, 1, X)*DX )
@@ -175,7 +170,7 @@ def cl_nnlo_g_reg(X, NF): #CLG2TA(X, NF):
 
 # CA
 
-def ca_nnlo_ns_reg(X, NF): #C3NSP2TA(X, NF):
+def ca_nnlo_ns_reg(X): #C3NSP2TA(X, NF):
     DX = 1/X
     DM = 1/(1-X)
     DP = 1/(1+X)
@@ -195,7 +190,7 @@ def ca_nnlo_ns_reg(X, NF): #C3NSP2TA(X, NF):
     result = CAeq2 - CAeq2L
     return result
 
-def ca_nnlo_ns_sing(X, NF): #C3NS2TB(X, NF): ### to check: should it be nsp?
+def ca_nnlo_ns_sing(X): #C3NS2TB(X, NF): ### to check: should it be nsp?
     DL1 = log(1-X)
     DM  = 1/(1-X)
     
@@ -207,7 +202,7 @@ def ca_nnlo_ns_sing(X, NF): #C3NS2TB(X, NF): ### to check: should it be nsp?
     result = DM * ( DL1**3 * A3 + DL1**2 * A2 + DL1 * A1 + A0)
     return result
 
-def ca_nnlo_ns_loc(X, NF): #C3NSP2TC(X, NF):
+def ca_nnlo_ns_loc(X): #C3NSP2TC(X, NF):
     C2DELT =  CA*CF * ( - 5465/72 + 140/3*z3 + 215/3*z2 - 49/5*z2**2 ) + CF**2 * ( 331/8 - 78*z3 - 39*z2 + 30*z2**2 ) + CF*NF * ( 457/36 + 4/3*z3 - 38/3*z2 )
     DL1 = log(1-X)
 
@@ -221,22 +216,22 @@ def ca_nnlo_ns_loc(X, NF): #C3NSP2TC(X, NF):
 
 # C2
 
-def c2_nnlo_ns_reg(X, NF):
-    result = ct_nnlo_ns_reg(X, NF) + cl_nnlo_ns_reg(X, NF)
+def c2_nnlo_ns_reg(X):
+    result = ct_nnlo_ns_reg(X) + cl_nnlo_ns_reg(X)
     return result
 
-def c2_nnlo_ns_sing(X, NF):
-    result = ct_nnlo_ns_sing(X, NF)
+def c2_nnlo_ns_sing(X):
+    result = ct_nnlo_ns_sing(X)
     return result
 
-def c2_nnlo_ns_loc(X, NF):
-    result = ct_nnlo_ns_loc(X, NF)
+def c2_nnlo_ns_loc(X):
+    result = ct_nnlo_ns_loc(X)
     return result
 
-def c2_nnlo_ps_reg(X, NF):
-    result = ct_nnlo_ps_reg(X, NF) + cl_nnlo_ps_reg(X, NF)
+def c2_nnlo_ps_reg(X):
+    result = ct_nnlo_ps_reg(X) + cl_nnlo_ps_reg(X)
     return result
 
-def c2_nnlo_g_reg(X, NF):
-    result = ct_nnlo_g_reg(X, NF) + cl_nnlo_g_reg(X, NF)
+def c2_nnlo_g_reg(X):
+    result = ct_nnlo_g_reg(X) + cl_nnlo_g_reg(X)
     return result

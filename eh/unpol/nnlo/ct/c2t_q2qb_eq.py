@@ -1,12 +1,4 @@
-from configs.eh import CF, NC, NF, TR, Li2, Li3
-from configs.eh import ln2 as rln2
-from configs.eh import atanint as InvTanInt
-from configs.eh import ZETA2 as zeta2
-from configs.eh import ZETA3 as zeta3
-from numpy import sqrt, pi
-from numpy import power as pow
-from numpy import log as ln
-from numpy import arctan as ArcTan
+from configs.eh import *
 
 LMUR = 1
 LMUF = 1
