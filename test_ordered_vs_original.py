@@ -104,32 +104,26 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                             # If the results are not equal
                             if not cmath.isclose(result_ordered, result_original):
                                 # Print the values of the variables
-                                print(
-                                    f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, Q: {self.Q}, muR: {muR}, muF: {muF}, muA: {muA}, order: {orders}"
-                                )
-                                print(
-                                    f"result_ordered: {result_ordered}, result_original: {result_original}"
-                                )
+                                print(f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, Q: {self.Q}, muR: {muR}, muF: {muF}, muA: {muA}, order: {orders}")
+                                print(f"result_ordered: {result_ordered}, result_original: {result_original}")
 
                             # Assert that the results are equal
-                            self.assertAlmostEqual(
-                                result_ordered, result_original, places=self.precision
-                            )
+                            self.assertAlmostEqual(result_ordered, result_original, places=self.precision)
 
-    def test_all_orders_LMUR_zero(self):
+    def test_all_orders_LMUX_zero(self):
         # Set equal to one get LMUx=0
         muR = 1.0
         muF = 1.0
         muA = 1.0
-        orders = ["all"]
+        orders = self.orders
         self.func_loop_orders(muR, muF, muA, orders)
 
-    def test_all_orders_LMUR(self):
+    def test_all_orders_LMUX(self):
         # Set equal to one get LMUx=0
         muR = 2.0
         muF = 2.0
         muA = 2.0
-        orders = ["all"]
+        orders = self.orders
         self.func_loop_orders(muR, muF, muA, orders)
 
     def test_000_order(self):

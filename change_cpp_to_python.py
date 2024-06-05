@@ -86,9 +86,7 @@ def convert_if_statement_to_include_round(s):
     return python_code
 
 
-def convert_cpp_to_python(
-    file_name, folder_path, cpp_folder_name="cpp", python_folder_name="python"
-):
+def convert_cpp_to_python(file_name, folder_path, cpp_folder_name="cpp", python_folder_name="python"):
     # Read the file line by line
     file_path = folder_path + f"/{cpp_folder_name}/{file_name}"
     python_file = list()
@@ -102,9 +100,7 @@ def convert_cpp_to_python(
                 def_line += line
                 python_file.append(cpp_to_python_func_def(def_line))
             else:
-                python_line = replace_cpp_with_python_replace_ensure_closed_decleration(
-                    line
-                )
+                python_line = replace_cpp_with_python_replace_ensure_closed_decleration(line)
                 python_line = replace_cpp_with_python_remove_redundancies(python_line)
                 python_line = replace_cpp_with_python_replace_easy_char(python_line)
                 python_line = cpp_to_python_if_statement(python_line)
@@ -127,7 +123,7 @@ def replace_order_with_if(s):
     # The replacement function
     def replacement(match):
         x = match.group(1)
-        return f'if ("{x}" in orders) or ("all" in orders):'
+        return f'if ("{x}" in orders):'
 
     # Replace the string
     new_s = re.sub(pattern, replacement, s)
