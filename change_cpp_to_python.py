@@ -66,14 +66,15 @@ def convert_if_statement_to_include_round(s):
     parts = [k for k in parts if k]
 
     # Replace C++ syntax with Python syntax
-    for i in range(0, len(parts), 2):
-        x = parts[i]
-        y = parts[i + 1]
-        if '"' in x or "'" in x or '"' in y or "'" in y:
-            continue
-        else:
-            parts[i] = f"round({x}, ndecimals)"
-            parts[i + 1] = f"round({y}, ndecimals)"
+    if len(parts) > 1:
+        for i in range(0, len(parts), 2):
+            x = parts[i]
+            y = parts[i + 1]
+            if '"' in x or "'" in x or '"' in y or "'" in y:
+                continue
+            else:
+                parts[i] = f"round({x}, ndecimals)"
+                parts[i + 1] = f"round({y}, ndecimals)"
 
     # Join the parts
     delimters = re.findall(r" == | and | \|\| | or | != | < | > | <= | >= |if |:", s)
@@ -137,20 +138,22 @@ def convert_to_our_library(file_path):
     add_indendt_flag = False
     tmp_flag = False
     with open(file_path, "r") as file:
-        for line in file:
-            # Replace order with if statement
+        for i, line in enumerate(file):
+
+            # Ignore parts of the settings from import statements
+            if i > 2 and i < 13:
+                continue
+
             if "(inx,inz,cx,cz,Q,muR,muF,muA)" in line.replace(" ", ""):
                 line = re.sub(
                     r"\(inx, inz, cx, cz,\s*Q, muR, muF, muA\)",
-                    "(inx, inz, cx, cz, Q, muR, muF, muA, orders:list, ndecimals)",
+                    "(inx, inz, cx, cz, orders:list, ndecimals=ndecimals, Q=Q, LMUR=LMUR, LMUF=LMUF, LMUA=LMUA)",
                     line,
                 )
             if "log(" in line:
                 line = line.replace("log(", "ln(")
             if "mysqrt(" in line:
                 line = line.replace("mysqrt(", "sqrt(")
-            if "zeta3" in line:
-                line = line.replace("zeta3", "ZETA3")
             if add_indendt_flag and "+=" in line and not (tmp_flag and "res" in line):
                 line = "\t" + line
             else:
@@ -167,16 +170,7 @@ def convert_to_our_library(file_path):
             python_file.append(line)
 
     # Add the import statements at the beginning
-    import_statements = [
-        "from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2\n",
-        "from core.definitions import ln2 as rln2\n",
-        "from core.miscfunc import atanint as InvTanInt\n",
-        "from core.miscfunc import Li2, Li3\n",
-        "from numpy import power as pow\n",
-        "from numpy import log as ln\n",
-        "from numpy import arctan as ArcTan\n",
-        "from numpy import sqrt, pi\n",
-    ]
+    import_statements = ["from configs.eh import *\n"]
 
     # Add the import statements at the beginning
     python_file = import_statements + python_file

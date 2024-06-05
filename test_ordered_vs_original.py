@@ -69,7 +69,7 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
 
         self.func_names = functions_ordered.keys()
 
-    def func_loop_orders(self, muR, muF, muA, orders):
+    def func_loop_orders(self, LMUR, LMUF, LMUA, orders):
         for func_name in self.func_names:
             for inx in self.x_values:
                 for inz in self.z_values:
@@ -81,99 +81,97 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                                 inz,
                                 cx,
                                 cz,
-                                self.Q,
-                                muR,
-                                muF,
-                                muA,
                                 orders,
-                                self.ndecimal,
+                                Q=self.Q,
+                                LMUR=LMUR,
+                                LMUF=LMUF,
+                                LMUA=LMUA,
+                                ndecimals=self.ndecimal,
                             )
                             result_original = functions_original[func_name](
                                 inx,
                                 inz,
                                 cx,
                                 cz,
-                                self.Q,
-                                muR,
-                                muF,
-                                muA,
                                 orders,
-                                self.ndecimal,
+                                Q=self.Q,
+                                LMUR=LMUR,
+                                LMUF=LMUF,
+                                LMUA=LMUA,
+                                ndecimals=self.ndecimal,
                             )
 
                             # If the results are not equal
                             if not cmath.isclose(result_ordered, result_original):
                                 # Print the values of the variables
-                                print(f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, Q: {self.Q}, muR: {muR}, muF: {muF}, muA: {muA}, order: {orders}")
+                                print(f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, Q: {self.Q}, muR: {LMUR}, muF: {LMUF}, muA: {LMUA}, order: {orders}")
                                 print(f"result_ordered: {result_ordered}, result_original: {result_original}")
 
                             # Assert that the results are equal
                             self.assertAlmostEqual(result_ordered, result_original, places=self.precision)
 
     def test_all_orders_LMUX_zero(self):
-        # Set equal to one get LMUx=0
-        muR = 1.0
-        muF = 1.0
-        muA = 1.0
+        LMUR = 0.0
+        LMUF = 0.0
+        LMUA = 0.0
         orders = self.orders
-        self.func_loop_orders(muR, muF, muA, orders)
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_all_orders_LMUX(self):
-        # Set equal to one get LMUx=0
-        muR = 2.0
-        muF = 2.0
-        muA = 2.0
+        LMUR = 0.9
+        LMUF = 0.9
+        LMUA = 0.9
         orders = self.orders
-        self.func_loop_orders(muR, muF, muA, orders)
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_000_order(self):
-        muR = 1.0
-        muF = 1.0
-        muA = 1.0
-        order = ["000"]
-        self.func_loop_orders(muR, muF, muA, order)
+        LMUR = 0.0
+        LMUF = 0.0
+        LMUA = 0.0
+        orders = ["000"]
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_LMUR_order(self):
-        muR = 2.0
-        muF = 1.0
-        muA = 1.0
-        order = ["000", "100"]
-        self.func_loop_orders(muR, muF, muA, order)
+        LMUR = 0.9
+        LMUF = 0.0
+        LMUA = 0.0
+        orders = ["000", "100"]
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_LMUF_order(self):
-        muR = 1.0
-        muF = 2.0
-        muA = 1.0
-        order = ["000", "010", "020"]
-        self.func_loop_orders(muR, muF, muA, order)
+        LMUR = 0.0
+        LMUF = 0.9
+        LMUA = 0.0
+        orders = ["000", "010", "020"]
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_LMUA_order(self):
-        muR = 1.0
-        muF = 1.0
-        muA = 2.0
-        order = ["000", "001", "002"]
-        self.func_loop_orders(muR, muF, muA, order)
+        LMUR = 0.0
+        LMUF = 0.0
+        LMUA = 0.9
+        orders = ["000", "001", "002"]
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_LMUR_LMUF_order(self):
-        muR = 2.0
-        muF = 2.0
-        muA = 1.0
-        order = ["000", "100", "010", "110", "020"]
-        self.func_loop_orders(muR, muF, muA, order)
+        LMUR = 0.9
+        LMUF = 0.9
+        LMUA = 0.0
+        orders = ["000", "100", "010", "110", "020"]
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_LMUR_LMUA_order(self):
-        muR = 2.0
-        muF = 1.0
-        muA = 2.0
-        order = ["000", "100", "001", "101", "002"]
-        self.func_loop_orders(muR, muF, muA, order)
+        LMUR = 0.9
+        LMUF = 0.0
+        LMUA = 0.9
+        orders = ["000", "100", "001", "101", "002"]
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
     def test_LMUF_LMUA_order(self):
-        muR = 1.0
-        muF = 2.0
-        muA = 2.0
-        order = ["000", "010", "001", "011", "002", "020"]
-        self.func_loop_orders(muR, muF, muA, order)
+        LMUR = 0.0
+        LMUF = 0.9
+        LMUA = 0.9
+        orders = ["000", "010", "001", "011", "002", "020"]
+        self.func_loop_orders(LMUR, LMUF, LMUA, orders)
 
 
 # def test_higher_orders(self):
