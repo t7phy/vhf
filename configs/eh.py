@@ -4,7 +4,6 @@ CF = default.CF
 NC = default.NC
 NF = default.NF
 TR = default.TR
-Q = default.Q
 zeta2 = default.ZETA2
 zeta3 = default.ZETA3
 rln2 = default.ln2

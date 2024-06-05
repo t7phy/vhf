@@ -11,8 +11,6 @@ ZETA3 = zeta(3)
 
 ln2 = log(2)
 
-Q = 1.0
-
 # Developer settings
 ndecimals = 10
 LMUA = 1.0
