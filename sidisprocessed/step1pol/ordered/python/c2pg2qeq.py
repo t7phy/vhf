@@ -1,31 +1,14 @@
-from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2
-from core.definitions import ln2 as rln2
-from core.miscfunc import atanint as InvTanInt
-from core.miscfunc import Li2, Li3
-from numpy import power as pow
-from numpy import log as ln
-from numpy import arctan as ArcTan
-from numpy import sqrt, pi
+from configs.eh import *
 
 
-def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
+def C2Pg2qEq_DR0123_scheme(inx: float, inz: float, cx: str, cz: str, order: str, ndecimals=ndecimals, LMUR=LMUR, LMUF=LMUF, LMUA=LMUA):
     res = 0.0
-
-    rln2 = ln(2.0)
-
-    LMUR = 2 * ln(muR / Q)
-    LMUF = 2 * ln(muF / Q)
-    LMUA = 2 * ln(muA / Q)
-
-    NC = 3.0
-    CF = 4.0 / 3.0
-    TR = 0.5
 
     if cx == "D" and cz == "D":
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -33,7 +16,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -41,7 +24,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -49,7 +32,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -57,7 +40,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -65,7 +48,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -73,7 +56,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -81,7 +64,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -89,7 +72,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -97,7 +80,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -105,7 +88,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -113,7 +96,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -121,7 +104,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -129,7 +112,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -137,7 +120,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -145,7 +128,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -153,7 +136,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -161,7 +144,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -169,7 +152,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -177,7 +160,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -185,7 +168,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -193,7 +176,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -201,7 +184,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -209,7 +192,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -217,7 +200,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
 
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -228,7 +211,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -239,7 +222,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -250,7 +233,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -261,7 +244,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -272,7 +255,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         opz = 1.0 + z
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -284,7 +267,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         op6xpxsq = 1.0 + 6.0 * x + x * x
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += (
                 +(-1) * 35.0 / 16.0 * pow(NC, -1)
                 + 263.0 / 16.0 * NC
@@ -292,10 +275,10 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                 + 45.0 / 16.0 * x * pow(NC, -1)
                 + (-1) * 281.0 / 16.0 * x * NC
                 + (-1) * 2.0 / 3.0 * x * NC * pow(rln2, 3)
-                + 4 * ZETA3 * pow(NC, -1)
-                + (-1) * 13.0 / 4.0 * ZETA3 * NC
-                + (-1) * 8 * ZETA3 * x * pow(NC, -1)
-                + 9.0 / 2.0 * ZETA3 * x * NC
+                + 4 * zeta3 * pow(NC, -1)
+                + (-1) * 13.0 / 4.0 * zeta3 * NC
+                + (-1) * 8 * zeta3 * x * pow(NC, -1)
+                + 9.0 / 2.0 * zeta3 * x * NC
                 + 5.0 / 24.0 * pow(pi, 2) * pow(NC, -1)
                 + (-1) * 23.0 / 24.0 * pow(pi, 2) * NC
                 + 1.0 / 6.0 * pow(pi, 2) * NC * rln2
@@ -411,11 +394,11 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                 + 0
             )
             res += +(-1) * 7.0 / 8.0 * Li2(x) * NC + (-1) * 1.0 / 2.0 * Li2(x) * x * pow(NC, -1) + (-1) * 3.0 / 2.0 * Li2(x) * x * NC + 0
-        if ("001" in orders) or ("all" in orders):
+        if "001" == order:
             res += 3.0 / 4.0 * LMUA * pow(NC, -1) + (-1) * 3.0 / 4.0 * LMUA * NC + (-1) * 3.0 / 4.0 * x * LMUA * pow(NC, -1) + 3.0 / 4.0 * x * LMUA * NC + 1.0 / 12.0 * pow(pi, 2) * LMUA * pow(NC, -1) + (-1) * 1.0 / 12.0 * pow(pi, 2) * LMUA * NC + (-1) * 1.0 / 6.0 * pow(pi, 2) * x * LMUA * pow(NC, -1) + 1.0 / 6.0 * pow(pi, 2) * x * LMUA * NC + 0
             res += 3.0 / 8.0 * ln(x) * LMUA * pow(NC, -1) + (-1) * 3.0 / 8.0 * ln(x) * LMUA * NC + (-1) * 3.0 / 4.0 * ln(x) * x * LMUA * pow(NC, -1) + 3.0 / 4.0 * ln(x) * x * LMUA * NC + 0
             res += (-1) * 3.0 / 8.0 * ln(omx) * LMUA * pow(NC, -1) + 3.0 / 8.0 * ln(omx) * LMUA * NC + 3.0 / 4.0 * ln(omx) * x * LMUA * pow(NC, -1) + (-1) * 3.0 / 4.0 * ln(omx) * x * LMUA * NC + 0
-        if ("010" in orders) or ("all" in orders):
+        if "010" == order:
             res += (
                 (-1) * 1.0 / 2.0 * LMUF * pow(NC, -1)
                 + 1.0 / 3.0 * LMUF * NF
@@ -459,17 +442,17 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             )
             res += (-1) * 1.0 / 2.0 * pow(ln(omx), 2) * LMUF * pow(NC, -1) + pow(ln(omx), 2) * LMUF * NC + pow(ln(omx), 2) * x * LMUF * pow(NC, -1) + (-1) * 2 * pow(ln(omx), 2) * x * LMUF * NC + Li2(-x) * LMUF * NC + 2 * Li2(-x) * x * LMUF * NC + 0
             res += 1.0 / 4.0 * Li2(x) * LMUF * pow(NC, -1) + 7.0 / 4.0 * Li2(x) * LMUF * NC + (-1) * 1.0 / 2.0 * Li2(x) * x * LMUF * pow(NC, -1) + 5.0 / 2.0 * Li2(x) * x * LMUF * NC + 0
-        if ("011" in orders) or ("all" in orders):
+        if "011" == order:
             res += 3.0 / 8.0 * LMUA * LMUF * pow(NC, -1) + (-1) * 3.0 / 8.0 * LMUA * LMUF * NC + (-1) * 3.0 / 4.0 * x * LMUA * LMUF * pow(NC, -1) + 3.0 / 4.0 * x * LMUA * LMUF * NC + 0
-        if ("020" in orders) or ("all" in orders):
+        if "020" == order:
             res += (-1) * 3.0 / 16.0 * pow(LMUF, 2) * pow(NC, -1) + 1.0 / 6.0 * pow(LMUF, 2) * NF + 109.0 / 48.0 * pow(LMUF, 2) * NC + (-1) * 1.0 / 3.0 * x * pow(LMUF, 2) * NF + (-1) * 7.0 / 6.0 * x * pow(LMUF, 2) * NC + 0
             res += (-1) * 1.0 / 8.0 * ln(x) * pow(LMUF, 2) * pow(NC, -1) + 9.0 / 8.0 * ln(x) * pow(LMUF, 2) * NC + 1.0 / 4.0 * ln(x) * x * pow(LMUF, 2) * pow(NC, -1) + 3.0 / 4.0 * ln(x) * x * pow(LMUF, 2) * NC + 0
             res += 1.0 / 4.0 * ln(omx) * pow(LMUF, 2) * pow(NC, -1) + (-1) * 3.0 / 4.0 * ln(omx) * pow(LMUF, 2) * NC + (-1) * 1.0 / 2.0 * ln(omx) * x * pow(LMUF, 2) * pow(NC, -1) + 3.0 / 2.0 * ln(omx) * x * pow(LMUF, 2) * NC + 0
-        if ("100" in orders) or ("all" in orders):
+        if "100" == order:
             res += (-1) * 1.0 / 3.0 * LMUR * NF + 11.0 / 6.0 * LMUR * NC + 1.0 / 3.0 * x * LMUR * NF + (-1) * 11.0 / 6.0 * x * LMUR * NC + 0
             res += (-1) * 1.0 / 6.0 * ln(x) * LMUR * NF + 11.0 / 12.0 * ln(x) * LMUR * NC + 1.0 / 3.0 * ln(x) * x * LMUR * NF + (-1) * 11.0 / 6.0 * ln(x) * x * LMUR * NC + 0
             res += 1.0 / 6.0 * ln(omx) * LMUR * NF + (-1) * 11.0 / 12.0 * ln(omx) * LMUR * NC + (-1) * 1.0 / 3.0 * ln(omx) * x * LMUR * NF + 11.0 / 6.0 * ln(omx) * x * LMUR * NC + 0
-        if ("110" in orders) or ("all" in orders):
+        if "110" == order:
             res += (-1) * 1.0 / 6.0 * LMUF * LMUR * NF + 11.0 / 12.0 * LMUF * LMUR * NC + 1.0 / 3.0 * x * LMUF * LMUR * NF + (-1) * 11.0 / 6.0 * x * LMUF * LMUR * NC + 0
         return res
 
@@ -481,7 +464,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         op6xpxsq = 1.0 + 6.0 * x + x * x
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += (
                 5.0 / 4.0 * pow(NC, -1)
                 + (-1) * 21.0 / 4.0 * NC
@@ -512,7 +495,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                 + 0
             )
             res += +1.0 / 2.0 * pow(ln(omx), 2) * pow(NC, -1) + (-1) * pow(ln(omx), 2) * NC + (-1) * pow(ln(omx), 2) * x * pow(NC, -1) + 2 * pow(ln(omx), 2) * x * NC + (-1) * Li2(-x) * NC + (-1) * 2 * Li2(-x) * x * NC + (-1) * 1.0 / 4.0 * Li2(x) * pow(NC, -1) + (-1) * 7.0 / 4.0 * Li2(x) * NC + 1.0 / 2.0 * Li2(x) * x * pow(NC, -1) + (-1) * 5.0 / 2.0 * Li2(x) * x * NC + 0
-        if ("001" in orders) or ("all" in orders):
+        if "001" == order:
             res += (
                 5.0 / 8.0 * LMUA * pow(NC, -1)
                 + (-1) * 5.0 / 8.0 * LMUA * NC
@@ -528,7 +511,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                 + (-1) * ln(omx) * x * LMUA * NC
                 + 0
             )
-        if ("010" in orders) or ("all" in orders):
+        if "010" == order:
             res += (
                 3.0 / 4.0 * LMUF * pow(NC, -1)
                 + (-1) * 1.0 / 6.0 * LMUF * NF
@@ -546,9 +529,9 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                 + (-1) * 3 * ln(omx) * x * LMUF * NC
                 + 0
             )
-        if ("011" in orders) or ("all" in orders):
+        if "011" == order:
             res += 1.0 / 2.0 * LMUA * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * LMUA * LMUF * NC + (-1) * x * LMUA * LMUF * pow(NC, -1) + x * LMUA * LMUF * NC + 0
-        if ("100" in orders) or ("all" in orders):
+        if "100" == order:
             res += 1.0 / 6.0 * LMUR * NF + (-1) * 11.0 / 12.0 * LMUR * NC + (-1) * 1.0 / 3.0 * x * LMUR * NF + 11.0 / 6.0 * x * LMUR * NC + 0
         return res
 
@@ -560,11 +543,11 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         op6xpxsq = 1.0 + 6.0 * x + x * x
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += +(-1) * 17.0 / 8.0 * pow(NC, -1) + 65.0 / 8.0 * NC + 5.0 / 2.0 * x * pow(NC, -1) + (-1) * 17.0 / 2.0 * x * NC + (-1) * 3.0 / 4.0 * ln(x) * pow(NC, -1) + 11.0 / 4.0 * ln(x) * NC + 3.0 / 2.0 * ln(x) * x * pow(NC, -1) + 1.0 / 2.0 * ln(x) * x * NC + ln(omx) * pow(NC, -1) + (-1) * 2 * ln(omx) * NC + (-1) * 2 * ln(omx) * x * pow(NC, -1) + 4 * ln(omx) * x * NC + 0
-        if ("001" in orders) or ("all" in orders):
+        if "001" == order:
             res += (-1) * LMUA * pow(NC, -1) + LMUA * NC + 2 * x * LMUA * pow(NC, -1) + (-1) * 2 * x * LMUA * NC + 0
-        if ("010" in orders) or ("all" in orders):
+        if "010" == order:
             res += (-1) * 1.0 / 2.0 * LMUF * pow(NC, -1) + 1.0 / 2.0 * LMUF * NC + x * LMUF * pow(NC, -1) + (-1) * x * LMUF * NC + 0
         return res
 
@@ -576,7 +559,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         op6xpxsq = 1.0 + 6.0 * x + x * x
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 3.0 / 4.0 * pow(NC, -1) + (-1) * 3.0 / 4.0 * NC + (-1) * 3.0 / 2.0 * x * pow(NC, -1) + 3.0 / 2.0 * x * NC + 0
         return res
 
@@ -588,7 +571,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
         op6xpxsq = 1.0 + 6.0 * x + x * x
         # Split orders:
         res = 0
-        if ("000" in orders) or ("all" in orders):
+        if "000" == order:
             res += 0 + 0
         return res
 
@@ -612,7 +595,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += (
                     2 * pow(z, -1) * pow(NC, -1)
                     + (-1) * pow(z, -1) * NC
@@ -962,7 +945,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += (
                     2 * pow(z, -1) * pow(NC, -1)
                     + (-1) * pow(z, -1) * NC
@@ -1312,7 +1295,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += (
                     2 * pow(z, -1) * pow(NC, -1)
                     + (-1) * pow(z, -1) * NC
@@ -1662,7 +1645,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += (
                     2 * pow(z, -1) * pow(NC, -1)
                     + (-1) * pow(z, -1) * NC
@@ -2012,7 +1995,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += 0 + 0
             res += tmp
 
@@ -2021,7 +2004,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += 0 + 0
             res += tmp
 
@@ -2030,7 +2013,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += 0 + 0
             res += tmp
 
@@ -2039,7 +2022,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += 0 + 0
             res += tmp
 
@@ -2048,7 +2031,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             tmp = 0.0
             # Split orders:
             tmp = 0
-            if ("000" in orders) or ("all" in orders):
+            if "000" == order:
                 tmp += (
                     2 * pow(z, -1) * pow(NC, -1) * pow(omz, -1)
                     + (-1) * 47.0 / 16.0 * pow(z, -1) * pow(NC, -1)
@@ -2838,7 +2821,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                     + Li2(z) * pow(x, 2) * pow(NC, -1) * pow(omz, -1)
                     + 0
                 )
-            if ("001" in orders) or ("all" in orders):
+            if "001" == order:
                 tmp += (-1) * 1.0 / 4.0 * LMUA * pow(NC, -1) + 1.0 / 4.0 * LMUA * NC + (-1) * 3.0 / 8.0 * z * LMUA * pow(NC, -1) + 3.0 / 8.0 * z * LMUA * NC + 0
                 tmp += 1.0 / 4.0 * x * z * LMUA * pow(NC, -1) + (-1) * 1.0 / 4.0 * x * z * LMUA * NC + 0
                 tmp += (-1) * 1.0 / 4.0 * ln(x) * LMUA * pow(NC, -1) + 1.0 / 4.0 * ln(x) * LMUA * NC + (-1) * 1.0 / 4.0 * ln(x) * z * LMUA * pow(NC, -1) + 1.0 / 4.0 * ln(x) * z * LMUA * NC + 0
@@ -2858,7 +2841,7 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                     + 0
                 )
                 tmp += (-1) * 5.0 / 2.0 * ln(omz) * x * LMUA * pow(NC, -1) + 5.0 / 2.0 * ln(omz) * x * LMUA * NC + (-1) * 1.0 / 2.0 * ln(omz) * x * z * LMUA * pow(NC, -1) + 1.0 / 2.0 * ln(omz) * x * z * LMUA * NC + 0
-            if ("010" in orders) or ("all" in orders):
+            if "010" == order:
                 tmp += (
                     (-1) * 1.0 / 6.0 * pow(z, -1) * LMUF * NF
                     + (-1) * 61.0 / 12.0 * pow(z, -1) * LMUF * NC
@@ -2894,11 +2877,113 @@ def C2Pg2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
                 )
                 tmp += 1.0 / 4.0 * ln(omz) * LMUF * pow(NC, -1) + (-1) * 1.0 / 4.0 * ln(omz) * LMUF * NC + 1.0 / 4.0 * ln(omz) * z * LMUF * pow(NC, -1) + (-1) * 1.0 / 4.0 * ln(omz) * z * LMUF * NC + 0
                 tmp += (-1) * 1.0 / 2.0 * ln(omz) * x * LMUF * pow(NC, -1) + 1.0 / 2.0 * ln(omz) * x * LMUF * NC + (-1) * 1.0 / 2.0 * ln(omz) * x * z * LMUF * pow(NC, -1) + 1.0 / 2.0 * ln(omz) * x * z * LMUF * NC + 0
-            if ("011" in orders) or ("all" in orders):
+            if "011" == order:
                 tmp += (-1) * 1.0 / 4.0 * LMUA * LMUF * pow(NC, -1) + 1.0 / 4.0 * LMUA * LMUF * NC + (-1) * 1.0 / 4.0 * z * LMUA * LMUF * pow(NC, -1) + 1.0 / 4.0 * z * LMUA * LMUF * NC + 1.0 / 2.0 * x * LMUA * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * x * LMUA * LMUF * NC + 0
                 tmp += 1.0 / 2.0 * x * z * LMUA * LMUF * pow(NC, -1) + (-1) * 1.0 / 2.0 * x * z * LMUA * LMUF * NC + 0
-            if ("100" in orders) or ("all" in orders):
+            if "100" == order:
                 tmp += 1.0 / 6.0 * pow(z, -1) * LMUR * NF + (-1) * 11.0 / 12.0 * pow(z, -1) * LMUR * NC + (-1) * 1.0 / 3.0 * LMUR * NF + 11.0 / 6.0 * LMUR * NC + (-1) * 1.0 / 3.0 * x * pow(z, -1) * LMUR * NF + 11.0 / 6.0 * x * pow(z, -1) * LMUR * NC + 2.0 / 3.0 * x * LMUR * NF + (-1) * 11.0 / 3.0 * x * LMUR * NC + 0
             res += tmp
 
         return res
+
+
+def c2p_g2q_eq(x, z, rsl, order, f=C2Pg2qEq_DR0123_scheme):
+    if rsl == "ll":
+        f_DD = f(x, z, "D", "D", order)
+        f_D0 = ln(1 - z) * f(x, z, "D", "0", order)
+        f_D1 = 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "D", "1", order)
+        f_D2 = 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "D", "2", order)
+        f_00 = ln(1 - x) * ln(1 - z) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - x) * 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "0", "1", order)
+        f_02 = ln(1 - x) * 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "0", "2", order)
+        f_10 = 1 / 2 * pow(ln(1 - x), 2) * ln(1 - z) * f(x, z, "1", "0", order)
+        f_11 = 1 / 2 * pow(ln(1 - x), 2) * 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "1", "1", order)
+        f_12 = 1 / 2 * pow(ln(1 - x), 2) * 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "1", "2", order)
+        f_20 = 1 / 3 * pow(ln(1 - x), 3) * ln(1 - z) * f(x, z, "2", "0", order)
+        f_21 = 1 / 3 * pow(ln(1 - x), 3) * 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "2", "1", order)
+        f_22 = 1 / 3 * pow(ln(1 - x), 3) * 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "2", "2", order)
+
+        return f_DD + f_D0 + f_D1 + f_D2 + f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    elif rsl == "lr":
+        f_DR = f(x, z, "D", "R", order)
+        f_0R = ln(1 - x) * f(x, z, "0", "R", order)
+        f_1R = 1 / 2 * pow(ln(1 - x), 2) * f(x, z, "1", "R", order)
+        f_2R = 1 / 3 * pow(ln(1 - x), 3) * f(x, z, "2", "R", order)
+
+        return f_DR + f_0R + f_1R + f_2R
+
+    elif rsl == "rl":
+        f_RD = f(x, z, "R", "D", order)
+        f_R0 = ln(1 - z) * f(x, z, "R", "0", order)
+        f_R1 = 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "R", "1", order)
+        f_R2 = 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "R", "2", order)
+
+        return f_RD + f_R0 + f_R1 + f_R2
+
+    elif rsl == "rr":
+        f_RR = f(x, z, "R", "R", order)
+
+        return f_RR
+
+    elif rsl == "rs":
+        f_R0 = 1 / (1 - z) * f(x, z, "R", "0", order)
+        f_R1 = ln(1 - z) / (1 - z) * f(x, z, "R", "1", order)
+        f_R2 = pow(ln(1 - z), 2) / (1 - z) * f(x, z, "R", "2", order)
+
+        return f_R0 + f_R1 + f_R2
+
+    elif rsl == "sr":
+        f_0R = 1 / (1 - x) * f(x, z, "0", "R", order)
+        f_1R = ln(1 - x) / (1 - x) * f(x, z, "1", "R", order)
+        f_2R = pow(ln(1 - x), 2) / (1 - x) * f(x, z, "2", "R", order)
+
+        return f_0R + f_1R + f_2R
+
+    elif rsl == "ss":
+        f_00 = 1 / ((1 - x) * (1 - z)) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - z) / ((1 - x) * (1 - z)) * f(x, z, "0", "1", order)
+        f_02 = pow(ln(1 - z), 2) / ((1 - x) * (1 - z)) * f(x, z, "0", "2", order)
+        f_10 = ln(1 - x) / ((1 - x) * (1 - z)) * f(x, z, "1", "0", order)
+        f_11 = ln(1 - x) * ln(1 - z) / ((1 - x) * (1 - z)) * f(x, z, "1", "1", order)
+        f_12 = ln(1 - x) * pow(ln(1 - z), 2) / ((1 - x) * (1 - z)) * f(x, z, "1", "2", order)
+        f_20 = pow(ln(1 - x), 2) / ((1 - x) * (1 - z)) * f(x, z, "2", "0", order)
+        f_21 = pow(ln(1 - x), 2) * ln(1 - z) / ((1 - x) * (1 - z)) * f(x, z, "2", "1", order)
+        f_22 = pow(ln(1 - x), 2) * pow(ln(1 - z), 2) / ((1 - x) * (1 - z)) * f(x, z, "2", "2", order)
+
+        return f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    elif rsl == "ls":
+        f_D0 = 1 / (1 - z) * f(x, z, "D", "0", order)
+        f_D1 = ln(1 - z) / (1 - z) * f(x, z, "D", "1", order)
+        f_D2 = pow(ln(1 - z), 2) / (1 - z) * f(x, z, "D", "2", order)
+        f_00 = ln(1 - x) / (1 - z) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - x) * ln(1 - z) / (1 - z) * f(x, z, "0", "1", order)
+        f_02 = ln(1 - x) * pow(ln(1 - z), 2) / (1 - z) * f(x, z, "0", "2", order)
+        f_10 = 1 / 2 * pow(ln(1 - x), 2) / (1 - z) * f(x, z, "1", "0", order)
+        f_11 = 1 / 2 * pow(ln(1 - x), 2) * ln(1 - z) / (1 - z) * f(x, z, "1", "1", order)
+        f_12 = 1 / 2 * pow(ln(1 - x), 2) * pow(ln(1 - z), 2) / (1 - z) * f(x, z, "1", "2", order)
+        f_20 = 1 / 3 * pow(ln(1 - x), 3) / (1 - z) * f(x, z, "2", "0", order)
+        f_21 = 1 / 3 * pow(ln(1 - x), 3) * ln(1 - z) / (1 - z) * f(x, z, "2", "1", order)
+        f_22 = 1 / 3 * pow(ln(1 - x), 3) * pow(ln(1 - z), 2) / (1 - z) * f(x, z, "2", "2", order)
+
+        return f_D0 + f_D1 + f_D2 + f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    elif rsl == "sl":
+        f_0D = 1 / (1 - x) * f(x, z, "0", "D", order)
+        f_1D = ln(1 - x) / (1 - x) * f(x, z, "1", "D", order)
+        f_2D = pow(ln(1 - x), 2) / (1 - x) * f(x, z, "2", "D", order)
+        f_00 = ln(1 - z) / (1 - x) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - z) * ln(1 - x) / (1 - x) * f(x, z, "0", "1", order)
+        f_02 = ln(1 - z) * pow(ln(1 - x), 2) / (1 - x) * f(x, z, "0", "2", order)
+        f_10 = 1 / 2 * pow(ln(1 - z), 2) / (1 - x) * f(x, z, "1", "0", order)
+        f_11 = 1 / 2 * pow(ln(1 - z), 2) * ln(1 - x) / (1 - x) * f(x, z, "1", "1", order)
+        f_12 = 1 / 2 * pow(ln(1 - z), 2) * pow(ln(1 - x), 2) / (1 - x) * f(x, z, "1", "2", order)
+        f_20 = 1 / 3 * pow(ln(1 - z), 3) / (1 - x) * f(x, z, "2", "0", order)
+        f_21 = 1 / 3 * pow(ln(1 - z), 3) * ln(1 - x) / (1 - x) * f(x, z, "2", "1", order)
+        f_22 = 1 / 3 * pow(ln(1 - z), 3) * pow(ln(1 - x), 2) / (1 - x) * f(x, z, "2", "2", order)
+
+        return f_0D + f_1D + f_2D + f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    else:
+        raise ValueError("Incorrect rsl choice, rsl must have a value of: 'll', 'lr', 'rl', 'rr', 'rs', 'sr', 'ss', 'ls' or 'sl'")
