@@ -183,8 +183,11 @@ double C1Tg2qEq(double inx, double inz, std::string cx, std::string cz,
   double omx = 1.-x;
   double opx = 1.+x;
   double op6xpxsq = 1.+6.*x+x*x;
-  res = 2*x*TR - 2*pow(x,2)*TR - LMUF*TR + 2*LMUF*x*TR - 2*LMUF*pow(x,2)*TR - ln(x)*TR + 2*ln(x)*x*
-      TR - 2*ln(x)*pow(x,2)*TR + ln(omx)*TR - 2*ln(omx)*x*TR + 2*ln(omx)*pow(x,2)*TR;
+  res = ;
+
+//////////////////////////////////// rd-010
+
+
 
   return res;
   }
@@ -193,7 +196,7 @@ double C1Tg2qEq(double inx, double inz, std::string cx, std::string cz,
   double omx = 1.-x;
   double opx = 1.+x;
   double op6xpxsq = 1.+6.*x+x*x;
-  res = TR - 2*x*TR + 2*pow(x,2)*TR;
+  res = ;
 
   return res;
   }
@@ -288,7 +291,7 @@ double C1Tg2qEq(double inx, double inz, std::string cx, std::string cz,
     }
     if (z != x && z != 1.-x) {
     double tmp = 0.0;
-    tmp = pow(z,-1)*TR - 2*TR - 2*x*pow(z,-1)*TR + 4*x*TR + 2*pow(x,2)*pow(z,-1)*TR - 4*pow(x,2)*TR
+    tmp = 
       ;
 
     res += tmp;

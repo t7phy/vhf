@@ -1,10 +1,4 @@
-from configs.eh import CF, NC, TR, Li2, Li3
-from configs.eh import ln2 as rln2
-from configs.eh import atanint as InvTanInt
-from numpy import sqrt, pi
-from numpy import power as pow
-from numpy import log as ln
-from numpy import arctan as ArcTan
+from configs.eh import *
 
 LMUR = 1
 LMUF = 1
@@ -26,7 +20,7 @@ def cl_nnlo_q2qp_eq(x, z, rsl, orders):
 
     if rsl == 'rr':
         result = 0
-        if orders = '000':
+        if orders == '000':
             if z != x and z != 1.-x:
                 result += - 4*CF + 2*z*CF + 2*pow(z,2)*CF + 7*x*CF - 1./3.*x*pow(pi,2)*CF - 2./3.*x*z*pow(pi,2)*CF\
            - 7*x*pow(z,2)*CF  + 8*ln(x)*x*CF - 4*\
@@ -34,7 +28,7 @@ def cl_nnlo_q2qp_eq(x, z, rsl, orders):
            - 4*ln(z)*z*CF - 2*ln(z)*x*CF + 8*ln(z)*x*z*CF + 2*ln(z)*x*pow(z,2)*CF - 2*pow(ln(z),2)*x*CF - 4*pow(ln(z),2)*x*z*CF - 2*ln(z)*ln(omx)*x*CF\
            - 4*ln(z)*ln(omx)*x*z*CF - 4*ln(omx)*x*CF + 2*ln(omx)*x*z*CF + 2*ln(omx)*x*pow(z,2)*CF - 4*\
           ln(omz)*x*CF + 2*ln(omz)*x*z*CF + 2*ln(omz)*x*pow(z,2)*CF + 2*Li2(z)*x*CF + 4*Li2(z)*x*z*CF
-        elif orders = '001':
+        elif orders == '001':
             if z != x and z != 1.-x:
                 result += + 4*LMUA*x*CF - 2*LMUA*x*z*CF - 2*LMUA*x*pow(z,2)*CF + 2*ln(z)*LMUA*x*CF + 4*ln(z)*LMUA*x*z*CF
         return result
