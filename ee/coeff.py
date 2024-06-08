@@ -32,19 +32,6 @@ def c2_lo_q(X, rsl):
 
 # CT
 
-def tmp(rsl):
-    if rsl == 'r':
-        result = 0
-        return result
-    elif rsl == 's':
-        result = 0
-        return result
-    elif rsl == 'l':
-        result = 0
-        return result
-    else:
-        raise ValueError('Invalid rsl value')
-
 def ct_nlo_q(X, rsl):
     if rsl == 'r':
         result = CF * (3*(-1 + X)**2 + 2*(-1 + X**2) * log(1-X) + 4*(1 + X**2)*log(X))/(1-X)
