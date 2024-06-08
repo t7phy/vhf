@@ -4,18 +4,31 @@ from configs.ee import *
 
 # CT
 
-def ct_lo_q_loc(X):
-    return 1.
+
+def ct_lo_q(X, rsl):
+    if rsl == 'l':
+        return 1.
+    else:
+        return 0.
 
 # CA
 
 def ca_lo_q_loc(X):
     return 1.
 
+def ca_lo_q(X, rsl):
+    if rsl == 'l':
+        return 1.
+    else:
+        return 0.
+
 # C
 
 def c2_lo_q_loc(X):
     return 1.
+
+def c2_lo_q(X, rsl):
+    return ct_lo_q(X, rsl) 
 
 ############################# NLO COEFFICIENTS #############################
 
