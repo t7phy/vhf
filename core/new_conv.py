@@ -47,21 +47,21 @@ class conv1:
                 for lists in [res, err]:
                     lists.append(0)
             elif min_xmin <= self.x < max_xmax:
-                z_min = self.x * (1 + eps_integration_border)
-                z_max = max_xmax * (1 - eps_integration_border)
+                x_intv_low = self.x * (1 + eps_integration_border)
+                x_intv_high = max_xmax * (1 - eps_integration_border)
                 if self.coeff_map['r'] == 1:
-                    res_r, err_r = integrate.quad(self.integrand_r, z_min, z_max, args=(i), epsabs=eps_integration_abs)
+                    res_r, err_r = integrate.quad(self.integrand_r, x_intv_low, x_intv_high, args=(i), epsabs=eps_integration_abs)
                 if self.coeff_map['s'] == 1:
-                    res_s, err_s = integrate.quad(self.integrand_s, z_min, z_max, args=(i), epsabs=eps_integration_abs)
+                    res_s, err_s = integrate.quad(self.integrand_s, x_intv_low, x_intv_high, args=(i), epsabs=eps_integration_abs)
                 res.append(res_r + res_s)
                 err.append(err_r + err_s)
             else:
-                z_min = min_xmin * (1 + eps_integration_border)
-                z_max = max_xmax * (1 - eps_integration_border)
+                x_intv_low = min_xmin * (1 + eps_integration_border)
+                x_intv_high = max_xmax * (1 - eps_integration_border)
                 if self.coeff_map['r'] == 1:
-                    res_r, err_r = integrate.quad(self.integrand_r, z_min, z_max, args=(i), epsabs=eps_integration_abs)
+                    res_r, err_r = integrate.quad(self.integrand_r, x_intv_low, x_intv_high, args=(i), epsabs=eps_integration_abs)
                 if self.coeff_map['s'] == 1:
-                    res_s, err_s = integrate.quad(self.integrand_s, z_min, z_max, args=(i), epsabs=eps_integration_abs)
+                    res_s, err_s = integrate.quad(self.integrand_s, x_intv_low, x_intv_high, args=(i), epsabs=eps_integration_abs)
                 res.append(res_r + res_s)
                 err.append(err_r + err_s)
 
@@ -77,3 +77,29 @@ class conv1:
     
     def __call__(self):
         return self.convolution()
+
+class conv2:
+
+    def __init__(self, x, z, coeff_func, itp_xgrid, itp_zgrid, mode_log=True, coeff_map=None):
+        self.x = x
+        self.z = z
+        self.coeff_func = coeff_func
+        self.itp_xgrid = itp_xgrid
+        self.itp_zgrid = itp_zgrid
+        self.mode_log = mode_log
+        self.basis_functions_x = compute_basis_functions(self.itp_xgrid, 4, self.mode_log)
+        self.basis_functions_z = compute_basis_functions(self.itp_zgrid, 4, self.mode_log)
+        self.interpolator_at_x = interpolator(self.x, self.basis_functions_x)
+        self.interpolator_at_z = interpolator(self.z, self.basis_functions_z)
+        if coeff_map is None:
+            self.coeff_map = {'rr': 1, 'rs': 1, 'rl': 1, 'sr': 1, 'ss': 1, 'sl': 1, 'lr': 1, 'ls': 1, 'll': 1}
+        else:
+            self.coeff_map = coeff_map
+
+    def integrand_rr(self, xhat, zhat, j, k):
+        return self.coeff_func(xhat, zhat, 'rr') * point_interpolator(self.x/xhat, self.basis_functions_x, j)/xhat * point_interpolator(self.z/zhat, self.basis_functions_z, k)/zhat
+    
+    def integrand_rs(self, xhat, zhat, j, k):
+        return self.coeff_func(xhat, zhat, 'rs') * point_interpolator(self.x/xhat, self.basis_functions_x, j)/xhat * (point_interpolator(self.z/zhat, self.basis_functions_z, k)/zhat - self.interpolator_at_z[k])
+    
+    # def integrand_rl(self, xhat, zhat, j, k):
