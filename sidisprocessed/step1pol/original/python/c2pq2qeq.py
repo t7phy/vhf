@@ -1,25 +1,8 @@
-from core.definitions import CF, NC, TR, NF, ZETA3, ZETA2
-from core.definitions import ln2 as rln2
-from core.miscfunc import atanint as InvTanInt
-from core.miscfunc import Li2, Li3
-from numpy import power as pow
-from numpy import log as ln
-from numpy import arctan as ArcTan
-from numpy import sqrt, pi
+from configs.eh import *
 
 
-def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
+def C2Pq2qEq_DR0123_scheme(inx: float, inz: float, cx: str, cz: str, order: str, ndecimals=ndecimals, LMUR=LMUR, LMUF=LMUF, LMUA=LMUA):
     res = 0.0
-
-    rln2 = ln(2.0)
-
-    LMUR = 2 * ln(muR / Q)
-    LMUF = 2 * ln(muF / Q)
-    LMUA = 2 * ln(muA / Q)
-
-    NC = 3.0
-    CF = 4.0 / 3.0
-    TR = 0.5
 
     if cx == "D" and cz == "D":
 
@@ -47,13 +30,13 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             - 9.0 / 16.0 * pow(LMUA, 2) * CF * pow(NC, -1)
             - 1.0 / 4.0 * pow(LMUA, 2) * CF * NF
             + 31.0 / 16.0 * pow(LMUA, 2) * CF * NC
-            + 15.0 / 2.0 * ZETA3 * CF * pow(NC, -1)
-            + 2.0 / 3.0 * ZETA3 * CF * NF
-            + 41.0 / 6.0 * ZETA3 * CF * NC
-            + 5 * ZETA3 * LMUF * CF * pow(NC, -1)
-            - 2 * ZETA3 * LMUF * CF * NC
-            + 5 * ZETA3 * LMUA * CF * pow(NC, -1)
-            - 2 * ZETA3 * LMUA * CF * NC
+            + 15.0 / 2.0 * zeta3 * CF * pow(NC, -1)
+            + 2.0 / 3.0 * zeta3 * CF * NF
+            + 41.0 / 6.0 * zeta3 * CF * NC
+            + 5 * zeta3 * LMUF * CF * pow(NC, -1)
+            - 2 * zeta3 * LMUF * CF * NC
+            + 5 * zeta3 * LMUA * CF * pow(NC, -1)
+            - 2 * zeta3 * LMUA * CF * NC
             - 29.0 / 24.0 * pow(pi, 2) * CF * pow(NC, -1)
             + 19.0 / 54.0 * pow(pi, 2) * CF * NF
             - 277.0 / 216.0 * pow(pi, 2) * CF * NC
@@ -88,8 +71,8 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             - 3.0 / 2.0 * pow(LMUA, 2) * CF * pow(NC, -1)
             - 1.0 / 3.0 * pow(LMUA, 2) * CF * NF
             + 10.0 / 3.0 * pow(LMUA, 2) * CF * NC
-            - 4 * ZETA3 * CF * pow(NC, -1)
-            + 11 * ZETA3 * CF * NC
+            - 4 * zeta3 * CF * pow(NC, -1)
+            + 11 * zeta3 * CF * NC
             - 1.0 / 9.0 * pow(pi, 2) * CF * NF
             + 11.0 / 18.0 * pow(pi, 2) * CF * NC
             - 1.0 / 3.0 * pow(pi, 2) * LMUF * CF * pow(NC, -1)
@@ -147,8 +130,8 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             + 10.0 / 3.0 * pow(LMUF, 2) * CF * NC
             - 3.0 / 2.0 * LMUA * LMUF * CF * pow(NC, -1)
             + 3.0 / 2.0 * LMUA * LMUF * CF * NC
-            - 4 * ZETA3 * CF * pow(NC, -1)
-            + 11 * ZETA3 * CF * NC
+            - 4 * zeta3 * CF * pow(NC, -1)
+            + 11 * zeta3 * CF * NC
             - 1.0 / 9.0 * pow(pi, 2) * CF * NF
             + 11.0 / 18.0 * pow(pi, 2) * CF * NC
             - 1.0 / 3.0 * pow(pi, 2) * LMUF * CF * pow(NC, -1)
@@ -353,14 +336,14 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             + 287.0 / 108.0 * pow(z, 2) * CF
             - 25.0 / 18.0 * pow(z, 2) * LMUA * CF
             - 1.0 / 3.0 * pow(z, 2) * pow(LMUA, 2) * CF
-            + 10 * ZETA3 * CF * pow(NC, -1) * pow(omz, -1)
-            - 4 * ZETA3 * CF * pow(NC, -1)
-            + 2 * ZETA3 * CF
-            - 14 * ZETA3 * CF * NC * pow(omz, -1)
-            + 5.0 / 2.0 * ZETA3 * CF * NC
-            - 4 * ZETA3 * z * CF * pow(NC, -1)
-            + 2 * ZETA3 * z * CF
-            + 5.0 / 2.0 * ZETA3 * z * CF * NC
+            + 10 * zeta3 * CF * pow(NC, -1) * pow(omz, -1)
+            - 4 * zeta3 * CF * pow(NC, -1)
+            + 2 * zeta3 * CF
+            - 14 * zeta3 * CF * NC * pow(omz, -1)
+            + 5.0 / 2.0 * zeta3 * CF * NC
+            - 4 * zeta3 * z * CF * pow(NC, -1)
+            + 2 * zeta3 * z * CF
+            + 5.0 / 2.0 * zeta3 * z * CF * NC
             - 1.0 / 4.0 * pow(pi, 2) * CF * pow(NC, -1) * pow(omz, -1)
             + 7.0 / 12.0 * pow(pi, 2) * CF * pow(NC, -1)
             - 1.0 / 6.0 * pow(pi, 2) * CF
@@ -828,12 +811,12 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             + 6 * x * LMUA * pow(CF, 2)
             + 3.0 / 4.0 * x * LMUA * LMUF * CF * pow(NC, -1)
             - 3.0 / 4.0 * x * LMUA * LMUF * CF * NC
-            - 7 * ZETA3 * CF * pow(NC, -1) * pow(omx, -1)
-            + 11.0 / 2.0 * ZETA3 * CF * pow(NC, -1)
-            + 5 * ZETA3 * CF * NC * pow(omx, -1)
-            - 8 * ZETA3 * CF * NC
-            + 11.0 / 2.0 * ZETA3 * x * CF * pow(NC, -1)
-            - 8 * ZETA3 * x * CF * NC
+            - 7 * zeta3 * CF * pow(NC, -1) * pow(omx, -1)
+            + 11.0 / 2.0 * zeta3 * CF * pow(NC, -1)
+            + 5 * zeta3 * CF * NC * pow(omx, -1)
+            - 8 * zeta3 * CF * NC
+            + 11.0 / 2.0 * zeta3 * x * CF * pow(NC, -1)
+            - 8 * zeta3 * x * CF * NC
             + 1.0 / 4.0 * pow(pi, 2) * CF * pow(NC, -1) * pow(omx, -1)
             + 1.0 / 6.0 * pow(pi, 2) * CF * pow(NC, -1)
             - 1.0 / 2.0 * pow(pi, 2) * CF
@@ -4087,3 +4070,105 @@ def C2Pq2qEq(inx, inz, cx, cz, Q, muR, muF, muA, orders: list, ndecimals):
             res += tmp
 
         return res
+
+
+def c2p_q2q_eq(x, z, rsl, order, f=C2Pq2qEq_DR0123_scheme):
+    if rsl == "ll":
+        f_DD = f(x, z, "D", "D", order)
+        f_D0 = ln(1 - z) * f(x, z, "D", "0", order)
+        f_D1 = 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "D", "1", order)
+        f_D2 = 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "D", "2", order)
+        f_00 = ln(1 - x) * ln(1 - z) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - x) * 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "0", "1", order)
+        f_02 = ln(1 - x) * 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "0", "2", order)
+        f_10 = 1 / 2 * pow(ln(1 - x), 2) * ln(1 - z) * f(x, z, "1", "0", order)
+        f_11 = 1 / 2 * pow(ln(1 - x), 2) * 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "1", "1", order)
+        f_12 = 1 / 2 * pow(ln(1 - x), 2) * 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "1", "2", order)
+        f_20 = 1 / 3 * pow(ln(1 - x), 3) * ln(1 - z) * f(x, z, "2", "0", order)
+        f_21 = 1 / 3 * pow(ln(1 - x), 3) * 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "2", "1", order)
+        f_22 = 1 / 3 * pow(ln(1 - x), 3) * 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "2", "2", order)
+
+        return f_DD + f_D0 + f_D1 + f_D2 + f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    elif rsl == "lr":
+        f_DR = f(x, z, "D", "R", order)
+        f_0R = ln(1 - x) * f(x, z, "0", "R", order)
+        f_1R = 1 / 2 * pow(ln(1 - x), 2) * f(x, z, "1", "R", order)
+        f_2R = 1 / 3 * pow(ln(1 - x), 3) * f(x, z, "2", "R", order)
+
+        return f_DR + f_0R + f_1R + f_2R
+
+    elif rsl == "rl":
+        f_RD = f(x, z, "R", "D", order)
+        f_R0 = ln(1 - z) * f(x, z, "R", "0", order)
+        f_R1 = 1 / 2 * pow(ln(1 - z), 2) * f(x, z, "R", "1", order)
+        f_R2 = 1 / 3 * pow(ln(1 - z), 3) * f(x, z, "R", "2", order)
+
+        return f_RD + f_R0 + f_R1 + f_R2
+
+    elif rsl == "rr":
+        f_RR = f(x, z, "R", "R", order)
+
+        return f_RR
+
+    elif rsl == "rs":
+        f_R0 = 1 / (1 - z) * f(x, z, "R", "0", order)
+        f_R1 = ln(1 - z) / (1 - z) * f(x, z, "R", "1", order)
+        f_R2 = pow(ln(1 - z), 2) / (1 - z) * f(x, z, "R", "2", order)
+
+        return f_R0 + f_R1 + f_R2
+
+    elif rsl == "sr":
+        f_0R = 1 / (1 - x) * f(x, z, "0", "R", order)
+        f_1R = ln(1 - x) / (1 - x) * f(x, z, "1", "R", order)
+        f_2R = pow(ln(1 - x), 2) / (1 - x) * f(x, z, "2", "R", order)
+
+        return f_0R + f_1R + f_2R
+
+    elif rsl == "ss":
+        f_00 = 1 / ((1 - x) * (1 - z)) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - z) / ((1 - x) * (1 - z)) * f(x, z, "0", "1", order)
+        f_02 = pow(ln(1 - z), 2) / ((1 - x) * (1 - z)) * f(x, z, "0", "2", order)
+        f_10 = ln(1 - x) / ((1 - x) * (1 - z)) * f(x, z, "1", "0", order)
+        f_11 = ln(1 - x) * ln(1 - z) / ((1 - x) * (1 - z)) * f(x, z, "1", "1", order)
+        f_12 = ln(1 - x) * pow(ln(1 - z), 2) / ((1 - x) * (1 - z)) * f(x, z, "1", "2", order)
+        f_20 = pow(ln(1 - x), 2) / ((1 - x) * (1 - z)) * f(x, z, "2", "0", order)
+        f_21 = pow(ln(1 - x), 2) * ln(1 - z) / ((1 - x) * (1 - z)) * f(x, z, "2", "1", order)
+        f_22 = pow(ln(1 - x), 2) * pow(ln(1 - z), 2) / ((1 - x) * (1 - z)) * f(x, z, "2", "2", order)
+
+        return f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    elif rsl == "ls":
+        f_D0 = 1 / (1 - z) * f(x, z, "D", "0", order)
+        f_D1 = ln(1 - z) / (1 - z) * f(x, z, "D", "1", order)
+        f_D2 = pow(ln(1 - z), 2) / (1 - z) * f(x, z, "D", "2", order)
+        f_00 = ln(1 - x) / (1 - z) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - x) * ln(1 - z) / (1 - z) * f(x, z, "0", "1", order)
+        f_02 = ln(1 - x) * pow(ln(1 - z), 2) / (1 - z) * f(x, z, "0", "2", order)
+        f_10 = 1 / 2 * pow(ln(1 - x), 2) / (1 - z) * f(x, z, "1", "0", order)
+        f_11 = 1 / 2 * pow(ln(1 - x), 2) * ln(1 - z) / (1 - z) * f(x, z, "1", "1", order)
+        f_12 = 1 / 2 * pow(ln(1 - x), 2) * pow(ln(1 - z), 2) / (1 - z) * f(x, z, "1", "2", order)
+        f_20 = 1 / 3 * pow(ln(1 - x), 3) / (1 - z) * f(x, z, "2", "0", order)
+        f_21 = 1 / 3 * pow(ln(1 - x), 3) * ln(1 - z) / (1 - z) * f(x, z, "2", "1", order)
+        f_22 = 1 / 3 * pow(ln(1 - x), 3) * pow(ln(1 - z), 2) / (1 - z) * f(x, z, "2", "2", order)
+
+        return f_D0 + f_D1 + f_D2 + f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    elif rsl == "sl":
+        f_0D = 1 / (1 - x) * f(x, z, "0", "D", order)
+        f_1D = ln(1 - x) / (1 - x) * f(x, z, "1", "D", order)
+        f_2D = pow(ln(1 - x), 2) / (1 - x) * f(x, z, "2", "D", order)
+        f_00 = ln(1 - z) / (1 - x) * f(x, z, "0", "0", order)
+        f_01 = ln(1 - z) * ln(1 - x) / (1 - x) * f(x, z, "0", "1", order)
+        f_02 = ln(1 - z) * pow(ln(1 - x), 2) / (1 - x) * f(x, z, "0", "2", order)
+        f_10 = 1 / 2 * pow(ln(1 - z), 2) / (1 - x) * f(x, z, "1", "0", order)
+        f_11 = 1 / 2 * pow(ln(1 - z), 2) * ln(1 - x) / (1 - x) * f(x, z, "1", "1", order)
+        f_12 = 1 / 2 * pow(ln(1 - z), 2) * pow(ln(1 - x), 2) / (1 - x) * f(x, z, "1", "2", order)
+        f_20 = 1 / 3 * pow(ln(1 - z), 3) / (1 - x) * f(x, z, "2", "0", order)
+        f_21 = 1 / 3 * pow(ln(1 - z), 3) * ln(1 - x) / (1 - x) * f(x, z, "2", "1", order)
+        f_22 = 1 / 3 * pow(ln(1 - z), 3) * pow(ln(1 - x), 2) / (1 - x) * f(x, z, "2", "2", order)
+
+        return f_0D + f_1D + f_2D + f_00 + f_01 + f_02 + f_10 + f_11 + f_12 + f_20 + f_21 + f_22
+
+    else:
+        raise ValueError("Incorrect rsl choice, rsl must have a value of: 'll', 'lr', 'rl', 'rr', 'rs', 'sr', 'ss', 'ls' or 'sl'")

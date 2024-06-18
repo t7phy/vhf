@@ -5,19 +5,19 @@ import os
 import cmath
 
 modules = {
-    "c1pg2qeq": "C1Pg2qEq",
-    "c1pq2geq": "C1Pq2gEq",
-    "c1pq2qeq": "C1Pq2qEq",
-    "c2pg2geq": "C2Pg2gEq",
-    "c2pg2qeq": "C2Pg2qEq",
-    "c2pq2geq": "C2Pq2gEq",
-    "c2pq2qbeq": "C2Pq2qbEq",
-    "c2pq2qeq": "C2Pq2qEq",
-    "c2pq2qeqp": "C2Pq2qEqp",
-    "c2pq2qpbes": "C2Pq2qpbEs",
-    "c2pq2qpeq": "C2Pq2qpEq",
-    "c2pq2qpeqp": "C2Pq2qpEqp",
-    "c2pq2qpes": "C2Pq2qpEs",
+    "c1pg2qeq": "C1Pg2qEq_DR0123_scheme",
+    "c1pq2geq": "C1Pq2gEq_DR0123_scheme",
+    "c1pq2qeq": "C1Pq2qEq_DR0123_scheme",
+    "c2pg2geq": "C2Pg2gEq_DR0123_scheme",
+    "c2pg2qeq": "C2Pg2qEq_DR0123_scheme",
+    "c2pq2geq": "C2Pq2gEq_DR0123_scheme",
+    "c2pq2qbeq": "C2Pq2qbEq_DR0123_scheme",
+    "c2pq2qeq": "C2Pq2qEq_DR0123_scheme",
+    "c2pq2qeqp": "C2Pq2qEqp_DR0123_scheme",
+    "c2pq2qpbes": "C2Pq2qpbEs_DR0123_scheme",
+    "c2pq2qpeq": "C2Pq2qpEq_DR0123_scheme",
+    "c2pq2qpeqp": "C2Pq2qpEqp_DR0123_scheme",
+    "c2pq2qpes": "C2Pq2qpEs_DR0123_scheme",
 }
 
 functions_ordered = dict()
@@ -57,7 +57,6 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
     def setUp(self):
         # Precission in decimals
         self.precision = 5
-        self.Q = 1.0
         self.ndecimal = 6
 
         self.x_values = [1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
@@ -76,25 +75,25 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                     for cx in self.cx_values:
                         for cz in self.cz_values:
                             # Call the functions and get the results
-                            result_ordered = functions_ordered[func_name](
-                                inx,
-                                inz,
-                                cx,
-                                cz,
-                                orders,
-                                Q=self.Q,
-                                LMUR=LMUR,
-                                LMUF=LMUF,
-                                LMUA=LMUA,
-                                ndecimals=self.ndecimal,
-                            )
+                            result_ordered = 0
+                            for order in orders:
+                                result_ordered += functions_ordered[func_name](
+                                    inx,
+                                    inz,
+                                    cx,
+                                    cz,
+                                    order,
+                                    LMUR=LMUR,
+                                    LMUF=LMUF,
+                                    LMUA=LMUA,
+                                    ndecimals=self.ndecimal,
+                                )
                             result_original = functions_original[func_name](
                                 inx,
                                 inz,
                                 cx,
                                 cz,
-                                orders,
-                                Q=self.Q,
+                                order,
                                 LMUR=LMUR,
                                 LMUF=LMUF,
                                 LMUA=LMUA,
@@ -104,7 +103,7 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                             # If the results are not equal
                             if not cmath.isclose(result_ordered, result_original):
                                 # Print the values of the variables
-                                print(f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, Q: {self.Q}, muR: {LMUR}, muF: {LMUF}, muA: {LMUA}, order: {orders}")
+                                print(f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, muR: {LMUR}, muF: {LMUF}, muA: {LMUA}, order: {orders}")
                                 print(f"result_ordered: {result_ordered}, result_original: {result_original}")
 
                             # Assert that the results are equal
