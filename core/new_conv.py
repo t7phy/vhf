@@ -102,4 +102,28 @@ class conv2:
     def integrand_rs(self, xhat, zhat, j, k):
         return self.coeff_func(xhat, zhat, 'rs') * point_interpolator(self.x/xhat, self.basis_functions_x, j)/xhat * (point_interpolator(self.z/zhat, self.basis_functions_z, k)/zhat - self.interpolator_at_z[k])
     
-    # def integrand_rl(self, xhat, zhat, j, k):
+    def integrand_rl(self, xhat, j, k):
+        return self.coeff_func(xhat, self.z, 'rl') * point_interpolator(self.x/xhat, self.basis_functions_x, j)/xhat * self.interpolator_at_z[k]
+    
+    def integrand_sr(self, xhat, zhat, j, k):
+        return self.coeff_func(xhat, zhat, 'sr') * (point_interpolator(self.x/xhat, self.basis_functions_x, j)/xhat - self.interpolator_at_x[j]) * point_interpolator(self.z/zhat, self.basis_functions_z, k)/zhat
+    
+    def integrand_ss(self, xhat, zhat, j, k):
+        return self.coeff_func(xhat, zhat, 'ss') * (point_interpolator(self.x/xhat, self.basis_functions_x, j)/xhat - self.interpolator_at_x[j]) * (point_interpolator(self.z/zhat, self.basis_functions_z, k)/zhat - self.interpolator_at_z[k])
+    
+    def integrand_sl(self, xhat, j, k):
+        return self.coeff_func(xhat, self.z, 'sl') * (point_interpolator(self.x/xhat, self.basis_functions_x, j)/xhat - self.interpolator_at_x[j]) * self.interpolator_at_z[k]
+    
+    def integrand_lr(self, xhat, zhat, j, k):
+        return self.coeff_func(self.x, zhat, 'lr') * self.interpolator_at_x[j] * point_interpolator(self.z/zhat, self.basis_functions_z, k)/zhat
+    
+    def integrand_ls(self, xhat, zhat, j, k):
+        return self.coeff_func(self.x, zhat, 'ls') * self.interpolator_at_x[j] * (point_interpolator(self.z/zhat, self.basis_functions_z, k)/zhat - self.interpolator_at_z[k])
+    
+    def evaluate_ll(self):
+        return [[self.coeff_func(self.x, self.z, 'll') * self.interpolator_at_x[j] * self.interpolator_at_z[k] for j in range(len(self.interpolator_at_x))] for k in range(len(self.interpolator_at_z))]
+    
+    # def integrator(self):
+    #     res, err = [[]], [[]]
+
+
