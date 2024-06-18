@@ -2,7 +2,7 @@ import unittest
 from importlib import import_module
 import re
 import os
-import cmath
+
 
 modules = {
     "c1pg2qeq": "C1Pg2qEq_DR0123_scheme",
@@ -23,8 +23,8 @@ modules = {
 functions_ordered = dict()
 functions_original = dict()
 for module, func_name in modules.items():
-    module_ordered = import_module(f"sidisprocessed.step1pol.ordered.python.{module}")
-    module_original = import_module(f"sidisprocessed.step1pol.original.python.{module}")
+    module_ordered = import_module(f"dev.sidis_reorder_code.step1pol.ordered.python.{module}")
+    module_original = import_module(f"dev.sidis_reorder_code.step1pol.original.python.{module}")
 
     functions_ordered[func_name] = getattr(module_ordered, func_name)
     functions_original[func_name] = getattr(module_original, func_name)
@@ -53,13 +53,41 @@ def get_orders():
     print(orders)
 
 
+def check_close_enough(value1, value2, percentage):
+    """
+    Check if the relative difference between values is smaller than a given percentage
+    value1: float
+    value2: float
+    percentage: float, 1% is 0.01
+    """
+    # Avoid devisions by 0
+    if value1 == 0:
+        value1 = percentage * 1e-3
+    if value2 == 0:
+        value2 = percentage * 1e-3
+
+    diff = abs(value1 - value2)
+
+    # Ensure biggest relative difference is measured
+    if abs(value1) < abs(value2):
+        relative_diff = diff / abs(value1)
+    else:
+        relative_diff = diff / abs(value2)
+
+    if relative_diff < percentage:
+        return True
+    else:
+        return False
+
+
 class TestComparisonOrderedAndOriginal(unittest.TestCase):
     def setUp(self):
         # Precission in decimals
-        self.precision = 5
-        self.ndecimal = 6
+        self.precision = 1e-4  # 0.01%
+        self.ndecimal = 10
 
-        self.x_values = [1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
+        # TODO: Note that x-values below 1e-6 do not pass.
+        self.x_values = [1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
         self.z_values = [1e-3, 1e-2, 1e-1, 0.25, 0.5, 0.9]
         self.cx_values = ["D", "R", "0", "1", "2", "3"]
         self.cz_values = ["D", "R", "0", "1", "2", "3"]
@@ -87,7 +115,7 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                                     LMUF=LMUF,
                                     LMUA=LMUA,
                                     ndecimals=self.ndecimal,
-                                )
+                                ).real
                             result_original = functions_original[func_name](
                                 inx,
                                 inz,
@@ -98,16 +126,14 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                                 LMUF=LMUF,
                                 LMUA=LMUA,
                                 ndecimals=self.ndecimal,
-                            )
+                            ).real
 
-                            # If the results are not equal
-                            if not cmath.isclose(result_ordered, result_original):
-                                # Print the values of the variables
+                            if check_close_enough(result_ordered, result_original, self.precision):
+                                assert True
+                            else:
                                 print(f"func_name: {func_name}, inx: {inx}, inz: {inz}, cx: {cx}, cz: {cz}, muR: {LMUR}, muF: {LMUF}, muA: {LMUA}, order: {orders}")
-                                print(f"result_ordered: {result_ordered}, result_original: {result_original}")
-
-                            # Assert that the results are equal
-                            self.assertAlmostEqual(result_ordered, result_original, places=self.precision)
+                                print(f"result_ordered: {result_ordered}, result_original: {result_original}, approximate relative difference: {round(abs(result_ordered - result_original) / abs(result_original), 6) * 100}%")
+                                assert False
 
     def test_all_orders_LMUX_zero(self):
         LMUR = 0.0
