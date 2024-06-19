@@ -134,18 +134,8 @@ def replace_order_with_if(s):
 
 def add_rsl_function(func_name):
 
-    # Lowercase the string
-
-    new_func_name = func_name.lower()
-
-    # Add _ after the first p
-    new_func_name = re.sub(r"(p)", r"\1_", new_func_name, count=1)
-
-    # Add _ before the first e
-    new_func_name = re.sub(r"(e)", r"_\1", new_func_name, count=1)
-
     return f"""
-def {new_func_name}(x, z, rsl, order,f={func_name}_DR0123_scheme):
+def {func_name}(x, z, rsl, order,f={func_name}_DR0123_scheme):
     if rsl == "ll":
         f_DD = f(x, z, "D", "D", order)
         f_D0 = ln(1 - z) * f(x, z, "D", "0", order)
@@ -355,7 +345,7 @@ def format_file_with_black(file_path, line_length):
 
 if __name__ == "__main__":
     # Get all files in the current directory
-    dir = "dev/sidis_reorder_code/step1_unpol/original"
+    dir = "dev/sidis_reorder_code/step1_pol/original"
     rename_txt_flag = False
 
     if rename_txt_flag:

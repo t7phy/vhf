@@ -1343,7 +1343,7 @@ def C2Lg2qEq_DR0123_scheme(inx: float, inz: float, cx: str, cz: str, order: str,
         return res
 
 
-def c2lg2q_eq(x, z, rsl, order, f=C2Lg2qEq_DR0123_scheme):
+def C2Lg2qEq(x, z, rsl, order, f=C2Lg2qEq_DR0123_scheme):
     if rsl == "ll":
         f_DD = f(x, z, "D", "D", order)
         f_D0 = ln(1 - z) * f(x, z, "D", "0", order)

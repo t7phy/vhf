@@ -635,7 +635,7 @@ def C2Lq2qpEs_DR0123_scheme(inx: float, inz: float, cx: str, cz: str, order: str
         return res
 
 
-def c2lq2qp__es(x, z, rsl, order, f=C2Lq2qpEs_DR0123_scheme):
+def C2Lq2qpEs(x, z, rsl, order, f=C2Lq2qpEs_DR0123_scheme):
     if rsl == "ll":
         f_DD = f(x, z, "D", "D", order)
         f_D0 = ln(1 - z) * f(x, z, "D", "0", order)
