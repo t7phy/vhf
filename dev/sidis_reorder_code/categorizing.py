@@ -230,13 +230,7 @@ def split_to_order(s: str):
 
 
 def remove_var_n_semicolon(s, var):
-    return (
-        s.replace(f"{var}=", "")
-        .replace(f"{var} =", "")
-        .replace(f"{var}+=", "")
-        .replace(f"{var} +=", "")
-        .replace(";", "")
-    )
+    return s.replace(f"{var}=", "").replace(f"{var} =", "").replace(f"{var}+=", "").replace(f"{var} +=", "").replace(";", "")
 
 
 def split_to_line_per_var(s, var):
@@ -317,9 +311,7 @@ def categorize_a_file(
                     skip_until_i += 1
 
                 skip_until_i -= 1
-                categorized_file += create_file_with_split_orders(
-                    lines_to_convert, "res"
-                )
+                categorized_file += create_file_with_split_orders(lines_to_convert, "res")
                 categorized_file.append(line)
             elif "tmp" in line and not "double" in line and not "return" in line:
                 skip_until_i = i
@@ -329,9 +321,7 @@ def categorize_a_file(
                     skip_until_i += 1
                     line = next(file)
 
-                categorized_file += create_file_with_split_orders(
-                    lines_to_convert, "tmp"
-                )
+                categorized_file += create_file_with_split_orders(lines_to_convert, "tmp")
                 categorized_file.append(line)
             else:
                 categorized_file.append(line)
@@ -344,7 +334,7 @@ def categorize_a_file(
 
 
 if __name__ == "__main__":
-    folder_path = "./sidisprocessed/step1pol"
+    folder_path = "./dev/sidis_reorder_code/step1_unpol"
     files = os.listdir(folder_path + "/original/cpp")
     for file_name in files:
         categorize_a_file(file_name, folder_path)
