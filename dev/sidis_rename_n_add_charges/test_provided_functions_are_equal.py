@@ -48,13 +48,13 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
         self.LMUR = 1
         self.LMUF = 1
 
-    def func_loop_orders(self):
+    def func_loop_orders(self, fplus, fminus):
         for order in self.orders:
             for inx in self.x_values:
                 for inz in self.z_values:
                     for cx in self.cx_values:
                         for cz in self.cz_values:
-                            result_plus = C2Pq2qpEs_DR0123_scheme(
+                            result_plus = fplus(
                                 inx,
                                 inz,
                                 cx,
@@ -65,7 +65,7 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                                 LMUA=self.LMUA,
                                 ndecimals=self.ndecimal,
                             ).real
-                            result_minus = C2Pq2qpbEs_DR0123_scheme(
+                            result_minus = fminus(
                                 inx,
                                 inz,
                                 cx,
@@ -90,7 +90,7 @@ class TestComparisonOrderedAndOriginal(unittest.TestCase):
                                 assert False
 
     def test_dif(self):
-        self.func_loop_orders()
+        self.func_loop_orders(fplus=C2Pq2qpEs_DR0123_scheme, fminus=C2Pq2qpbEs_DR0123_scheme)
 
 
 # def test_higher_orders(self):
