@@ -16,7 +16,7 @@ def cl_nlo_g2q_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 8*x*TR - 8*pow(x,2)*TR
         return result
     elif rsl == 'rs':
@@ -50,7 +50,7 @@ def cl_nlo_q2g_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 4*x*CF - 4*x*z*CF
         return result
     elif rsl == 'rs':
@@ -84,7 +84,7 @@ def cl_nlo_q2q_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 4*x*z*CF
         return result
     elif rsl == 'rs':
@@ -121,7 +121,7 @@ def ct_nlo_g2q_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += pow(z,-1)*TR - 2*TR - 2*x*pow(z,-1)*TR + 4*x*TR + 2*pow(x,2)*pow(z,-1)*TR - 4*pow(x,2)*TR
         return result
     elif rsl == 'rs':
@@ -167,7 +167,7 @@ def ct_nlo_q2g_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += - pow(z,-1)*CF + 2*CF - x*pow(z,-1)*CF + 2*x*CF - 2*x*z*CF
         return result
     elif rsl == 'rs':
@@ -214,7 +214,7 @@ def ct_nlo_q2q_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 2*CF + 2*x*z*CF
         return result
     elif rsl == 'rs':

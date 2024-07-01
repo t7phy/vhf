@@ -21,7 +21,7 @@ def ct_nnlo_q2q_eqp(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += - 5./8.*pow(x,-1)*pow(z,-1)*CF + 5./8.*pow(x,-1)*CF - 5./8.*pow(z,-2)*CF - 15./4.*pow(\
           z,-1)*CF + 15./4.*CF + 5./8.*z*CF + 5./8.*x*pow(z,-2)*CF + 15./4.*x*pow(z,-1)*CF - 15./4.*x*\
           CF - 5./8.*x*z*CF + 5./8.*pow(x,2)*pow(z,-1)*CF - 5./8.*pow(x,2)*CF + 5./8.*ArcTan(z*sqrtxz3)\

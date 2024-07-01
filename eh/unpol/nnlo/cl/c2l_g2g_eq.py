@@ -21,7 +21,7 @@ def cl_nnlo_g2g_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 2./3.*pow(NC,-1)*pow(x,-1)*z*pow(pi,2)*pow(opx,-1) - 2./3.*pow(NC,-1)*pow(x,-1)*z*pow(\
           pi,2) + 2*pow(NC,-1) - 2*pow(NC,-1)*z + 4./3.*pow(NC,-1)*z*pow(pi,2)*pow(opx,-1) - 2./3.*pow(\
           NC,-1)*z*pow(pi,2) - 8*pow(NC,-1)*x*pow(z,-1) + 14*pow(NC,-1)*x - 8*pow(NC,-1)*x*pow(rln2,2)\
@@ -276,14 +276,14 @@ def cl_nnlo_g2g_eq(x, z, rsl, orders):
           pow(x,2)*z + 4*Li2(z)*pow(NC,-1)*x - 4*Li2(z)*pow(NC,-1)*pow(x,2) - 4*Li2(z)*NC*x + 4*Li2(z)*\
           NC*pow(x,2)
         elif orders == '001':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 4*LMUA*pow(NC,-1)*x*pow(z,-1) - 2*LMUA*pow(NC,-1)*x - 2*LMUA*pow(NC,-1)*x*z - 4*LMUA*pow(\
                 NC,-1)*pow(x,2)*pow(z,-1) + 2*LMUA*pow(NC,-1)*pow(x,2) + 2*LMUA*pow(NC,-1)*pow(x,2)*z - 4*\
                 LMUA*NC*x*pow(z,-1) + 2*LMUA*NC*x + 2*LMUA*NC*x*z + 4*LMUA*NC*pow(x,2)*pow(z,-1) - 2*LMUA*NC*\
                 pow(x,2) - 2*LMUA*NC*pow(x,2)*z + 4*ln(z)*LMUA*pow(NC,-1)*x - 4*ln(z)*LMUA*pow(NC,-1)*pow(x,2) \
                 - 4*ln(z)*LMUA*NC*x + 4*ln(z)*LMUA*NC*pow(x,2)
         elif orders == '010':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += + LMUF*pow(NC,-1) - LMUF*pow(NC,-1)*z + LMUF*pow(NC,-1)*x - LMUF*pow(NC,-1)*x*z - 2*LMUF*pow(NC,-1)*pow(x,2) + 2*LMUF*pow(NC,-1)*pow(x,2)*z - \
                 LMUF*NC + LMUF*NC*z - LMUF*NC*x + LMUF*NC*x*z + 2*LMUF*NC*pow(x,2) - 2*LMUF*NC*pow(x,2)*z +  + 2*ln(x)*LMUF*pow(NC,-1)*x - 2*ln(x)*LMUF*pow(NC,-1)*x*z - 2*ln(x)*LMUF*NC*x + 2*ln(\
                 x)*LMUF*NC*x*z 

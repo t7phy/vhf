@@ -21,7 +21,7 @@ def cl_nnlo_q2qb_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += - 4./3.*pow(NC,-1)*pow(x,-1)*pow(z,-1)*pow(pi,2)*CF*pow(omz,-1)*pow(opx,-1) + 4./3.*pow(\
           NC,-1)*pow(x,-1)*pow(z,-1)*pow(pi,2)*CF*pow(omz,-1) + 4./3.*pow(NC,-1)*pow(x,-1)*pow(z,-1)*\
           pow(pi,2)*CF*pow(opx,-1) - 4./3.*pow(NC,-1)*pow(x,-1)*pow(z,-1)*pow(pi,2)*CF + 4./3.*pow(\
@@ -579,10 +579,10 @@ def cl_nnlo_q2qb_eq(x, z, rsl, orders):
           x)*pow(x,-1)*pow(z,2)*CF - 8*Li2(x)*z*CF*pow(opx,-1) + 16*Li2(x)*pow(z,2)*CF*pow(opx,-1) + 4*\
           Li2(x)*x*CF - 8*Li2(x)*x*z*CF + 16*Li2(x)*x*pow(z,2)*CF + 6*Li2(z)*x*CF - 4*Li2(z)*x*z*CF
         elif orders == '001':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += + 4*LMUA*x*CF - 2*LMUA*x*z*CF - 2*LMUA*x*pow(z,2)*CF + 2*ln(z)*LMUA*x*CF + 4*ln(z)*LMUA*x*z*CF
         elif orders == '010':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += - 4./3.*LMUF*pow(x,-1)*CF + 4*LMUF*CF - 8./3.*LMUF*pow(x,2)*CF  + 4*ln(x)*LMUF*x*CF 
         return result
     elif rsl == 'rs':

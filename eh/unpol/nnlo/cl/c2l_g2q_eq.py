@@ -21,7 +21,7 @@ def cl_nnlo_g2q_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 1./8.*pow(NC,-1)*pow(x,-1)*pow(poly2,-1) - 1./8.*pow(NC,-1)*pow(x,-1) - 1./2.*pow(NC,-1)*\
           pow(z,-1) - 1./8.*pow(NC,-1)*pow(poly2,-1) + 3./8.*pow(NC,-1) - 1./2.*pow(NC,-1)*z - 5./2.*\
           pow(NC,-1)*x*pow(z,-1) - 1./4.*pow(NC,-1)*x*pow(poly2,-1) - 2*pow(NC,-1)*x*pow(omz,-1) + pow(\
@@ -338,7 +338,7 @@ def cl_nnlo_g2q_eq(x, z, rsl, orders):
           pow(x,2) - 2*Li2(x)*pow(NC,-1)*pow(x,2)*z + 18*Li2(x)*NC*x - 4*Li2(x)*NC*x*z - 2*Li2(x)*NC*\
           pow(x,2) + 2*Li2(x)*NC*pow(x,2)*z - 8*Li2(z)*pow(NC,-1)*x + 8*Li2(z)*pow(NC,-1)*pow(x,2) + 8*\
           Li2(z)*NC*x - 8*Li2(z)*NC*pow(x,2)
-            if z < 1.-x and z < x:
+            if z < round(1 - x, ndecimals) and z < x:
                 result += 2*pow(NC,-1)*x*pow(z,-1) + 2*pow(NC,-1)*x*pow(omz,-1) - 7./3.*pow(NC,-1)*x*pow(pi,2) - 2*\
       pow(NC,-1)*pow(x,2)*pow(z,-1) - 2*pow(NC,-1)*pow(x,2)*pow(omz,-1) + 7./3.*pow(NC,-1)*pow(x,2)\
       *pow(pi,2) - 4*NC*x + 2./3.*NC*x*pow(pi,2) + 4*NC*pow(x,2) - 2./3.*NC*pow(x,2)*pow(pi,2) + 6*\
@@ -418,7 +418,7 @@ def cl_nnlo_g2q_eq(x, z, rsl, orders):
       pow(z,-1)*omx)*NC*pow(x,2) + 2*Li2(omx*pow(omz,-1))*pow(NC,-1)*x - 2*Li2(omx*pow(omz,-1))*\
       pow(NC,-1)*pow(x,2) + 4*Li2(omx*pow(omz,-1))*NC*x - 4*Li2(omx*pow(omz,-1))*NC*pow(x,2) - 4*\
       Li2(x*pow(z,-1)*omx*pow(omz,-1))*NC*x + 4*Li2(x*pow(z,-1)*omx*pow(omz,-1))*NC*pow(x,2)
-            if z < 1.-x and z > x:
+            if z < round(1 - x, ndecimals) and z > x:
                 result += 2*pow(NC,-1)*x*pow(z,-1) + 2*pow(NC,-1)*x*pow(omz,-1) - 7./3.*pow(NC,-1)*x*pow(pi,2) - 2*\
       pow(NC,-1)*pow(x,2)*pow(z,-1) - 2*pow(NC,-1)*pow(x,2)*pow(omz,-1) + 7./3.*pow(NC,-1)*pow(x,2)\
       *pow(pi,2) - 4*NC*x + 10./3.*NC*x*pow(pi,2) + 4*NC*pow(x,2) - 10./3.*NC*pow(x,2)*pow(pi,2) + \
@@ -459,7 +459,7 @@ def cl_nnlo_g2q_eq(x, z, rsl, orders):
       x,2) - 4*Li2(x*pow(z,-1)*omx*pow(omz,-1))*NC*x + 4*Li2(x*pow(z,-1)*omx*pow(omz,-1))*NC*pow(\
       x,2) + 2*Li2(x*z*pow(omx,-1)*pow(omz,-1))*pow(NC,-1)*x - 2*Li2(x*z*pow(omx,-1)*pow(omz,-1))*\
       pow(NC,-1)*pow(x,2)
-            if z > 1.-x and z > x:
+            if z > round(1 - x, ndecimals) and z > x:
                 result += 2*pow(NC,-1)*x*pow(z,-1) + 2*pow(NC,-1)*x*pow(omz,-1) - 7./3.*pow(NC,-1)*x*pow(pi,2) - 2*\
       pow(NC,-1)*pow(x,2)*pow(z,-1) - 2*pow(NC,-1)*pow(x,2)*pow(omz,-1) + 7./3.*pow(NC,-1)*pow(x,2)\
       *pow(pi,2) - 4*NC*x + 2./3.*NC*x*pow(pi,2) + 4*NC*pow(x,2) - 2./3.*NC*pow(x,2)*pow(pi,2) + 6*\
@@ -501,17 +501,17 @@ def cl_nnlo_g2q_eq(x, z, rsl, orders):
       pow(x,2) + 2*Li2(x*pow(z,-1)*pow(omx,-1)*omz)*pow(NC,-1)*x - 2*Li2(x*pow(z,-1)*pow(omx,-1)*\
       omz)*pow(NC,-1)*pow(x,2)
         elif orders == '001':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += + 4*ln(omz)*LMUA*pow(NC,-1)*x - 4*ln(omz)*LMUA*pow(NC,-1)*pow(x,2) - 4*ln(omz)*LMUA*NC*x  + 4*ln(omz)*LMUA*NC*pow(x,2)\
                 + LMUA*pow(NC,-1)*x + 2*LMUA*pow(NC,-1)*x*z - LMUA*pow(NC,-1)*pow(x,2) - 2*LMUA*pow(NC,-1)*pow(x,2)*z - LMUA*NC*x - 2*LMUA*NC*x*z + \
                 LMUA*NC*pow(x,2) - 2*ln(z)*LMUA*NC*pow(x,2) + 2*LMUA*NC*pow(x,2)*z - 2*ln(z)*LMUA*pow(NC,-1)*x + 2*ln(z)*LMUA*pow(NC,-1)*pow(x,2) + 2*ln(z)*LMUA*NC*x      
         elif orders == '010':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += - 8*ln(omx)*LMUF*NC*x + 8*ln(omx)*LMUF*NC*pow(x,2) + 2*ln(x)*LMUF*pow(NC,-1)*x*z + 16*ln(x)*LMUF*NC*x - 2*ln(x)*LMUF*NC*x*z \
                 + LMUF*pow(NC,-1)*z + LMUF*pow(NC,-1)*x*z - 2*LMUF*pow(NC,-1)*pow(x,2)*z - 4./3.*LMUF*NC*pow(x,-1) + 4*LMUF*NC - LMUF*NC*z + 38./3.*LMUF*NC*x \
                 - LMUF*NC*x*z - 46./3.*LMUF*NC*pow(x,2) + 2*LMUF*NC*pow(x,2)*z + 4./3.*LMUF*NF*x - 4./3.*LMUF*NF*pow(x,2)  
         elif orders == '100':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += + 22./3.*LMUR*NC*x - 22./3.*LMUR*NC*pow(x,2) - 4./3.*LMUR*NF*x + 4./3.*LMUR*NF*pow(x,2)
         return result
     elif rsl == 'rs':

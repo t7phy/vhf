@@ -21,7 +21,7 @@ def cl_nnlo_q2qp_eqp(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 20./9.*pow(x,-1)*CF - 50./3.*CF + 20*z*CF + 14./3.*x*CF - 2./3.*x*pow(pi,2)*CF - 20*x*z*\
           CF + 88./9.*pow(x,2)*CF  - 1./2.\
           *ln(x)*pow(x,-1)*pow(poly2,-1)*CF + 1./2.*ln(x)*pow(x,-1)*CF + 1./2.*ln(x)*pow(poly2,-1)*CF\
@@ -103,7 +103,7 @@ def cl_nnlo_q2qp_eqp(x, z, rsl, orders):
           /2. + 1./2.*sqrtxz2 - 1./2.*x)*pow(x,3)*pow(sqrtxz2,-1)*CF + 1./4.*Li2(1./2. + 1./2.*sqrtxz2\
            - 1./2.*x)*pow(x,5)*pow(sqrtxz2,-1)*pow(poly2,-1)*CF + 4*Li2(x)*x*CF
         elif orders == '010':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += - 4./3.*LMUF*pow(x,-1)*CF + 4*LMUF*CF - 8./3.*LMUF*pow(x,2)*CF + 4*ln(x)*LMUF*x*CF
         return result
     elif rsl == 'rs':

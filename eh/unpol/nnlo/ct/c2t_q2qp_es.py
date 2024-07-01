@@ -21,7 +21,7 @@ def ct_nnlo_q2qp_es(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 1./3.*pow(x,-2)*pow(pi,2)*CF*pow(opx,-1) - 1./3.*pow(x,-2)*pow(pi,2)*CF - 2./3.*pow(x,-2)\
           *z*pow(pi,2)*CF*pow(opx,-1) + 2./3.*pow(x,-2)*z*pow(pi,2)*CF + 4./3.*pow(x,-2)*pow(z,2)*pow(\
           pi,2)*CF*pow(opx,-1) - 4./3.*pow(x,-2)*pow(z,2)*pow(pi,2)*CF + 1./3.*pow(x,-1)*pow(pi,2)*CF\

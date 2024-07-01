@@ -21,7 +21,7 @@ def ct_nnlo_q2qp_eqp(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += 13./9.*pow(x,-1)*pow(z,-1)*CF - 26./9.*pow(x,-1)*CF - 11./6.*pow(z,-1)*CF + 1./6.*pow(\
                           z,-1)*pow(pi,2)*CF - 7./3.*CF - 1./3.*pow(pi,2)*CF + 10*z*CF + 17./6.*x*pow(z,-1)*CF + 1./6.*\
                           x*pow(z,-1)*pow(pi,2)*CF + 1./3.*x*CF - 1./3.*x*pow(pi,2)*CF - 10*x*z*CF - 22./9.*pow(x,2)*\
@@ -115,7 +115,7 @@ def ct_nnlo_q2qp_eqp(x, z, rsl, orders):
                            sqrtxz2,-1)*pow(poly2,-1)*CF - Li2(x)*pow(z,-1)*CF + 2*Li2(x)*CF - Li2(x)*x*pow(z,-1)*CF + 2*\
                            Li2(x)*x*CF
         elif orders == '010':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += - 2./3.*LMUF*pow(x,-1)*pow(z,-1)*CF + 4./3.*LMUF*pow(x,-1)*\
                           CF - 1./2.*LMUF*pow(z,-1)*CF + LMUF*CF + 1./2.*LMUF*x*pow(z,-1)*CF - LMUF*x*CF + 2./3.*LMUF*\
                           pow(x,2)*pow(z,-1)*CF - 4./3.*LMUF*pow(x,2)*CF - ln(x)*LMUF*pow(z,-1)*CF + 2*ln(x)*LMUF*CF - ln(x)*LMUF*x*\

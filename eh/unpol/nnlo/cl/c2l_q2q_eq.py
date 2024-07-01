@@ -21,7 +21,7 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
     if rsl == 'rr':
         result = 0
         if orders == '000':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += pow(NC,-1)*pow(x,-1)*pow(poly2,-1)*CF - pow(NC,-1)*pow(x,-1)*CF - 4./3.*pow(NC,-1)*pow(\
           x,-1)*pow(pi,2)*CF*pow(opx,-1) + 4./3.*pow(NC,-1)*pow(x,-1)*pow(pi,2)*CF + 4./3.*pow(NC,-1)*\
           pow(x,-1)*z*pow(pi,2)*CF*pow(opx,-1) - 4./3.*pow(NC,-1)*pow(x,-1)*z*pow(pi,2)*CF - pow(NC,-1)\
@@ -411,7 +411,7 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
           *pow(z,2)*CF*pow(opx,-1) + 4*Li2(x)*x*CF + 8*Li2(x)*x*z*CF - 16*Li2(x)*x*pow(z,2)*CF + 2*Li2(\
           x)*NC*x*z*CF + 4*Li2(z)*pow(NC,-1)*x*CF*pow(omz,-1) - 4*Li2(z)*pow(NC,-1)*x*CF - 14*Li2(z)*\
           pow(NC,-1)*x*z*CF - 2*Li2(z)*x*CF + 12*Li2(z)*x*z*CF + 6*Li2(z)*NC*x*z*CF
-            if z < 1.-x and z < x:
+            if z < round(1 - x, ndecimals) and z < x:
                 result +=  2*pow(NC,-1)*x*pow(pi,2)*CF*pow(omz,-1) - 2*pow(NC,-1)*x*pow(pi,2)*CF - 8./3.*pow(NC,-1)*\
       x*z*pow(pi,2)*CF - 24*ln(x)*pow(NC,-1)*x*z*CF - 12*pow(ln(x),2)*pow(NC,-1)*x*CF*pow(omz,-1)\
        + 12*pow(ln(x),2)*pow(NC,-1)*x*CF + 24*pow(ln(x),2)*pow(NC,-1)*x*z*CF + 20*ln(x)*ln(z)*pow(\
@@ -463,7 +463,7 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
       omx*pow(omz,-1))*pow(NC,-1)*x*CF*pow(omz,-1) + 4*Li2(omx*pow(omz,-1))*pow(NC,-1)*x*CF + 4*\
       Li2(x*pow(z,-1)*omx*pow(omz,-1))*pow(NC,-1)*x*z*CF + 4*Li2(z)*pow(NC,-1)*x*CF*pow(omz,-1) - 4\
       *Li2(z)*pow(NC,-1)*x*CF - 4*Li2(z)*pow(NC,-1)*x*z*CF
-            if z < 1.-x and z > x:
+            if z < round(1 - x, ndecimals) and z > x:
                 result += 2*pow(NC,-1)*x*pow(pi,2)*CF*pow(omz,-1) - 2*pow(NC,-1)*x*pow(pi,2)*CF - 16./3.*pow(NC,-1)\
       *x*z*pow(pi,2)*CF - 24*ln(x)*pow(NC,-1)*x*z*CF - 4*ln(x)*ln( - xmz)*pow(NC,-1)*x*CF*pow(\
       omz,-1) + 4*ln(x)*ln( - xmz)*pow(NC,-1)*x*CF + 8*ln(x)*ln( - xmz)*pow(NC,-1)*x*z*CF - 14*pow(\
@@ -489,7 +489,7 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
       omz,-1) + 4*Li2(x*pow(z,-1)*pow(omx,-1)*omz)*pow(NC,-1)*x*CF + 4*Li2(x*pow(z,-1)*pow(omx,-1)*\
       omz)*pow(NC,-1)*x*z*CF + 4*Li2(x*pow(z,-1)*omx*pow(omz,-1))*pow(NC,-1)*x*z*CF + 4*Li2(z)*pow(\
       NC,-1)*x*CF*pow(omz,-1) - 4*Li2(z)*pow(NC,-1)*x*CF - 4*Li2(z)*pow(NC,-1)*x*z*CF
-            if z > 1.-x and z > x:
+            if z > round(1 - x, ndecimals) and z > x:
                 result += 2*pow(NC,-1)*x*pow(pi,2)*CF*pow(omz,-1) - 2*pow(NC,-1)*x*pow(pi,2)*CF - 8./3.*pow(NC,-1)*\
       x*z*pow(pi,2)*CF - 24*ln(x)*pow(NC,-1)*x*z*CF + 4*ln(x)*ln( - omxmz)*pow(NC,-1)*x*z*CF - 4*\
       ln(x)*ln( - xmz)*pow(NC,-1)*x*CF*pow(omz,-1) + 4*ln(x)*ln( - xmz)*pow(NC,-1)*x*CF + 8*ln(x)*\
@@ -515,7 +515,7 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
       *Li2(x*pow(z,-1)*pow(omx,-1)*omz)*pow(NC,-1)*x*CF*pow(omz,-1) + 4*Li2(x*pow(z,-1)*pow(omx,-1)\
       *omz)*pow(NC,-1)*x*CF + 4*Li2(x*pow(z,-1)*pow(omx,-1)*omz)*pow(NC,-1)*x*z*CF + 4*Li2(z)*pow(\
       NC,-1)*x*CF*pow(omz,-1) - 4*Li2(z)*pow(NC,-1)*x*CF - 4*Li2(z)*pow(NC,-1)*x*z*CF
-            if z < 1.-x: 
+            if z < round(1 - x, ndecimals): 
                 result += 8./3.*NC*x*z*pow(pi,2)*CF - 12*ln(x)*NC*x*CF + 12*ln(x)*NC*x*z*CF - 14*pow(ln(x),2)*NC*x*\
       z*CF + 12*ln(x)*ln(z)*NC*x*z*CF + 24*ln(x)*ln(omx)*NC*x*z*CF + 24*ln(x)*ln(omz)*NC*x*z*CF - 4\
       *ln(x)*ln(omxmz)*NC*x*z*CF + 4*ln(z)*NC*x*CF - 4*ln(z)*NC*x*z*CF - 2*pow(ln(z),2)*NC*x*z*CF\
@@ -523,7 +523,7 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
       *z*CF - 8*pow(ln(omx),2)*NC*x*z*CF - 20*ln(omx)*ln(omz)*NC*x*z*CF + 8*ln(omz)*NC*x*CF - 8*ln(\
       omz)*NC*x*z*CF - 10*pow(ln(omz),2)*NC*x*z*CF + 4*ln(omz)*ln(omxmz)*NC*x*z*CF + 4*Li2(z*pow(\
       omx,-1))*NC*x*z*CF - 4*Li2(x*z*pow(omx,-1)*pow(omz,-1))*NC*x*z*CF - 4*Li2(z)*NC*x*z*CF
-            if z > 1.-x:
+            if z > round(1 - x, ndecimals):
                 result += 8./3.*NC*x*z*pow(pi,2)*CF - 12*ln(x)*NC*x*CF + 12*ln(x)*NC*x*z*CF - 4*ln(x)*ln( - omxmz)*\
       NC*x*z*CF - 12*pow(ln(x),2)*NC*x*z*CF + 16*ln(x)*ln(z)*NC*x*z*CF + 20*ln(x)*ln(omx)*NC*x*z*CF\
        + 20*ln(x)*ln(omz)*NC*x*z*CF + 4*ln(z)*NC*x*CF - 4*ln(z)*NC*x*z*CF - 2*pow(ln(z),2)*NC*x*z*\
@@ -532,15 +532,15 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
       *ln(omz)*NC*x*z*CF + 4*ln(omz)*ln( - omxmz)*NC*x*z*CF - 8*pow(ln(omz),2)*NC*x*z*CF + 4*Li2(\
       pow(x,-1)*pow(z,-1)*omx*omz)*NC*x*z*CF - 4*Li2(pow(z,-1)*omx)*NC*x*z*CF - 4*Li2(z)*NC*x*z*CF
         elif orders == '001':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += + 4*ln(omz)*LMUA*pow(NC,-1)*x*z*CF - 4*ln(omz)*LMUA*NC*x*z*CF - 2*ln(z)*LMUA*pow(NC,-1)*x*z*CF + 2*ln(z)*LMUA*x*CF + 4*ln(z)*LMUA*x*z*CF + 2*ln(z)*LMUA*NC*x*z*CF\
                 + 2*LMUA*pow(NC,-1)*x*CF + LMUA*pow(NC,-1)*x*z*CF + 4*LMUA*x*CF - 2*LMUA*x*z*CF - 2*LMUA*x*pow(z,2)*CF - 2*LMUA*NC*x*CF - LMUA*NC*x*z*CF
         elif orders == '010':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += + 4*ln(omx)*LMUF*pow(NC,-1)*x*z*CF - 4*ln(omx)*LMUF*NC*x*z*CF + 2*LMUF*pow(NC,-1)*z*CF + LMUF*pow(NC,-1)*x*z*CF - 4./3.*LMUF*pow(x,-1)*CF + \
                 4*LMUF*CF - 8./3.*LMUF*pow(x,2)*CF - 2*LMUF*NC*z*CF - LMUF*NC*x*z*CF  - 2*ln(x)*LMUF*pow(NC,-1)*x*z*CF + 4*ln(x)*LMUF*x*CF + 2*ln(x)*LMUF*NC*x*z*CF
         elif orders == '100':
-            if z != x and z != 1.-x:
+            if z != x and z != round(1 - x, ndecimals):
                 result += + 22./3.*LMUR*NC*x*z*CF - 4./3.*LMUR*NF*x*z*CF
         return result
     elif rsl == 'rs':
