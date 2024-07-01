@@ -119,7 +119,7 @@ def cl_nnlo_q2g_eq(x, z, rsl, orders):
       pow(NC,-1)*x*pow(z,-1)*CF + 8*Li2(x*z*pow(omx,-1)*pow(omz,-1))*pow(NC,-1)*x*CF - 4*Li2(x*z*\
       pow(omx,-1)*pow(omz,-1))*pow(NC,-1)*x*z*CF - 4*Li2(z)*pow(NC,-1)*x*pow(z,-1)*CF + 8*Li2(z)*\
       pow(NC,-1)*x*CF - 4*Li2(z)*pow(NC,-1)*x*z*CF
-            if z > 1.-x and z  < x:
+            if z > round(1 - x, ndecimals) and z < x:
                 result += 8./3.*pow(NC,-1)*x*pow(z,-1)*pow(pi,2)*CF - 6*pow(NC,-1)*x*pow(pi,2)*CF + 10./3.*pow(\
       NC,-1)*x*z*pow(pi,2)*CF - 24*ln(x)*pow(NC,-1)*x*CF + 24*ln(x)*pow(NC,-1)*x*z*CF - 4*ln(x)*ln(\
        - omxmz)*pow(NC,-1)*x*pow(z,-1)*CF + 12*ln(x)*ln( - omxmz)*pow(NC,-1)*x*CF - 8*ln(x)*ln( - \

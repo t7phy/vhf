@@ -736,7 +736,7 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
        - Li2(x*z*pow(omx,-1)*pow(omz,-1))*pow(NC,-1)*pow(x,2) + 1./2.*Li2(z)*pow(NC,-1)*pow(z,-1)\
        - 1./2.*Li2(z)*pow(NC,-1)*pow(omz,-1) - Li2(z)*pow(NC,-1)*x*pow(z,-1) + Li2(z)*pow(NC,-1)*x*\
       pow(omz,-1)
-            if z > 1.-x and z  < x:
+            if z > round(1 - x, ndecimals) and z < x:
                 3./2.*pow(NC,-1)*pow(z,-1) - 11./12.*pow(NC,-1)*pow(z,-1)*pow(pi,2) + 3./2.*pow(NC,-1)*\
       pow(omz,-1) - 5./6.*pow(NC,-1)*pow(pi,2)*pow(omz,-1) + 7./12.*pow(NC,-1)*pow(pi,2) + 11./6.*\
       pow(NC,-1)*x*pow(z,-1)*pow(pi,2) + 5./3.*pow(NC,-1)*x*pow(pi,2)*pow(omz,-1) - 7./6.*pow(\
@@ -1452,9 +1452,7 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
             result += - 1./12.*LMUA*pow(NC,-1)*pow(pi,2) + 3./4.*LMUA*pow(NC,-1)*x + 1./6.*LMUA*pow(NC,-1)*x*pow(pi,2) - 3./4.*\
       LMUA*pow(NC,-1)*pow(x,2) - 1./6.*LMUA*pow(NC,-1)*pow(x,2)*pow(pi,2) + 1./12.*LMUA*NC*pow(\
       pi,2) - 3./4.*LMUA*NC*x - 1./6.*LMUA*NC*x*pow(pi,2) + 3./4.*LMUA*NC*pow(x,2) + 1./6.*LMUA*NC*\
-      pow(x,2)*pow(pi,2) - 3./8.*LMUA*LMUF*pow(NC,-1) + 3./4.*LMUA*LMUF*pow(NC,-1)*x - 3./4.*LMUA*\
-      LMUF*pow(NC,-1)*pow(x,2) + 3./8.*LMUA*LMUF*NC - 3./4.*LMUA*LMUF*NC*x + 3./4.*LMUA*LMUF*NC*\
-      pow(x,2) - 3./8.*ln(x)*LMUA*pow(NC,-1) + 3./4.*ln(x)*LMUA*pow(NC,-1)*x - 3./4.\
+      pow(x,2)*pow(pi,2)  - 3./8.*ln(x)*LMUA*pow(NC,-1) + 3./4.*ln(x)*LMUA*pow(NC,-1)*x - 3./4.\
       *ln(x)*LMUA*pow(NC,-1)*pow(x,2) + 3./8.*ln(x)*LMUA*NC - 3./4.*ln(x)*LMUA*NC*x + 3./4.*ln(x)*\
       LMUA*NC*pow(x,2) + 3./8.*ln(omx)*LMUA*pow(NC,-1) - 3./\
       4.*ln(omx)*LMUA*pow(NC,-1)*x + 3./4.*ln(omx)*LMUA*pow(NC,-1)*pow(x,2) - 3./8.*ln(omx)*LMUA*NC\
@@ -1508,6 +1506,7 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
             result_r0 = + 11./12.*LMUR*NC - 11./6.*LMUR*NC*x + 11./6.*LMUR*NC*pow(x,2) - 1./6.*LMUR*NF + 1./3.*LMUR*NF*x - 1./3.*LMUR*NF*pow(x,2)
             result += result_r0 * ln(1-z)
         elif orders == '011':
+            result += - 3./8.*LMUA*LMUF*pow(NC,-1) + 3./4.*LMUA*LMUF*pow(NC,-1)*x - 3./4.*LMUA*LMUF*pow(NC,-1)*pow(x,2) + 3./8.*LMUA*LMUF*NC - 3./4.*LMUA*LMUF*NC*x + 3./4.*LMUA*LMUF*NC*pow(x,2)
             result_r0 = - 1./2.*LMUA*LMUF*pow(NC,-1) + LMUA*LMUF*pow(NC,-1)*x - LMUA*LMUF*pow(NC,-1)*pow(x,2) + 1./2.*LMUA*LMUF*NC - LMUA*LMUF*NC*x + LMUA*LMUF*NC*pow(x,2) 
             result += result_r0 * ln(1-z)
         elif orders == '020':

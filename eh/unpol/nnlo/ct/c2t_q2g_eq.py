@@ -364,7 +364,7 @@ def ct_nnlo_q2g_eq(x, z, rsl, orders):
       Li2(x*z*pow(omx,-1)*pow(omz,-1))*pow(NC,-1)*x*z*CF + 2*Li2(z)*pow(NC,-1)*pow(z,-1)*CF*pow(\
       omx,-1) - 2*Li2(z)*pow(NC,-1)*CF*pow(omx,-1) + Li2(z)*pow(NC,-1)*z*CF*pow(omx,-1) - 2*Li2(z)*\
       pow(NC,-1)*x*pow(z,-1)*CF + 4*Li2(z)*pow(NC,-1)*x*CF - 2*Li2(z)*pow(NC,-1)*x*z*CF
-            if z > 1.-x and z  < x:
+            if z > round(1 - x, ndecimals) and z < x:
                 result += 4*pow(NC,-1)*pow(z,-1)*CF - 5./3.*pow(NC,-1)*pow(z,-1)*pow(pi,2)*CF*pow(omx,-1) + 1./6.*\
       pow(NC,-1)*pow(z,-1)*pow(pi,2)*CF - 6*pow(NC,-1)*CF + 2*pow(NC,-1)*pow(pi,2)*CF*pow(omx,-1)\
        - 1./3.*pow(NC,-1)*pow(pi,2)*CF + 4*pow(NC,-1)*z*CF*pow(omx,-1) - pow(NC,-1)*z*pow(pi,2)*CF*\

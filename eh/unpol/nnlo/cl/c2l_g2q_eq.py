@@ -378,7 +378,7 @@ def cl_nnlo_g2q_eq(x, z, rsl, orders):
       omz,-1))*NC*pow(x,2) - 2*Li2(z*pow(omx,-1))*pow(NC,-1)*x + 2*Li2(z*pow(omx,-1))*pow(NC,-1)*\
       pow(x,2) - 4*Li2(z*pow(omx,-1))*NC*x + 4*Li2(z*pow(omx,-1))*NC*pow(x,2) + 2*Li2(x*z*pow(\
       omx,-1)*pow(omz,-1))*pow(NC,-1)*x - 2*Li2(x*z*pow(omx,-1)*pow(omz,-1))*pow(NC,-1)*pow(x,2)
-            if z > 1.-x and z  < x:
+            if z > round(1 - x, ndecimals) and z < x:
                 result += 2*pow(NC,-1)*x*pow(z,-1) + 2*pow(NC,-1)*x*pow(omz,-1) - 7./3.*pow(NC,-1)*x*pow(pi,2) - 2*\
       pow(NC,-1)*pow(x,2)*pow(z,-1) - 2*pow(NC,-1)*pow(x,2)*pow(omz,-1) + 7./3.*pow(NC,-1)*pow(x,2)\
       *pow(pi,2) - 4*NC*x + 2./3.*NC*x*pow(pi,2) + 4*NC*pow(x,2) - 2./3.*NC*pow(x,2)*pow(pi,2) + 6*\

@@ -912,7 +912,7 @@ def ct_nnlo_q2q_eq(x, z, rsl, orders):
       z*CF - 2*Li2(z)*pow(NC,-1)*CF*pow(omx,-1)*pow(omz,-1) + Li2(z)*pow(NC,-1)*CF*pow(omx,-1) + \
       Li2(z)*pow(NC,-1)*z*CF*pow(omx,-1) + 2*Li2(z)*pow(NC,-1)*x*CF*pow(omz,-1) - 2*Li2(z)*pow(\
       NC,-1)*x*CF - 2*Li2(z)*pow(NC,-1)*x*z*CF
-            if z > 1.-x and z  < x:
+            if z > round(1 - x, ndecimals) and z < x:
                 result += 4*pow(NC,-1)*CF*pow(omx,-1) + 4*pow(NC,-1)*CF*pow(omz,-1) - 6*pow(NC,-1)*CF - 4./3.*pow(\
       NC,-1)*pow(pi,2)*CF*pow(omx,-1)*pow(omz,-1) + 5./6.*pow(NC,-1)*pow(pi,2)*CF*pow(omx,-1) + 1./\
       6.*pow(NC,-1)*pow(pi,2)*CF*pow(omz,-1) - 1./3.*pow(NC,-1)*pow(pi,2)*CF - 4*pow(NC,-1)*z*CF*\
@@ -1751,8 +1751,7 @@ def ct_nnlo_q2q_eq(x, z, rsl, orders):
        ln(z)*LMUA*NC*z*CF + 2./3.*ln(z)*LMUA*NF*CF*pow(omz,-1) - 1./3.*ln(z)*LMUA*NF*CF - 1./3.*ln(z\
        )*LMUA*NF*z*CF - 11./9.*LMUA*NF*z*CF
             result_0r = - 7./4.*LMUA*pow(NC,-1)*CF + 1./4.*LMUA*pow(NC,-1)*z*CF - 2./3.*LMUA*pow(z,-1)*CF - 1./2.*LMUA*CF + 1./2.*LMUA*z*CF + 2./3.*LMUA*pow(\
-      z,2)*CF + 7./4.*LMUA*NC*CF - 1./4.*LMUA*NC*z*CF + LMUA*LMUF*pow(NC,-1)*CF + LMUA*LMUF*pow(\
-      NC,-1)*z*CF - LMUA*LMUF*NC*CF - LMUA*LMUF*NC*z*CF - 2*ln(z)*LMUA*\
+      z,2)*CF + 7./4.*LMUA*NC*CF - 1./4.*LMUA*NC*z*CF - 2*ln(z)*LMUA*\
       pow(NC,-1)*CF*pow(omz,-1) + 3./2.*ln(z)*LMUA*pow(NC,-1)*CF + 3./2.*ln(z)*LMUA*pow(NC,-1)*z*CF\
        - ln(z)*LMUA*CF - ln(z)*LMUA*z*CF + 2*ln(z)*LMUA*NC*CF*pow(omz,-1) - 3./2.*ln(z)*LMUA*NC*CF\
        - 3./2.*ln(z)*LMUA*NC*z*CF - 2*ln(omz)*LMUA*pow(NC,-1)*CF - 2*ln(omz)*LMUA*pow(NC,-1)*z*CF + 2*ln(omz)*LMUA*NC*CF + 2*ln(omz)*LMUA*NC*z*CF

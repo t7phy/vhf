@@ -437,7 +437,7 @@ def cl_nnlo_q2q_eq(x, z, rsl, orders):
       CF - 4*Li2(omx*pow(omz,-1))*pow(NC,-1)*x*CF*pow(omz,-1) + 4*Li2(omx*pow(omz,-1))*pow(NC,-1)*x\
       *CF + 4*Li2(z*pow(omx,-1))*pow(NC,-1)*x*z*CF + 4*Li2(z)*pow(NC,-1)*x*CF*pow(omz,-1) - 4*Li2(z\
       )*pow(NC,-1)*x*CF - 4*Li2(z)*pow(NC,-1)*x*z*CF
-            if z > 1.-x and z  < x:
+            if z > round(1 - x, ndecimals) and z < x:
                 result += 2*pow(NC,-1)*x*pow(pi,2)*CF*pow(omz,-1) - 2*pow(NC,-1)*x*pow(pi,2)*CF - 8./3.*pow(NC,-1)*\
       x*z*pow(pi,2)*CF - 24*ln(x)*pow(NC,-1)*x*z*CF + 4*ln(x)*ln( - omxmz)*pow(NC,-1)*x*z*CF - 12*\
       pow(ln(x),2)*pow(NC,-1)*x*CF*pow(omz,-1) + 12*pow(ln(x),2)*pow(NC,-1)*x*CF + 26*pow(ln(x),2)*\
