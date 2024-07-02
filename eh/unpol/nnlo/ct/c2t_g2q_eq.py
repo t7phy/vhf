@@ -1,5 +1,6 @@
 from configs.eh import *
 
+
 LMUR = 1
 LMUF = 1
 LMUA = 1
@@ -49,7 +50,8 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
       pow(x,2)*pow(omxmz,-1) + 1127./144.*NC*pow(x,2) + 1./3.*NC*pow(x,2)*pow(pi,2)*pow(omz,-1) + 5.\
       /3.*NC*pow(x,2)*pow(pi,2) + 3./2.*NC*pow(x,2)*z + 1./6.*NC*pow(x,2)*z*pow(pi,2) - 1./16.*NC*\
       pow(x,3)*pow(poly2,-1) - 1./2.*NC*pow(x,3)*pow(omxmz,-1) + 1./16.*NC*pow(x,4)*pow(poly2,-1)
-                result +=   - 3./32.*ln(x)*pow(NC,-1)*pow(x,-1)*pow(poly2,-2) + 5./32.*ln(x)*pow(NC,-1)*pow(x,-1)*pow(poly2,-1) - \
+                result +=  - 3./32.*\
+      ln(x)*pow(NC,-1)*pow(x,-1)*pow(poly2,-2) + 5./32.*ln(x)*pow(NC,-1)*pow(x,-1)*pow(poly2,-1) - \
       1./16.*ln(x)*pow(NC,-1)*pow(x,-1) + 8*ln(x)*pow(NC,-1)*pow(z,-1)*pow(omz,-1) - 53./8.*ln(x)*\
       pow(NC,-1)*pow(z,-1) + 3./32.*ln(x)*pow(NC,-1)*pow(poly2,-2) - 3./32.*ln(x)*pow(NC,-1)*pow(\
       poly2,-1) - 13./2.*ln(x)*pow(NC,-1)*pow(omz,-1) + 3./4.*ln(x)*pow(NC,-1)*pow(omxmz,-1) - 53./\
@@ -85,7 +87,7 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
       ln(x)*NC*pow(x,3)*pow(omxmz,-1) + 3./32.*ln(x)*NC*pow(x,4)*pow(poly2,-2) + 3./32.*ln(x)*NC*\
       pow(x,4)*pow(poly2,-1) + 1./2.*ln(x)*NC*pow(x,4)*pow(xmz,-2) - 1./2.*ln(x)*NC*pow(x,4)*pow(\
       omxmz,-2) + 3./32.*ln(x)*NC*pow(x,5)*pow(poly2,-2) - 3./32.*ln(x)*NC*pow(x,6)*pow(poly2,-2)
-                result +=   - 3./64.*ln(x)*ln(1 - sqrtxz2 + x)*pow(NC,-1)*pow(x,-1)*pow(\
+                result +=  - 3./64.*ln(x)*ln(1 - sqrtxz2 + x)*pow(NC,-1)*pow(x,-1)*pow(\
       sqrtxz2,-1)*pow(poly2,-2) + 3./32.*ln(x)*ln(1 - sqrtxz2 + x)*pow(NC,-1)*pow(x,-1)*pow(\
       sqrtxz2,-1)*pow(poly2,-1) - 3./64.*ln(x)*ln(1 - sqrtxz2 + x)*pow(NC,-1)*pow(x,-1)*pow(\
       sqrtxz2,-1) - ln(x)*ln(1 - sqrtxz2 + x)*pow(NC,-1)*pow(z,-1)*pow(sqrtxz2,-1) + ln(x)*ln(1 - \
@@ -247,8 +249,8 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
       NC*pow(x,2)*z - 3./32.*ln(z)*NC*pow(x,3)*pow(poly2,-2) - 1./32.*ln(z)*NC*pow(x,3)*pow(\
       poly2,-1) + 3./2.*ln(z)*NC*pow(x,3)*pow(xmz,-1) - 3./32.*ln(z)*NC*pow(x,4)*pow(poly2,-2) - 3./\
       32.*ln(z)*NC*pow(x,4)*pow(poly2,-1) - 1./2.*ln(z)*NC*pow(x,4)*pow(xmz,-2) + 3./32.*ln(z)*NC*\
-      pow(x,5)*pow(poly2,-2) + 3./32.*ln(z)*NC*pow(x,6)*pow(poly2,-2)
-                result +=   - 5./4.*pow(ln(z),2)*pow(NC,-1)*pow(z,-1)\
+      pow(x,5)*pow(poly2,-2) + 3./32.*ln(z)*NC*pow(x,6)*pow(poly2,-2) 
+                result +=  - 5./4.*pow(ln(z),2)*pow(NC,-1)*pow(z,-1)\
        - pow(ln(z),2)*pow(NC,-1)*pow(omz,-1) + 1./4.*pow(ln(z),2)*pow(NC,-1) - 1./4.*pow(ln(z),2)*\
       pow(NC,-1)*z + 5./2.*pow(ln(z),2)*pow(NC,-1)*x*pow(z,-1) + 2*pow(ln(z),2)*pow(NC,-1)*x*pow(\
       omz,-1) - 1./2.*pow(ln(z),2)*pow(NC,-1)*x + 1./2.*pow(ln(z),2)*pow(NC,-1)*x*z - 2*pow(ln(z),2\
@@ -283,8 +285,8 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
        + 2./3.*ln(omx)*NC*pow(x,-1)*pow(z,-1) - 4./3.*ln(omx)*NC*pow(x,-1) + 1./4.*ln(omx)*NC*pow(\
       z,-1) + 1./2.*ln(omx)*NC*pow(omz,-1) - 5./4.*ln(omx)*NC + 3./8.*ln(omx)*NC*z + 11./2.*ln(omx)\
       *NC*x*pow(z,-1) - 27./2.*ln(omx)*NC*x - 1./4.*ln(omx)*NC*x*z - 20./3.*ln(omx)*NC*pow(x,2)*\
-      pow(z,-1) + 193./12.*ln(omx)*NC*pow(x,2) - 1./2.*ln(omx)*NC*pow(x,2)*z
-                result +=   - 3*pow(ln(omx),2)*pow(NC,-1)*pow(z,-1) - 3*pow(ln(\
+      pow(z,-1) + 193./12.*ln(omx)*NC*pow(x,2) - 1./2.*ln(omx)*NC*pow(x,2)*z 
+                result +=  - 3*pow(ln(omx),2)*pow(NC,-1)*pow(z,-1) - 3*pow(ln(\
       omx),2)*pow(NC,-1)*pow(omz,-1) + 9./4.*pow(ln(omx),2)*pow(NC,-1) + 1./4.*pow(ln(omx),2)*pow(\
       NC,-1)*z + 6*pow(ln(omx),2)*pow(NC,-1)*x*pow(z,-1) + 6*pow(ln(omx),2)*pow(NC,-1)*x*pow(\
       omz,-1) - 9./2.*pow(ln(omx),2)*pow(NC,-1)*x - 1./2.*pow(ln(omx),2)*pow(NC,-1)*x*z - 4*pow(ln(\
@@ -320,8 +322,8 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
       NC*x*z - 20./3.*ln(omz)*NC*pow(x,2)*pow(z,-1) + 3./4.*ln(omz)*NC*pow(x,2)*pow(omxmz,-2) + 3./\
       2.*ln(omz)*NC*pow(x,2)*pow(omxmz,-1) + 199./12.*ln(omz)*NC*pow(x,2) - 1./2.*ln(omz)*NC*pow(\
       x,2)*z - ln(omz)*NC*pow(x,3)*pow(omxmz,-2) - ln(omz)*NC*pow(x,3)*pow(omxmz,-1) + 1./2.*ln(omz\
-      )*NC*pow(x,4)*pow(omxmz,-2)
-                result +=   - 5./2.*pow(ln(omz),2)*pow(NC,-1)*pow(z,-1) - 3./2.*pow(ln(omz),2)*pow(NC,-1)*pow(omz,-1) + 2*\
+      )*NC*pow(x,4)*pow(omxmz,-2) 
+                result +=  - 5./2.*pow(ln(omz),2)*pow(NC,-1)*pow(z,-1) - 3./2.*pow(ln(omz),2)*pow(NC,-1)*pow(omz,-1) + 2*\
       pow(ln(omz),2)*pow(NC,-1) + 1./4.*pow(ln(omz),2)*pow(NC,-1)*z + 5*pow(ln(omz),2)*pow(NC,-1)*x\
       *pow(z,-1) + 3*pow(ln(omz),2)*pow(NC,-1)*x*pow(omz,-1) - 4*pow(ln(omz),2)*pow(NC,-1)*x - 1./2.\
       *pow(ln(omz),2)*pow(NC,-1)*x*z - 3*pow(ln(omz),2)*pow(NC,-1)*pow(x,2)*pow(z,-1) - 5./2.*pow(\
@@ -346,7 +348,8 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
       /2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(NC,-1)*x*pow(sqrtxz2,-1)*pow(omz,-1) + 259./32.*\
       Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(NC,-1)*x*pow(sqrtxz2,-1) - 11./4.*\
       Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(NC,-1)*x*z*pow(sqrtxz2,-1) + 11./4.\
-      *Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(NC,-1)*x*pow(z,2)*pow(sqrtxz2,-1)
+      *Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(NC,-1)*x*pow(z,2)*pow(sqrtxz2,-1)\
+      
                 result +=  - 3*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(NC,-1)*pow(x,2)*pow(\
       z,-1)*pow(sqrtxz2,-1) + 3*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*sqrtxz2)*pow(NC,-1)*\
       pow(x,2)*pow(sqrtxz2,-1)*pow(omz,-1) + 29./16.*Li2(1./2. - 1./2.*pow(x,-1) - 1./2.*pow(x,-1)*\
@@ -737,7 +740,7 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
        - 1./2.*Li2(z)*pow(NC,-1)*pow(omz,-1) - Li2(z)*pow(NC,-1)*x*pow(z,-1) + Li2(z)*pow(NC,-1)*x*\
       pow(omz,-1)
             if z > round(1 - x, ndecimals) and z < x:
-                3./2.*pow(NC,-1)*pow(z,-1) - 11./12.*pow(NC,-1)*pow(z,-1)*pow(pi,2) + 3./2.*pow(NC,-1)*\
+                result += 3./2.*pow(NC,-1)*pow(z,-1) - 11./12.*pow(NC,-1)*pow(z,-1)*pow(pi,2) + 3./2.*pow(NC,-1)*\
       pow(omz,-1) - 5./6.*pow(NC,-1)*pow(pi,2)*pow(omz,-1) + 7./12.*pow(NC,-1)*pow(pi,2) + 11./6.*\
       pow(NC,-1)*x*pow(z,-1)*pow(pi,2) + 5./3.*pow(NC,-1)*x*pow(pi,2)*pow(omz,-1) - 7./6.*pow(\
       NC,-1)*x*pow(pi,2) - pow(NC,-1)*pow(x,2)*pow(z,-1) - 7./6.*pow(NC,-1)*pow(x,2)*pow(z,-1)*pow(\
@@ -1465,30 +1468,28 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
             result_r1 = + LMUA*pow(NC,-1) - 2*LMUA*pow(NC,-1)*x + 2*LMUA*pow(NC,-1)*pow(x,2) - LMUA*NC + 2*LMUA*NC*x - 2*LMUA*NC*pow(x,2)
             result += result_r0 * ln(1-z) + result_r1 * (1/2)*ln(1-z)*ln(1-z)
         elif orders == '010':
-            result += - 3./8.*LMUF*pow(NC,-1) - 1./24.*LMUF*pow(NC,-1)*pow(pi,2) - 5./8.*LMUF*pow(NC,-1)*x + 1./12.*LMUF*pow(\
+            result += + Li2( - x)*LMUF*NC + 2*Li2( - x)*LMUF*NC*x + 2*Li2( - x)*LMUF*NC*pow(x,2) - 1./4.*Li2(x)*LMUF*pow(NC,-1) + 1./2.*Li2(x)*LMUF*pow(NC,-1)*x + 5./4.*Li2(x)*LMUF*\
+      NC + 7./2.*Li2(x)*LMUF*NC*x + 1./2.*pow(ln(omx),2)*LMUF*pow(NC,-1) - pow(ln(omx),2)*LMUF*pow(\
+      NC,-1)*x + pow(ln(omx),2)*LMUF*pow(NC,-1)*pow(x,2) - pow(ln(omx),2)*LMUF*NC + 2*pow(ln(omx),2\
+      )*LMUF*NC*x - 2*pow(ln(omx),2)*LMUF*NC*pow(x,2) - 1./2.*ln(omx)*LMUF*pow(\
+      NC,-1) + 9./4.*ln(omx)*LMUF*pow(NC,-1)*x - 7./4.*ln(omx)*LMUF*pow(NC,-1)*pow(x,2) - 2./3.*ln(\
+      omx)*LMUF*NC*pow(x,-1) - 11./12.*ln(omx)*LMUF*NC - 53./12.*ln(omx)*LMUF*NC*x + 61./12.*ln(omx\
+      )*LMUF*NC*pow(x,2) + 1./6.*ln(omx)*LMUF*NF - 1./3.*ln(omx)*LMUF*NF*x + 1./3.*ln(omx)*LMUF*NF*\
+      pow(x,2) - ln(x)*ln(omx)*LMUF*pow(NC,-1) + 2*ln(x)*ln(omx)*LMUF*pow(NC,-1)*x\
+       - 2*ln(x)*ln(omx)*LMUF*pow(NC,-1)*pow(x,2) + 2*ln(x)*ln(omx)*LMUF*NC - 4*ln(x)*ln(omx)*LMUF*\
+      NC*x + 4*ln(x)*ln(omx)*LMUF*NC*pow(x,2) + 3./8.*\
+      ln(x)*LMUF*pow(NC,-1) - 9./4.*ln(x)*LMUF*pow(NC,-1)*x + 7./4.*ln(x)*LMUF*pow(NC,-1)*pow(x,2)\
+       - 11./24.*ln(x)*LMUF*NC + 5./12.*ln(x)*LMUF*NC*x - 149./12.*ln(x)*LMUF*NC*pow(x,2) - 1./6.*\
+      ln(x)*LMUF*NF + 1./3.*ln(x)*LMUF*NF*x - 1./3.*ln(x)*LMUF*NF*pow(x,2) - 3./8.*LMUF*\
+      pow(NC,-1) - 1./24.*LMUF*pow(NC,-1)*pow(pi,2) - 5./8.*LMUF*pow(NC,-1)*x + 1./12.*LMUF*pow(\
       NC,-1)*x*pow(pi,2) - 3./8.*LMUF*pow(NC,-1)*pow(x,2) - 1./6.*LMUF*pow(NC,-1)*pow(x,2)*pow(\
       pi,2) - 13./9.*LMUF*NC*pow(x,-1) + 59./24.*LMUF*NC + 1./24.*LMUF*NC*pow(pi,2) - 181./24.*LMUF\
       *NC*x - 3./4.*LMUF*NC*x*pow(pi,2) + 533./72.*LMUF*NC*pow(x,2) + 1./2.*LMUF*NC*pow(x,2)*pow(\
-      pi,2) + 1./3.*LMUF*NF*x - 1./3.*LMUF*NF*pow(x,2) - 9./4.*ln(x)*LMUF*pow(NC,-1)*x + 7./4.*ln(x)*LMUF*pow(NC,-1)*pow(x,2)\
-      - 11./24.*ln(x)*LMUF*NC + 5./12.*ln(x)*LMUF*NC*x - 149./12.*ln(x)*LMUF*NC*pow(x,2) - 1./6.*\
-     ln(x)*LMUF*NF + 1./3.*ln(x)*LMUF*NF*x - 1./3.*ln(x)*LMUF*NF*pow(x,2) - 1./2.*ln(omx)*LMUF*pow(\
-        NC,-1) + 9./4.*ln(omx)*LMUF*pow(NC,-1)*x - 7./4.*ln(omx)*LMUF*pow(NC,-1)*pow(x,2) - 2./3.*ln(\
-        omx)*LMUF*NC*pow(x,-1) - 11./12.*ln(omx)*LMUF*NC - 53./12.*ln(omx)*LMUF*NC*x + 61./12.*ln(omx\
-        )*LMUF*NC*pow(x,2) + 1./6.*ln(omx)*LMUF*NF - 1./3.*ln(omx)*LMUF*NF*x + 1./3.*ln(omx)*LMUF*NF*\
-        pow(x,2) + 1./2.*pow(ln(omx),2)*LMUF*pow(NC,-1) - pow(ln(omx),2)*LMUF*pow(\
-            NC,-1)*x + pow(ln(omx),2)*LMUF*pow(NC,-1)*pow(x,2) - pow(ln(omx),2)*LMUF*NC + 2*pow(ln(omx),2\
-            )*LMUF*NC*x - 2*pow(ln(omx),2)*LMUF*NC*pow(x,2) + Li2( - x)*LMUF*NC + 2*Li2( - x)*LMUF*NC*x + 2*Li2( - x)*LMUF*NC*pow(x,2) \
-            - 1./4.*Li2(x)*LMUF*pow(NC,-1) + 1./2.*Li2(x)*LMUF*pow(NC,-1)*x + 5./4.*Li2(x)*LMUF*\
-            NC + 7./2.*Li2(x)*LMUF*NC*x + ln(x)*ln(1 + x)*LMUF*NC + 2*ln(x)*ln(1 + x)*LMUF*NC*x + 2*ln(x)*ln(1 + x)*LMUF*NC*pow(x,2) + 1./4.*\
-            pow(ln(x),2)*LMUF*pow(NC,-1) - 1./2.*pow(ln(x),2)*LMUF*pow(NC,-1)*x + pow(ln(x),2)*LMUF*pow(\
-            NC,-1)*pow(x,2) + 3./4.*pow(ln(x),2)*LMUF*NC + 7./2.*pow(ln(x),2)*LMUF*NC*x - pow(ln(x),2)*\
-            LMUF*NC*pow(x,2) - ln(x)*ln(omx)*LMUF*pow(NC,-1) + 2*ln(x)*ln(omx)*LMUF*pow(NC,-1)*x\
-            - 2*ln(x)*ln(omx)*LMUF*pow(NC,-1)*pow(x,2) + 2*ln(x)*ln(omx)*LMUF*NC - 4*ln(x)*ln(omx)*LMUF*\
-           NC*x + 4*ln(x)*ln(omx)*LMUF*NC*pow(x,2) - 1./2.*ln(omx)*LMUF*pow(\
-            NC,-1) + 9./4.*ln(omx)*LMUF*pow(NC,-1)*x - 7./4.*ln(omx)*LMUF*pow(NC,-1)*pow(x,2) - 2./3.*ln(\
-            omx)*LMUF*NC*pow(x,-1) - 11./12.*ln(omx)*LMUF*NC - 53./12.*ln(omx)*LMUF*NC*x + 61./12.*ln(omx\
-            )*LMUF*NC*pow(x,2) + 1./6.*ln(omx)*LMUF*NF - 1./3.*ln(omx)*LMUF*NF*x + 1./3.*ln(omx)*LMUF*NF*\
-            pow(x,2) + 3./8.*ln(x)*LMUF*pow(NC,-1)
+      pi,2) + 1./3.*LMUF*NF*x - 1./3.*LMUF*NF*pow(x,2) + ln(x)*ln(1 + x)*LMUF*\
+      NC + 2*ln(x)*ln(1 + x)*LMUF*NC*x + 2*ln(x)*ln(1 + x)*LMUF*NC*pow(x,2) + 1./4.*\
+      pow(ln(x),2)*LMUF*pow(NC,-1) - 1./2.*pow(ln(x),2)*LMUF*pow(NC,-1)*x + pow(ln(x),2)*LMUF*pow(\
+      NC,-1)*pow(x,2) + 3./4.*pow(ln(x),2)*LMUF*NC + 7./2.*pow(ln(x),2)*LMUF*NC*x - pow(ln(x),2)*\
+      LMUF*NC*pow(x,2)
             result_r0 = - 1./2.*LMUF*pow(NC,-1) + 5./4.*LMUF*pow(NC,-1)*x - 3./4.*LMUF*pow(NC,-1)*pow(x,2) - 2./3.*LMUF*NC*pow(x,-1)\
        - 11./12.*LMUF*NC - 41./12.*LMUF*NC*x + 49./12.*LMUF*NC*pow(x,2) + 1./6.*LMUF*NF - 1./3.*\
       LMUF*NF*x + 1./3.*LMUF*NF*pow(x,2) - 1./4.*ln(x)*LMUF*pow(NC,-1) + 1./2.*ln(x)*LMUF*pow(NC,-1)*x - ln(x)*LMUF*pow(NC,-1)*\
@@ -1497,12 +1498,10 @@ def ct_nnlo_g2q_eq(x, z, rsl, orders):
             result_r1 = + 1./2.*LMUF*pow(NC,-1) - LMUF*pow(NC,-1)*x + LMUF*pow(NC,-1)*pow(x,2) - 1./2.*LMUF*NC + LMUF*NC*x - LMUF*NC*pow(x,2)
             result += result_r0 * ln(1-z) + result_r1 * (1/2)*ln(1-z)*ln(1-z)
         elif orders == '100':
-            result += + 11./6.*LMUR*NC*x - 11./6.*LMUR*NC*pow(x,2) - 1./3.*LMUR*NF*x + 1./3.*LMUR*NF*pow(x,2) - 11./12.*ln(x)*LMUR*NC + 11./6.*ln(x)*LMUR*NC*x - 11./6.*ln(x)*LMUR*\
-                      NC*pow(x,2) + 1./6.*ln(x)*LMUR*NF - 1./3.*ln(x)*LMUR*NF*x + 1./3.*ln(x)*LMUR*NF*pow(x,2) + 11./12.\
-                      *ln(omx)*LMUR*NC - 11./6.*ln(omx)*LMUR*NC*x + 11./6.*ln(omx)*LMUR*NC*pow(x,2) - 1./6.*ln(omx)\
-                      *LMUR*NF + 1./3.*ln(omx)*LMUR*NF*x - 1./3.*ln(omx)*LMUR*NF*pow(x,2) + 11./12.\
-                      *ln(omx)*LMUR*NC - 11./6.*ln(omx)*LMUR*NC*x + 11./6.*ln(omx)*LMUR*NC*pow(x,2) - 1./6.*ln(omx)\
-                      *LMUR*NF + 1./3.*ln(omx)*LMUR*NF*x - 1./3.*ln(omx)*LMUR*NF*pow(x,2)
+            result += + 11./6.*LMUR*NC*x - 11./6.*LMUR*NC*pow(x,2) - 1./3.*LMUR*NF*x + 1./3.*LMUR*NF*pow(x,2) + 11./12.\
+      *ln(omx)*LMUR*NC - 11./6.*ln(omx)*LMUR*NC*x + 11./6.*ln(omx)*LMUR*NC*pow(x,2) - 1./6.*ln(omx)\
+      *LMUR*NF + 1./3.*ln(omx)*LMUR*NF*x - 1./3.*ln(omx)*LMUR*NF*pow(x,2) - 11./12.*ln(x)*LMUR*NC + 11./6.*ln(x)*LMUR*NC*x - 11./6.*ln(x)*LMUR*\
+      NC*pow(x,2) + 1./6.*ln(x)*LMUR*NF - 1./3.*ln(x)*LMUR*NF*x + 1./3.*ln(x)*LMUR*NF*pow(x,2)
             result_r0 = + 11./12.*LMUR*NC - 11./6.*LMUR*NC*x + 11./6.*LMUR*NC*pow(x,2) - 1./6.*LMUR*NF + 1./3.*LMUR*NF*x - 1./3.*LMUR*NF*pow(x,2)
             result += result_r0 * ln(1-z)
         elif orders == '011':
