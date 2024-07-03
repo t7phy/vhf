@@ -127,7 +127,7 @@ class conv2:
         res, err = [[]], [[]]
         for i in range(len(self.basis_functions_z)):
             for j in range(len(self.basis_functions_x)):
-                res_rr, err_rr, res_rs, err_rs, res_rl, err_rl, res_sr, err_sr, res_ss, err_ss, res_sl, err_sl, res_lr, err_lr, res_ls, err_ls = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+                res_rr, err_rr, res_rs, err_rs, res_rl, err_rl, res_sr, err_sr, res_ss, err_ss, res_sl, err_sl, res_lr, err_lr, res_ls, err_ls = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
                 if self.mode_log:
                     min_xmin = np.exp(self.basis_functions_x['p_'+str(j)][0]['xmin'])
                     max_xmax = np.exp(self.basis_functions_x['p_'+str(j)][-1]['xmax'])
