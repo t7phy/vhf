@@ -123,7 +123,76 @@ class conv2:
     def evaluate_ll(self):
         return [[self.coeff_func(self.x, self.z, 'll') * self.interpolator_at_x[j] * self.interpolator_at_z[k] for j in range(len(self.interpolator_at_x))] for k in range(len(self.interpolator_at_z))]
     
-    # def integrator(self):
-    #     res, err = [[]], [[]]
+    def integrator(self):
+        res, err = [[]], [[]]
+        for i in range(len(self.basis_functions_z)):
+            for j in range(len(self.basis_functions_x)):
+                res_rr, err_rr, res_rs, err_rs, res_rl, err_rl, res_sr, err_sr, res_ss, err_ss, res_sl, err_sl, res_lr, err_lr, res_ls, err_ls = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+                if self.mode_log:
+                    min_xmin = np.exp(self.basis_functions_x['p_'+str(j)][0]['xmin'])
+                    max_xmax = np.exp(self.basis_functions_x['p_'+str(j)][-1]['xmax'])
+                    min_zmin = np.exp(self.basis_functions_z['p_'+str(i)][0]['xmin'])
+                    max_zmax = np.exp(self.basis_functions_z['p_'+str(i)][-1]['xmax'])
+                else:
+                    min_xmin = self.basis_functions_x['p_'+str(j)][0]['xmin']
+                    max_xmax = self.basis_functions_x['p_'+str(j)][-1]['xmax']
+                    min_zmin = self.basis_functions_z['p_'+str(i)][0]['xmin']
+                    max_zmax = self.basis_functions_z['p_'+str(i)][-1]['xmax']
+                if max_xmax <= self.x or max_zmax <= self.z:
+                    for lists in [res, err]:
+                        lists[i].append(0)
+                elif min_zmin <= self.z < max_zmax:
+                    if min_xmin <= self.x < max_xmax:
+                        x_intv_low = self.x * (1 + eps_integration_border)
+                        x_intv_high = max_xmax * (1 - eps_integration_border)
+                        z_intv_low = self.z * (1 + eps_integration_border)
+                        z_intv_high = max_zmax * (1 - eps_integration_border)
+                    else:
+                        x_intv_low = min_xmin * (1 + eps_integration_border)
+                        x_intv_high = max_xmax * (1 - eps_integration_border)
+                        z_intv_low = self.z * (1 + eps_integration_border)
+                        z_intv_high = max_zmax * (1 - eps_integration_border)
+                else:
+                    if min_xmin <= self.x < max_xmax:
+                        x_intv_low = self.x * (1 + eps_integration_border)
+                        x_intv_high = max_xmax * (1 - eps_integration_border)
+                        z_intv_low = min_zmin * (1 + eps_integration_border)
+                        z_intv_high = max_zmax * (1 - eps_integration_border)
+                    else:
+                        x_intv_low = min_xmin * (1 + eps_integration_border)
+                        x_intv_high = max_xmax * (1 - eps_integration_border)
+                        z_intv_low = min_zmin * (1 + eps_integration_border)
+                        z_intv_high = max_zmax * (1 - eps_integration_border)
+                if self.coeff_map['rr'] == 1:
+                    res_rr, err_rr = integrate.dblquad(self.integrand_rr, z_intv_low, z_intv_high, x_intv_low, x_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                if self.coeff_map['rs'] == 1:
+                    res_rs, err_rs = integrate.dblquad(self.integrand_rs, z_intv_low, z_intv_high, x_intv_low, x_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                if self.coeff_map['rl'] == 1:
+                    res_rl, err_rl = integrate.quad(self.integrand_rl, x_intv_low, x_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                if self.coeff_map['sr'] == 1:
+                    res_sr, err_sr = integrate.dblquad(self.integrand_sr, z_intv_low, z_intv_high, x_intv_low, x_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                if self.coeff_map['ss'] == 1:
+                    res_ss, err_ss = integrate.dblquad(self.integrand_ss, z_intv_low, z_intv_high, x_intv_low, x_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                if self.coeff_map['sl'] == 1:
+                    res_sl, err_sl = integrate.quad(self.integrand_sl, x_intv_low, x_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                if self.coeff_map['lr'] == 1:
+                    res_lr, err_lr = integrate.quad(self.integrand_lr, z_intv_low, z_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                if self.coeff_map['ls'] == 1:
+                    res_ls, err_ls = integrate.quad(self.integrand_ls, z_intv_low, z_intv_high, args=(j, i), epsabs=eps_integration_abs)
+                res[i].append(res_rr + res_rs + res_rl + res_sr + res_ss + res_sl + res_lr + res_ls)
+                err[i].append(err_rr + err_rs + err_rl + err_sr + err_ss + err_sl + err_lr + err_ls)
+
+        return res, err
+    
+    def convolution(self):
+        res, err = self.integrator()
+        if self.coeff_map['ll'] == 1:
+            loc_res = self.evaluate_ll()
+            res = [[res[i][j] + loc_res[i][j] for j in range(len(res[i]))] for i in range(len(res))]
+        return res, err
+    
+    def __call__(self):
+        return self.convolution()
+            
 
 
