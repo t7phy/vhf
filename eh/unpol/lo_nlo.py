@@ -1,7 +1,5 @@
 from configs.eh import *
 
-LMUF = 1
-LMUA = 1
 
 def cl_lo_q2q_eq(x, z, rsl, orders):
     return 0
