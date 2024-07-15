@@ -1,0 +1,14 @@
+[package]
+name = "vhf_py"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "vhf_py"
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1.0.86"
+num = "0.4.3"
+polylog = "2.6.0"
+pyo3 = "0.22.0"
