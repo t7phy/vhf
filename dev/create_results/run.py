@@ -9,7 +9,7 @@ from core.libfunc import lambertgrid
 
 debug_flag = False
 # Define the phase space points, always in a list
-x = [0.5]
+x = [0.05]
 
 z = [
     0.1,
