@@ -16,9 +16,10 @@ InvTanInt = default.atanint
 sqrt = default.sqrt
 pow = default.power
 ArcTan = default.arctan
+charges = default.charges
 
 # Developer options
 ndecimals = default.ndecimals
-LMUA = default.LMUA
-LMUF = default.LMUF
-LMUR = default.LMUR
+LMUA = 1.0
+LMUF = 1.0
+LMUR = 1.0
