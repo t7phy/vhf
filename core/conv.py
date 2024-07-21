@@ -184,7 +184,6 @@ class conv2:
                         res_ls, err_ls = integrate.quad(self.integrand_ls, z_intv_low, z_intv_high, args=(j, i), epsabs=eps_integration_abs)
                     res[i].append(res_rr + res_rs + res_rl + res_sr + res_ss + res_sl + res_lr + res_ls)
                     err[i].append(err_rr + err_rs + err_rl + err_sr + err_ss + err_sl + err_lr + err_ls)
-                print(i, ', ', j)
 
         return res, err
     
