@@ -4,9 +4,9 @@ from scipy.integrate import quad
 
 def unpol_sidis_F2(x, z, y, ct_func, cl_func, itp_points):
     ct = conv2(x, z, ct_func.cf, '000', itp_points[0], itp_points[1])
-    ct_grid = np.array(ct())
+    ct_grid, _ = np.array(ct())
     cl = conv2(x, z, cl_func.cf, '000', itp_points[0], itp_points[1])
-    cl_grid = np.array(cl())
+    cl_grid, _ = np.array(cl())
     if type(y) == tuple:
         ct_integral, _ = quad(lambda y: (1-y)/y, y[0], y[1])
         cl_integral, _ = quad(lambda y: (1+(1-y)**2)/(2*y), y[0], y[1])
