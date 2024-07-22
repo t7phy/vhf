@@ -15,6 +15,12 @@ def Li3(x):
     result = nl(2, 1, x)
     return result
 
+def ln(x):
+    if x < 0:
+        return np.log(-x) + 1j * np.pi
+    else:
+        return np.log(x)
+
 def lambertgrid(n_pts, x_min, x_max=1.0):
     
     def direct_relation(x):

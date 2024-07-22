@@ -9,7 +9,7 @@ zeta3 = default.ZETA3
 rln2 = default.ln2
 pi = default.pi
 
-ln = default.log
+ln = default.ln
 Li2 = default.Li2
 Li3 = default.Li3
 InvTanInt = default.atanint
