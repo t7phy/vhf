@@ -10,7 +10,7 @@ def unpol_sidis_F2(x, z, y, ct_func, cl_func, itp_points):
     if type(y) == tuple:
         ct_integral, _ = quad(lambda y: (1-y)/y, y[0], y[1])
         cl_integral, _ = quad(lambda y: (1+(1-y)**2)/(2*y), y[0], y[1])
-        grid = ct_integral * ct_grid + cl_integral * cl_grid
+        grid = (ct_integral * ct_grid + cl_integral * cl_grid)/(y[1]-y[0])
     else:
         grid = (1-y)/y * ct_grid + (1+(1-y)**2)/(2*y) * cl_grid
     itp_grids = {}
