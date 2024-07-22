@@ -17,7 +17,7 @@ def Li3(x):
 
 def ln(x):
     if x < 0:
-        return np.log(-x) + 1j * np.pi
+        return np.log(x) + 1j * np.pi
     else:
         return np.log(x)
 
