@@ -7,7 +7,7 @@ import json
 from core.conv import conv2
 from core.libfunc import lambertgrid
 
-debug_flag = False
+debug_flag = True
 # Define the phase space points, always in a list
 x = [0.05]
 
