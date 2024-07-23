@@ -123,10 +123,10 @@ def ct_nlo_g2q_eq(x, z, rsl, orders):
                 result += pow(z,-1)*TR - 2*TR - 2*x*pow(z,-1)*TR + 4*x*TR + 2*pow(x,2)*pow(z,-1)*TR - 4*pow(x,2)*TR
         return result
     elif rsl == 'rs':
+        result = 0
         if orders == '000':
             result_r0 = TR - 2*x*TR + 2*pow(x,2)*TR
             result += result_r0*1/(1-z)
-        result = 0
         return result
     elif rsl == 'rl':
         result = 0
