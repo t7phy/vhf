@@ -4,7 +4,7 @@ executable   = submit.sh
 log                     = $(Order).log
 output                  = $(Order)_outfile.log
 error                   = $(Order)_errors.log
-# accounting_group        = smefit
+accounting_group        = smefit
 ## Can use "el7", "el8", or "el9" for UseOS or you can specify your own 
 ## SingularityImage but an OS must be specified and in string quotations. 
 +UseOS                  = "el9"
