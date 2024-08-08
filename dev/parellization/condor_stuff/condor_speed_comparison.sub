@@ -1,0 +1,14 @@
+executable   = submit_speed_comparison.sh
+
+# Pass specific environment variables
+log                     = $(Order)_sc.log
+output                  = $(Order)_sc_outfile.log
+error                   = $(Order)_sc_errors.log
+request_cpus            = 16
+## Can use "el7", "el8", or "el9" for UseOS or you can specify your own 
+## SingularityImage but an OS must be specified and in string quotations. 
++UseOS                  = "el9"
+## This job can run up to 4 hours. Can choose "express", "short", "medium", or "long".
++JobCategory            = "medium"
+
+queue arguments from $(Order)_args.txt 

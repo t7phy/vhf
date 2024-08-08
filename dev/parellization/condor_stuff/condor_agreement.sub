@@ -1,0 +1,15 @@
+executable   = submit_agreement.sh
+
+# Pass specific environment variables
+log                     = $(Order).log
+output                  = $(Order)_outfile.log
+error                   = $(Order)_errors.log
+accounting_group        = smefit
+request_cpus            = 1
+## Can use "el7", "el8", or "el9" for UseOS or you can specify your own 
+## SingularityImage but an OS must be specified and in string quotations. 
++UseOS                  = "el9"
+## This job can run up to 4 hours. Can choose "express", "short", "medium", or "long".
++JobCategory            = "medium"
+
+queue arguments from $(Order)_args.txt 

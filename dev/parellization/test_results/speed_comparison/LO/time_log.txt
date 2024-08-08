@@ -1,0 +1,2 @@
+Function, x, z, 		Normal Time	 1Nested Time	 Time Ratio
+ct_lo_q2q_eq, x=0.05 and z=0.1:	00:00:13	00:00:08	0.6060762086286192
