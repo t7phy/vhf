@@ -6,6 +6,7 @@ pub fn r_00(x: f64, nf: f64) -> f64 {
     let res: f64 = - 84.18 - 1010.* x - 3.748 * pow(dl, 3) - 19.56 * pow(dl, 2) - 1.235 * dl - 17.19 * pow(dl1, 3) + 71.08 * pow(dl1, 2) - 663.0 * dl1 - 192.4 * dl * pow(dl1, 2) + 80.41 * pow(dl, 2) * dl1 + nf * ( - 5.691 - 37.91 * x + 2.244 * pow(dl, 2) + 5.770 * dl - 1.707 * pow(dl1, 2)  + 22.95 * dl1 + 3.036 * pow(dl, 2) * dl1 + 17.97 * dl * dl1 );
     return res;
 }
+
 pub fn s_00(x: f64, nf: f64) -> f64 {
     let dl1: f64 = log(1. - x);
     let dm: f64 = 1.0 / (1.0 - x);
