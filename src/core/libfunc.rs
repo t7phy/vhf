@@ -5,6 +5,10 @@ pub fn ln(x: f64) -> f64 {
     x.ln()
 }
 
+pub fn log(x: f64) -> f64 {
+    x.ln()
+}
+
 /// The integral of arctan(x), which is x*arctan(x) - 0.5*ln(1 + x^2)
 pub fn InvTanInt(x: f64) -> f64 {
     // Rust allows simple math to look very clean

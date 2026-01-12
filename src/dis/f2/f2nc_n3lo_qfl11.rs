@@ -1,0 +1,13 @@
+use crate::dis::internal::*;
+
+pub fn r_00(x: f64, nf: f64) -> f64 {
+    let dl: f64 = log(x);
+    let dl1: f64 = log(1.0 - x);
+    let x1: f64 = 1.0 - x;
+    let res: f64 = nf * ( (126.42 - 50.29 * x - 50.15 * pow(x, 2)) * x1 - 26.717 - 320.0 * d81 * pow(dl, 2) * (dl + 5.0) + 59.59 * dl - x * pow(dl, 2) * (101.8 + 34.79 * dl + 3.070 * pow(dl, 2)) - 9.075 * x * x1 * dl1) * x;
+    return res;
+}
+
+pub fn l_00(x: f64, nf: f64) -> f64 {
+    return -nf * 11.8880;
+}

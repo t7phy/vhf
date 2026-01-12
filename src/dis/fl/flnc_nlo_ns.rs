@@ -1,0 +1,5 @@
+use crate::dis::internal::*;
+
+pub fn r_00(x: f64, nf: f64) -> f64 {
+    return CF * 4.0 * x;
+}
