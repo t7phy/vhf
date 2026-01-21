@@ -595,3 +595,14 @@ double RG_RG_100(double x, double z, double NF) {
   - RG_DL: 000, 001, 010, 011, 020, 100, 110
   - RG_RG: 000, 001, 010, 011, 100
 */
+
+/*
+  Inverted Branch Report (By Number):
+  - 000: RG_D0, RG_D1, RG_D2, RG_DL, RG_RG
+  - 001: RG_D0, RG_D1, RG_DL, RG_RG
+  - 010: RG_D0, RG_D1, RG_DL, RG_RG
+  - 011: RG_D0, RG_DL, RG_RG
+  - 020: RG_DL
+  - 100: RG_D0, RG_DL, RG_RG
+  - 110: RG_DL
+*/

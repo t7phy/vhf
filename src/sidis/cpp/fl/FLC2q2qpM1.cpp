@@ -234,3 +234,9 @@ double RG_RG_001(double x, double z, double NF) {
   Created helper functions for:
   - RG_RG: 000, 001
 */
+
+/*
+  Inverted Branch Report (By Number):
+  - 000: RG_RG
+  - 001: RG_RG
+*/

@@ -1016,3 +1016,16 @@ double RG_RG_100(double x, double z, double NF) {
   - RG_DL: 000, 001, 010, 011, 020, 100, 110
   - RG_RG: 000, 001, 010, 011, 100
 */
+
+/*
+  Inverted Branch Report (By Number):
+  - 000: D0_D0, D0_D1, D0_D2, D0_DL, D0_RG, D1_D0, D1_D1, D1_DL, D1_RG, D2_D0, D2_DL, D2_RG, D3_DL, DL_D0, DL_D1, DL_D2, DL_D3, DL_DL, DL_RG, RG_D0, RG_D1, RG_D2, RG_DL, RG_RG
+  - 001: D0_D0, D0_D1, D0_DL, D0_RG, D1_D0, D1_DL, D1_RG, DL_D0, DL_D1, DL_D2, DL_DL, DL_RG, RG_D0, RG_D1, RG_DL, RG_RG
+  - 002: DL_D0, DL_D1, DL_DL, DL_RG
+  - 010: D0_D0, D0_D1, D0_DL, D0_RG, D1_D0, D1_DL, D1_RG, D2_DL, DL_D0, DL_D1, DL_DL, DL_RG, RG_D0, RG_D1, RG_DL, RG_RG
+  - 011: D0_D0, D0_DL, D0_RG, DL_D0, DL_DL, DL_RG, RG_D0, RG_DL, RG_RG
+  - 020: D0_DL, D1_DL, DL_DL, RG_DL
+  - 100: D0_D0, D0_RG, D1_DL, DL_D1, DL_DL, DL_RG, RG_D0, RG_DL, RG_RG
+  - 101: DL_D0, DL_DL, DL_RG
+  - 110: D0_DL, DL_DL, RG_DL
+*/

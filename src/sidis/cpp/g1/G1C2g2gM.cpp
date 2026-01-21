@@ -408,3 +408,11 @@ double RG_RG_011(double x, double z, double NF) {
   Created helper functions for:
   - RG_RG: 000, 001, 010, 011
 */
+
+/*
+  Inverted Branch Report (By Number):
+  - 000: RG_RG
+  - 001: RG_RG
+  - 010: RG_RG
+  - 011: RG_RG
+*/

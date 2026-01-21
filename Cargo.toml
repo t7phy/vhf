@@ -8,3 +8,4 @@ num-complex = "0.4.6"
 polylog = "2.6.0"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_yaml = "0.9.34"
+serde_json = "1.0"
