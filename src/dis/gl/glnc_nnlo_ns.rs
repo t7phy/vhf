@@ -1,9 +1,12 @@
+use crate::dis::internal::*;
 use super::super::fl::flnc_nnlo_nsp;
 
-pub fn r_00(x: f64, nf: f64) -> f64 {
-    return flnc_nnlo_nsp::r_00(x, nf);
+fn r_00(x: f64, nf: f64) -> f64 {
+    return flnc_nnlo_nsp::cf().r.unwrap()(x, nf);
 }
 
-pub fn l_00(x: f64, nf: f64) -> f64 {
-    return flnc_nnlo_nsp::l_00(x, nf);
+fn l_00(x: f64, nf: f64) -> f64 {
+    return flnc_nnlo_nsp::cf().l.unwrap()(x, nf);
 }
+
+mkcoeff!(r_00, _, l_00);

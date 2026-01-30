@@ -1,6 +1,6 @@
 use crate::dis::internal::*;
 
-pub fn r_00(x: f64, nf: f64) -> f64 {
+fn r_00(x: f64, nf: f64) -> f64 {
     let dl: f64 = log(x);
     let dl1: f64 = log(1.0 - x);
     let x1: f64 = 1.0 - x;
@@ -8,15 +8,17 @@ pub fn r_00(x: f64, nf: f64) -> f64 {
     return res;
 }
 
-pub fn s_00(x: f64, nf: f64) -> f64 {
+fn s_00(x: f64, nf: f64) -> f64 {
     let dl1: f64 = log(1.0 - x);
     let dm: f64 = 1.0 / (1.0 - x);
     let res: f64 = (1536.0 * d81 * pow(dl1, 5) - 16320.0 * d81 * pow(dl1, 4) + 5.01099e2 * pow(dl1, 3) + 1.17154e3 * pow(dl1, 2) - 7.32845e3 * dl1 + 4.44276e3 + nf * ( 640.0 * d81 * pow(dl1, 4) - 6592.0 * d81 * pow(dl1, 3) + 220.573 * pow(dl1, 2) + 294.906 * dl1 - 729.359) + pow(nf, 2) * (64.0 * d81 * pow(dl1, 3) - 464.0 * d81 * pow(dl1, 2) + 7.67505 * dl1 + 1.00830)) * dm;
     return res;
 }
 
-pub fn l_00(x: f64, nf: f64) -> f64 {
+fn l_00(x: f64, nf: f64) -> f64 {
     let dl1: f64 = log(1.0 - x);
     let res: f64 = 256.0 * d81 * pow(dl1, 6) - 3264.0 * d81 * pow(dl1, 5) + 1.252745e2 * pow(dl1, 4) + 3.905133e2 * pow(dl1, 3) - 3.664225e3 * pow(dl1, 2) + 4.44276e3 * dl1 - 9195.48 + 22.80 + nf * ( 128.0 * d81 * pow(dl1, 5) - 1648.0 * d81 * pow(dl1, 4) + 220.573 * d3 * pow(dl1, 3) + 147.453 * pow(dl1, 2) - 729.359 * dl1 + 2575.074 + 0.386) + pow(nf, 2) * ( 16.0 * d81 * pow(dl1, 4) - 464.0 * d81 * d3 * pow(dl1, 3) + 7.67505 * 1.0 / 5.0 * pow(dl1, 2) + 1.0083 * dl1 - 103.2521 - 0.0081);
     return res;
 }
+
+mkcoeff!(r_00, s_00, l_00);

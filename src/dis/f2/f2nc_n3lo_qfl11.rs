@@ -1,6 +1,6 @@
 use crate::dis::internal::*;
 
-pub fn r_00(x: f64, nf: f64) -> f64 {
+fn r_00(x: f64, nf: f64) -> f64 {
     let dl: f64 = log(x);
     let dl1: f64 = log(1.0 - x);
     let x1: f64 = 1.0 - x;
@@ -8,6 +8,8 @@ pub fn r_00(x: f64, nf: f64) -> f64 {
     return res;
 }
 
-pub fn l_00(x: f64, nf: f64) -> f64 {
+fn l_00(x: f64, nf: f64) -> f64 {
     return -nf * 11.8880;
 }
+
+mkcoeff!(r_00, _, l_00);

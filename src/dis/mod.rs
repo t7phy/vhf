@@ -11,6 +11,33 @@ pub(crate) mod internal {
     pub const d27: f64 = 1.0 / 27.0;
     pub const d81: f64 = 1.0 / 81.0;
     pub const d243: f64 = 1.0 / 243.0;
+
+    pub type DISFunc = fn(f64, f64) -> f64;
+
+    pub struct CoeffFuncs {
+        pub r: Option<DISFunc>,
+        pub s: Option<DISFunc>,
+        pub l: Option<DISFunc>,
+    }
+
+    macro_rules! mkcoeff {
+        // Pattern 1: Helper for function names
+        (wrap _) => { None };
+        (wrap $id:ident) => { Some($id) };
+
+        // Pattern 2: The main call
+        ($r:tt, $s:tt, $l:tt) => {
+            pub fn cf() -> CoeffFuncs {
+                CoeffFuncs {
+                    r: mkcoeff!(wrap $r),
+                    s: mkcoeff!(wrap $s),
+                    l: mkcoeff!(wrap $l),
+                }
+            }
+        };
+    }
+    
+    pub(crate) use mkcoeff;
 }
 
 pub mod f2;
