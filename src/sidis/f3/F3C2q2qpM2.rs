@@ -1,36 +1,36 @@
 use crate::sidis::internal::*;
 
-pub fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 52. / 27. * pow(x, -1) * CF + (- 41. / 36. * CF) + 17. / 36. * x * CF + (- 34. / 27. * pow(x, 2) * CF) + 1. / 6. * pow(pi, 2) * CF + 1. / 2. * pow(pi, 2) * x * CF + 1. / 3. * pow(pi, 2) * pow(x, 2) * CF + 13. / 9. * ln(1.0 - x) * pow(x, -1) * CF + (- 11. / 6. * ln(1.0 - x) * CF) + 17. / 6. * ln(1.0 - x) * x * CF + (- 22. / 9. * ln(1.0 - x) * pow(x, 2) * CF) + 1. / 3. * ln(1.0 - x) * pow(pi, 2) * CF + 1. / 3. * ln(1.0 - x) * pow(pi, 2) * x * CF + 1. / 3. * pow(ln(1.0 - x), 2) * pow(x, -1) * CF + 1. / 4. * pow(ln(1.0 - x), 2) * CF + (- 1. / 4. * pow(ln(1.0 - x), 2) * x * CF) + (- 1. / 3. * pow(ln(1.0 - x), 2) * pow(x, 2) * CF) + (- ln(1.0 - x) * Li2(1.0 - x) * CF) + (- ln(1.0 - x) * Li2(1.0 - x) * x * CF) + (- 2.0 * ln(1.0 - x) * Li2(x) * CF) + (- 2.0 * ln(1.0 - x) * Li2(x) * x * CF) + 23. / 6. * ln(x) * CF + (- 5. / 6. * ln(x) * x * CF) + 38. / 9. * ln(x) * pow(x, 2) * CF + (- 1. / 3. * ln(x) * pow(pi, 2) * CF) + (- 1. / 3. * ln(x) * pow(pi, 2) * x * CF) + (- 2. / 3. * ln(x) * ln(1.0 - x) * pow(x, -1) * CF) + (- 1. / 2. * ln(x) * ln(1.0 - x) * CF) + 1. / 2. * ln(x) * ln(1.0 - x) * x * CF + 2. / 3. * ln(x) * ln(1.0 - x) * pow(x, 2) * CF +  (-3. / 2. * ln(x) * pow(ln(1.0 - x), 2) * CF) + (- 3. / 2. * ln(x) * pow(ln(1.0 - x), 2) * x * CF) + (- 13. / 8. * pow(ln(x), 2) * CF) + (- 13. / 8. * pow(ln(x), 2) * x * CF) + (- 5. / 3. * pow(ln(x), 2) * pow(x, 2) * CF) + 5. / 12. * pow(ln(x), 3) * CF + 5. / 12. * pow(ln(x), 3) * x * CF + ln(x) * Li2(x) * CF + ln(x) * Li2(x) * x * CF + (- Li3(1.0 - x) * CF) + (- Li3(1.0 - x) * x * CF) + (- 2. / 3. * Li2(x) * pow(x, -1) * CF) + (- 3. / 2. * Li2(x) * CF) + (- 5. / 2. * Li2(x) * x * CF) + (- 4. / 3. * Li2(x) * pow(x, 2) * CF);
     return res;
 }
 
-pub fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 26. / 9. * lmuf * pow(x, -1) * CF) + 11. / 3. * lmuf * CF + (- 17. / 3. * lmuf * x * CF) + 44. / 9. * lmuf * pow(x, 2) * CF + (- 1. / 3. * lmuf * pow(pi, 2) * CF) + (- 1. / 3. * lmuf * pow(pi, 2) * x * CF) + (- 4. / 3. * lmuf * ln(1.0 - x) * pow(x, -1) * CF) + (- lmuf * ln(1.0 - x) * CF) + lmuf * ln(1.0 - x) * x * CF + 4. / 3. * lmuf * ln(1.0 - x) * pow(x, 2) * CF + 2.0 * lmuf * Li2(x) * CF + 2.0 * lmuf * Li2(x) * x * CF + (- 2.0 * ln(x) * lmuf * CF) + (- 6.0 * ln(x) * lmuf * x * CF) + (- 4.0 * ln(x) * lmuf * pow(x, 2) * CF) + 2.0 * pow(ln(x), 2) * lmuf * CF + 2.0 * pow(ln(x), 2) * lmuf * x * CF;
     return res;
 }
 
-pub fn RG_DL_020(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_020(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 4. / 3. * pow(lmuf, 2) * pow(x, -1) * CF + pow(lmuf, 2) * CF + (- pow(lmuf, 2) * x * CF) + (- 4. / 3. * pow(lmuf, 2) * pow(x, 2) * CF) + 2.0 * ln(x) * pow(lmuf, 2) * CF + 2.0 * ln(x) * pow(lmuf, 2) * x * CF;
     return res;
 }
 
-pub fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 13. / 9. * pow(x, -1) * CF + (- 11. / 6. * CF) + 17. / 6. * x * CF + (- 22. / 9. * pow(x, 2) * CF) + 1. / 6. * pow(pi, 2) * CF + 1. / 6. * pow(pi, 2) * x * CF + 2. / 3. * ln(1.0 - x) * pow(x, -1) * CF + 1. / 2. * ln(1.0 - x) * CF + (- 1. / 2. * ln(1.0 - x) * x * CF) + (- 2. / 3. * ln(1.0 - x) * pow(x, 2) * CF) + ln(x) * CF + 3.0 * ln(x) * x * CF + 2.0 * ln(x) * pow(x, 2) * CF + (- pow(ln(x), 2) * CF) + (- pow(ln(x), 2) * x * CF) + (- Li2(x) * CF) + (- Li2(x) * x * CF);
     return res;
 }
 
-pub fn RG_D0_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D0_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 4. / 3. * lmuf * pow(x, -1) * CF) + (- lmuf * CF) + lmuf * x * CF + 4. / 3. * lmuf * pow(x, 2) * CF + (- 2.0 * ln(x) * lmuf * CF) + (- 2.0 * ln(x) * lmuf * x * CF);
     return res;
 }
 
-pub fn RG_D1_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D1_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2. / 3. * pow(x, -1) * CF + 1. / 2. * CF + (- 1. / 2. * x * CF) + (- 2. / 3. * pow(x, 2) * CF) + ln(x) * CF + ln(x) * x * CF;
     return res;
 }
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -113,7 +113,7 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     return res;
 }
 
-pub fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -195,10 +195,16 @@ pub fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["RG_D0", "RG_D1", "RG_DL", "RG_RG"]);
-    m.insert("010", vec!["RG_D0", "RG_DL", "RG_RG"]);
-    m.insert("020", vec!["RG_DL"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, RG_D0_000, RG_D1_000, _, _, RG_DL_000, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]),
+    ("010", [RG_RG_010, RG_D0_010, _, _, _, RG_DL_010, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]),
+    ("020", [_, _, _, _, _, RG_DL_020, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _])
+);
+
+/*
+  SV mapping:
+  - 000: RG_D0, RG_D1, RG_DL, RG_RG
+    - 010: RG_D0, RG_DL, RG_RG
+    - 020: RG_DL
+*/

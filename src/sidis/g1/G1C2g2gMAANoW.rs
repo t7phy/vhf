@@ -1,6 +1,6 @@
 use crate::sidis::internal::*;
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -79,8 +79,12 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["RG_RG"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _])
+);
+
+/*
+  SV mapping:
+  - 000: RG_RG
+*/

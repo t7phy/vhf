@@ -1,21 +1,21 @@
 use crate::sidis::internal::*;
 
-pub fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-1. / 2. * z * pow(NQCD, -1)) + 1. / 2. * z * NQCD + (- ln(1.0 - z) * pow(z, -1) * pow(NQCD, -1)) + ln(1.0 - z) * pow(z, -1) * NQCD + ln(1.0 - z) * pow(NQCD, -1) + (- ln(1.0 - z) * NQCD) + (- 1. / 2. * ln(1.0 - z) * z * pow(NQCD, -1)) + 1. / 2. * ln(1.0 - z) * z * NQCD + (- ln(z) * pow(z, -1) * pow(NQCD, -1)) + ln(z) * pow(z, -1) * NQCD + ln(z) * pow(NQCD, -1) + (- ln(z) * NQCD) + (- 1. / 2. * ln(z) * z * pow(NQCD, -1)) + 1. / 2. * ln(z) * z * NQCD;
     return res;
 }
 
-pub fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2.0 * lmua * pow(z, -1) * pow(NQCD, -1) + (- 2.0 * lmua * pow(z, -1) * NQCD) + (- 2.0 * lmua * pow(NQCD, -1)) + 2.0 * lmua * NQCD + lmua * z * pow(NQCD, -1) + (- lmua * z * NQCD);
     return res;
 }
 
-pub fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-pow(z, -1) * pow(NQCD, -1)) + pow(z, -1) * NQCD + pow(NQCD, -1) + (- NQCD) + (- 1. / 2. * z * pow(NQCD, -1)) + 1. / 2. * z * NQCD;
     return res;
 }
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -97,9 +97,14 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["D0_RG", "DL_RG", "RG_RG"]);
-    m.insert("001", vec!["DL_RG"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, _, _, _, _, _, D0_RG_000, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_000, _, _, _, _, _]),
+    ("001", [_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_001, _, _, _, _, _])
+);
+
+/*
+  SV mapping:
+  - 000: D0_RG, DL_RG, RG_RG
+    - 001: DL_RG
+*/

@@ -1,86 +1,86 @@
 use crate::sidis::internal::*;
 
-pub fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 1169. / 54. * pow(z, -1) * CF * NQCD + 4. / 3. * pow(z, -1) * CF * NQCD * pow(rln2, 3) + 3.0 * CF * pow(NQCD, -1) + (- 295. / 18. * CF * NQCD) + 4. / 3. * CF * NQCD * pow(rln2, 3) + 13. / 8. * z * CF * pow(NQCD, -1) + (- 389. / 72. * z * CF * NQCD) + 2. / 3. * z * CF * NQCD * pow(rln2, 3) + (- 269. / 54. * pow(z, 2) * CF * NQCD) + (- 5.0 * zeta3 * pow(z, -1) * CF * pow(NQCD, -1)) + (- 14.0 * zeta3 * pow(z, -1) * CF * NQCD) + 3.0 * zeta3 * CF * pow(NQCD, -1) + (- 3. / 2. * zeta3 * z * CF * pow(NQCD, -1)) + (- 12.0 * zeta3 * z * CF * NQCD) + (- 1. / 4. * pow(pi, 2) * pow(z, -1) * CF * pow(NQCD, -1)) + (- 1. / 4. * pow(pi, 2) * pow(z, -1) * CF * NQCD) + (- 2. / 3. * pow(pi, 2) * pow(z, -1) * CF * NQCD * rln2) + 2. / 3. * pow(pi, 2) * CF * pow(NQCD, -1) + (- 5. / 3. * pow(pi, 2) * CF * NQCD) + (- 2. / 3. * pow(pi, 2) * CF * NQCD * rln2) + (- 1. / 8. * pow(pi, 2) * z * CF * pow(NQCD, -1)) + 7. / 24. * pow(pi, 2) * z * CF * NQCD + (- 1. / 3. * pow(pi, 2) * z * CF * NQCD * rln2) + 9. / 2. * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + (- 55. / 18. * ln(1.0 - z) * pow(z, -1) * CF * NQCD) + (- 2.0 * ln(1.0 - z) * pow(z, -1) * CF * NQCD * pow(rln2, 2)) + (- 9. / 2. * ln(1.0 - z) * CF * pow(NQCD, -1)) + 23. / 3. * ln(1.0 - z) * CF * NQCD + (- 2.0 * ln(1.0 - z) * CF * NQCD * pow(rln2, 2)) + 5. / 2. * ln(1.0 - z) * z * CF * pow(NQCD, -1) + (- 31. / 6. * ln(1.0 - z) * z * CF * NQCD) + (- ln(1.0 - z) * z * CF * NQCD * pow(rln2, 2)) + (- 13. / 9. * ln(1.0 - z) * pow(z, 2) * CF * NQCD) + 2. / 3. * ln(1.0 - z) * pow(pi, 2) * pow(z, -1) * CF * pow(NQCD, -1) + (- 2. / 3. * ln(1.0 - z) * pow(pi, 2) * pow(z, -1) * CF * NQCD) + (- ln(1.0 - z) * pow(pi, 2) * CF * pow(NQCD, -1)) + (- ln(1.0 - z) * pow(pi, 2) * CF * NQCD) + 1. / 2. * ln(1.0 - z) * pow(pi, 2) * z * CF * pow(NQCD, -1) + (- 7. / 6. * ln(1.0 - z) * pow(pi, 2) * z * CF * NQCD) + 3. / 2. * pow(ln(1.0 - z), 2) * pow(z, -1) * CF * pow(NQCD, -1) + (- 20. / 3. * pow(ln(1.0 - z), 2) * pow(z, -1) * CF * NQCD) +  (-2.0 * pow(ln(1.0 - z), 2) * CF * pow(NQCD, -1)) + 6.0 * pow(ln(1.0 - z), 2) * CF * NQCD + 1. / 8. * pow(ln(1.0 - z), 2) * z * CF * pow(NQCD, -1) + (- 1. / 8. * pow(ln(1.0 - z), 2) * z * CF * NQCD) + 2. / 3. * pow(ln(1.0 - z), 2) * pow(z, 2) * CF * NQCD + (- 5. / 6. * pow(ln(1.0 - z), 3) * pow(z, -1) * CF * pow(NQCD, -1)) + 7. / 6. * pow(ln(1.0 - z), 3) * pow(z, -1) * CF * NQCD + 5. / 6. * pow(ln(1.0 - z), 3) * CF * pow(NQCD, -1) + (- 7. / 6. * pow(ln(1.0 - z), 3) * CF * NQCD) + (- 5. / 12. * pow(ln(1.0 - z), 3) * z * CF * pow(NQCD, -1)) + 7. / 12. * pow(ln(1.0 - z), 3) * z * CF * NQCD + 4.0 * ln(1.0 - z) * ln(1.0 + z) * pow(z, -1) * CF * NQCD * rln2 + 4.0 * ln(1.0 - z) * ln(1.0 + z) * CF * NQCD * rln2 + 2.0 * ln(1.0 - z) * ln(1.0 + z) * z * CF * NQCD * rln2 + (- 2.0 * ln(1.0 - z) * pow(ln(1.0 + z), 2) * pow(z, -1) * CF * NQCD) + (- 2.0 * ln(1.0 - z) * pow(ln(1.0 + z), 2) * CF * NQCD) + (- ln(1.0 - z) * pow(ln(1.0 + z), 2) * z * CF * NQCD) + (- 2.0 * ln(1.0 - z) * Li2(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1)) + (- 2.0 * ln(1.0 - z) * Li2(1.0 - z) * pow(z, -1) * CF * NQCD) + 3.0 * ln(1.0 - z) * Li2(1.0 - z) * CF * pow(NQCD, -1) + 9.0 * ln(1.0 - z) * Li2(1.0 - z) * CF * NQCD + (- 3. / 2. * ln(1.0 - z) * Li2(1.0 - z) * z * CF * pow(NQCD, -1)) + 3. / 2. * ln(1.0 - z) * Li2(1.0 - z) * z * CF * NQCD + 4.0 * ln(1.0 - z) * Li2(-z) * pow(z, -1) * CF * NQCD + 4.0 * ln(1.0 - z) * Li2(-z) * CF * NQCD + 2.0 * ln(1.0 - z) * Li2(-z) * z * CF * NQCD + 3.0 * ln(1.0 - z) * Li2(z) * pow(z, -1) * CF * pow(NQCD, -1) + 3.0 * ln(1.0 - z) * Li2(z) * pow(z, -1) * CF * NQCD + (- ln(1.0 - z) * Li2(z) * CF * pow(NQCD, -1)) + 11.0 * ln(1.0 - z) * Li2(z) * CF * NQCD + 1. / 2. * ln(1.0 - z) * Li2(z) * z * CF * pow(NQCD, -1) + 13. / 2. * ln(1.0 - z) * Li2(z) * z * CF * NQCD + (- 2.0 * ln(1.0 + z) * pow(z, -1) * CF * NQCD * pow(rln2, 2)) + (- 2.0 * ln(1.0 + z) * CF * NQCD * pow(rln2, 2)) + (- ln(1.0 + z) * z * CF * NQCD * pow(rln2, 2)) +  ln(1.0 + z) * pow(pi, 2) * pow(z, -1) * CF * NQCD + ln(1.0 + z) * pow(pi, 2) * CF * NQCD + 1. / 2. * ln(1.0 + z) * pow(pi, 2) * z * CF * NQCD +  9. / 2. * ln(z) * pow(z, -1) * CF * pow(NQCD, -1) + 71. / 18. * ln(z) * pow(z, -1) * CF * NQCD + (- 67. / 8. * ln(z) * CF * pow(NQCD, -1)) + 247. / 8. * ln(z) * CF * NQCD + 45. / 8. * ln(z) * z * CF * pow(NQCD, -1) + 31. / 8. * ln(z) * z * CF * NQCD + 31. / 9. * ln(z) * pow(z, 2) * CF * NQCD + 1. / 3. * ln(z) * pow(pi, 2) * pow(z, -1) * CF * pow(NQCD, -1) + (- ln(z) * pow(pi, 2) * pow(z, -1) * CF * NQCD) + (- 1. / 2. * ln(z) * pow(pi, 2) * CF * pow(NQCD, -1)) + (- 1. / 6. * ln(z) * pow(pi, 2) * CF * NQCD) + 1. / 4. * ln(z) * pow(pi, 2) * z * CF * pow(NQCD, -1) + (- 11. / 12. * ln(z) * pow(pi, 2) * z * CF * NQCD) + 3.0 * ln(z) * ln(1.0 - z) * z * CF * NQCD + 3.0 * ln(z) * pow(ln(1.0 - z), 2) * pow(z, -1) * CF * NQCD + 3. / 2. * ln(z) * pow(ln(1.0 - z), 2) * CF * pow(NQCD, -1) + 15. / 2. * ln(z) * pow(ln(1.0 - z), 2) * CF * NQCD + (- 3. / 4. * ln(z) * pow(ln(1.0 - z), 2) * z * CF * pow(NQCD, -1)) + 21. / 4. * ln(z) * pow(ln(1.0 - z), 2) * z * CF * NQCD + 4.0 * ln(z) * ln(1.0 - z) * ln(1.0 + z) * pow(z, -1) * CF * NQCD + 4.0 * ln(z) * ln(1.0 - z) * ln(1.0 + z) * CF * NQCD + 2.0 * ln(z) * ln(1.0 - z) * ln(1.0 + z) * z * CF * NQCD + ln(z) * ln(1.0 + z) * z * CF * NQCD +  (- 20. / 3. * pow(ln(z), 2) * pow(z, -1) * CF * NQCD) + pow(ln(z), 2) * CF * pow(NQCD, -1) + (- 5.0 * pow(ln(z), 2) * CF * NQCD) +  (-13. / 16. * pow(ln(z), 2) * z * CF * pow(NQCD, -1)) + (- 7. / 16. * pow(ln(z), 2) * z * CF * NQCD) + 2.0 * pow(ln(z), 2) * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + pow(ln(z), 2) * ln(1.0 - z) * pow(z, -1) * CF * NQCD + (- 2.0 * pow(ln(z), 2) * ln(1.0 - z) * CF * pow(NQCD, -1)) + (- pow(ln(z), 2) * ln(1.0 - z) * CF * NQCD) + pow(ln(z), 2) * ln(1.0 - z) * z * CF * pow(NQCD, -1) + 1. / 2. * pow(ln(z), 2) * ln(1.0 - z) * z * CF * NQCD + 3.0 * pow(ln(z), 2) * ln(1.0 + z) * pow(z, -1) * CF * NQCD + 3.0 * pow(ln(z), 2) * ln(1.0 + z) * CF * NQCD + 3. / 2. * pow(ln(z), 2) * ln(1.0 + z) * z * CF * NQCD + (- 10. / 3. * pow(ln(z), 3) * pow(z, -1) * CF * NQCD) + (- 5. / 12. * pow(ln(z), 3) * CF * pow(NQCD, -1)) + (- 5. / 4. * pow(ln(z), 3) * CF * NQCD) + 5. / 24. * pow(ln(z), 3) * z * CF * pow(NQCD, -1) + (- 65. / 24. * pow(ln(z), 3) * z * CF * NQCD) + 2.0 * ln(z) * Li2(-z) * pow(z, -1) * CF * NQCD + 2.0 * ln(z) * Li2(-z) * CF * NQCD + ln(z) * Li2(-z) * z * CF * NQCD + 6.0 * ln(z) * Li2(z) * pow(z, -1) * CF * pow(NQCD, -1) + (- 4.0 * ln(z) * Li2(z) * pow(z, -1) * CF * NQCD) + (- 6.0 * ln(z) * Li2(z) * CF * pow(NQCD, -1)) + 4.0 * ln(z) * Li2(z) * CF * NQCD + 3.0 * ln(z) * Li2(z) * z * CF * pow(NQCD, -1) + (- 2.0 * ln(z) * Li2(z) * z * CF * NQCD) + (- 4.0 * Li3(1. / 2. - 1. / 2. * z) * pow(z, -1) * CF * NQCD) + (- 4.0 * Li3(1. / 2. - 1. / 2. * z) * CF * NQCD) + (- 2.0 * Li3(1. / 2. - 1. / 2. * z) * z * CF * NQCD) + (- 4.0 * Li3(1. / 2. + 1. / 2. * z) * pow(z, -1) * CF * NQCD) + (- 4.0 * Li3(1. / 2. + 1. / 2. * z) * CF * NQCD) + (- 2.0 * Li3(1. / 2. + 1. / 2. * z) * z * CF * NQCD) +  3.0 * Li3(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + 7.0 * Li3(1.0 - z) * pow(z, -1) * CF * NQCD + (- 2.0 * Li3(1.0 - z) * CF * pow(NQCD, -1)) + 8.0 * Li3(1.0 - z) * CF * NQCD + Li3(1.0 - z) * z * CF * pow(NQCD, -1) + 6.0 * Li3(1.0 - z) * z * CF * NQCD + 2.0 * Li3(-z) * pow(z, -1) * CF * NQCD + 2.0 * Li3(-z) * CF * NQCD + Li3(-z) * z * CF * NQCD + 4.0 * Li3(1.0 / (1.0 + z)) * pow(z, -1) * CF * NQCD + 4.0 * Li3(1.0 / (1.0 + z)) * CF * NQCD + 2.0 * Li3(1.0 / (1.0 + z)) * z * CF * NQCD + (- 4.0 * Li3(1.0 / (1.0 + z) - 1.0 / (1.0 + z) * z) * pow(z, -1) * CF * NQCD) + (- 4.0 * Li3(1.0 / (1.0 + z) - 1.0 / (1.0 + z) * z) * CF * NQCD) + (- 2.0 * Li3(1.0 / (1.0 + z) - 1.0 / (1.0 + z) * z) * z * CF * NQCD) + (- 6.0 * Li3(z) * pow(z, -1) * CF * pow(NQCD, -1)) + 20.0 * Li3(z) * pow(z, -1) * CF * NQCD + 8.0 * Li3(z) * CF * pow(NQCD, -1) + (- 2.0 * Li3(z) * CF * NQCD) + (- 4.0 * Li3(z) * z * CF * pow(NQCD, -1)) + 15.0 * Li3(z) * z * CF * NQCD + Li2(-z) * z * CF * NQCD + (- 3. / 2. * Li2(z) * pow(z, -1) * CF * pow(NQCD, -1)) + 89. / 6. * Li2(z) * pow(z, -1) * CF * NQCD + (- 2.0 * Li2(z) * CF * NQCD) + Li2(z) * z * CF * pow(NQCD, -1) + Li2(z) * z * CF * NQCD + (- 4. / 3. * Li2(z) * pow(z, 2) * CF * NQCD);
     return res;
 }
 
-pub fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 9.0 * lmua * pow(z, -1) * CF * pow(NQCD, -1)) + 55. / 9. * lmua * pow(z, -1) * CF * NQCD + 17. / 2. * lmua * CF * pow(NQCD, -1) + (- 95. / 6. * lmua * CF * NQCD) + (- 7. / 2. * lmua * z * CF * pow(NQCD, -1)) + 31. / 6. * lmua * z * CF * NQCD + 2. / 3. * lmua * z * CF * NF + 26. / 9. * lmua * pow(z, 2) * CF * NQCD + (- 2. / 3. * lmua * pow(pi, 2) * pow(z, -1) * CF * pow(NQCD, -1)) + 2. / 3. * lmua * pow(pi, 2) * pow(z, -1) * CF * NQCD + lmua * pow(pi, 2) * CF * pow(NQCD, -1) + 1. / 3. * lmua * pow(pi, 2) * CF * NQCD + (- 1. / 2. * lmua * pow(pi, 2) * z * CF * pow(NQCD, -1)) + 7. / 6. * lmua * pow(pi, 2) * z * CF * NQCD + (- 3.0 * lmua * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1)) + 49. / 3. * lmua * ln(1.0 - z) * pow(z, -1) * CF * NQCD + 4. / 3. * lmua * ln(1.0 - z) * pow(z, -1) * CF * NF + 5.0 * lmua * ln(1.0 - z) * CF * pow(NQCD, -1) + (- 41. / 3. * lmua * ln(1.0 - z) * CF * NQCD) + (- 4. / 3. * lmua * ln(1.0 - z) * CF * NF) + (- 17. / 3. * lmua * ln(1.0 - z) * z * CF * NQCD) + 2. / 3. * lmua * ln(1.0 - z) * z * CF * NF + (- 8. / 3. * lmua * ln(1.0 - z) * pow(z, 2) * CF * NQCD) + 4.0 * lmua * pow(ln(1.0 - z), 2) * pow(z, -1) * CF * pow(NQCD, -1) + (- 8.0 * lmua * pow(ln(1.0 - z), 2) * pow(z, -1) * CF * NQCD) + (- 4.0 * lmua * pow(ln(1.0 - z), 2) * CF * pow(NQCD, -1)) + 8.0 * lmua * pow(ln(1.0 - z), 2) * CF * NQCD + 2.0 * lmua * pow(ln(1.0 - z), 2) * z * CF * pow(NQCD, -1) + (- 4.0 * lmua * pow(ln(1.0 - z), 2) * z * CF * NQCD) + (- 8.0 * lmua * Li2(-z) * pow(z, -1) * CF * NQCD) + (- 8.0 * lmua * Li2(-z) * CF * NQCD) + (- 4.0 * lmua * Li2(-z) * z * CF * NQCD) + (- 12.0 * lmua * Li2(z) * pow(z, -1) * CF * pow(NQCD, -1)) + (- 12.0 * lmua * Li2(z) * pow(z, -1) * CF * NQCD) + 10.0 * lmua * Li2(z) * CF * pow(NQCD, -1) + (- 2.0 * lmua * Li2(z) * CF * NQCD) + (- 5.0 * lmua * Li2(z) * z * CF * pow(NQCD, -1)) + (- 11.0 * lmua * Li2(z) * z * CF * NQCD) + 58. / 3. * ln(z) * lmua * pow(z, -1) * CF * NQCD + 4. / 3. * ln(z) * lmua * pow(z, -1) * CF * NF + (- 3.0 * ln(z) * lmua * CF * pow(NQCD, -1)) + 19. / 3. * ln(z) * lmua * CF * NQCD + (- 4. / 3. * ln(z) * lmua * CF * NF) + 3. / 2. * ln(z) * lmua * z * CF * pow(NQCD, -1) + (- 55. / 6. * ln(z) * lmua * z * CF * NQCD) + 2. / 3. * ln(z) * lmua * z * CF * NF + (-8. / 3. * ln(z) * lmua * pow(z, 2) * CF * NQCD) + (- 4.0 * ln(z) * lmua * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1)) + (- 12.0 * ln(z) * lmua * ln(1.0 - z) * pow(z, -1) * CF * NQCD) + 4.0 * ln(z) * lmua * ln(1.0 - z) * CF * pow(NQCD, -1) + 12.0 * ln(z) * lmua * ln(1.0 - z) * CF * NQCD + (- 2.0 * ln(z) * lmua * ln(1.0 - z) * z * CF * pow(NQCD, -1)) + (- 6.0 * ln(z) * lmua * ln(1.0 - z) * z * CF * NQCD) + (- 8.0 * ln(z) * lmua * ln(1.0 + z) * pow(z, -1) * CF * NQCD) + (- 8.0 * ln(z) * lmua * ln(1.0 + z) * CF * NQCD) + (- 4.0 * ln(z) * lmua * ln(1.0 + z) * z * CF * NQCD) + 12.0 * pow(ln(z), 2) * lmua * pow(z, -1) * CF * NQCD + 2.0 * pow(ln(z), 2) * lmua * CF * pow(NQCD, -1) + 6.0 * pow(ln(z), 2) * lmua * CF * NQCD + (- pow(ln(z), 2) * lmua * z * CF * pow(NQCD, -1)) + 11.0 * pow(ln(z), 2) * lmua * z * CF * NQCD;
     return res;
 }
 
-pub fn DL_RG_002(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_002(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 6.0 * pow(lmua, 2) * pow(z, -1) * CF * NQCD) + (- 8. / 3. * pow(lmua, 2) * pow(z, -1) * CF * NF) + (- 2.0 * pow(lmua, 2) * CF * pow(NQCD, -1)) + 10. / 3. * pow(lmua, 2) * CF * NQCD + 8. / 3. * pow(lmua, 2) * CF * NF + 1. / 2. * pow(lmua, 2) * z * CF * pow(NQCD, -1) + 53. / 6. * pow(lmua, 2) * z * CF * NQCD + (- 4. / 3. * pow(lmua, 2) * z * CF * NF) + 8. / 3. * pow(lmua, 2) * pow(z, 2) * CF * NQCD + (- 4.0 * pow(lmua, 2) * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1)) + 12.0 * pow(lmua, 2) * ln(1.0 - z) * pow(z, -1) * CF * NQCD + 4.0 * pow(lmua, 2) * ln(1.0 - z) * CF * pow(NQCD, -1) + (- 12.0 * pow(lmua, 2) * ln(1.0 - z) * CF * NQCD) + (- 2.0 * pow(lmua, 2) * ln(1.0 - z) * z * CF * pow(NQCD, -1)) + 6.0 * pow(lmua, 2) * ln(1.0 - z) * z * CF * NQCD + (- 8.0 * ln(z) * pow(lmua, 2) * pow(z, -1) * CF * NQCD) + (- 2.0 * ln(z) * pow(lmua, 2) * CF * pow(NQCD, -1)) + (- 6.0 * ln(z) * pow(lmua, 2) * CF * NQCD) + ln(z) * pow(lmua, 2) * z * CF * pow(NQCD, -1) + (- 9.0 * ln(z) * pow(lmua, 2) * z * CF * NQCD);
     return res;
 }
 
-pub fn DL_RG_010(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 3. / 2. * lmuf * z * CF * pow(NQCD, -1) + (- 3. / 2. * lmuf * z * CF * NQCD) + (- 2. / 3. * lmuf * pow(pi, 2) * pow(z, -1) * CF * pow(NQCD, -1)) + 2. / 3. * lmuf * pow(pi, 2) * pow(z, -1) * CF * NQCD + 2. / 3. * lmuf * pow(pi, 2) * CF * pow(NQCD, -1) + (- 2. / 3. * lmuf * pow(pi, 2) * CF * NQCD) + (- 1. / 3. * lmuf * pow(pi, 2) * z * CF * pow(NQCD, -1)) + 1. / 3. * lmuf * pow(pi, 2) * z * CF * NQCD + 3.0 * lmuf * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + (- 3.0 * lmuf * ln(1.0 - z) * pow(z, -1) * CF * NQCD) + (- 3.0 * lmuf * ln(1.0 - z) * CF * pow(NQCD, -1)) + 3.0 * lmuf * ln(1.0 - z) * CF * NQCD + 3. / 2. * lmuf * ln(1.0 - z) * z * CF * pow(NQCD, -1) + (- 3. / 2. * lmuf * ln(1.0 - z) * z * CF * NQCD) + 3.0 * ln(z) * lmuf * pow(z, -1) * CF * pow(NQCD, -1) + (- 3.0 * ln(z) * lmuf * pow(z, -1) * CF * NQCD) + (- 3.0 * ln(z) * lmuf * CF * pow(NQCD, -1)) + 3.0 * ln(z) * lmuf * CF * NQCD + 3. / 2. * ln(z) * lmuf * z * CF * pow(NQCD, -1) + (- 3. / 2. * ln(z) * lmuf * z * CF * NQCD);
     return res;
 }
 
-pub fn DL_RG_011(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_011(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 6.0 * lmuf * lmua * pow(z, -1) * CF * pow(NQCD, -1)) + 6.0 * lmuf * lmua * pow(z, -1) * CF * NQCD + 6.0 * lmuf * lmua * CF * pow(NQCD, -1) + (- 6.0 * lmuf * lmua * CF * NQCD) + (- 3.0 * lmuf * lmua * z * CF * pow(NQCD, -1)) + 3.0 * lmuf * lmua * z * CF * NQCD;
     return res;
 }
 
-pub fn DL_RG_100(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_100(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 11. / 3. * lmur * z * CF * NQCD + (- 2. / 3. * lmur * z * CF * NF) + 22. / 3. * lmur * ln(1.0 - z) * pow(z, -1) * CF * NQCD + (- 4. / 3. * lmur * ln(1.0 - z) * pow(z, -1) * CF * NF) + (- 22. / 3. * lmur * ln(1.0 - z) * CF * NQCD) + 4. / 3. * lmur * ln(1.0 - z) * CF * NF + 11. / 3. * lmur * ln(1.0 - z) * z * CF * NQCD + (- 2. / 3. * lmur * ln(1.0 - z) * z * CF * NF) + 22. / 3. * ln(z) * lmur * pow(z, -1) * CF * NQCD + (- 4. / 3. * ln(z) * lmur * pow(z, -1) * CF * NF) + (- 22. / 3. * ln(z) * lmur * CF * NQCD) + 4. / 3. * ln(z) * lmur * CF * NF + 11. / 3. * ln(z) * lmur * z * CF * NQCD + (- 2. / 3. * ln(z) * lmur * z * CF * NF);
     return res;
 }
 
-pub fn DL_RG_101(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_101(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 44. / 3. * lmur * lmua * pow(z, -1) * CF * NQCD) + 8. / 3. * lmur * lmua * pow(z, -1) * CF * NF + 44. / 3. * lmur * lmua * CF * NQCD + (-8. / 3. * lmur * lmua * CF * NF) + (- 22. / 3. * lmur * lmua * z * CF * NQCD) + 4. / 3. * lmur * lmua * z * CF * NF;
     return res;
 }
 
-pub fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 9. / 2. * pow(z, -1) * CF * pow(NQCD, -1) + (- 55. / 18. * pow(z, -1) * CF * NQCD) + (- 17. / 4. * CF * pow(NQCD, -1)) + 95. / 12. * CF * NQCD + 5. / 2. * z * CF * pow(NQCD, -1) + (- 31. / 6. * z * CF * NQCD) + (- 13. / 9. * pow(z, 2) * CF * NQCD) + 2. / 3. * pow(pi, 2) * pow(z, -1) * CF * pow(NQCD, -1) + (- 2. / 3. * pow(pi, 2) * pow(z, -1) * CF * NQCD) + (- 5. / 6. * pow(pi, 2) * CF * pow(NQCD, -1)) + 1. / 6. * pow(pi, 2) * CF * NQCD + 5. / 12. * pow(pi, 2) * z * CF * pow(NQCD, -1) + (- 3. / 4. * pow(pi, 2) * z * CF * NQCD) + 3.0 * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + (- 40. / 3. * ln(1.0 - z) * pow(z, -1) * CF * NQCD) + (- 4.0 * ln(1.0 - z) * CF * pow(NQCD, -1)) + 12.0 * ln(1.0 - z) * CF * NQCD + 3. / 4. * ln(1.0 - z) * z * CF * pow(NQCD, -1) + 1. / 4. * ln(1.0 - z) * z * CF * NQCD + 4. / 3. * ln(1.0 - z) * pow(z, 2) * CF * NQCD + (- 2.0 * pow(ln(1.0 - z), 2) * pow(z, -1) * CF * pow(NQCD, -1)) + 4.0 * pow(ln(1.0 - z), 2) * pow(z, -1) * CF * NQCD + 2.0 * pow(ln(1.0 - z), 2) * CF * pow(NQCD, -1) + (- 4.0 * pow(ln(1.0 - z), 2) * CF * NQCD) + (- pow(ln(1.0 - z), 2) * z * CF * pow(NQCD, -1)) + 2.0 * pow(ln(1.0 - z), 2) * z * CF * NQCD +  3. / 2. * ln(z) * pow(z, -1) * CF * pow(NQCD, -1) + (- 89. / 6. * ln(z) * pow(z, -1) * CF * NQCD) + 2.0 * ln(z) * CF * NQCD + 2.0 * ln(z) * z * CF * NQCD + 4. / 3. * ln(z) * pow(z, 2) * CF * NQCD + 2.0 * ln(z) * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + 6.0 * ln(z) * ln(1.0 - z) * pow(z, -1) * CF * NQCD +  (-2.0 * ln(z) * ln(1.0 - z) * CF * pow(NQCD, -1)) + (- 6.0 * ln(z) * ln(1.0 - z) * CF * NQCD) + ln(z) * ln(1.0 - z) * z * CF * pow(NQCD, -1) + 3.0 * ln(z) * ln(1.0 - z) * z * CF * NQCD + 4.0 * ln(z) * ln(1.0 + z) * pow(z, -1) * CF * NQCD + 4.0 * ln(z) * ln(1.0 + z) * CF * NQCD + 2.0 * ln(z) * ln(1.0 + z) * z * CF * NQCD + (- 6.0 * pow(ln(z), 2) * pow(z, -1) * CF * NQCD) + (- pow(ln(z), 2) * CF * pow(NQCD, -1)) + (- 3.0 * pow(ln(z), 2) * CF * NQCD) + 1. / 2. * pow(ln(z), 2) * z * CF * pow(NQCD, -1) + (- 11. / 2. * pow(ln(z), 2) * z * CF * NQCD) + 4.0 * Li2(-z) * pow(z, -1) * CF * NQCD + 4.0 * Li2(-z) * CF * NQCD + 2.0 * Li2(-z) * z * CF * NQCD + 6.0 * Li2(z) * pow(z, -1) * CF * pow(NQCD, -1) + 6.0 * Li2(z) * pow(z, -1) * CF * NQCD + (- 5.0 * Li2(z) * CF * pow(NQCD, -1)) + Li2(z) * CF * NQCD + 5. / 2. * Li2(z) * z * CF * pow(NQCD, -1) + 11. / 2. * Li2(z) * z * CF * NQCD;
     return res;
 }
 
-pub fn D0_RG_001(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_RG_001(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 3.0 * lmua * pow(z, -1) * CF * pow(NQCD, -1)) + 49. / 3. * lmua * pow(z, -1) * CF * NQCD + 4. / 3. * lmua * pow(z, -1) * CF * NF + 5.0 * lmua * CF * pow(NQCD, -1) + (- 41. / 3. * lmua * CF * NQCD) + (- 4. / 3. * lmua * CF * NF) + (- 2.0 * lmua * z * CF * pow(NQCD, -1)) + (- 11. / 3. * lmua * z * CF * NQCD) + 2. / 3. * lmua * z * CF * NF + (- 8. / 3. * lmua * pow(z, 2) * CF * NQCD) + 4.0 * lmua * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + (- 12.0 * lmua * ln(1.0 - z) * pow(z, -1) * CF * NQCD) + (- 4.0 * lmua * ln(1.0 - z) * CF * pow(NQCD, -1)) + 12.0 * lmua * ln(1.0 - z) * CF * NQCD + 2.0 * lmua * ln(1.0 - z) * z * CF * pow(NQCD, -1) + (- 6.0 * lmua * ln(1.0 - z) * z * CF * NQCD) + 8.0 * ln(z) * lmua * pow(z, -1) * CF * NQCD + 2.0 * ln(z) * lmua * CF * pow(NQCD, -1) + 6.0 * ln(z) * lmua * CF * NQCD + (- ln(z) * lmua * z * CF * pow(NQCD, -1)) + 9.0 * ln(z) * lmua * z * CF * NQCD;
     return res;
 }
 
-pub fn D0_RG_010(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_RG_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 3.0 * lmuf * pow(z, -1) * CF * pow(NQCD, -1) + (- 3.0 * lmuf * pow(z, -1) * CF * NQCD) + (- 3.0 * lmuf * CF * pow(NQCD, -1)) + 3.0 * lmuf * CF * NQCD + 7. / 2. * lmuf * z * CF * pow(NQCD, -1) + (- 7. / 2. * lmuf * z * CF * NQCD) + 4.0 * lmuf * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1) + (- 4.0 * lmuf * ln(1.0 - z) * pow(z, -1) * CF * NQCD) + (- 4.0 * lmuf * ln(1.0 - z) * CF * pow(NQCD, -1)) + 4.0 * lmuf * ln(1.0 - z) * CF * NQCD + 2.0 * lmuf * ln(1.0 - z) * z * CF * pow(NQCD, -1) + (- 2.0 * lmuf * ln(1.0 - z) * z * CF * NQCD) + 4.0 * ln(z) * lmuf * pow(z, -1) * CF * pow(NQCD, -1) + (- 4.0 * ln(z) * lmuf * pow(z, -1) * CF * NQCD) + (- 4.0 * ln(z) * lmuf * CF * pow(NQCD, -1)) + 4.0 * ln(z) * lmuf * CF * NQCD + 2.0 * ln(z) * lmuf * z * CF * pow(NQCD, -1) + (- 2.0 * ln(z) * lmuf * z * CF * NQCD);
     return res;
 }
 
-pub fn D0_RG_011(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_RG_011(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 8.0 * lmuf * lmua * pow(z, -1) * CF * pow(NQCD, -1)) + 8.0 * lmuf * lmua * pow(z, -1) * CF * NQCD + 8.0 * lmuf * lmua * CF * pow(NQCD, -1) + (- 8.0 * lmuf * lmua * CF * NQCD) + (- 4.0 * lmuf * lmua * z * CF * pow(NQCD, -1)) + 4.0 * lmuf * lmua * z * CF * NQCD;
     return res;
 }
 
-pub fn D0_RG_100(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_RG_100(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 22. / 3. * lmur * pow(z, -1) * CF * NQCD + (- 4. / 3. * lmur * pow(z, -1) * CF * NF) + (- 22. / 3. * lmur * CF * NQCD) + 4. / 3. * lmur * CF * NF + 11. / 3. * lmur * z * CF * NQCD + (- 2. / 3. * lmur * z * CF * NF);
     return res;
 }
 
-pub fn D1_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn D1_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 3.0 * pow(z, -1) * CF * pow(NQCD, -1) + (- 40. / 3. * pow(z, -1) * CF * NQCD) + (- 4.0 * CF * pow(NQCD, -1)) + 12.0 * CF * NQCD + 3. / 4. * z * CF * pow(NQCD, -1) + 1. / 4. * z * CF * NQCD + 4. / 3. * pow(z, 2) * CF * NQCD + (- 4.0 * ln(1.0 - z) * pow(z, -1) * CF * pow(NQCD, -1)) + 8.0 * ln(1.0 - z) * pow(z, -1) * CF * NQCD + 4.0 * ln(1.0 - z) * CF * pow(NQCD, -1) + (- 8.0 * ln(1.0 - z) * CF * NQCD) + (- 2.0 * ln(1.0 - z) * z * CF * pow(NQCD, -1)) + 4.0 * ln(1.0 - z) * z * CF * NQCD + (- 2.0 * ln(z) * pow(z, -1) * CF * pow(NQCD, -1)) + (- 2.0 * ln(z) * pow(z, -1) * CF * NQCD) + ln(z) * CF * pow(NQCD, -1) + (- 5.0 * ln(z) * CF * NQCD) + (- 1. / 2. * ln(z) * z * CF * pow(NQCD, -1)) + (- 7. / 2. * ln(z) * z * CF * NQCD);
     return res;
 }
 
-pub fn D1_RG_001(x: f64, z: f64, NF: f64) -> f64 {
+fn D1_RG_001(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 4.0 * lmua * pow(z, -1) * CF * pow(NQCD, -1) + (- 4.0 * lmua * pow(z, -1) * CF * NQCD) + (- 4.0 * lmua * CF * pow(NQCD, -1)) + 4.0 * lmua * CF * NQCD + 2.0 * lmua * z * CF * pow(NQCD, -1) + (- 2.0 * lmua * z * CF * NQCD);
     return res;
 }
 
-pub fn D1_RG_010(x: f64, z: f64, NF: f64) -> f64 {
+fn D1_RG_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 8.0 * lmuf * pow(z, -1) * CF * pow(NQCD, -1) + (- 8.0 * lmuf * pow(z, -1) * CF * NQCD) + (- 8.0 * lmuf * CF * pow(NQCD, -1)) + 8.0 * lmuf * CF * NQCD + 4.0 * lmuf * z * CF * pow(NQCD, -1) + (- 4.0 * lmuf * z * CF * NQCD);
     return res;
 }
 
-pub fn D2_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn D2_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-3.0 * pow(z, -1) * CF * pow(NQCD, -1)) + 3.0 * pow(z, -1) * CF * NQCD + 3.0 * CF * pow(NQCD, -1) + (- 3.0 * CF * NQCD) + (- 3. / 2. * z * CF * pow(NQCD, -1)) + 3. / 2. * z * CF * NQCD;
     return res;
 }
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -193,7 +193,7 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     return res;
 }
 
-pub fn RG_RG_001(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_001(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -276,7 +276,7 @@ pub fn RG_RG_001(x: f64, z: f64, NF: f64) -> f64 {
     return res;
 }
 
-pub fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -359,7 +359,7 @@ pub fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
     return res;
 }
 
-pub fn RG_RG_011(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_011(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -442,7 +442,7 @@ pub fn RG_RG_011(x: f64, z: f64, NF: f64) -> f64 {
     return res;
 }
 
-pub fn RG_RG_100(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_100(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -524,14 +524,24 @@ pub fn RG_RG_100(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["D0_RG", "D1_RG", "D2_RG", "DL_RG", "RG_RG"]);
-    m.insert("001", vec!["D0_RG", "D1_RG", "DL_RG", "RG_RG"]);
-    m.insert("002", vec!["DL_RG"]);
-    m.insert("010", vec!["D0_RG", "D1_RG", "DL_RG", "RG_RG"]);
-    m.insert("011", vec!["D0_RG", "DL_RG", "RG_RG"]);
-    m.insert("100", vec!["D0_RG", "DL_RG", "RG_RG"]);
-    m.insert("101", vec!["DL_RG"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, _, _, _, _, _, D0_RG_000, _, _, _, _, _, D1_RG_000, _, _, _, _, _, D2_RG_000, _, _, _, _, _, _, _, _, _, _, _, DL_RG_000, _, _, _, _, _]),
+    ("001", [RG_RG_001, _, _, _, _, _, D0_RG_001, _, _, _, _, _, D1_RG_001, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_001, _, _, _, _, _]),
+    ("002", [_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_002, _, _, _, _, _]),
+    ("010", [RG_RG_010, _, _, _, _, _, D0_RG_010, _, _, _, _, _, D1_RG_010, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_010, _, _, _, _, _]),
+    ("011", [RG_RG_011, _, _, _, _, _, D0_RG_011, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_011, _, _, _, _, _]),
+    ("100", [RG_RG_100, _, _, _, _, _, D0_RG_100, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_100, _, _, _, _, _]),
+    ("101", [_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_101, _, _, _, _, _])
+);
+
+/*
+  SV mapping:
+  - 000: D0_RG, D1_RG, D2_RG, DL_RG, RG_RG
+    - 001: D0_RG, D1_RG, DL_RG, RG_RG
+    - 002: DL_RG
+    - 010: D0_RG, D1_RG, DL_RG, RG_RG
+    - 011: D0_RG, DL_RG, RG_RG
+    - 100: D0_RG, DL_RG, RG_RG
+    - 101: DL_RG
+*/

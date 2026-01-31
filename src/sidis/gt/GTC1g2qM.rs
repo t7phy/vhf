@@ -1,21 +1,21 @@
 use crate::sidis::internal::*;
 
-pub fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-1. / 2.) + 1. / 2. * x + 1. / 4. * ln(1.0 - x) + (- 1. / 2. * ln(1.0 - x) * x) + (- 1. / 4. * ln(x)) + 1. / 2. * ln(x) * x;
     return res;
 }
 
-pub fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 1. / 2. * lmuf) + lmuf * x;
     return res;
 }
 
-pub fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 1. / 4. + (- 1. / 2. * x);
     return res;
 }
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -97,9 +97,14 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["RG_D0", "RG_DL", "RG_RG"]);
-    m.insert("010", vec!["RG_DL"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, RG_D0_000, _, _, _, RG_DL_000, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]),
+    ("010", [_, _, _, _, _, RG_DL_010, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _])
+);
+
+/*
+  SV mapping:
+  - 000: RG_D0, RG_DL, RG_RG
+    - 010: RG_DL
+*/

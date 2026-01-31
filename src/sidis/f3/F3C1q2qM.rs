@@ -1,76 +1,76 @@
 use crate::sidis::internal::*;
 
-pub fn DL_DL_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-8.0 * CF);
+fn DL_DL_000(x: f64, z: f64, NF: f64) -> f64 {
+    let res: f64 = -8.0 * CF;
     return res;
 }
 
-pub fn DL_DL_001(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (- 3.0 * lmua * CF);
+fn DL_DL_001(x: f64, z: f64, NF: f64) -> f64 {
+    let res: f64 = - 3.0 * lmua * CF;
     return res;
 }
 
-pub fn DL_DL_010(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (- 3.0 * lmuf * CF);
+fn DL_DL_010(x: f64, z: f64, NF: f64) -> f64 {
+    let res: f64 = - 3.0 * lmuf * CF;
     return res;
 }
 
-pub fn DL_D0_001(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-4.0 * lmua * CF);
+fn DL_D0_001(x: f64, z: f64, NF: f64) -> f64 {
+    let res: f64 = -4.0 * lmua * CF;
     return res;
 }
 
-pub fn DL_D1_000(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_D1_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2.0 * CF;
     return res;
 }
 
-pub fn D0_DL_010(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-4.0 * lmuf * CF);
+fn D0_DL_010(x: f64, z: f64, NF: f64) -> f64 {
+    let res: f64 = -4.0 * lmuf * CF;
     return res;
 }
 
-pub fn D0_D0_000(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_D0_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2.0 * CF;
     return res;
 }
 
-pub fn D1_DL_000(x: f64, z: f64, NF: f64) -> f64 {
+fn D1_DL_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2.0 * CF;
     return res;
 }
 
-pub fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = CF + (- z * CF) + (- ln(1.0 - z) * CF) + (- ln(1.0 - z) * z * CF) + (- ln(z) * CF) + (- ln(z) * z * CF) + 2.0 / (1.0 - z) * ln(z) * CF;
     return res;
 }
 
-pub fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2.0 * lmua * CF + 2.0 * lmua * z * CF;
     return res;
 }
 
-pub fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-CF) + (- z * CF);
     return res;
 }
 
-pub fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = CF + (- x * CF) + (- ln(1.0 - x) * CF) + (- ln(1.0 - x) * x * CF) + ln(x) * CF + ln(x) * x * CF + (- 2.0 / (1.0 - x) * ln(x) * CF);
     return res;
 }
 
-pub fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2.0 * lmuf * CF + 2.0 * lmuf * x * CF;
     return res;
 }
 
-pub fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-CF) + (- x * CF);
     return res;
 }
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -152,10 +152,16 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["D0_D0", "D0_RG", "D1_DL", "DL_D1", "DL_DL", "DL_RG", "RG_D0", "RG_DL", "RG_RG"]);
-    m.insert("001", vec!["DL_D0", "DL_DL", "DL_RG"]);
-    m.insert("010", vec!["D0_DL", "DL_DL", "RG_DL"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, RG_D0_000, _, _, _, RG_DL_000, D0_RG_000, D0_D0_000, _, _, _, _, _, _, _, _, _, D1_DL_000, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_000, _, DL_D1_000, _, _, DL_DL_000]),
+    ("001", [_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_RG_001, DL_D0_001, _, _, _, DL_DL_001]),
+    ("010", [_, _, _, _, _, RG_DL_010, _, _, _, _, _, D0_DL_010, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_DL_010])
+);
+
+/*
+  SV mapping:
+  - 000: D0_D0, D0_RG, D1_DL, DL_D1, DL_DL, DL_RG, RG_D0, RG_DL, RG_RG
+    - 001: DL_D0, DL_DL, DL_RG
+    - 010: D0_DL, DL_DL, RG_DL
+*/

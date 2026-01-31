@@ -14,7 +14,7 @@ def translate_non_rg_func(content):
     # Becomes: pub fn <name>(x: f64, z: f64, NF: f64) -> f64 {
     # Specifically excludes names starting with RG_RG_
     sig_pattern = r"double\s+((?!RG_RG_)\w+_\w+_\d{3})\s*\(double\s+x,\s+double\s+z,\s+double\s+NF\)\s*\{"
-    content = re.sub(sig_pattern, r"pub fn \1(x: f64, z: f64, NF: f64) -> f64 {", content)
+    content = re.sub(sig_pattern, r"fn \1(x: f64, z: f64, NF: f64) -> f64 {", content)
 
     # 2. Discard the specific initialization line
     content = content.replace("    double res = 0.0;\n", "")
@@ -153,7 +153,7 @@ def translate_rg_func(content):
         # 2. Extract logic AFTER the preamble
         parts = body.split('if (z')
         if len(parts) < 2:
-            return f"pub fn {func_name}(x: f64, z: f64, NF: f64) -> f64 {{{rust_preamble}\n    res\n}}"
+            return f"fn {func_name}(x: f64, z: f64, NF: f64) -> f64 {{{rust_preamble}\n    res\n}}"
         
         raw_logic = 'if (z' + 'if (z'.join(parts[1:])
         raw_logic = raw_logic.replace("return res;", "").strip()
@@ -194,55 +194,175 @@ def translate_rg_func(content):
         # if discarded_conditions:
         #     discard_comment = f"\n\n    // Discarded conditions where tmp = 0: {', '.join(discarded_conditions)}"
 
-        return f"pub fn {func_name}(x: f64, z: f64, NF: f64) -> f64 {{{rust_preamble}\n\n{final_logic}{discard_comment}\n\n    return res;\n}}"
+        return f"fn {func_name}(x: f64, z: f64, NF: f64) -> f64 {{{rust_preamble}\n\n{final_logic}{discard_comment}\n\n    return res;\n}}"
 
     return re.sub(rg_pattern, process_rg, content, flags=re.DOTALL)
 
 
+# def translate_sv_map(content):
+#     # 1. Locate the Inverted Branch Report block
+#     report_pattern = r"/\*\s+Inverted Branch Report \(By Number\):(.*?)\*/"
+#     match = re.search(report_pattern, content, re.DOTALL)
+    
+#     if not match:
+#         return content
+
+#     report_body = match.group(1).strip()
+    
+#     # 2. Parse the lines
+#     map_entries = []
+#     lines = report_body.splitlines()
+#     for line in lines:
+#         line = line.strip()
+#         if not line.startswith("- "): continue
+#         try:
+#             key_part, values_part = line.replace("- ", "").split(":")
+#             key = key_part.strip() 
+#             values = [v.strip() for v in values_part.split(",")]
+#             rust_vec = 'vec![' + ', '.join([f'"{v}"' for v in values]) + ']'
+#             map_entries.append(f'    m.insert("{key}", {rust_vec});')
+#         except ValueError: continue
+
+#     # 3. Generate the Rust code block
+#     rust_map_code = [
+
+#         "",
+#         "pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {",
+#         "    let mut m = HashMap::new();"
+#     ]
+#     rust_map_code.extend(map_entries)
+#     rust_map_code.append("    m")
+#     rust_map_code.append("}")
+    
+#     map_final_string = "\n".join(rust_map_code)
+
+#     # 4. Remove both C++ report comment blocks from the original content
+#     # This prevents the raw reports from staying in your Rust file
+#     content = re.sub(r"/\*\s+Branch extraction report:.*?\*/", "", content, flags=re.DOTALL)
+#     content = re.sub(r"/\*\s+Inverted Branch Report.*?\*/", "", content, flags=re.DOTALL)
+
+#     # 5. Return the existing content (translated functions) PLUS the new Rust map
+#     return content.strip() + map_final_string
+# def translate_sv_map(content):
+#     # 1. Locate the Inverted Branch Report block
+#     report_pattern = r"/\*\s+Inverted Branch Report \(By Number\):(.*?)\*/"
+#     match = re.search(report_pattern, content, re.DOTALL)
+    
+#     if not match:
+#         return content
+
+#     report_body = match.group(1).strip()
+    
+#     # 2. Parse the lines
+#     map_entries = []
+#     lines = report_body.splitlines()
+#     for line in lines:
+#         line = line.strip()
+#         if not line.startswith("- "): continue
+#         try:
+#             key_part, values_part = line.replace("- ", "").split(":")
+#             key = key_part.strip() 
+#             values = [v.strip() for v in values_part.split(",")]
+#             # Construct the (string, identifier) pairs for the macro
+#             pairs = ", ".join([f'("{v}", {v}_{key})' for v in values])
+#             map_entries.append(f'        "{key}" => [{pairs}],')
+#         except ValueError: continue
+
+#     # 3. Generate the Rust code block
+#     rust_map_code = [
+#         "",
+#         "pub fn get_sv_map() -> sv_map {",
+#         "    generate_sv_map! {"
+#     ]
+#     rust_map_code.extend(map_entries)
+#     rust_map_code.append("    }")
+#     rust_map_code.append("}")
+    
+#     map_final_string = "\n".join(rust_map_code)
+
+#     # 4. Remove both C++ report comment blocks from the original content
+#     content = re.sub(r"/\*\s+Branch extraction report:.*?\*/", "", content, flags=re.DOTALL)
+#     content = re.sub(r"/\*\s+Inverted Branch Report.*?\*/", "", content, flags=re.DOTALL)
+
+#     # 5. Return the existing content (translated functions) PLUS the new Rust map
+#     return content.strip() + map_final_string
+
 def translate_sv_map(content):
-    # 1. Locate the Inverted Branch Report block
+    # 1. Strict 36-slot order (Indices 0-35)
+    # This MUST match the order of your Rust macro's @gen_wrappers block
+    ORDERED_KEYS = [
+        "RG_RG", "RG_D0", "RG_D1", "RG_D2", "RG_D3", "RG_DL", # 0-5
+        "D0_RG", "D0_D0", "D0_D1", "D0_D2", "D0_D3", "D0_DL", # 6-11
+        "D1_RG", "D1_D0", "D1_D1", "D1_D2", "D1_D3", "D1_DL", # 12-17
+        "D2_RG", "D2_D0", "D2_D1", "D2_D2", "D2_D3", "D2_DL", # 18-23
+        "D3_RG", "D3_D0", "D3_D1", "D3_D2", "D3_D3", "D3_DL", # 24-29
+        "DL_RG", "DL_D0", "DL_D1", "DL_D2", "DL_D3", "DL_DL"  # 30-35
+    ]
+
+    # 2. Extract the report block
     report_pattern = r"/\*\s+Inverted Branch Report \(By Number\):(.*?)\*/"
     match = re.search(report_pattern, content, re.DOTALL)
-    
     if not match:
         return content
 
     report_body = match.group(1).strip()
     
-    # 2. Parse the lines
-    map_entries = []
+    # 3. Build the SV Mapping Comment Block (Formatted for Rust)
+    sv_comment = ["/*", "  SV mapping:"]
+    sv_comment.extend([f"  {line}" for line in report_body.splitlines()])
+    sv_comment.append("*/")
+
+    # 4. Generate the mkcoeff! macro entries
+    macro_entries = []
     lines = report_body.splitlines()
+    
     for line in lines:
         line = line.strip()
-        if not line.startswith("- "): continue
+        if not line or not line.startswith("- "): continue
+        
         try:
-            key_part, values_part = line.replace("- ", "").split(":")
-            key = key_part.strip() 
-            values = [v.strip() for v in values_part.split(",")]
-            rust_vec = 'vec![' + ', '.join([f'"{v}"' for v in values]) + ']'
-            map_entries.append(f'    m.insert("{key}", {rust_vec});')
-        except ValueError: continue
+            # Parse line format: "- 000: D0_D0, RG_RG, ..."
+            scale_part, funcs_part = line.replace("- ", "").split(":")
+            scale = scale_part.strip()
+            
+            # Clean up function names (remove whitespace)
+            available_funcs = [f.strip() for f in funcs_part.split(",") if f.strip()]
+            
+            # Initialize 36 slots with underscores
+            slots = ["_"] * 36
+            
+            for func in available_funcs:
+                if func in ORDERED_KEYS:
+                    idx = ORDERED_KEYS.index(func)
+                    # Resulting identifier: D0_D0_000
+                    slots[idx] = f"{func}_{scale}"
+            
+            # Construct the entry tuple
+            terms_str = ", ".join(slots)
+            macro_entries.append(f'    ("{scale}", [{terms_str}])')
+            
+        except ValueError:
+            continue
 
-    # 3. Generate the Rust code block
-    rust_map_code = [
+    # 5. Join entries with commas and wrap in mkcoeff!
+    # Using a trailing comma in the list to avoid the "unexpected end" error
+    macro_final_call = "mkcoeff!(\n" + ",\n".join(macro_entries) + "\n);"
 
-        "",
-        "pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {",
-        "    let mut m = HashMap::new();"
-    ]
-    rust_map_code.extend(map_entries)
-    rust_map_code.append("    m")
-    rust_map_code.append("}")
-    
-    map_final_string = "\n".join(rust_map_code)
-
-    # 4. Remove both C++ report comment blocks from the original content
-    # This prevents the raw reports from staying in your Rust file
+    # 6. Cleanup original C++ content and assemble Rust content
     content = re.sub(r"/\*\s+Branch extraction report:.*?\*/", "", content, flags=re.DOTALL)
-    content = re.sub(r"/\*\s+Inverted Branch Report.*?\*/", "", content, flags=re.DOTALL)
+    content = re.sub(report_pattern, "", content, flags=re.DOTALL)
 
-    # 5. Return the existing content (translated functions) PLUS the new Rust map
-    return content.strip() + map_final_string
+    # return content.strip() + "\n\n" + "\n".join(sv_comment) + "\n" + macro_final_call
+    final_output = (
+        content.strip() + 
+        "\n\n" + 
+        macro_final_call + 
+        "\n\n" + 
+        "\n".join(sv_comment) + 
+        "\n"
+    )
+    
+    return final_output
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

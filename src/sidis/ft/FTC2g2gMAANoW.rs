@@ -1,11 +1,11 @@
 use crate::sidis::internal::*;
 
-pub fn DL_DL_000(x: f64, z: f64, NF: f64) -> f64 {
+fn DL_DL_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = pow(NQCD, -1) + (- NQCD);
     return res;
 }
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -84,8 +84,12 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["DL_DL", "RG_RG"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, DL_DL_000])
+);
+
+/*
+  SV mapping:
+  - 000: DL_DL, RG_RG
+*/

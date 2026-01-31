@@ -1,36 +1,36 @@
 use crate::sidis::internal::*;
 
-pub fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-26. / 27. * pow(x, -1) * pow(NQCD, -1)) + 26. / 27. * pow(x, -1) * NQCD + 41. / 72. * pow(NQCD, -1) + (- 41. / 72. * NQCD) + (- 17. / 72. * x * pow(NQCD, -1)) + 17. / 72. * x * NQCD + 17. / 27. * pow(x, 2) * pow(NQCD, -1) + (- 17. / 27. * pow(x, 2) * NQCD) + (- 1. / 12. * pow(pi, 2) * pow(NQCD, -1)) + 1. / 12. * pow(pi, 2) * NQCD + (- 1. / 4. * pow(pi, 2) * x * pow(NQCD, -1)) + 1. / 4. * pow(pi, 2) * x * NQCD + (- 1. / 6. * pow(pi, 2) * pow(x, 2) * pow(NQCD, -1)) + 1. / 6. * pow(pi, 2) * pow(x, 2) * NQCD + (- 13. / 18. * ln(1.0 - x) * pow(x, -1) * pow(NQCD, -1)) + 13. / 18. * ln(1.0 - x) * pow(x, -1) * NQCD + 11. / 12. * ln(1.0 - x) * pow(NQCD, -1) + (- 11. / 12. * ln(1.0 - x) * NQCD) + (- 17. / 12. * ln(1.0 - x) * x * pow(NQCD, -1)) + 17. / 12. * ln(1.0 - x) * x * NQCD + 11. / 9. * ln(1.0 - x) * pow(x, 2) * pow(NQCD, -1) + (- 11. / 9. * ln(1.0 - x) * pow(x, 2) * NQCD) + (- 1. / 6. * ln(1.0 - x) * pow(pi, 2) * pow(NQCD, -1)) + 1. / 6. * ln(1.0 - x) * pow(pi, 2) * NQCD + (- 1. / 6. * ln(1.0 - x) * pow(pi, 2) * x * pow(NQCD, -1)) + 1. / 6. * ln(1.0 - x) * pow(pi, 2) * x * NQCD + (- 1. / 6. * pow(ln(1.0 - x), 2) * pow(x, -1) * pow(NQCD, -1)) + 1. / 6. * pow(ln(1.0 - x), 2) * pow(x, -1) * NQCD + (- 1. / 8. * pow(ln(1.0 - x), 2) * pow(NQCD, -1)) + 1. / 8. * pow(ln(1.0 - x), 2) * NQCD + 1. / 8. * pow(ln(1.0 - x), 2) * x * pow(NQCD, -1) + (- 1. / 8. * pow(ln(1.0 - x), 2) * x * NQCD) + 1. / 6. * pow(ln(1.0 - x), 2) * pow(x, 2) * pow(NQCD, -1) + (- 1. / 6. * pow(ln(1.0 - x), 2) * pow(x, 2) * NQCD) + 1. / 2. * ln(1.0 - x) * Li2(1.0 - x) * pow(NQCD, -1) + (- 1. / 2. * ln(1.0 - x) * Li2(1.0 - x) * NQCD) + 1. / 2. * ln(1.0 - x) * Li2(1.0 - x) * x * pow(NQCD, -1) + (- 1. / 2. * ln(1.0 - x) * Li2(1.0 - x) * x * NQCD) + ln(1.0 - x) * Li2(x) * pow(NQCD, -1) + (- ln(1.0 - x) * Li2(x) * NQCD) + ln(1.0 - x) * Li2(x) * x * pow(NQCD, -1) + (- ln(1.0 - x) * Li2(x) * x * NQCD) + (- 23. / 12. * ln(x) * pow(NQCD, -1)) + 23. / 12. * ln(x) * NQCD + 5. / 12. * ln(x) * x * pow(NQCD, -1) + (- 5. / 12. * ln(x) * x * NQCD) + (- 19. / 9. * ln(x) * pow(x, 2) * pow(NQCD, -1)) + 19. / 9. * ln(x) * pow(x, 2) * NQCD + 1. / 6. * ln(x) * pow(pi, 2) * pow(NQCD, -1) + (- 1. / 6. * ln(x) * pow(pi, 2) * NQCD) + 1. / 6. * ln(x) * pow(pi, 2) * x * pow(NQCD, -1) + (- 1. / 6. * ln(x) * pow(pi, 2) * x * NQCD) + 1. / 3. * ln(x) * ln(1.0 - x) * pow(x, -1) * pow(NQCD, -1) + (- 1. / 3. * ln(x) * ln(1.0 - x) * pow(x, -1) * NQCD) + 1. / 4. * ln(x) * ln(1.0 - x) * pow(NQCD, -1) + (- 1. / 4. * ln(x) * ln(1.0 - x) * NQCD) + (- 1. / 4. * ln(x) * ln(1.0 - x) * x * pow(NQCD, -1)) + 1. / 4. * ln(x) * ln(1.0 - x) * x * NQCD + (- 1. / 3. * ln(x) * ln(1.0 - x) * pow(x, 2) * pow(NQCD, -1)) + 1. / 3. * ln(x) * ln(1.0 - x) * pow(x, 2) * NQCD + 3. / 4. * ln(x) * pow(ln(1.0 - x), 2) * pow(NQCD, -1) + (- 3. / 4. * ln(x) * pow(ln(1.0 - x), 2) * NQCD) + 3. / 4. * ln(x) * pow(ln(1.0 - x), 2) * x * pow(NQCD, -1) + (- 3. / 4. * ln(x) * pow(ln(1.0 - x), 2) * x * NQCD) + 13. / 16. * pow(ln(x), 2) * pow(NQCD, -1) + (- 13. / 16. * pow(ln(x), 2) * NQCD) + 13. / 16. * pow(ln(x), 2) * x * pow(NQCD, -1) + (- 13. / 16. * pow(ln(x), 2) * x * NQCD) + 5. / 6. * pow(ln(x), 2) * pow(x, 2) * pow(NQCD, -1) +  (-5. / 6. * pow(ln(x), 2) * pow(x, 2) * NQCD) + (- 5. / 24. * pow(ln(x), 3) * pow(NQCD, -1)) + 5. / 24. * pow(ln(x), 3) * NQCD + (- 5. / 24. * pow(ln(x), 3) * x * pow(NQCD, -1)) + 5. / 24. * pow(ln(x), 3) * x * NQCD + (- 1. / 2. * ln(x) * Li2(x) * pow(NQCD, -1)) + 1. / 2. * ln(x) * Li2(x) * NQCD + (- 1. / 2. * ln(x) * Li2(x) * x * pow(NQCD, -1)) + 1. / 2. * ln(x) * Li2(x) * x * NQCD + 1. / 2. * Li3(1.0 - x) * pow(NQCD, -1) + (- 1. / 2. * Li3(1.0 - x) * NQCD) + 1. / 2. * Li3(1.0 - x) * x * pow(NQCD, -1) + (- 1. / 2. * Li3(1.0 - x) * x * NQCD) + 1. / 3. * Li2(x) * pow(x, -1) * pow(NQCD, -1) + (- 1. / 3. * Li2(x) * pow(x, -1) * NQCD) + 3. / 4. * Li2(x) * pow(NQCD, -1) + (- 3. / 4. * Li2(x) * NQCD) + 5. / 4. * Li2(x) * x * pow(NQCD, -1) + (- 5. / 4. * Li2(x) * x * NQCD) + 2. / 3. * Li2(x) * pow(x, 2) * pow(NQCD, -1) + (- 2. / 3. * Li2(x) * pow(x, 2) * NQCD);
     return res;
 }
 
-pub fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 13. / 9. * lmuf * pow(x, -1) * pow(NQCD, -1) + (- 13. / 9. * lmuf * pow(x, -1) * NQCD) + (- 11. / 6. * lmuf * pow(NQCD, -1)) + 11. / 6. * lmuf * NQCD + 17. / 6. * lmuf * x * pow(NQCD, -1) + (- 17. / 6. * lmuf * x * NQCD) + (- 22. / 9. * lmuf * pow(x, 2) * pow(NQCD, -1)) + 22. / 9. * lmuf * pow(x, 2) * NQCD + 1. / 6. * lmuf * pow(pi, 2) * pow(NQCD, -1) + (- 1. / 6. * lmuf * pow(pi, 2) * NQCD) + 1. / 6. * lmuf * pow(pi, 2) * x * pow(NQCD, -1) + (- 1. / 6. * lmuf * pow(pi, 2) * x * NQCD) + 2. / 3. * lmuf * ln(1.0 - x) * pow(x, -1) * pow(NQCD, -1) + (- 2. / 3. * lmuf * ln(1.0 - x) * pow(x, -1) * NQCD) + 1. / 2. * lmuf * ln(1.0 - x) * pow(NQCD, -1) + (- 1. / 2. * lmuf * ln(1.0 - x) * NQCD) + (- 1. / 2. * lmuf * ln(1.0 - x) * x * pow(NQCD, -1)) + 1. / 2. * lmuf * ln(1.0 - x) * x * NQCD + (- 2. / 3. * lmuf * ln(1.0 - x) * pow(x, 2) * pow(NQCD, -1)) + 2. / 3. * lmuf * ln(1.0 - x) * pow(x, 2) * NQCD + (- lmuf * Li2(x) * pow(NQCD, -1)) + lmuf * Li2(x) * NQCD + (- lmuf * Li2(x) * x * pow(NQCD, -1)) + lmuf * Li2(x) * x * NQCD + ln(x) * lmuf * pow(NQCD, -1) + (- ln(x) * lmuf * NQCD) + 3.0 * ln(x) * lmuf * x * pow(NQCD, -1) + (- 3.0 * ln(x) * lmuf * x * NQCD) + 2.0 * ln(x) * lmuf * pow(x, 2) * pow(NQCD, -1) + (- 2.0 * ln(x) * lmuf * pow(x, 2) * NQCD) + (- pow(ln(x), 2) * lmuf * pow(NQCD, -1)) + pow(ln(x), 2) * lmuf * NQCD + (- pow(ln(x), 2) * lmuf * x * pow(NQCD, -1)) + pow(ln(x), 2) * lmuf * x * NQCD;
     return res;
 }
 
-pub fn RG_DL_020(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_DL_020(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (- 2. / 3. * pow(lmuf, 2) * pow(x, -1) * pow(NQCD, -1)) + 2. / 3. * pow(lmuf, 2) * pow(x, -1) * NQCD + (- 1. / 2. * pow(lmuf, 2) * pow(NQCD, -1)) + 1. / 2. * pow(lmuf, 2) * NQCD + 1. / 2. * pow(lmuf, 2) * x * pow(NQCD, -1) + (- 1. / 2. * pow(lmuf, 2) * x * NQCD) + 2. / 3. * pow(lmuf, 2) * pow(x, 2) * pow(NQCD, -1) + (- 2. / 3. * pow(lmuf, 2) * pow(x, 2) * NQCD) + (- ln(x) * pow(lmuf, 2) * pow(NQCD, -1)) + ln(x) * pow(lmuf, 2) * NQCD + (- ln(x) * pow(lmuf, 2) * x * pow(NQCD, -1)) + ln(x) * pow(lmuf, 2) * x * NQCD;
     return res;
 }
 
-pub fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-13. / 18. * pow(x, -1) * pow(NQCD, -1)) + 13. / 18. * pow(x, -1) * NQCD + 11. / 12. * pow(NQCD, -1) + (- 11. / 12. * NQCD) + (- 17. / 12. * x * pow(NQCD, -1)) + 17. / 12. * x * NQCD + 11. / 9. * pow(x, 2) * pow(NQCD, -1) + (- 11. / 9. * pow(x, 2) * NQCD) + (- 1. / 12. * pow(pi, 2) * pow(NQCD, -1)) + 1. / 12. * pow(pi, 2) * NQCD + (- 1. / 12. * pow(pi, 2) * x * pow(NQCD, -1)) + 1. / 12. * pow(pi, 2) * x * NQCD + (- 1. / 3. * ln(1.0 - x) * pow(x, -1) * pow(NQCD, -1)) + 1. / 3. * ln(1.0 - x) * pow(x, -1) * NQCD + (- 1. / 4. * ln(1.0 - x) * pow(NQCD, -1)) + 1. / 4. * ln(1.0 - x) * NQCD + 1. / 4. * ln(1.0 - x) * x * pow(NQCD, -1) + (- 1. / 4. * ln(1.0 - x) * x * NQCD) + 1. / 3. * ln(1.0 - x) * pow(x, 2) * pow(NQCD, -1) + (- 1. / 3. * ln(1.0 - x) * pow(x, 2) * NQCD) + (- 1. / 2. * ln(x) * pow(NQCD, -1)) + 1. / 2. * ln(x) * NQCD + (- 3. / 2. * ln(x) * x * pow(NQCD, -1)) + 3. / 2. * ln(x) * x * NQCD + (- ln(x) * pow(x, 2) * pow(NQCD, -1)) + ln(x) * pow(x, 2) * NQCD + 1. / 2. * pow(ln(x), 2) * pow(NQCD, -1) + (- 1. / 2. * pow(ln(x), 2) * NQCD) + 1. / 2. * pow(ln(x), 2) * x * pow(NQCD, -1) + (- 1. / 2. * pow(ln(x), 2) * x * NQCD) + 1. / 2. * Li2(x) * pow(NQCD, -1) + (- 1. / 2. * Li2(x) * NQCD) + 1. / 2. * Li2(x) * x * pow(NQCD, -1) + (- 1. / 2. * Li2(x) * x * NQCD);
     return res;
 }
 
-pub fn RG_D0_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D0_010(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = 2. / 3. * lmuf * pow(x, -1) * pow(NQCD, -1) + (- 2. / 3. * lmuf * pow(x, -1) * NQCD) + 1. / 2. * lmuf * pow(NQCD, -1) + (- 1. / 2. * lmuf * NQCD) + (- 1. / 2. * lmuf * x * pow(NQCD, -1)) + 1. / 2. * lmuf * x * NQCD + (- 2. / 3. * lmuf * pow(x, 2) * pow(NQCD, -1)) + 2. / 3. * lmuf * pow(x, 2) * NQCD + ln(x) * lmuf * pow(NQCD, -1) + (- ln(x) * lmuf * NQCD) + ln(x) * lmuf * x * pow(NQCD, -1) + (- ln(x) * lmuf * x * NQCD);
     return res;
 }
 
-pub fn RG_D1_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_D1_000(x: f64, z: f64, NF: f64) -> f64 {
     let res: f64 = (-1. / 3. * pow(x, -1) * pow(NQCD, -1)) + 1. / 3. * pow(x, -1) * NQCD + (- 1. / 4. * pow(NQCD, -1)) + 1. / 4. * NQCD + 1. / 4. * x * pow(NQCD, -1) + (- 1. / 4. * x * NQCD) + 1. / 3. * pow(x, 2) * pow(NQCD, -1) + (- 1. / 3. * pow(x, 2) * NQCD) + (- 1. / 2. * ln(x) * pow(NQCD, -1)) + 1. / 2. * ln(x) * NQCD + (- 1. / 2. * ln(x) * x * pow(NQCD, -1)) + 1. / 2. * ln(x) * x * NQCD;
     return res;
 }
 
-pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -113,7 +113,7 @@ pub fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     return res;
 }
 
-pub fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
+fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
     let mut res: f64 = 0.0;
     let tiny: f64 = 1e-4;
     let tinyinv: f64 = 1.0 / tiny;
@@ -195,10 +195,16 @@ pub fn RG_RG_010(x: f64, z: f64, NF: f64) -> f64 {
 
     return res;
 }
-pub fn get_sv_map() -> HashMap<&'static str, Vec<&'static str>> {
-    let mut m = HashMap::new();
-    m.insert("000", vec!["RG_D0", "RG_D1", "RG_DL", "RG_RG"]);
-    m.insert("010", vec!["RG_D0", "RG_DL", "RG_RG"]);
-    m.insert("020", vec!["RG_DL"]);
-    m
-}
+
+mkcoeff!(
+    ("000", [RG_RG_000, RG_D0_000, RG_D1_000, _, _, RG_DL_000, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]),
+    ("010", [RG_RG_010, RG_D0_010, _, _, _, RG_DL_010, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]),
+    ("020", [_, _, _, _, _, RG_DL_020, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _])
+);
+
+/*
+  SV mapping:
+  - 000: RG_D0, RG_D1, RG_DL, RG_RG
+    - 010: RG_D0, RG_DL, RG_RG
+    - 020: RG_DL
+*/
