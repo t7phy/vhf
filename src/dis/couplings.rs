@@ -63,24 +63,25 @@ pub fn dis_coupling(l_pid: i32, q_pid: i32, q2: f64, interaction_type: String, p
 
 pub fn dis_coupling_fl11(l_pid: i32, q_pid: i32, nf: i32, q2:f64, interaction_type: String) -> f64 {
     
-    fn charge(coupling_type: char, diagram: String, pid: i32) -> f64 {
+    fn charge(coupling_type: char, diagram: &str, pid: i32) -> f64 {
         let val: f64 = match (coupling_type, diagram) {
             ('V', "phph" | "zph") => ew_charges(pid).0,
-            ('A', "phph" | "zph") => 0,
+            ('A', "phph" | "zph") => 0.0,
             ('V', "phz" | "zz") => ew_charges(pid).1,
             ('A', "phz" | "zz") => ew_charges(pid).2,
-        }
+            _ => panic!("Wrong coupling type or diagram for FL11")
+        };
         val
     }
-    fn res(ct1: char, ct2: char, diagram: String) -> f64 {
-        let res1: f64 = 0.0;
+    let res = |ct1: char, ct2: char, diagram: &str| -> f64 {
+        let mut res1: f64 = 0.0;
         for i in 1..=nf {
             res1 += charge(ct1, diagram, i);
         }
         res1 /= nf as f64;
         let res2: f64 = charge(ct2, diagram, q_pid);
         res1 * res2
-    }
+    };
 
     let w_phph: f64 = ew_charges(l_pid).0.powi(2) * res('V', 'V', "phph");
     let eta_phz: f64 = q2/(m_z().powi(2) + q2) * 1.0/(4.0*theta_w().sin().powi(2)*theta_w().cos().powi(2));
