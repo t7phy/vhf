@@ -24,6 +24,17 @@ pub struct Parameters {
     pub gamma_z: f64,
     pub alpha_s_at_mz: f64,
     pub alpha_em_at_mz: f64,
+    pub theta_w: f64,
+    pub ckm_ud: f64,
+    pub ckm_us: f64,
+    pub ckm_ub: f64,
+    pub ckm_cd: f64,
+    pub ckm_cs: f64,
+    pub ckm_cb: f64,
+    pub ckm_td: f64,
+    pub ckm_ts: f64,
+    pub ckm_tb: f64,
+    pub ckm_matrix: [[f64; 3]; 3],
 }
 
 /// Hard-coded PDG Defaults
@@ -46,6 +57,21 @@ impl Default for Parameters {
             gamma_z: 2.4952,
             alpha_s_at_mz: 0.1179,
             alpha_em_at_mz: 0.007755, // ~1/128.9
+            theta_w: 0.23126, // sin^2(theta_w) at m_z
+            ckm_ud: 0.97401,
+            ckm_us: 0.2245,
+            ckm_ub: 0.00382,
+            ckm_cd: 0.2245,
+            ckm_cs: 0.97320,
+            ckm_cb: 0.0410,
+            ckm_td: 0.0080,
+            ckm_ts: 0.0400,
+            ckm_tb: 0.99915,
+            ckm_matrix: [
+                [ckm_ud(), ckm_us(), ckm_ub()],
+                [ckm_cd(), ckm_cs(), ckm_cb()],
+                [ckm_td(), ckm_ts(), ckm_tb()],
+            ]
         }
     }
 }
@@ -101,3 +127,14 @@ pub fn gamma_w() -> f64   { get().gamma_w }
 pub fn gamma_z() -> f64   { get().gamma_z }
 pub fn alpha_s() -> f64   { get().alpha_s_at_mz }
 pub fn alpha_em() -> f64  { get().alpha_em_at_mz }
+pub fn theta_w() -> f64   { get().theta_w }
+pub fn ckm_ud() -> f64    { get().ckm_ud }
+pub fn ckm_us() -> f64    { get().ckm_us }
+pub fn ckm_ub() -> f64    { get().ckm_ub }
+pub fn ckm_cd() -> f64    { get().ckm_cd }
+pub fn ckm_cs() -> f64    { get().ckm_cs }
+pub fn ckm_cb() -> f64    { get().ckm_cb }
+pub fn ckm_td() -> f64    { get().ckm_td }
+pub fn ckm_ts() -> f64    { get().ckm_ts }
+pub fn ckm_tb() -> f64    { get().ckm_tb }
+pub fn ckm_matrix() -> [[f64; 3]; 3] { get().ckm_matrix }
