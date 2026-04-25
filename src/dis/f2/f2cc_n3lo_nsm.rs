@@ -5,7 +5,7 @@ fn r_00(x: f64, nf: f64) -> f64 {
     let dl: f64 = log(x);
     let dl1: f64 = log(1. - x);
     let x1: f64 = 1.0 - x;
-    let res1: f64 = f2nc_n3lo_nsp::cf().r.unwrap()(x, nf);
+    let res1: f64 = f2nc_n3lo_nsp::cf().r(x, nf);
     let res2: f64 = (( 273.59 - 44.95 * x - 73.56 * pow(x, 2) + 40.68 * pow(x, 3) + 0.1356 * pow(dl, 5) + 8.483 * pow(dl, 4) + 55.90 * pow(dl, 3) + 120.67 * pow(dl, 2) + 388.0 * dl - 329.8 * dl * dl1 - x * dl * (316.2 + 71.63 * dl) + 46.30 * dl1 + 5.447 * pow(dl1, 2)) + nf * ( -19.093 + 12.97 * x + 36.44 * pow(x, 2) - 29.256 * pow(x, 3) - 0.76 * pow(dl, 4) - 5.317 * pow(dl, 3) - 19.82 * pow(dl, 2) - 38.958 * dl - 13.395 * dl * dl1 + x * dl * (14.44 + 17.74 * dl) + 1.395 * dl1)) * x1;
     let res: f64 = res1 - res2;
     return res;
@@ -19,7 +19,7 @@ fn s_00(x: f64, nf: f64) -> f64 {
 }
 
 fn l_00(x: f64, nf: f64) -> f64 {
-    let res1: f64 = f2nc_n3lo_nsp::cf().l.unwrap()(x, nf);
+    let res1: f64 = f2nc_n3lo_nsp::cf().l(x, nf);
     let res2: f64 = - 0.0008 + 0.0001 * nf;
     let res: f64 = res1 - res2;
     return res;

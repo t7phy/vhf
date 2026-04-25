@@ -1,8 +1,12 @@
 pub mod sm_params;
 pub mod constants;
 pub mod libfunc;
-pub mod nielsen;
+pub mod polylogs;
 pub mod interpolation;
-pub mod conv1;
+pub mod conv1d;
 pub mod vegas;
 pub mod quad;
+pub mod toypdf;
+// pub mod conv1dvegas;
+pub mod conv1dquad;
+pub mod conv2dquad;

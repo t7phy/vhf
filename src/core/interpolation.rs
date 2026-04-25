@@ -221,12 +221,12 @@ pub struct BasisCache {
 }
 
 /// Solves the inverse relation y = 5(1-x) - ln(x) for x using Newton-Raphson.
-fn inverse_relation_solver(y: f64) -> f64 {
+fn inverse_relation_lambert(y: f64) -> f64 {
     let mut yp = y;
     let mut deltap = f64::INFINITY;
 
     // Newton-Raphson iteration
-    for _ in 0..10 {
+    for _ in 0..15 {
         let x = (-yp).exp();
         // delta = f(yp) = 5(1 - e^-yp) - (y - yp)
         let delta = (1.0 - x).mul_add(-5.0, y - yp);
@@ -254,7 +254,25 @@ pub fn lambertgrid(n_pts: usize, x_min: f64, x_max: f64) -> Vec<f64> {
     for i in 0..n_pts {
         // Linear spacing in y-space
         let y = y_min + (y_max - y_min) * (i as f64) / ((n_pts - 1) as f64);
-        grid.push(inverse_relation_solver(y));
+        grid.push(inverse_relation_lambert(y));
+    }
+    grid
+}
+
+fn inverse_relation_q2(tau: f64) -> f64 {
+    0.0625 * tau.exp().exp()
+}
+
+pub fn q2_grid(n_pts: usize, q_min: f64, q_max: f64) -> Vec<f64> {
+    let direct_relation = |q2: f64| (q2/0.0625).ln().ln();
+
+    let tau_min = direct_relation(q_min.powi(2));
+    let tau_max = direct_relation(q_max.powi(2));
+
+    let mut grid = Vec::with_capacity(n_pts);
+    for i in 0..n_pts {
+        let tau = tau_min + (tau_max - tau_min) * (i as f64) / ((n_pts - 1) as f64);
+        grid.push(inverse_relation_q2(tau));
     }
     grid
 }
@@ -397,24 +415,59 @@ pub fn point_interpolator(ev_point: f64, cache: &BasisCache, i: usize) -> f64 {
     0.0
 }
 
+// pub fn integration_regions(x: f64, itp_xgrid: &[f64]) -> Option<Vec<(f64, f64)>> {
+//     if x <= itp_xgrid[0] || x >= *itp_xgrid.last().unwrap() {
+//         return None;
+//     }
+
+//     let pos = match itp_xgrid.binary_search_by(|prob| {
+//         if *prob <= x { Ordering::Less } else { Ordering::Greater }
+//     }) {
+//         Ok(idx) => idx,
+//         Err(idx) => idx,
+//     };
+
+//     let mut region_borders = vec![x];
+//     region_borders.extend_from_slice(&itp_xgrid[pos..]);
+
+//     let mut regions = Vec::new();
+//     for i in 0..(region_borders.len() - 1) {
+//         regions.push((region_borders[i], region_borders[i + 1]));
+//     }
+//     Some(regions)
+// }
+
 pub fn integration_regions(x: f64, itp_xgrid: &[f64]) -> Option<Vec<(f64, f64)>> {
-    if x <= itp_xgrid[0] || x >= *itp_xgrid.last().unwrap() {
+    if x < itp_xgrid[0] || x >= *itp_xgrid.last().unwrap() {
         return None;
     }
 
-    let pos = match itp_xgrid.binary_search_by(|prob| {
-        if *prob <= x { Ordering::Less } else { Ordering::Greater }
-    }) {
-        Ok(idx) => idx,
-        Err(idx) => idx,
-    };
-
     let mut region_borders = vec![x];
-    region_borders.extend_from_slice(&itp_xgrid[pos..]);
+
+    for &xj in itp_xgrid {
+        let xhat = x / xj;
+        if xhat > x && xhat < 1.0 {
+            region_borders.push(xhat);
+        }
+    }
+
+    region_borders.push(1.0);
+
+    region_borders.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    region_borders.dedup_by(|a, b| (*a - *b).abs() < 1e-14);
 
     let mut regions = Vec::new();
     for i in 0..(region_borders.len() - 1) {
-        regions.push((region_borders[i], region_borders[i + 1]));
+        let a = region_borders[i];
+        let b = region_borders[i + 1];
+        if b > a {
+            regions.push((a, b));
+        }
     }
-    Some(regions)
+
+    if regions.is_empty() {
+        None
+    } else {
+        Some(regions)
+    }
 }

@@ -9,7 +9,7 @@ fn r_00(x: f64, nf: f64) -> f64 {
 }
 
 fn s_00(x: f64, nf: f64) -> f64 {
-    return f3nc_nnlo_nsp::cf().s.unwrap()(x, nf);
+    return f3nc_nnlo_nsp::cf().s(x, nf);
 }
 
 fn l_00(x: f64, nf: f64) -> f64 {
