@@ -10,6 +10,9 @@ use std::sync::OnceLock;
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(default)]
 pub struct Parameters {
+    pub m_electron: f64,
+    pub m_muon: f64,
+    pub m_tau: f64,
     pub m_up: f64,
     pub m_down: f64,
     pub m_strange: f64,
@@ -48,6 +51,9 @@ pub struct Parameters {
 impl Default for Parameters {
     fn default() -> Self {
         Self {
+            m_electron: 0.00051099895,
+            m_muon: 0.1056583755,
+            m_tau: 1.77693,
             m_up: 0.00216,
             m_down: 0.00470,
             m_strange: 0.0935,
@@ -126,6 +132,9 @@ fn get() -> &'static Parameters {
 // These allow your physics modules to use the parameters 
 // without needing any function arguments.
 
+pub fn m_electron() -> f64 { get().m_electron }
+pub fn m_muon() -> f64    { get().m_muon }
+pub fn m_tau() -> f64     { get().m_tau }
 pub fn m_up() -> f64      { get().m_up }
 pub fn m_down() -> f64    { get().m_down }
 pub fn m_strange() -> f64 { get().m_strange }

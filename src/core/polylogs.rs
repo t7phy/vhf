@@ -182,39 +182,39 @@ pub fn nl(n: i32, m: i32, x: f64) -> Complex64 {
     These function compute the dilogarithm Li2(x) and trilogarithm Li3(x) using the nl function defined above.
 */
 
-// pub fn Li2(x: f64) -> f64 {
-//     nl(1, 1, x).re
-// }
 pub fn Li2(x: f64) -> f64 {
-    const PI2_6: f64 = std::f64::consts::PI * std::f64::consts::PI / 6.0;
-
-    if x == 0.0 { return 0.0; }
-    if x == 1.0 { return PI2_6; }
-    if x == -1.0 { return -PI2_6 / 2.0; }
-
-    // Map to z in (-1, 0.5] using functional identities, accumulating offset
-    let (z, offset, sign) = if x > 0.5 && x < 1.0 {
-        (1.0 - x, PI2_6 - x.ln() * (1.0 - x).ln(), -1.0)
-    } else if x >= 1.0 {
-        (1.0 / x, -PI2_6 - 0.5 * x.ln() * x.ln(), -1.0)
-    } else if x < -1.0 {
-        (1.0 / x, -PI2_6 - 0.5 * (-x).ln() * (-x).ln(), -1.0)
-    } else {
-        (x, 0.0, 1.0)
-    };
-
-    // Taylor series: Li₂(z) = Σ zⁿ/n², converges fast for |z| ≤ 0.5
-    let mut sum = 0.0;
-    let mut zn = z;
-    for n in 1u64.. {
-        let term = zn / (n * n) as f64;
-        sum += term;
-        if term.abs() < 1e-17 * sum.abs() { break; }
-        zn *= z;
-    }
-
-    offset + sign * sum
+    nl(1, 1, x).re
 }
+// pub fn Li2_custom(x: f64) -> f64 {
+//     const PI2_6: f64 = std::f64::consts::PI * std::f64::consts::PI / 6.0;
+
+//     if x == 0.0 { return 0.0; }
+//     if x == 1.0 { return PI2_6; }
+//     if x == -1.0 { return -PI2_6 / 2.0; }
+
+//     // Map to z in (-1, 0.5] using functional identities, accumulating offset
+//     let (z, offset, sign) = if x > 0.5 && x < 1.0 {
+//         (1.0 - x, PI2_6 - x.ln() * (1.0 - x).ln(), -1.0)
+//     } else if x >= 1.0 {
+//         (1.0 / x, -PI2_6 - 0.5 * x.ln() * x.ln(), -1.0)
+//     } else if x < -1.0 {
+//         (1.0 / x, -PI2_6 - 0.5 * (-x).ln() * (-x).ln(), -1.0)
+//     } else {
+//         (x, 0.0, 1.0)
+//     };
+
+//     // Taylor series: Li₂(z) = Σ zⁿ/n², converges fast for |z| ≤ 0.5
+//     let mut sum = 0.0;
+//     let mut zn = z;
+//     for n in 1u64.. {
+//         let term = zn / (n * n) as f64;
+//         sum += term;
+//         if term.abs() < 1e-17 * sum.abs() { break; }
+//         zn *= z;
+//     }
+
+//     offset + sign * sum
+// }
 
 pub fn Li3(x: f64) -> f64 {
     nl(2, 1, x).re

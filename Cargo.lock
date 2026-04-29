@@ -1317,6 +1317,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "73f88a1307638156682bada9d7604135552957b7818057dcef22705b4d509495"
 dependencies = [
  "num-traits",
+ "serde",
 ]
 
 [[package]]
@@ -1376,6 +1377,33 @@ name = "once_cell_polyfill"
 version = "1.70.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "384b8ab6d37215f3c5301a95a4accb5d64aa607f1fcb26a11b5303878451b4fe"
+
+[[package]]
+name = "oxiarc-core"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "09ce7cafbdf59b46e5d47462e66611315ba2239c78250dbe361e95fc6da7e400"
+dependencies = [
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "oxiarc-lz4"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ab35b8ddc55b28c8d7c1e0677e0f7c0335e3c44f3aa0eda19fdace4b2291a183"
+dependencies = [
+ "oxiarc-core",
+]
+
+[[package]]
+name = "oxiarc-zstd"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fc4597dff612ce03aa8865f564e155d3f39f5d6efbd125eeca16eca9f6d95607"
+dependencies = [
+ "oxiarc-core",
+]
 
 [[package]]
 name = "parking_lot"
@@ -1973,12 +2001,16 @@ dependencies = [
  "num-traits",
  "num_cpus",
  "once_cell",
+ "oxiarc-lz4",
+ "oxiarc-zstd",
  "parking_lot",
  "rand 0.10.1",
  "rand_chacha 0.10.0",
  "rand_distr 0.6.0",
  "rayon",
  "regex",
+ "serde",
+ "serde_json",
  "statrs",
  "thiserror 2.0.18",
  "uuid",
@@ -2517,6 +2549,7 @@ version = "0.1.0"
 dependencies = [
  "clap",
  "fs2",
+ "libc",
  "mchep",
  "ndarray 0.15.6",
  "neopdf 0.3.2",
@@ -2525,6 +2558,7 @@ dependencies = [
  "rand 0.8.5",
  "rand_chacha 0.3.1",
  "rayon",
+ "scirs2-core",
  "scirs2-integrate",
  "serde",
  "serde_json",
