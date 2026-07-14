@@ -12,7 +12,7 @@ use std::path::PathBuf;
 // --------------------------------------------|
 use crate::dis::internal::CoeffFuncs as Cf1D;
 use crate::sidis::internal::CoeffFuncs as Cf2D;
-use crate::dis::{dis_factor_none, f2};
+use crate::dis::{dis_factor_none, f2_light};
 use crate::core::conv1d::Conv1DPointGrid;
 use crate::core::interpolation::lambertgrid;
 use crate::runner::handle_json::{append_partonic_subgrid, write_channel_subgrid, ChannelEntry};
@@ -703,6 +703,9 @@ pub fn combine(path: &str) {
 |                                                             |
 \----------------------------------------------------------- */
 
+const inv4PI: f64 = 1.0/(4.0 *std::f64::consts::PI);
+const inv2PI: f64 = 1.0/(2.0 *std::f64::consts::PI);
+
 pub enum CFsVec {
     Cf1D(Vec<Vec<(Cf1D, f64, fn(f64, f64, String) -> Vec<(i8, f64)>, fn(f64, f64) -> f64)>>),
     Cf2D(Vec<Vec<(Cf2D, f64, fn(f64, f64, f64, String) -> Vec<(i8, f64)>, fn(f64, f64, f64) -> f64)>>)
@@ -713,22 +716,22 @@ pub fn obtain_cfs(process: &Process) -> CFsVec {
         Process::DIS_NC { observable, .. } => {
             if observable == "F2" {
                 CFsVec::Cf1D(vec![
-                    vec![(f2::f2nc_lo_ns::cf(), f2::f2nc_lo_ns::as_norm, f2::f2nc_lo_ns::nc_coupling, dis_factor_none)],
+                    vec![(f2_light::f2nc_lo_ns::cf(), 1.0, f2_light::f2nc_lo_ns::nc_coupling, dis_factor_none)],
                     vec![
-                        (f2::f2nc_nlo_ns::cf(), f2::f2nc_nlo_ns::as_norm, f2::f2nc_nlo_ns::nc_coupling, dis_factor_none), 
-                        (f2::f2nc_nlo_g::cf(), f2::f2nc_nlo_g::as_norm, f2::f2nc_nlo_g::nc_coupling, dis_factor_none)
+                        (f2_light::f2nc_nlo_ns::cf(), inv4PI, f2_light::f2nc_nlo_ns::nc_coupling, dis_factor_none), 
+                        (f2_light::f2nc_nlo_g::cf(), inv4PI, f2_light::f2nc_nlo_g::nc_coupling, dis_factor_none)
                         ],
                     vec![
-                        (f2::f2nc_nnlo_nsp::cf(), f2::f2nc_nnlo_nsp::as_norm, f2::f2nc_nnlo_nsp::nc_coupling, dis_factor_none), 
-                        (f2::f2nc_nnlo_g::cf(), f2::f2nc_nnlo_g::as_norm, f2::f2nc_nnlo_g::nc_coupling, dis_factor_none), 
-                        (f2::f2nc_nnlo_ps::cf(), f2::f2nc_nnlo_ps::as_norm, f2::f2nc_nnlo_ps::nc_coupling, dis_factor_none)
+                        (f2_light::f2nc_nnlo_nsp::cf(), inv4PI.powi(2), f2_light::f2nc_nnlo_nsp::nc_coupling, dis_factor_none), 
+                        (f2_light::f2nc_nnlo_g::cf(), inv4PI.powi(2), f2_light::f2nc_nnlo_g::nc_coupling, dis_factor_none), 
+                        (f2_light::f2nc_nnlo_ps::cf(), inv4PI.powi(2), f2_light::f2nc_nnlo_ps::nc_coupling, dis_factor_none)
                         ],
                     vec![
-                        (f2::f2nc_n3lo_nsp::cf(), f2::f2nc_n3lo_nsp::as_norm, f2::f2nc_n3lo_nsp::nc_coupling, dis_factor_none),
-                        (f2::f2nc_n3lo_g::cf(), f2::f2nc_n3lo_g::as_norm, f2::f2nc_n3lo_g::nc_coupling, dis_factor_none),
-                        (f2::f2nc_n3lo_ps::cf(), f2::f2nc_n3lo_ps::as_norm, f2::f2nc_n3lo_ps::nc_coupling, dis_factor_none),
-                        (f2::f2nc_n3lo_qfl11::cf(), f2::f2nc_n3lo_qfl11::as_norm, f2::f2nc_n3lo_qfl11::nc_coupling, dis_factor_none),
-                        (f2::f2nc_n3lo_gfl11::cf(), f2::f2nc_n3lo_gfl11::as_norm, f2::f2nc_n3lo_gfl11::nc_coupling, dis_factor_none)
+                        (f2_light::f2nc_n3lo_nsp::cf(), inv4PI.powi(3), f2_light::f2nc_n3lo_nsp::nc_coupling, dis_factor_none),
+                        (f2_light::f2nc_n3lo_g::cf(), inv4PI.powi(3), f2_light::f2nc_n3lo_g::nc_coupling, dis_factor_none),
+                        (f2_light::f2nc_n3lo_ps::cf(), inv4PI.powi(3), f2_light::f2nc_n3lo_ps::nc_coupling, dis_factor_none),
+                        (f2_light::f2nc_n3lo_qfl11::cf(), inv4PI.powi(3), f2_light::f2nc_n3lo_qfl11::nc_coupling, dis_factor_none),
+                        (f2_light::f2nc_n3lo_gfl11::cf(), inv4PI.powi(3), f2_light::f2nc_n3lo_gfl11::nc_coupling, dis_factor_none)
                         ]
                 ])
             } else {
@@ -739,7 +742,13 @@ pub fn obtain_cfs(process: &Process) -> CFsVec {
         Process::pDIS_NC { .. } => todo!(),
         Process::pDIS_CC { .. } => todo!(),
         Process::SIA { .. } => todo!(),
-        Process::SIDIS_NC { .. } => todo!(),
+        // Process::SIDIS_NC { observable, .. } => {
+        //     if observable == "DIF-X-SEC" {
+        //         CFsVec::Cf2D(vec![])
+        //     } else {
+        //         panic!("Observable {} not implemented for SIDIS NC", observable);
+        //     }
+        // },
         Process::SIDIS_CC { .. } => todo!(),
         Process::pSIDIS_NC { .. } => todo!(),
         Process::pSIDIS_CC { .. } => todo!(),

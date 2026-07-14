@@ -1,0 +1,35 @@
+# Metadata and Run Settings
+run_name: "HERA_F2_Test_Run"
+output_type: "InterpolationGrid"
+qcd_perturbative_order: 2  # 0=LO, 1=NLO, etc.
+scale_variations: true
+unit_prefix: "pb"
+
+# Theory Settings
+fns: "ZMVFNS"
+
+# Process Definition
+process:
+  process_type: "DIS_NC"
+  observable: "F2"
+  lepton: 11           # Electron
+  hadron: 2212         # Proton
+  electroweak_interaction_type: "em"
+
+# Binning Configuration
+bins:
+  xz_binning_type: "point"
+  q_binning_type: "point"
+  data:
+    # KinVar::dis { x, q }
+    - x: { val: 0.01 }
+      q: { val: 10.0 }
+    
+    - x: { val: 0.01 }
+      q: { val: 20.0 }
+    
+    - x: { val: 0.05 }
+      q: { val: 50.0 }
+    
+    - x: { val: 0.1 }
+      q: { val: 100.0 }

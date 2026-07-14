@@ -2,7 +2,7 @@ use crate::dis::CoeffFuncs as Cf1D;
 use super::interpolation::{BasisCache, compute_basis_functions, point_interpolator, interpolator, integration_regions};
 
 // Adjust this path to wherever you placed your custom quad function.
-use crate::core::quad::{quad, nquad, Bound};
+use crate::core::scits::quad::{quad, nquad, Bound};
 
 use rayon::prelude::*;
 

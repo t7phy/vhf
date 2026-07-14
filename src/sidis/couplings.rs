@@ -258,7 +258,7 @@ pub fn nc_sidis_coupling(interaction_type: &str, coupling_type: &str, l_pid: i32
             "a" => 0.0,
             _ => panic!("Invalid coupling type: {} for EM interaction", coupling_type),
         },
-        "nc" => match interaction_type {
+        "nc" => match coupling_type {
             "v" => nc_sidis_coupling("em", "v", l_pid, quark1_pid, quark2_pid, q2) +
                 prop_factor("phZ", q2) * lepton_coupling("phZ", l_pid, "unpol") * nc_quark_coupling("v_phZ", quark1_pid, quark2_pid) +
                 prop_factor("ZZ", q2) * lepton_coupling("ZZ", l_pid, "unpol") * nc_quark_coupling("v_ZZ", quark1_pid, quark2_pid),
@@ -279,4 +279,283 @@ pub fn cc_sidis_coupling(l_pid: i32, quark1_pid: i32, quark2_pid: i32, q2: f64) 
     //     prop_factor("W", q2) * lepton_coupling("w", l_pid, "R") * 2.0 * cc_quark_coupling(quark1_pid, quark2_pid)
     // }
     cc_dis_coupling(l_pid, quark1_pid, quark2_pid, q2)
+}
+
+pub fn nc_sym_default(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        let coupling_v = nc_sidis_coupling(interaction_type, "v", l_pid, i, i, q2);
+        let coupling_a = nc_sidis_coupling(interaction_type, "a", l_pid, i, i, q2);
+        vec.push((i, i, coupling_v + coupling_a));
+        vec.push((-i, -i, coupling_v + coupling_a));
+    }
+    vec
+}
+
+pub fn nc_sym_q2g(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_sym_default(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.1 = 21);
+    vec
+}
+
+pub fn nc_sym_g2q(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_sym_default(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.0 = 21);
+    vec
+}
+
+pub fn nc_sym_q2qmfcon2(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        let mut entry: f64 = 0.0;
+        for j in 1..=nf {
+            if j != i {
+                entry += nc_sidis_coupling(interaction_type, "v", l_pid, j, j, q2) + nc_sidis_coupling(interaction_type, "a", l_pid, j, j, q2);
+            }
+        }
+        vec.push((i, i, entry));
+        vec.push((-i, -i, entry));
+    }
+    vec
+}
+
+pub fn nc_sym_q2qmanow(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        // let mut entry, : f64 = quark_charges(i).2;
+        let mut entry: f64 = 0.0;
+        for j in 1..=nf {
+            if j != i {
+                entry += quark_charges(j).2;
+            }
+        }
+        entry *= quark_charges(i).2;
+        vec.push((i, i, entry));
+        vec.push((-i, -i, entry))
+    }
+    vec
+}
+
+pub fn nc_sym_q2gmanow(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_sym_q2qmanow(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.1 = 21);
+    vec
+}
+
+pub fn nc_syn_g2qmanow(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_sym_q2qmanow(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.0 = 21);
+    vec
+}
+
+pub fn nc_sym_g2g(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut entry: f64 = 0.0;
+    for i in 1..=nf {
+        entry += nc_sidis_coupling(interaction_type, "v", l_pid, i, i, q2) + nc_sidis_coupling(interaction_type, "a", l_pid, i, i, q2);
+    }
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    vec.push((21, 21, entry));
+    vec
+} 
+
+pub fn nc_sym_g2gmaanow(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut entry: f64 = 0.0;
+    for i in 1..=nf {
+        entry += quark_charges(i).2;
+    }
+    entry *= entry;
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    vec.push((21, 21, entry));
+    vec
+}
+
+pub fn nc_sym_q2qpm1(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "v", l_pid, i, i, q2) + nc_sidis_coupling(interaction_type, "a", l_pid, i, i, q2);
+                vec.push((i, j, entry));
+                vec.push((-i, -j, entry));
+                vec.push((i, -j, entry));
+                vec.push((-i, j, entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_sym_q2qpm2(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "v", l_pid, j, j, q2) + nc_sidis_coupling(interaction_type, "a", l_pid, j, j, q2);
+                vec.push((i, j, entry));
+                vec.push((-i, -j, entry));
+                vec.push((i, -j, entry));
+                vec.push((-i, j, entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_sym_mnow3(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "v", l_pid, i, j, q2);
+                vec.push((i, j, entry));
+                vec.push((i, -j, -entry));
+                vec.push((-i, -j, entry));
+                vec.push((-i, j, -entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_sym_mnow4(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "a", l_pid, i, j, q2);
+                vec.push((i, j, entry));
+                vec.push((i, -j, entry));
+                vec.push((-i, -j, entry));
+                vec.push((-i, j, entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_sym_q2qb(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_sym_default(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.1 = -e.1);
+    vec
+}
+
+pub fn nc_asym_default(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_sym_default(nf, interaction_type, l_pid, q2);
+    for i in 1..=nf {
+        let coupling = nc_sidis_coupling(interaction_type, "i", l_pid, i, i, q2);
+        vec.push((i, i, coupling));
+        vec.push((-i, -i, -coupling));
+    }
+    vec
+}
+
+pub fn nc_asym_q2g(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_asym_default(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.1 = 21);
+    vec
+}
+
+pub fn nc_asym_g2q(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_asym_default(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.0 = 21);
+    vec
+}
+
+pub fn nc_asym_q2qmanow(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        // let mut entry, : f64 = quark_charges(i).2;
+        let mut entry: f64 = 0.0;
+        for j in 1..=nf {
+            if j != i {
+                entry += quark_charges(j).2;
+            }
+        }
+        entry *= 2.0 * quark_charges(i).1;
+        vec.push((i, i, entry));
+        vec.push((-i, -i, -entry))
+    }
+    vec
+}
+
+pub fn nc_asym_q2gmanow(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_asym_q2qmanow(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.1 = 21);
+    vec
+}
+
+pub fn nc_asym_g2qmanow(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_asym_q2qmanow(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.0 = 21);
+    vec
+}
+
+pub fn nc_asym_q2qpm1(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "i", l_pid, i, i, q2);
+                vec.push((i, j, entry));
+                vec.push((-i, -j, -entry));
+                vec.push((i, -j, entry));
+                vec.push((-i, j, -entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_asym_q2qpm2(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "i", l_pid, j, j, q2);
+                vec.push((i, j, entry));
+                vec.push((-i, -j, -entry));
+                vec.push((i, -j, -entry));
+                vec.push((-i, j, entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_asym_mnow3(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "i", l_pid, i, j, q2);
+                vec.push((i, j, entry));
+                vec.push((-i, -j, -entry));
+                vec.push((i, -j, entry));
+                vec.push((-i, j, -entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_asym_mnow4(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec: Vec<(i32, i32, f64)> = vec![];
+    for i in 1..=nf {
+        for j in 1..=nf {
+            if j != i {
+                let entry: f64 = nc_sidis_coupling(interaction_type, "i", l_pid, j, i, q2);
+                vec.push((i, j, entry));
+                vec.push((-i, -j, -entry));
+                vec.push((i, -j, -entry));
+                vec.push((-i, j, entry));
+            }
+        }
+    }
+    vec
+}
+
+pub fn nc_asym_q2qb(nf: i32, interaction_type: &str, l_pid: i32, q2: f64) -> Vec<(i32, i32, f64)> {
+    let mut vec = nc_asym_default(nf, interaction_type, l_pid, q2);
+    vec.iter_mut().for_each(|e| e.1 = -e.1);
+    vec
 }

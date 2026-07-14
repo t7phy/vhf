@@ -1,0 +1,33 @@
+# =========================================================
+# VIRTUAL HADRON FACTORY - Standard Model Parameters
+# Values are based on PDG 2024/2025 averages.
+# All masses and widths are in GeV.
+# Sin^2(theta_w) is the effective value at the M_Z scale.
+# =========================================================
+
+m_up: 0.00216
+m_down: 0.00467
+m_strange: 0.093
+m_charm: 1.27
+m_bottom: 4.18
+m_top: 172.69
+m_w: 80.377
+m_z: 91.1876
+m_h: 125.25
+m_pion: 0.13957
+m_kaon: 0.49367
+m_proton: 0.93827
+gamma_w: 2.085
+gamma_z: 2.4952
+alpha_s_at_mz: 0.1179
+alpha_em_at_mz: 0.007755
+theta_w: 0.23126
+ckm_ud: 0.97401
+ckm_us: 0.2245
+ckm_ub: 0.00382
+ckm_cd: 0.2245
+ckm_cs: 0.9732
+ckm_cb: 0.041
+ckm_td: 0.008
+ckm_ts: 0.04
+ckm_tb: 0.99915

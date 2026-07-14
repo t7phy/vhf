@@ -1,6 +1,6 @@
 use crate::sia::internal::*;
 
-fn r_00(z: f64, nf: f64) -> f64 {
+fn r_00(z: f64, _nf: f64) -> f64 {
     let dz = 1.0 / z;
     let Hr1m1 = hm1(z);
     let Hr10 = h0(z);

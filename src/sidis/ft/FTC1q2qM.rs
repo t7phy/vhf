@@ -1,72 +1,72 @@
 use crate::sidis::internal::*;
 
 fn DL_DL_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 4.0 * pow(NQCD, -1) + (- 4.0 * NQCD);
+    let res: f64 = 4.0 * (1.0 / NQCD) + (- 4.0 * NQCD);
     return res;
 }
 
 fn DL_DL_001(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 3. / 2. * lmua * pow(NQCD, -1) + (- 3. / 2. * lmua * NQCD);
+    let res: f64 = 3. / 2. * lmua * (1.0 / NQCD) + (- 3. / 2. * lmua * NQCD);
     return res;
 }
 
 fn DL_DL_010(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 3. / 2. * lmuf * pow(NQCD, -1) + (- 3. / 2. * lmuf * NQCD);
+    let res: f64 = 3. / 2. * lmuf * (1.0 / NQCD) + (- 3. / 2. * lmuf * NQCD);
     return res;
 }
 
 fn DL_D0_001(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 2.0 * lmua * pow(NQCD, -1) + (- 2.0 * lmua * NQCD);
+    let res: f64 = 2.0 * lmua * (1.0 / NQCD) + (- 2.0 * lmua * NQCD);
     return res;
 }
 
 fn DL_D1_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-pow(NQCD, -1)) + NQCD;
+    let res: f64 = (-(1.0 / NQCD)) + NQCD;
     return res;
 }
 
 fn D0_DL_010(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 2.0 * lmuf * pow(NQCD, -1) + (- 2.0 * lmuf * NQCD);
+    let res: f64 = 2.0 * lmuf * (1.0 / NQCD) + (- 2.0 * lmuf * NQCD);
     return res;
 }
 
 fn D0_D0_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-pow(NQCD, -1)) + NQCD;
+    let res: f64 = (-(1.0 / NQCD)) + NQCD;
     return res;
 }
 
 fn D1_DL_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-pow(NQCD, -1)) + NQCD;
+    let res: f64 = (-(1.0 / NQCD)) + NQCD;
     return res;
 }
 
 fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-1. / 2. * pow(NQCD, -1)) + 1. / 2. * NQCD + 1. / 2. * z * pow(NQCD, -1) + (- 1. / 2. * z * NQCD) + 1. / 2. * ln(1.0 - z) * pow(NQCD, -1) + (- 1. / 2. * ln(1.0 - z) * NQCD) + 1. / 2. * ln(1.0 - z) * z * pow(NQCD, -1) + (- 1. / 2. * ln(1.0 - z) * z * NQCD) + 1. / 2. * ln(z) * pow(NQCD, -1) + (- 1. / 2. * ln(z) * NQCD) + 1. / 2. * ln(z) * z * pow(NQCD, -1) + (- 1. / 2. * ln(z) * z * NQCD) + (- 1.0 / (1.0 - z) * ln(z) * pow(NQCD, -1)) + 1.0 / (1.0 - z) * ln(z) * NQCD;
+    let res: f64 = (-1. / 2. * (1.0 / NQCD)) + 1. / 2. * NQCD + 1. / 2. * z * (1.0 / NQCD) + (- 1. / 2. * z * NQCD) + 1. / 2. * ln(1.0 - z) * (1.0 / NQCD) + (- 1. / 2. * ln(1.0 - z) * NQCD) + 1. / 2. * ln(1.0 - z) * z * (1.0 / NQCD) + (- 1. / 2. * ln(1.0 - z) * z * NQCD) + 1. / 2. * ln(z) * (1.0 / NQCD) + (- 1. / 2. * ln(z) * NQCD) + 1. / 2. * ln(z) * z * (1.0 / NQCD) + (- 1. / 2. * ln(z) * z * NQCD) + (- 1.0 / (1.0 - z) * ln(z) * (1.0 / NQCD)) + 1.0 / (1.0 - z) * ln(z) * NQCD;
     return res;
 }
 
 fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (- lmua * pow(NQCD, -1)) + lmua * NQCD + (- lmua * z * pow(NQCD, -1)) + lmua * z * NQCD;
+    let res: f64 = (- lmua * (1.0 / NQCD)) + lmua * NQCD + (- lmua * z * (1.0 / NQCD)) + lmua * z * NQCD;
     return res;
 }
 
 fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 1. / 2. * pow(NQCD, -1) + (- 1. / 2. * NQCD) + 1. / 2. * z * pow(NQCD, -1) + (- 1. / 2. * z * NQCD);
+    let res: f64 = 1. / 2. * (1.0 / NQCD) + (- 1. / 2. * NQCD) + 1. / 2. * z * (1.0 / NQCD) + (- 1. / 2. * z * NQCD);
     return res;
 }
 
 fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-1. / 2. * pow(NQCD, -1)) + 1. / 2. * NQCD + 1. / 2. * x * pow(NQCD, -1) + (- 1. / 2. * x * NQCD) + 1. / 2. * ln(1.0 - x) * pow(NQCD, -1) + (- 1. / 2. * ln(1.0 - x) * NQCD) + 1. / 2. * ln(1.0 - x) * x * pow(NQCD, -1) + (- 1. / 2. * ln(1.0 - x) * x * NQCD) + (- 1. / 2. * ln(x) * pow(NQCD, -1)) + 1. / 2. * ln(x) * NQCD + (- 1. / 2. * ln(x) * x * pow(NQCD, -1)) + 1. / 2. * ln(x) * x * NQCD + 1.0 / (1.0 - x) * ln(x) * pow(NQCD, -1) + (- 1.0 / (1.0 - x) * ln(x) * NQCD);
+    let res: f64 = (-1. / 2. * (1.0 / NQCD)) + 1. / 2. * NQCD + 1. / 2. * x * (1.0 / NQCD) + (- 1. / 2. * x * NQCD) + 1. / 2. * ln(1.0 - x) * (1.0 / NQCD) + (- 1. / 2. * ln(1.0 - x) * NQCD) + 1. / 2. * ln(1.0 - x) * x * (1.0 / NQCD) + (- 1. / 2. * ln(1.0 - x) * x * NQCD) + (- 1. / 2. * ln(x) * (1.0 / NQCD)) + 1. / 2. * ln(x) * NQCD + (- 1. / 2. * ln(x) * x * (1.0 / NQCD)) + 1. / 2. * ln(x) * x * NQCD + 1.0 / (1.0 - x) * ln(x) * (1.0 / NQCD) + (- 1.0 / (1.0 - x) * ln(x) * NQCD);
     return res;
 }
 
 fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (- lmuf * pow(NQCD, -1)) + lmuf * NQCD + (- lmuf * x * pow(NQCD, -1)) + lmuf * x * NQCD;
+    let res: f64 = (- lmuf * (1.0 / NQCD)) + lmuf * NQCD + (- lmuf * x * (1.0 / NQCD)) + lmuf * x * NQCD;
     return res;
 }
 
 fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 1. / 2. * pow(NQCD, -1) + (- 1. / 2. * NQCD) + 1. / 2. * x * pow(NQCD, -1) + (- 1. / 2. * x * NQCD);
+    let res: f64 = 1. / 2. * (1.0 / NQCD) + (- 1. / 2. * NQCD) + 1. / 2. * x * (1.0 / NQCD) + (- 1. / 2. * x * NQCD);
     return res;
 }
 
@@ -146,7 +146,7 @@ fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     }
 
     if z != x && z != 1. - x {
-        let tmp: f64 = (-pow(NQCD, -1)) + NQCD + (- x * z * pow(NQCD, -1)) + x * z * NQCD;
+        let tmp: f64 = (-(1.0 / NQCD)) + NQCD + (- x * z * (1.0 / NQCD)) + x * z * NQCD;
         res += tmp;
     }
 

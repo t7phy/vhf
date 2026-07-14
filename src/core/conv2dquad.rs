@@ -1,7 +1,7 @@
 use crate::sidis::CoeffFuncs as Cf2D;
 use super::interpolation::{BasisCache, compute_basis_functions, point_interpolator, interpolator, integration_regions};
 
-use crate::core::quad::{quad, nquad, Bound};
+use crate::core::scits::quad::{quad, nquad, Bound};
 
 use rayon::prelude::*;
 
@@ -426,7 +426,7 @@ impl Conv2DPointGrid {
                         let interp_at_x = self.interpolator_at_x[xnode];
                         let interp_at_z = self.interpolator_at_z[znode];
 
-                        let epsrel = 1e-6;
+                        let epsrel = 1e-3;
 
                         // Double piece in xhat and zhat:
                         if let (Some(ref regions_x), Some(ref regions_z)) =

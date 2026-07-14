@@ -1,17 +1,17 @@
 use crate::sidis::internal::*;
 
 fn DL_RG_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-1. / 2. * z * pow(NQCD, -1)) + 1. / 2. * z * NQCD + (- ln(1.0 - z) * pow(z, -1) * pow(NQCD, -1)) + ln(1.0 - z) * pow(z, -1) * NQCD + ln(1.0 - z) * pow(NQCD, -1) + (- ln(1.0 - z) * NQCD) + (- 1. / 2. * ln(1.0 - z) * z * pow(NQCD, -1)) + 1. / 2. * ln(1.0 - z) * z * NQCD + (- ln(z) * pow(z, -1) * pow(NQCD, -1)) + ln(z) * pow(z, -1) * NQCD + ln(z) * pow(NQCD, -1) + (- ln(z) * NQCD) + (- 1. / 2. * ln(z) * z * pow(NQCD, -1)) + 1. / 2. * ln(z) * z * NQCD;
+    let res: f64 = (-1. / 2. * z * (1.0 / NQCD)) + 1. / 2. * z * NQCD + (- ln(1.0 - z) * (1.0 / z) * (1.0 / NQCD)) + ln(1.0 - z) * (1.0 / z) * NQCD + ln(1.0 - z) * (1.0 / NQCD) + (- ln(1.0 - z) * NQCD) + (- 1. / 2. * ln(1.0 - z) * z * (1.0 / NQCD)) + 1. / 2. * ln(1.0 - z) * z * NQCD + (- ln(z) * (1.0 / z) * (1.0 / NQCD)) + ln(z) * (1.0 / z) * NQCD + ln(z) * (1.0 / NQCD) + (- ln(z) * NQCD) + (- 1. / 2. * ln(z) * z * (1.0 / NQCD)) + 1. / 2. * ln(z) * z * NQCD;
     return res;
 }
 
 fn DL_RG_001(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 2.0 * lmua * pow(z, -1) * pow(NQCD, -1) + (- 2.0 * lmua * pow(z, -1) * NQCD) + (- 2.0 * lmua * pow(NQCD, -1)) + 2.0 * lmua * NQCD + lmua * z * pow(NQCD, -1) + (- lmua * z * NQCD);
+    let res: f64 = 2.0 * lmua * (1.0 / z) * (1.0 / NQCD) + (- 2.0 * lmua * (1.0 / z) * NQCD) + (- 2.0 * lmua * (1.0 / NQCD)) + 2.0 * lmua * NQCD + lmua * z * (1.0 / NQCD) + (- lmua * z * NQCD);
     return res;
 }
 
 fn D0_RG_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (-pow(z, -1) * pow(NQCD, -1)) + pow(z, -1) * NQCD + pow(NQCD, -1) + (- NQCD) + (- 1. / 2. * z * pow(NQCD, -1)) + 1. / 2. * z * NQCD;
+    let res: f64 = (-(1.0 / z) * (1.0 / NQCD)) + (1.0 / z) * NQCD + (1.0 / NQCD) + (- NQCD) + (- 1. / 2. * z * (1.0 / NQCD)) + 1. / 2. * z * NQCD;
     return res;
 }
 
@@ -91,7 +91,7 @@ fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     }
 
     if z != x && z != 1. - x {
-        let tmp: f64 = 1. / 2. * pow(z, -1) * pow(NQCD, -1) + (- 1. / 2. * pow(z, -1) * NQCD) + (- pow(NQCD, -1)) + NQCD + 1. / 2. * x * pow(z, -1) * pow(NQCD, -1) + (- 1. / 2. * x * pow(z, -1) * NQCD) + (- x * pow(NQCD, -1)) + x * NQCD + x * z * pow(NQCD, -1) + (- x * z * NQCD);
+        let tmp: f64 = 1. / 2. * (1.0 / z) * (1.0 / NQCD) + (- 1. / 2. * (1.0 / z) * NQCD) + (- (1.0 / NQCD)) + NQCD + 1. / 2. * x * (1.0 / z) * (1.0 / NQCD) + (- 1. / 2. * x * (1.0 / z) * NQCD) + (- x * (1.0 / NQCD)) + x * NQCD + x * z * (1.0 / NQCD) + (- x * z * NQCD);
         res += tmp;
     }
 

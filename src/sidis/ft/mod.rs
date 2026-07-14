@@ -18,3 +18,5 @@ pub mod FTC2q2qpM1;
 pub mod FTC2q2qpM2;
 pub mod FTC2q2qpMNoW3;
 pub mod FTC2q2qpMNoW4;
+
+pub mod FTC2q2qM_old;

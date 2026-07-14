@@ -1,17 +1,17 @@
 use crate::sidis::internal::*;
 
 fn RG_DL_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = x + (- pow(x, 2)) + 1. / 2. * ln(1.0 - x) + (- ln(1.0 - x) * x) + ln(1.0 - x) * pow(x, 2) + (- 1. / 2. * ln(x)) + ln(x) * x + (- ln(x) * pow(x, 2));
+    let res: f64 = x + (- (x * x)) + 1. / 2. * ln(1.0 - x) + (- ln(1.0 - x) * x) + ln(1.0 - x) * (x * x) + (- 1. / 2. * ln(x)) + ln(x) * x + (- ln(x) * (x * x));
     return res;
 }
 
 fn RG_DL_010(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = (- lmuf) + 2.0 * lmuf * x + (- 2.0 * lmuf * pow(x, 2));
+    let res: f64 = (- lmuf) + 2.0 * lmuf * x + (- 2.0 * lmuf * (x * x));
     return res;
 }
 
 fn RG_D0_000(x: f64, z: f64, NF: f64) -> f64 {
-    let res: f64 = 1. / 2. + (- x) + pow(x, 2);
+    let res: f64 = 1. / 2. + (- x) + (x * x);
     return res;
 }
 
@@ -91,7 +91,7 @@ fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     }
 
     if z != x && z != 1. - x {
-        let tmp: f64 = (-1.0) + 1. / 2. * pow(z, -1) + (- x * pow(z, -1)) + 2.0 * x + pow(x, 2) * pow(z, -1) + (- 2.0 * pow(x, 2));
+        let tmp: f64 = (-1.0) + 1. / 2. * (1.0 / z) + (- x * (1.0 / z)) + 2.0 * x + (x * x) * (1.0 / z) + (- 2.0 * (x * x));
         res += tmp;
     }
 

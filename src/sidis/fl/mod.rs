@@ -17,3 +17,5 @@ pub mod FLC2q2qpM1;
 pub mod FLC2q2qpM2;
 pub mod FLC2q2qpMNoW3;
 pub mod FLC2q2qpMNoW4;
+
+pub mod FLC2q2qM_old;

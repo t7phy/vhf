@@ -1,5 +1,5 @@
 use crate::dis::internal::*;
-use super::super::fl::flnc_nnlo_nsp;
+use super::super::fl_light::flnc_nnlo_nsp;
 
 fn r_00(x: f64, nf: f64) -> f64 {
     return flnc_nnlo_nsp::cf().r(x, nf);

@@ -1047,6 +1047,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b6d2cec3eae94f9f509c767b45932f1ada8350c4bdb85af2fcab4a3c14807981"
 
 [[package]]
+name = "libome-rs"
+version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "476654e521cd0b5d6784a1cd4ef75640041956d3962375ae91bb38ad31cf7379"
+dependencies = [
+ "cc",
+ "paste",
+ "pkg-config",
+]
+
+[[package]]
 name = "libredox"
 version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1495,6 +1506,12 @@ dependencies = [
  "serde",
  "thiserror 1.0.69",
 ]
+
+[[package]]
+name = "pkg-config"
+version = "0.3.33"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "19f132c84eca552bf34cab8ec81f1c1dcc229b811638f9d283dceabe58c5569e"
 
 [[package]]
 name = "plain"
@@ -2550,6 +2567,7 @@ dependencies = [
  "clap",
  "fs2",
  "libc",
+ "libome-rs",
  "mchep",
  "ndarray 0.15.6",
  "neopdf 0.3.2",

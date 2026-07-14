@@ -1,0 +1,112 @@
+// In Rust, translating this class involves moving from Object-Oriented (class-based) to Data-Oriented (struct-based) design.
+
+// A few things to note about the Rust implementation:
+
+// Types: We'll use Vec<f64> for the grid and our custom HashMap for the basis functions.
+
+// The Integrand: Instead of a class method, we use a Closure (anonymous function). This allows the integrand to "capture" the variables it needs (basis_functions, x, Q, etc.) without needing a complex class hierarchy.
+
+// The Rust Implementation
+// First, we define a struct to hold the state, and then a method to initialize it.
+
+use std::collections::HashMap;
+use crate::core::interpolation::{
+    compute_basis_functions, interpolator, point_interpolator, integration_regions, BasisPiece
+};
+
+pub struct Conv1dPoint {
+    pub x: f64,
+    pub q: f64,
+    pub sv_order: i32,
+    pub itp_xgrid: Vec<f64>,
+    pub x_node: usize,
+    pub mode_log: bool,
+    // The "Dictionary" of coefficients
+    pub basis_functions: HashMap<String, Vec<BasisPiece>>,
+    // The pre-evaluated interpolation at point x
+    pub interpolator_at_x: Vec<f64>,
+    // The regions for integration (xmin, xmax)
+    pub integration_regions: Option<Vec<(f64, f64)>>,
+}
+
+impl Conv1dPoint {
+    pub fn new(x: f64, q: f64, sv_order: i32, itp_xgrid: Vec<f64>, x_node: usize, mode_log: bool) -> Self {
+        // Calculate basis functions once during initialization
+        let bfs = compute_basis_functions(itp_xgrid.clone(), 4, mode_log);
+        
+        // Pre-calculate the interpolator vector at value x
+        let interp_at_x = interpolator(x, &bfs, mode_log);
+        
+        // Get the split regions for the integration limits
+        let regions = integration_regions(x, &itp_xgrid);
+
+        Self {
+            x,
+            q,
+            sv_order,
+            itp_xgrid,
+            x_node,
+            mode_log,
+            basis_functions: bfs,
+            interpolator_at_x: interp_at_x,
+            integration_regions: regions,
+        }
+    }
+
+    /// This replaces the Python integrand_r method
+    /// It takes a closure/function pointer for the coefficient function
+    pub fn get_integrand_r<F>(&self, coeff_func: F) -> impl Fn(f64) -> f64 + '_ 
+    where 
+        F: Fn(f64, f64, i32, i32) -> f64 + 'static
+    {
+        // We move the logic into a closure that "borrows" self
+        move |xhat: f64| {
+            let poly_val = point_interpolator(
+                self.x / xhat, 
+                &self.basis_functions, 
+                self.x_node, 
+                self.mode_log
+            );
+            
+            (coeff_func(xhat, self.q, 7, self.sv_order) * poly_val) / xhat
+        }
+    }
+}
+
+// Breakdown of Specific Objects
+// 1. itp_xgrid format
+// In Python, this was a NumPy array. In Rust, we use Vec<f64>. Since integration_regions and compute_basis_functions both need to look at the grid, we pass it by reference &[f64] or clone it if the struct needs to own it.
+
+// 2. basis_functions object
+// This is your "Dictionary." In Rust, it is a HashMap<String, Vec<BasisPiece>>.
+
+// The Key is "p_0", "p_1", etc.
+
+// The Value is a list of BasisPiece structs (containing xmin, xmax, and the polynomial coeffs).
+
+// 3. interpolator_at_x
+// This is a Vec<f64>. In your Python code, it’s a list of floats representing the value of every basis function at the specific point self.x. This is pre-computed in new() to save time during the convolution.
+
+// 4. point_interpolator in the Integrand
+// In Rust, the integrand is a closure.
+
+// Python: self.coeff_func(...) * point_interpolator(...)
+
+// Rust: We pass the coeff_func (which is likely your nielsen or nl function) into the get_integrand_r method. The returned closure can then be passed into an integrator (like a GSL or Quad-rule solver).
+
+// How to use it in your main code:
+
+// 1. Initialize the point
+let point = Conv1dPoint::new(0.1, 100.0, 2, my_grid, 5, true);
+
+// 2. Define your coefficient function (e.g., matching your Python logic)
+let my_coeff_func = |xhat: f64, q: f64, order: i32, sv: i32| {
+    // Call your nielsen logic here
+    1.0 // placeholder
+};
+
+// 3. Get the integrand
+let integrand = point.get_integrand_r(my_coeff_func);
+
+// 4. Evaluate it at some xhat
+let value = integrand(0.5);

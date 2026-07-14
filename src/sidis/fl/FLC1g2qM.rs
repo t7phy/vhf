@@ -76,7 +76,7 @@ fn RG_RG_000(x: f64, z: f64, NF: f64) -> f64 {
     }
 
     if z != x && z != 1. - x {
-        let tmp: f64 = 4.0 * x + (- 4.0 * pow(x, 2));
+        let tmp: f64 = 4.0 * x + (- 4.0 * (x * x));
         res += tmp;
     }
 

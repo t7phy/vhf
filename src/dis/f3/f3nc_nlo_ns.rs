@@ -1,5 +1,5 @@
 use crate::dis::internal::*;
-use super::super::f2::f2nc_nlo_ns;
+use super::super::f2_light::f2nc_nlo_ns;
 
 fn r_00(x: f64, nf: f64) -> f64 {
     let res: f64 = f2nc_nlo_ns::cf().r(x, nf) - 2.0 * CF * (1.0 + x);

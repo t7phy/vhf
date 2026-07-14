@@ -20,28 +20,32 @@ pub fn ArcTan(x: f64) -> f64 {
     x.atan()
 }
 
-pub trait Power<Exponent> {
-    fn pow(base: f64, exp: Exponent) -> f64;
-}
+// pub trait Power<Exponent> {
+//     fn pow(base: f64, exp: Exponent) -> f64;
+// }
 
-// Case 1: y is an i32 (Integer)
-impl Power<i32> for f64 {
-    fn pow(base: f64, exp: i32) -> f64 {
-        base.powi(exp) // Uses Rust's optimized integer power
-    }
-}
+// // Case 1: y is an i32 (Integer)
+// impl Power<i32> for f64 {
+//     fn pow(base: f64, exp: i32) -> f64 {
+//         base.powi(exp) // Uses Rust's optimized integer power
+//     }
+// }
 
-// Case 2: y is an f64 (Float)
-impl Power<f64> for f64 {
-    fn pow(base: f64, exp: f64) -> f64 {
-        base.powf(exp) // Uses Rust's float power
-    }
-}
+// // Case 2: y is an f64 (Float)
+// impl Power<f64> for f64 {
+//     fn pow(base: f64, exp: f64) -> f64 {
+//         base.powf(exp) // Uses Rust's float power
+//     }
+// }
 
-// The generic wrapper function
-pub fn pow<T>(x: f64, y: T) -> f64 
-where 
-    f64: Power<T> 
-{
-    <f64 as Power<T>>::pow(x, y)
+// // The generic wrapper function
+// pub fn pow<T>(x: f64, y: T) -> f64 
+// where 
+//     f64: Power<T> 
+// {
+//     <f64 as Power<T>>::pow(x, y)
+// }
+
+pub fn pow(x: f64, y: i32) -> f64 {
+    x.powi(y)
 }
