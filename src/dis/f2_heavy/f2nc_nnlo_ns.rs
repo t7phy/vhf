@@ -1,5 +1,5 @@
 use crate::dis::internal::*;
-use crate::dis::f2_heavy::{dq1_h4, ADLER_LOGXIS, ADLER_F2_VV};
+use crate::dis::dis_ext::leprohq_funcs::{dq1_h4, ADLER_LOGXIS, ADLER_F2_VV};
 use crate::core::scits::cubic_spline::CubicSpline;
 use std::sync::OnceLock;
 
@@ -8,11 +8,11 @@ fn adler_spline() -> &'static CubicSpline {
     SPLINE.get_or_init(|| CubicSpline::new(&ADLER_LOGXIS, &ADLER_F2_VV))
 }
 
-pub fn r_00(x: f64, Q2: f64, pid: f64) -> f64 {
+pub fn r_00(x: f64, Q2: f64, pid: f64, _nf: f64, _var: i8) -> f64 {
 
     let m2 = get_quark_mass(pid as i8).powi(2);
 
-    let mut res: f64;
+    let res: f64;
     if below_threshold(x, Q2, m2) {
         res = 0.0;
     } else {
@@ -30,7 +30,7 @@ pub fn r_00(x: f64, Q2: f64, pid: f64) -> f64 {
     res
 }
 
-pub fn l_00(x: f64, Q2: f64, pid: f64) -> f64 {
+pub fn l_00(x: f64, Q2: f64, pid: f64, _nf: f64, _var: i8) -> f64 {
 
     let m2 = get_quark_mass(pid as i8).powi(2);
 

@@ -1,16 +1,16 @@
 use crate::dis::internal::*;
-use crate::dis::f2_heavy::fh_grids::cg1_f2_aa_bulk::cg1_f2_aa_bulk_spline as grid;
-use crate::dis::f2_heavy::fh_grids::cg1_f2_aa_bulk::{CG1_F2_AA_BULK_X, CG1_F2_AA_BULK_Y};
-use crate::dis::f2_heavy::{cgbar1_h1, cgbar1_h2, cgbar1_h3, cg1t_f2_aa, cg1hv_f2};
+use crate::dis::dis_ext::leprohq_grids::cg1_f2_aa_bulk::cg1_f2_aa_bulk_spline as grid;
+use crate::dis::dis_ext::leprohq_grids::cg1_f2_aa_bulk::{CG1_F2_AA_BULK_X, CG1_F2_AA_BULK_Y};
+use crate::dis::dis_ext::leprohq_funcs::{cgbar1_h1, cgbar1_h2, cgbar1_h3, cg1t_f2_aa, cg1hv_f2};
 
 const LNETA_TH_MIX: f64 = -2.302585092994046; // ln(1e-1)
 const LNXI_HV_MIX: f64 = 7.3132203482534845;  // ln(1.5e3)
 
-pub fn r_00(x: f64, Q2: f64, pid: f64) -> f64 {
+pub fn r_00(x: f64, Q2: f64, pid: f64, _nf: f64, _var: i8) -> f64 {
 
     let m2 = get_quark_mass(pid as i8).powi(2);
 
-    let mut res: f64;
+    let res: f64;
     if below_threshold(x, Q2, m2) {
         res = 0.0;
     } else {
@@ -30,7 +30,7 @@ pub fn r_00(x: f64, Q2: f64, pid: f64) -> f64 {
         let cgbar1 = (8.*chi*chiq*(2.*beta*(-1. + rhoq)*rhoq*(-632.*pow(rho,2) + (62. - 95.*rho)*rho*rhoq + (8. + 9.*(-2. + rho)*rho)*pow(rhoq,2)) + 48.*h1*rho*(rho - rhoq)*(-1. + rhoq)*((-1. + rhoq)*rhoq + rho*(5. + rhoq)) + 96.*beta*h3*rho*(-1. + rhoq)*(pow(rho,2) + pow(rhoq,2) + rho*rhoq*(6. + rhoq)) + 24.*h2*rho*(-1. + rhoq)*(-6.*rho*pow(rhoq,2) + 2.*(-1. + rhoq)*pow(rhoq,2) + pow(rho,2)*(-2. + (-2. + rhoq)*rhoq)) + rho*(1. - rhoq)*(-48.*pow(rhoq,2)*(1. + rhoq) - 24.*rho*rhoq*(-22. + (-10. + rhoq)*rhoq) + pow(rho,2)*(-568. + rhoq*(312. + rhoq*(-59. + 9.*rhoq))))*ln(chi) - 8.*betaq*(rho - rhoq)*((4. - 5.*rhoq)*pow(rhoq,2) + 2.*rho*rhoq*(-4. + 5.*rhoq) + pow(rho,2)*(-68. + 67.*rhoq))*ln((chi + chiq)/(1. + chi*chiq))))/((-1. + beta)*pow(1. + beta,5)*pow(1. + betaq,8)*pow(chi + chiq,3)*pow(1. + chi*chiq,3)*pow(1. - pow(chiq,2),2)*pi);
 
         // log independent part
-        let mut cg1: f64;
+        let cg1: f64;
         let lneta = eta.ln();
         let lnxi = xi.ln();
 

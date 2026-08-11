@@ -1,13 +1,12 @@
 use crate::dis::internal::*;
-use crate::dis::f2_heavy::fh_grids::cg1_fl_aa_bulk::cg1_fl_aa_bulk_spline as grid;
-use crate::dis::f2_heavy::fh_grids::cg1_fl_aa_bulk::{CG1_FL_AA_BULK_X, CG1_FL_AA_BULK_Y};
-use crate::dis::f2_heavy::{cgbar1_h1, cgbar1_h2, cgbar1_h3};
-use crate::dis::fl_heavy::{cg1t_fl_aa, cg1hv_fl};
+use crate::dis::dis_ext::leprohq_grids::cg1_fl_aa_bulk::cg1_fl_aa_bulk_spline as grid;
+use crate::dis::dis_ext::leprohq_grids::cg1_fl_aa_bulk::{CG1_FL_AA_BULK_X, CG1_FL_AA_BULK_Y};
+use crate::dis::dis_ext::leprohq_funcs::{cgbar1_h1, cgbar1_h2, cgbar1_h3, cg1t_fl_aa, cg1hv_fl};
 
 const LNETA_TH_MIX: f64 = -2.302585092994046;
 const LNXI_HV_MIX: f64 = 7.3132203482534845;
 
-pub fn r_00(x: f64, Q2: f64, pid: f64) -> f64 {
+pub fn r_00(x: f64, Q2: f64, pid: f64, _nf: f64, _var: i8) -> f64 {
     let m2 = get_quark_mass(pid as i8).powi(2);
     if below_threshold(x, Q2, m2) {
         return 0.0;

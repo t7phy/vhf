@@ -1,7 +1,7 @@
 use crate::dis::internal::*;
 
 // cg0_x2g1_AA == cg0_x2g1_VV
-pub fn r_00(x: f64, Q2: f64, pid: f64) -> f64 {
+pub fn r_00(x: f64, Q2: f64, pid: f64, _nf: f64, _var: i8) -> f64 {
     let m2 = get_quark_mass(pid as i8).powi(2);
     if below_threshold(x, Q2, m2) {
         return 0.0;

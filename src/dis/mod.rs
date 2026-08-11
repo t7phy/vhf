@@ -4,7 +4,6 @@
 
 pub mod f2_light;
 pub mod f2_heavy;
-pub mod f2_asymptotic;
 pub mod f3;
 pub mod f3_heavy;
 pub mod fl_light;
@@ -16,9 +15,9 @@ pub mod g4_heavy;
 pub mod gl;
 pub mod gl_heavy;
 
-pub mod couplings;
+pub mod dis_ext;
 
-pub mod processes;
+pub mod couplings;
 
 pub use internal::{CoeffFuncs, DISFunc};
 

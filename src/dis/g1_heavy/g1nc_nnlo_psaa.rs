@@ -1,13 +1,12 @@
 use crate::dis::internal::*;
-use crate::dis::f2_heavy::fh_grids::cq1_x2g1_aa_bulk::cq1_x2g1_aa_bulk_spline as grid;
-use crate::dis::f2_heavy::fh_grids::cq1_x2g1_aa_bulk::{CQ1_X2G1_AA_BULK_X, CQ1_X2G1_AA_BULK_Y};
-use crate::dis::f2_heavy::cgbar1_h1;
-use crate::dis::g1_heavy::cq1t_x2g1_aa;
+use crate::dis::dis_ext::leprohq_grids::cq1_x2g1_aa_bulk::cq1_x2g1_aa_bulk_spline as grid;
+use crate::dis::dis_ext::leprohq_grids::cq1_x2g1_aa_bulk::{CQ1_X2G1_AA_BULK_X, CQ1_X2G1_AA_BULK_Y};
+use crate::dis::dis_ext::leprohq_funcs::{cgbar1_h1, cq1t_x2g1_aa};
 
 const LNETA_TH_MIX: f64 = 0.0;
 const LNXI_HV_MIX: f64 = 7.3132203482534845;
 
-pub fn r_00(x: f64, Q2: f64, pid: f64) -> f64 {
+pub fn r_00(x: f64, Q2: f64, pid: f64, _nf: f64, _var: i8) -> f64 {
     let m2 = get_quark_mass(pid as i8).powi(2);
     if below_threshold(x, Q2, m2) {
         return 0.0;
